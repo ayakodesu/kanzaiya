@@ -1,0 +1,2 @@
+module GeneralPublic::ItemsHelper
+end

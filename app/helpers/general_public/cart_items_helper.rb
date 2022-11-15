@@ -1,0 +1,2 @@
+module GeneralPublic::CartItemsHelper
+end

@@ -1,0 +1,2 @@
+module GeneralPublic::AddressesHelper
+end
