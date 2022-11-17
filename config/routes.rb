@@ -1,84 +1,70 @@
 Rails.application.routes.draw do
   namespace :general_public do
-    get 'favorites/index'
+    get '/' => 'homes#top'
+    get "/home/about" => "homes#about", as: "about"
+
+    resources :orders, only: [:new, :index, :create, :destroy, :show]
+    resources :items, only: [:index, :create, :show, :update, :destroy]
+    resource :customer, only: [:create, :edit, :show, :update, :destroy]
+    resources :addresses, only: [:create, :edit, :index, :update, :destroy]
+    resources :cart_items, only: [:index, :create, :update, :destroy]
+    resources :favorites, only: [:index, :create, :destroy]
+
   end
-  namespace :general_public do
-    get 'addresses/index'
-    get 'addresses/edit'
-  end
-  namespace :general_public do
-    get 'orders/new'
-    get 'orders/index'
-    get 'orders/show'
-  end
-  namespace :general_public do
-    get 'cart_items/index'
-  end
-  namespace :general_public do
-    get 'customers/show'
-    get 'customers/edit'
-  end
-  namespace :general_public do
-    get 'items/index'
-    get 'items/show'
-  end
+
   namespace :public do
-    get 'favorites/index'
+
+   get '/' => 'homes#top'
+    get "/home/about" => "homes#about", as: "about"
+
+    resources :orders, only: [:new, :index, :create, :destroy, :show]
+    resources :items, only: [:index, :create, :show, :update, :destroy]
+    resource :customer, only: [:create, :edit, :show, :update, :destroy]
+    resources :addresses, only: [:create, :edit, :index, :update, :destroy]
+    resources :cart_items, only: [:index, :create, :update, :destroy]
+    resources :favorites, only: [:index, :create, :destroy]
+
   end
-  namespace :public do
-    get 'addresses/index'
-    get 'addresses/edit'
-  end
-  namespace :public do
-    get 'orders/new'
-    get 'orders/index'
-    get 'orders/show'
-  end
-  namespace :public do
-    get 'cart_items/index'
-  end
-  namespace :public do
-    get 'customers/show'
-    get 'customers/edit'
-  end
-  namespace :public do
-    get 'registations/new'
-  end
-  namespace :public do
-    get 'items/index'
-    get 'items/show'
-  end
+
+
   namespace :admin do
-    get 'orders/show'
+    get 'top' => 'homes#top'
+    get "/home/about" => "homes#about", as: "about"
+
+
+    resources :homes, only: [:new, :index, :create, :edit, :update, :destroy]
+    resources :genres, only: [:index, :create, :edit, :update, :destroy]
+
+    resources :items, only: [:new, :index, :create, :edit, :show, :update, :destroy]
+
+    resources :orders, only: [:show]
+    resources :customers, only: [:index, :show, :create, :edit, :update, :destroy]
+
+
+
+
+
   end
-  namespace :admin do
-    get 'customers/index'
-    get 'customers/show'
-    get 'customers/edit'
-  end
-  namespace :admin do
-    get 'genres/index'
-    get 'genres/edit'
-  end
-  namespace :admin do
-    get 'items/index'
-    get 'items/new'
-    get 'items/show'
-    get 'items/edit'
-  end
-  namespace :admin do
-    get 'homes/top'
-  end
-  namespace :general_public do
-    get 'homes/top'
-    get 'homes/about'
-  end
-  namespace :public do
-    get 'homes/top'
-    get 'homes/about'
-  end
-  devise_for :admins
-  devise_for :general_customers
-  devise_for :customers
+
+
+
+
+  devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
+  sessions: "admin/sessions"
+}
+
+
+
+  devise_for :general_customers,skip: [:passwords], controllers: {
+  registrations: "general_public/registrations",
+  sessions: 'general_public/sessions'
+}
+
+
+  devise_for :customers,skip: [:passwords], controllers: {
+  registrations: "public/registrations",
+  sessions: 'public/sessions'
+}
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
