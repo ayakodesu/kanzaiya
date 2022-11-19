@@ -19,7 +19,11 @@
     <% @items.each do |item| %>
 
     <tr>
-      <td><%= image_tag item.image, size: '50x50'%></td>
+      <td>
+      <%= link_to admin_items_path(item.id) do %>
+      <%= image_tag item.image, size: '50x50'%>
+      <% end %>
+      </td>
       <td><%= item.genre.name %></td>
       <td><%= item.name %>/<%= item.shape %>/<%= item.size %></td>
       <td><%= item.amount %></td>
