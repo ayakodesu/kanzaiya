@@ -12,6 +12,7 @@
 
 <div class="row mt-4 justify-content-center">
   <strong>ジャンル</strong>
+  <%= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: '--選択してください--'}, class: 'sample' %>
 
 </div>
 
@@ -30,8 +31,14 @@
 <div class="row mt-4 justify-content-center">
   <strong>サイズ</strong>
   <%= f.text_field :size, placeholder: "20" %>
-
 </div>
+
+<div class="row mt-4 justify-content-center">
+  <strong>商品説明</strong>
+  <%= f.text_area :introduction, placeholder: "説明文入力" %>
+</div>
+
+
 
 
 <div class="row mt-4 justify-content-center">
