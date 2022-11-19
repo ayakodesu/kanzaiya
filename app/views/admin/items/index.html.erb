@@ -1,1 +1,35 @@
-商品一覧だお
+<div class="container text-center">
+    <div class="row mt-5 justify-content-center">
+      <h4>商品一覧</h4>
+    </div>
+
+<%= link_to "商品新規追加", new_admin_item_path, class: "btn btn-outline-info" %>
+
+  <table class="table table-bordered">
+    <thead>
+      <th>商品画像</th>
+      <th>商品名/型/サイズ</th>
+      <th>ジャンル</th>
+      <th>数量</th>
+      <th>定価</th>
+
+    </thread>
+
+  <tbody>
+    <% @items.each do |item| %>
+
+    <tr>
+      <td><%= image_tag item.image, size: '50x50'%></td>
+      <td><%= item.name %>/<%= item.shape %>/<%= item.size %></td>
+      <td><%= item.genre.name %></td>
+      <td></td>
+      <td><%= item.last_price %></td>
+    </tr>
+
+    <% end %>
+  </tbody>
+
+</table>
+
+
+</div>
