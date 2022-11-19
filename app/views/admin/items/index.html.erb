@@ -5,7 +5,7 @@
 
 <%= link_to "商品新規追加", new_admin_item_path, class: "btn btn-outline-info" %>
 
-  <table class="table table-bordered">
+  <table class="table table-hover table-bordered table-sm">
     <thead>
       <th>商品画像</th>
       <th>ジャンル</th>
@@ -25,7 +25,12 @@
       <% end %>
       </td>
       <td><%= item.genre.name %></td>
-      <td><%= item.name %>/<%= item.shape %>/<%= item.size %></td>
+      <td><%= link_to admin_item_path(item.id) do %>
+      <%= item.name %><br />
+      <%= item.shape %><br />
+      <%= item.size %>
+      <% end %>
+      </td>
       <td><%= item.amount %></td>
       <td><%= item.last_price %></td>
     </tr>
