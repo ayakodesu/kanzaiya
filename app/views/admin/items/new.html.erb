@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row mt-5 justify-content-center">
+      <h4>商品新規登録</h4>
+    </div>
+
+<%= form_with model: @item, url: admin_items_path do |f| %>
+
+ <div class="row mt-4 justify-content-center">
+   <strong>商品画像</strong>
+   <%= f.file_field :image, accept: "image/*" %>
+</div>
+
+<div class="row mt-4 justify-content-center">
+  <strong>ジャンル</strong>
+
+</div>
+
+<div class="row mt-4 justify-content-center">
+  <strong>商品名</strong>
+  <%= f.text_field :name, placeholder: "商品名" %>
+</div>
+
+
+<div class="row mt-4 justify-content-center">
+  <strong>型</strong>
+  <%= f.text_field :shape, placeholder: "エルボ" %>
+
+</div>
+
+<div class="row mt-4 justify-content-center">
+  <strong>サイズ</strong>
+  <%= f.text_field :size, placeholder: "20" %>
+
+</div>
+
+
+<div class="row mt-4 justify-content-center">
+  <strong>定価</strong>
+  <%= f.text_field :last_price, placeholder: "10,000" %>
+
+</div>
+
+  <div class="row mt-5 justify-content-center">
+    <%= f.submit "新規登録", class: "btn btn-success" %>
+  </div>
+
+
+
+   <% end %>
+
+
+ </div>
+
+
+
+
+
+
+
+
+ </div>
+

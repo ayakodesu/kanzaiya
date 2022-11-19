@@ -1,21 +1,25 @@
 
 
-<div class="container text-center">
-<h2>社員ログインページ</h2>
+<div class="container mt-5  pt-5 text-center">
+
+    <h2>社員ログインページ</h2>
 
 
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+   <div class="row mb-5 mt-5">
+      <div class="col">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="row mb-5 mt-5">
+      <div class="col">
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
   </div>
 
 
@@ -23,7 +27,7 @@
   <div class="actions">
     <%= f.submit "Log in", class: "btn btn-primary" %>
   </div>
-<% end %>
+    <% end %>
 
 <%= render "admin/shared/links" %>
 

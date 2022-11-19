@@ -34,10 +34,10 @@ Rails.application.routes.draw do
 
     resources :homes, only: [:new, :index, :create, :edit, :update, :destroy]
     resources :genres, only: [:index, :create, :edit, :update, :destroy]
-
+    get 'genres/edit/:id' => 'genres#edit'
     resources :items, only: [:new, :index, :create, :edit, :show, :update, :destroy]
 
-    resources :orders, only: [:show]
+    resources :orders, only: [:show, :index]
     resources :customers, only: [:index, :show, :create, :edit, :update, :destroy]
 
 
