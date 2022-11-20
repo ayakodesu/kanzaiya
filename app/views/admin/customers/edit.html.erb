@@ -1,0 +1,107 @@
+<div class="container">
+    <div class="row mt-5 justify-content-center">
+      <h4>会員編集</h4>
+    </div>
+
+
+    <%= form_with model: @customer, url: admin_customer_path do |f| %>
+
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-2">
+      会員ID
+    </div>
+    <div class="col-2">
+      <%= @customer.id %>
+    </div>
+
+  <div class="row mb-3">
+    <div class="col-2">
+      名前
+    </div>
+    <div class="col-2">
+      <%= @customer.last_name %>
+      <%= @customer.first_name %>
+    </div>
+  </div>
+
+
+  <div class="row mb-3">
+    <div class="col-2">
+      ふりがな
+    </div>
+    <div class="col-2">
+      <%= @customer.last_name_kana %>
+      <%= @customer.first_name_kana %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-2">
+      会社名
+    </div>
+    <div class="col-2">
+      <%= @customer.corporation %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-2">
+      住所
+    </div>
+    <div class="col-2">
+      <%= @customer.address %>
+    </div>
+  </div>
+
+
+  <div class="row mb-3">
+    <div class="col-2">
+      TEL
+    </div>
+      <%= @customer.telephone_number %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-2">
+      email
+  　</div>
+  　<div class="col-2">
+  　  <%= @customer.email %>
+  　 </div>
+  </div>
+
+
+  <div class="row mb-3">
+    <div class="col-2">
+      会員ステータス
+    </div>
+     <div class="col-2"><%= f.radio_button :is_deleted, :false %>
+         <%= f.label :is_deleted, "有効" %>
+      </div>
+      <div class="col-2"><%= f.radio_button :is_deleted, :true %>
+         <%= f.label :is_deleted, "退会" %>
+      </div>
+    </div>
+
+
+  <div class="row mb-3">
+    <div class="col-2">
+      <%= f.submit "変更を保存", class: "btn btn-success" %>
+    </div>
+  </div>
+
+
+
+
+
+</div>
+
+    <% end %>
+
+
+
+
+
+</div>
