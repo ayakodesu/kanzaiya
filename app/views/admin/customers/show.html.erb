@@ -11,6 +11,7 @@
       </div>
       <div class="col-4">
         <%= @customer.id %>
+        <%= @general_customer.id %>
       </div>
     </div>
   </div>
@@ -23,7 +24,10 @@
         名前
       </div>
       <div class="col-4">
-        <%= @customer.last_name + first_name %>様
+        <%= @customer.last_name %>
+        <%= @customer.last_name %>様
+        <%= @general_customer.last_name %>
+        <%= @general_customer.first_name %>様
       </div>
     </div>
 
@@ -35,6 +39,10 @@
         ふりがな
       </div>
       <div class="col-4">
+        <%= @customer.last_name_kana %>
+        <%= @customer.last_name_kana %>様
+        <%= @general_customer.last_name_kana %>
+        <%= @general_customer.first_name_kana %>様
 
       </div>
     </div>
@@ -48,6 +56,7 @@
       </div>
       <div class="col-4">
         <%= @customer.corporation %>
+
       </div>
     </div>
 
@@ -59,6 +68,7 @@
       </div>
       <div class="col-4">
         <%= @customer.address %>
+        <%= @general_customer.address %>
       </div>
     </div>
 
@@ -71,6 +81,7 @@
       </div>
       <div class="col-4">
         <%= @customer.telephone_number %>
+        <%= @general_customer.telephone_number %>
       </div>
     </div>
 
@@ -83,6 +94,7 @@
       </div>
       <div class="col-4">
         <%= @customer.email %>
+        <%= @general_customer.email %>
       </div>
     </div>
 
@@ -101,6 +113,12 @@
     <div class="row mt-2">
       <div class="col-3">
         <%= link_to "編集する",  edit_admin_customer_path(@customer.id), class: "btn btn-success" %>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-2">
+        <%= link_to "編集する", edit_admin_customer_path(@general_customer.id), class: "btn btn-success" %>
       </div>
     </div>
 
