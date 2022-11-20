@@ -1,1 +1,30 @@
-顧客一覧！！
+<div class="container">
+    <div class="row mt-5 justify-content-center">
+      <h4>会員一覧</h4>
+    </div>
+
+
+    <table class="table table-hover table-bordered table-sm">
+      <thead>
+
+        <th>会員ID</th>
+        <th>企業/一般ユーザー名</th>
+        <th>住所</th>
+
+      </thead>
+    </table>
+
+
+ <tbody>
+    <%= @customers.each do |customer| %>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+
+
+  </tr>
+    <% end %>
+
+</tbody>
+</table>

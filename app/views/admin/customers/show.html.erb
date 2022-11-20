@@ -1,0 +1,108 @@
+<div class="container">
+    <div class="row mt-5 justify-content-center">
+      <h4>会員詳細</h4>
+    </div>
+
+
+  <div class="container">
+    <div class="row mt-2">
+      <div class="col-3">
+        会員ID
+      </div>
+      <div class="col-4">
+        <%= @customer.id %>
+      </div>
+    </div>
+  </div>
+
+
+
+
+    <div class="row mt-2">
+      <div class="col-3">
+        名前
+      </div>
+      <div class="col-4">
+        <%= @customer.last_name + first_name %>様
+      </div>
+    </div>
+
+
+
+
+    <div class="row mt-2">
+      <div class="col-3">
+        ふりがな
+      </div>
+      <div class="col-4">
+
+      </div>
+    </div>
+
+
+
+
+    <div class="row mt-2">
+      <div class="col-3">
+        会社名
+      </div>
+      <div class="col-4">
+        <%= @customer.corporation %>
+      </div>
+    </div>
+
+
+
+    <div class="row mt-2">
+      <div class="col-3">
+        住所
+      </div>
+      <div class="col-4">
+        <%= @customer.address %>
+      </div>
+    </div>
+
+
+
+
+    <div class="row mt-2">
+      <div class="col-3">
+        TEL
+      </div>
+      <div class="col-4">
+        <%= @customer.telephone_number %>
+      </div>
+    </div>
+
+
+
+
+    <div class="row mt-2">
+      <div class="col-3">
+        email
+      </div>
+      <div class="col-4">
+        <%= @customer.email %>
+      </div>
+    </div>
+
+
+
+    <div class="row mt-2">
+      <div class="col-3">
+        会員ステータス
+      </div>
+      <div class="col-4">
+
+      </div>
+    </div>
+
+
+    <div class="row mt-2">
+      <div class="col-3">
+        <%= link_to "編集する",  edit_admin_customer_path(@customer.id), class: "btn btn-success" %>
+      </div>
+    </div>
+
+
+</div>
