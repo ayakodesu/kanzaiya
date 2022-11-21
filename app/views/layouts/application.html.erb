@@ -60,9 +60,16 @@
         <% end %>
 
 
+          <% end %>
 
 
 
+          <% if customer_signed_in? %>
+
+           <%= link_to destroy_customer_session_path, method: :delete, class: 'nav-link text-light' do %>
+          <p class="border rounded">ログアウト</p>
+
+          <% end %>
 
           <% end %>
       </ul>

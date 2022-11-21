@@ -8,25 +8,25 @@
       <thead>
 
         <th>会員ID</th>
-        <th>企業/一般ユーザー名</th>
+        <th >名前</th>
+        <th>企業</th>
         <th>住所</th>
 
       </thead>
-    </table>
+
 
 
  <tbody>
-    <%= @customers.each do |customer| %>
-    <%= @general_customers.each do |general_customer| %>
+    <% @customers.each do |customer| %>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-
-
+    <td><%= customer.id %></td>
+    <td><%= customer.last_name %>
+        <%= customer.first_name %></td>
+    <td><%= customer.corporation %></td>
+    <td><%= customer.address %></td>
   </tr>
     <% end %>
-    <% end %>
+
 
 </tbody>
 </table>
