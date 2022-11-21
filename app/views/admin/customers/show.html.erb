@@ -52,11 +52,20 @@
 
     <div class="row mt-2">
       <div class="col-3">
-        会社名
+        法人名
       </div>
       <div class="col-4">
         <%= @customer.corporation %>
+      </div>
+    </div>
 
+    <div class="row mt-2">
+      <div class="col-3">
+        〒
+      </div>
+      <div class="col-4">
+        <%= @customer.postal_code %>
+        <%= @general_customer.postal_code %>
       </div>
     </div>
 
@@ -77,7 +86,7 @@
 
     <div class="row mt-2">
       <div class="col-3">
-        TEL
+        電話番号
       </div>
       <div class="col-4">
         <%= @customer.telephone_number %>

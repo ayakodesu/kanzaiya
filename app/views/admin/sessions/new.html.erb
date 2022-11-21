@@ -1,37 +1,41 @@
 
 
 <div class="container mt-5  pt-5 text-center">
+  <div class="card" style="width: 20rem;">
+    <div class="card-header">
+     <h2>社員ログイン</h2>
+    </div>
 
-    <h2>社員ログインページ</h2>
-
-
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
+    <div class="card-body">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
    <div class="row mb-5 mt-5">
       <div class="col">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", autocomplete: "email", class: "form-control" %>
       </div>
   </div>
 
   <div class="row mb-5 mt-5">
       <div class="col">
-        <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: "current-password" %>
+        <%= f.password_field :password, placeholder: "パスワード", autocomplete: "current-password", class: "form-control" %>
     </div>
   </div>
 
 
 
   <div class="actions">
-    <%= f.submit "Log in", class: "btn btn-primary" %>
+    <%= f.submit "ログイン", class: "btn btn-primary" %>
   </div>
-    <% end %>
+
+
+
+      <% end %>
+
 
 <%= render "admin/shared/links" %>
 
+    </div>
+  </div>
 </div>
-
 
 
