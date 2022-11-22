@@ -72,6 +72,20 @@
           <% end %>
 
           <% end %>
+
+
+          <% if general_customer_signed_in? %>
+
+           <%= link_to destroy_general_customer_session_path, method: :delete, class: 'nav-link text-light' do %>
+          <p class="border rounded">ログアウト</p>
+
+          <% end %>
+
+          <% end %>
+
+
+
+
       </ul>
     </div>
   </div>

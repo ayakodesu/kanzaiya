@@ -17,7 +17,19 @@
 
 
  <tbody>
-    <% @customers.each do |customer| %>
+
+    <% @instances.each do |instance| %>
+    <% if instance.class == "GeneralCustomer" %>
+  <tr>
+    <td><%= general_customer.id %></td>
+    <td><%= general_customer.last_name %>
+        <%= general_customer.first_name %></td>
+    <td><%#= customer.corporation %></td>
+    <td><%= general_customer.address %></td>
+  </tr>
+
+  <% else %>
+
   <tr>
     <td><%= customer.id %></td>
     <td><%= customer.last_name %>
@@ -25,6 +37,12 @@
     <td><%= customer.corporation %></td>
     <td><%= customer.address %></td>
   </tr>
+
+
+<% end %>
+
+
+
     <% end %>
 
 

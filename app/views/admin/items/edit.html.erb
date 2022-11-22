@@ -1,19 +1,27 @@
-<div class="container text-center">
+<div class="container">
     <div class="row mt-5 justify-content-center">
-      <h4>商品編集</h4>
+      <h4>商品編集/数量変更</h4>
     </div>
 
 
     <%= form_with model: @item, url: admin_item_path do |f| %>
 
-    <div class="row">
+
+  <div class="row text-right">
+    <div class="col">
+      数量
+      <%= f.text_field :amount, placeholder: "20" %>
+    </div>
+  </div>
+
+    <div class="row text-center">
       <div class="col">
         商品画像
         <%= f.file_field :image, accept: "image/*" %>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row text-center">
       <div class="col">
         ジャンル
         <%= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: '--選択してください--'}, class: 'sample' %>
@@ -21,7 +29,7 @@
     </div>
 
 
-    <div class="row">
+    <div class="row text-center">
       <div class="col">
         商品名
         <%= f.text_field :name, placeholder: "商品名" %>
@@ -29,7 +37,7 @@
     </div>
 
 
-  <div class="row">
+  <div class="row text-center">
     <div class="col">
       商品説明
       <%= f.text_area :introduction, placeholder: "ここに説明文を記述" %>
@@ -37,7 +45,7 @@
   </div>
 
 
-  <div class="row">
+  <div class="row text-center">
     <div class="col">
       型
       <%= f.text_field :shape, placeholder: "エルボ" %>
@@ -45,7 +53,7 @@
   </div>
 
 
-  <div class="row">
+  <div class="row text-center">
     <div class="col">
       サイズ
       <%= f.text_field :size, placeholder: "15" %>
@@ -53,34 +61,31 @@
   </div>
 
 
-  <div class="row">
-    <div class="col">
-      数量
-      <%= f.text_field :amount, placeholder: "20" %>
-    </div>
-  </div>
 
 
-  <div class="row">
+
+  <div class="row text-center">
     <div class="col">
       定価
       <%= f.text_field :last_price, placeholder: "10,000" %>
     </div>
   </div>
 
-  <div class="row mt-2 justify-content-center">
+  <div class="row justify-content-center">
         <div class="col-2">
           販売ステータス
         </div>
-        <div><%= f.radio_button :is_active, :true %></div>
-        <div><%= f.label :is_active, "販売中" %></div>
 
-        <div><%= f.radio_button :is_active, :false %></div>
-        <div><%= f.label :is_active, "販売停止中" %></div>
+        <%= f.radio_button :is_active, :true %>
+        <%= f.label :is_active, "販売中" %>
+
+        <%= f.radio_button :is_active, :false %>
+        <%= f.label :is_active, "販売停止中" %>
+
       </div>
 
 
-  <div class="row">
+  <div class="row text-center">
     <div class="col">
       <%= f.submit "変更を保存", class: "btn btn-success" %>
     </div>
@@ -90,9 +95,6 @@
 
 
     <% end %>
-
-
-
 
 
 

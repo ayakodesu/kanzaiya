@@ -1,18 +1,55 @@
 <div class="container mt-5  pt-5 text-center">
 
-    <h2>企業様　新規会員登録</h2>
+    <h2>一般ユーザー様　新規会員登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "general_public/shared/error_messages", resource: resource %>
 
-  <div class="row mb-5 mt-5">
+  <div class="row mb-4 mt-5">
+    <div class="col"><%= f.label :お名前 %>
+      (姓)<%= f.text_field :last_name, placeholder: "山田" %>
+      (名)<%= f.text_field :first_name, placeholder: "太郎" %>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col"><%= f.label :ふりがな %>
+      (せい)<%= f.text_field :last_name_kana, placeholder: "やまだ" %>
+      (めい)<%= f.text_field :first_name_kana, placeholder: "たろう" %>
+    </div>
+  </div>
+
+
+
+  <div class="row mb-4">
+    <div class="col"><%= f.label :〒 %>
+      <%= f.text_field :postal_code, placeholder: "0010001" %>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col"><%= f.label :住所 %>
+      <%= f.text_field :address, placeholder: "東京都千代田区丸の内1丁目1-1" %>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col"><%= f.label :電話番号 %>
+      <%= f.text_field :telephone_number, placeholder: "09012345678" %>
+    </div>
+  </div>
+
+
+
+
+ <div class="row mb-4">
       <div class="col">
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
   </div>
 
-  <div class="row mb-5 mt-5">
+  <div class="row mb-4">
       <div class="col">
     <%= f.label :password %>
     <% if @minimum_password_length %>
@@ -22,12 +59,13 @@
   </div>
   </div>
 
- <div class="row mb-5 mt-5">
+  <div class="row mb-4">
       <div class="col">
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
   </div>
+
 
   <div class="row mb-5 mt-5">
       <div class="col">
