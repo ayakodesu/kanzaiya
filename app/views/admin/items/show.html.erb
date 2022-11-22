@@ -8,97 +8,56 @@
 
 <div class="container">
   <div class="row mt-3 justify-content-center">
-    <div class="col-6">
+    <div class="col-6 text-center">
       <%= image_tag @item.image, size: '200x200' %>
     </div>
 
 
-   <div class="col-6">
-  <div class="container">
-    <div class="row mt-2">
-      <div class="col-3">
-        商品名
-      </div>
-      <div class="col-4">
-        <%= @item.name %>
-      </div>
-    </div>
-  </div>
+<div class="col-6">
+  <table class="table table-borderless table-striped">
 
-   <div class="container">
-    <div class="row mt-2">
-      <div class="col-3">
-        商品説明
-      </div>
-      <div class="col-4">
-        <%= @item.introduction %>
-      </div>
-    </div>
-  </div>
+        <tr><th>商品名</th>
+      <td><%= @item.name %></td></tr>
 
 
 
- <div class="container">
-    <div class="row mt-2">
-      <div class="col-3">
-        型
-      </div>
-      <div class="col-4">
-        <%= @item.shape %>
-      </div>
-    </div>
-  </div>
-
- <div class="container">
-    <div class="row mt-2">
-      <div class="col-3">
-        サイズ
-      </div>
-      <div class="col-4">
-        <%= @item.size %>
-      </div>
-    </div>
-  </div>
+        <tr><th>商品説明</th>
+        <td><%= @item.introduction %></td>
 
 
-      <div class="container">
-    <div class="row mt-2">
-      <div class="col-3">
-        数量
-      </div>
-      <div class="col-4">
-        <%= @item.amount %>
-      </div>
-    </div>
-  </div>
+        <tr><th>型</th>
+        <td><%= @item.shape %></td>
 
 
-      <div class="container">
-    <div class="row mt-2">
-      <div class="col-3">
-        定価
-      </div>
-      <div class="col-4">
-        ¥<%= @item.last_price %>
-      </div>
-    </div>
-  </div>
+
+        <tr><th>サイズ</th>
+        <td><%= @item.size %></td>
 
 
-<div class="container">
-    <div class="row mt-2">
-      <div class="col-4">
-        販売ステータス
-      </div>
-      <div class="col-4">
+
+
+        <tr><th>数量</th>
+        <td><%= @item.amount %></td>
+
+
+
+        <tr><th>定価</th>
+        <td>¥<%= @item.last_price %></td>
+
+
+
+        <tr><th>販売ステータス</th>
+      <td>
         <% if @item.is_active == true %>
           <p class="text-success">販売中</p>
         <% else %>
           <p class="text-secondary">販売停止中</p>
         <% end %>
-      </div>
-    </div>
-  </div>
+      </td>
+
+
+  </table>
+
 
 
 <div class="container">
@@ -109,3 +68,4 @@
   </div>
 </div>
 
+</div>
