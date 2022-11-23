@@ -17,21 +17,22 @@
 
  <tbody>
 
-  <% @customers.each do |customer| %>
+  <% @instances.each do |instance| %>
+    <% if instance.class == Customer %>
     <tr>
-      <td><%= customer.id %></td>
-      <td><%= link_to customer.last_name + customer.first_name, admin_customer_path(customer.id) %></td>
-      <td><%= customer.corporation %></td>
-      <td><%= customer.address %></td>
+      <td><%= instance.id %></td>
+      <td><%= link_to instance.last_name + instance.first_name, admin_customer_path(instance.id) %></td>
+      <td><%= instance.corporation %></td>
+      <td><%= instance.address %></td>
       <td></td>
     </tr>
 
-  <% @general_customers.each do |general_customer| %>
+  <% else %>
     <tr>
-     <td><%= general_customer.id %></td>
-      <td><%= link_to general_customer.last_name + general_customer.first_name, admin_customer_path(general_customer.id) %></td>
+     <td><%= instance.id %></td>
+      <td><%= link_to instance.last_name + instance.first_name, admin_customer_path(instance.id) %></td>
       <td>---------</td>
-      <td><%= general_customer.address %></td>
+      <td><%= instance.address %></td>
       <td></td>
     </tr>
   <% end %>

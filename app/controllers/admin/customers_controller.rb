@@ -1,9 +1,9 @@
 class Admin::CustomersController < ApplicationController
   def index
     @customer = Customer.all
-    @customers = Customer.page(params[:page])
     @general_customer = GeneralCustomer.all
-    @general_customers = GeneralCustomer.page(params[:page])
+    @instances = @customer | @general_customer
+
 
 
   end
