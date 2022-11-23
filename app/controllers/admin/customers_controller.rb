@@ -3,8 +3,8 @@ class Admin::CustomersController < ApplicationController
     @customer = Customer.all
     @customers = Customer.page(params[:page])
     @general_customer = GeneralCustomer.all
-    @general_customers = GeneralCustomer.page(params[:id])
-    @instances = customers | general_customer
+    @general_customers = GeneralCustomer.page(params[:page])
+
 
   end
 

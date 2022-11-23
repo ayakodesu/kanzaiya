@@ -6,45 +6,41 @@
 
     <table class="table table-hover table-bordered table-sm">
       <thead>
-
         <th>会員ID</th>
         <th >名前</th>
         <th>企業</th>
         <th>住所</th>
-
+        <th>会員ステータス</th>
       </thead>
 
 
 
  <tbody>
 
-    <% @instances.each do |instance| %>
-    <% if instance.class == "GeneralCustomer" %>
-  <tr>
-    <td><%= general_customer.id %></td>
-    <td><%= general_customer.last_name %>
-        <%= general_customer.first_name %></td>
-    <td><%#= customer.corporation %></td>
-    <td><%= general_customer.address %></td>
-  </tr>
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.id %></td>
+      <td><%= link_to customer.last_name + customer.first_name, admin_customer_path(customer.id) %></td>
+      <td><%= customer.corporation %></td>
+      <td><%= customer.address %></td>
+      <td></td>
+    </tr>
 
-  <% else %>
+  <% @general_customers.each do |general_customer| %>
+    <tr>
+     <td><%= general_customer.id %></td>
+      <td><%= link_to general_customer.last_name + general_customer.first_name, admin_customer_path(general_customer.id) %></td>
+      <td>---------</td>
+      <td><%= general_customer.address %></td>
+      <td></td>
+    </tr>
+  <% end %>
 
-  <tr>
-    <td><%= customer.id %></td>
-    <td><%= customer.last_name %>
-        <%= customer.first_name %></td>
-    <td><%= customer.corporation %></td>
-    <td><%= customer.address %></td>
-  </tr>
-
-
-<% end %>
+  <% end %>
 
 
+  </tbody>
 
-    <% end %>
+    </table>
 
-
-</tbody>
-</table>
+</div>
