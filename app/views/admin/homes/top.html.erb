@@ -1,2 +1,18 @@
-社員トップページだよ
+<div class="container mt-5">
+    <h2>kanzaiya社員用トップページ</h2>
+</div>
 
+<div class="container mt-5">
+  <div class="card" style="width: 20rem;">
+    <div class="card-header">
+     <h4>メニュー</h4>
+    </div>
+
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+      <%= link_to "商品一覧", admin_items_path %><br/>
+      <%= link_to "会員一覧", admin_customers_path %><br />
+      <%= link_to "注文履歴一覧", admin_orders_path %><br />
+      <%= link_to "ジャンル一覧&追加", admin_genres_path %>
+      </ul>
+    </div>
