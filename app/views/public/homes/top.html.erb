@@ -1,1 +1,66 @@
-トップページ
+<div class="container">
+    <div class="row mt-5 justify-content-center">
+       <div class="text-center"
+            <p>
+                <h2>ようこそ! kanzaiyaへ!</h2><br>
+                <h5>このサイトは、kanzaiyaのECサイトになります。</br>
+            <div class="row mt-4 justify-content-center">
+                kanzaiyaの商品の在庫確認、ご注文が出来ます。</br></h5>
+                </br>
+            </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+   <div class="row mt-5">
+
+     <div class="col text-center">
+       <div class="card" style="width: 20rem;">
+        <div class="card-header">
+          <h2>一般ユーザー様</h2>
+        </div>
+        <div class="card-body">
+          <div class="row mb-5 mt-3">
+            <div class="col text-center">
+              <%= link_to "登録済みの方", new_general_customer_session_path, class: "btn btn-primary" %>
+            </div>
+          </div>
+        <div class="row mb-5 mt-3 text-center">
+          <div class="col">
+            <%= link_to "初めての方(新規登録)", new_general_customer_registration_path, class: "btn btn-white" %>
+          </div>
+        </div>
+        </div>
+       </div>
+      </div>
+
+
+
+    <div class="col text-center">
+       <div class="card" style="width: 20rem;">
+        <div class="card-header">
+          <h2>企業ユーザー様</h2>
+        </div>
+        <div class="card-body">
+          <div class="row mb-5 mt-3">
+            <div class="col text-center">
+              <%= link_to "登録済みの方", new_customer_session_path, class: "btn btn-primary" %>
+            </div>
+          </div>
+            <div class="row mb-5 mt-3 text-center">
+              <div class="col">
+                <%= link_to "初めての方(新規登録)", new_customer_registration_path, class: "btn btn-white" %>
+              </div>
+            </div>
+        </div>
+       </div>
+     </div>
+
+    </div>
+
+</div>
+
+</div>

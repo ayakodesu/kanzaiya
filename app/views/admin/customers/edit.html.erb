@@ -5,6 +5,7 @@
 
 
     <%= form_with model: @customer, url: admin_customer_path do |f| %>
+    <%= form_with model: @general_customer, url: admin_customer_path do |f| %>
 
 <div class="container">
   <div class="row mb-3">
@@ -13,6 +14,7 @@
     </div>
     <div class="col-2">
       <%= @customer.id %>
+      <%= @general_customer.id %>
     </div>
 
   <div class="row mb-3">
@@ -22,6 +24,8 @@
     <div class="col-2">
       <%= @customer.last_name %>
       <%= @customer.first_name %>
+      <%= @general_customer.last_name %>
+      <%= @general_customer.first_name %>
     </div>
   </div>
 
@@ -33,6 +37,8 @@
     <div class="col-2">
       <%= @customer.last_name_kana %>
       <%= @customer.first_name_kana %>
+      <%= @general_customer.last_name_kana %>
+      <%= @general_customer.first_name_kana %>
     </div>
   </div>
 
@@ -51,6 +57,7 @@
     </div>
     <div class="col-2">
       <%= @customer.address %>
+      <%= @general_customer.address %>
     </div>
   </div>
 
@@ -60,6 +67,7 @@
       TEL
     </div>
       <%= @customer.telephone_number %>
+      <%= @general_customer.telephone_number %>
     </div>
   </div>
 
@@ -69,6 +77,7 @@
   　</div>
   　<div class="col-2">
   　  <%= @customer.email %>
+  　 <%= @general_customer.email %>
   　 </div>
   </div>
 
@@ -99,7 +108,7 @@
 </div>
 
     <% end %>
-
+<% end %>
 
 
 

@@ -10,11 +10,11 @@
         会員ID
       </div>
       <div class="col-4">
-        <% if @customer.class == "Customer" %>
-        <%= @customer.id %>
-        <% else %>
-        <%= @general_customer.id %>
-        <% end %>
+      <% if @instances.class == Customer %>
+        <%= @instances.id %>
+      <% else %>
+        <%= @instances.id %>
+      <% end %>
       </div>
     </div>
   </div>
@@ -27,14 +27,13 @@
         名前
       </div>
       <div class="col-4">
-        <% if @instances.class == "Customer" %>
-        <%= @customer.last_name %>
-        <%= @customer.last_name %>様
-        <% else %>
-        <%= @general_customer.last_name %>
-        <%= @general_customer.first_name %>様
-
-        <% end %>
+      <% if @instances.class == Customer %>
+        <%= @instances.last_name %>
+        <%= @instances.last_name %>様
+      <% else %>
+        <%= @instances.last_name %>
+        <%= @instances.first_name %>様
+      <% end %>
       </div>
     </div>
 
@@ -46,11 +45,13 @@
         ふりがな
       </div>
       <div class="col-4">
+        <% if @instances.class == Customer %>
         <%= @customer.last_name_kana %>
         <%= @customer.last_name_kana %>様
+        <% else %>
         <%= @general_customer.last_name_kana %>
         <%= @general_customer.first_name_kana %>様
-
+        <% end %>
       </div>
     </div>
 
@@ -71,8 +72,11 @@
         〒
       </div>
       <div class="col-4">
+        <% if @instances.class == Customer %>
         <%= @customer.postal_code %>
+        <% else %>
         <%= @general_customer.postal_code %>
+        <% end %>
       </div>
     </div>
 
@@ -83,8 +87,11 @@
         住所
       </div>
       <div class="col-4">
+        <% if @instances.class == Customer %>
         <%= @customer.address %>
+        <% else %>
         <%= @general_customer.address %>
+        <% end %>
       </div>
     </div>
 
@@ -96,8 +103,11 @@
         電話番号
       </div>
       <div class="col-4">
+        <% if @instances.class == Customer %>
         <%= @customer.telephone_number %>
+        <% else %>
         <%= @general_customer.telephone_number %>
+        <% end %>
       </div>
     </div>
 
@@ -109,8 +119,11 @@
         email
       </div>
       <div class="col-4">
+        <% if @instances.class == Customer %>
         <%= @customer.email %>
+        <% else %>
         <%= @general_customer.email %>
+        <% end %>
       </div>
     </div>
 
