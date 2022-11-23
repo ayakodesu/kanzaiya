@@ -10,8 +10,11 @@
         会員ID
       </div>
       <div class="col-4">
+        <% if @customer.class == "Customer" %>
         <%= @customer.id %>
+        <% else %>
         <%= @general_customer.id %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -24,10 +27,14 @@
         名前
       </div>
       <div class="col-4">
+        <% if @instances.class == "Customer" %>
         <%= @customer.last_name %>
         <%= @customer.last_name %>様
+        <% else %>
         <%= @general_customer.last_name %>
         <%= @general_customer.first_name %>様
+
+        <% end %>
       </div>
     </div>
 
