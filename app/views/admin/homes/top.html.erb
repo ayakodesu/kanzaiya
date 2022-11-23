@@ -10,9 +10,31 @@
 
     <div class="card-body">
       <ul class="list-group list-group-flush">
-      <%= link_to "商品一覧", admin_items_path %><br/>
-      <%= link_to "会員一覧", admin_customers_path %><br />
-      <%= link_to "注文履歴一覧", admin_orders_path %><br />
-      <%= link_to "ジャンル一覧&追加", admin_genres_path %>
+
+      <%= link_to url: admin_items_path do %>
+     <i class="fa-solid fa-bag-shopping"></i>
+      商品一覧
+      <% end %>
+      <br />
+
+      <%= link_to  url: admin_customers_path do %>
+      <i class="fa-solid fa-users"></i>
+      会員一覧
+      <% end %>
+      <br />
+
+      <%= link_to url: admin_orders_path do %>
+      <i class="fa-solid fa-cart-shopping"></i>
+      注文履歴一覧
+      <% end %>
+      <br />
+
+      <%= link_to url: admin_genres_path do %>
+      <i class="fa-solid fa-gear"></i>
+      ジャンル一覧&追加
+      <% end %>
+      <br />
+
+
       </ul>
     </div>
