@@ -11,9 +11,9 @@
       </div>
       <div class="col-4">
       <% if @instances.class == Customer %>
-        <%= @instances.id %>
+        <%= @customer.id %>
       <% else %>
-        <%= @instances.id %>
+        <%= @general_customer.id %>
       <% end %>
       </div>
     </div>
@@ -28,11 +28,11 @@
       </div>
       <div class="col-4">
       <% if @instances.class == Customer %>
-        <%= @instances.last_name %>
-        <%= @instances.last_name %>様
+        <%= @customer.last_name %>
+        <%= @customer.last_name %>様
       <% else %>
-        <%= @instances.last_name %>
-        <%= @instances.first_name %>様
+        <%= @general_customer.last_name %>
+        <%= @general_customer.first_name %>様
       <% end %>
       </div>
     </div>

@@ -66,6 +66,14 @@
 
           <% if customer_signed_in? %>
 
+          <%= link_to public_items_path, class: 'nav-link text-light' do %>
+          商品一覧
+          <% end %>
+
+          <%= link_to public_orders_path, class: 'nav-link text-light' do %>
+          注文履歴一覧
+          <% end %>
+
           <%= link_to public_about_path, class: 'nav-link text-light' do %>
           プロフィール
           <% end %>
