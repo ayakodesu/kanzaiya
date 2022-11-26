@@ -14,7 +14,8 @@
 </div>
 
 
-
+<% if !general_customer_signed_in? %>
+<% if !customer_signed_in? %>
 
 <div class="container">
    <div class="row mt-5">
@@ -42,6 +43,8 @@
 
 
 
+
+
     <div class="col text-center">
        <div class="card" style="width: 20rem;">
         <div class="card-header">
@@ -61,6 +64,9 @@
         </div>
        </div>
      </div>
+
+    <% end %>
+    <% end %>
 
 
     </div>
