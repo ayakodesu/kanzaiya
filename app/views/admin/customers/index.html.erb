@@ -24,7 +24,12 @@
       <td><%= link_to instance.last_name + instance.first_name, admin_customer_path(instance.id) %></td>
       <td><%= instance.corporation %></td>
       <td><%= instance.address %></td>
-      <td></td>
+      <td><% if instance.is_deleted == false %>
+          <p class="text-success">有効</p>
+        <% else %>
+           <p class="text-secondary">退会</p>
+        <% end %>
+      </td>
     </tr>
 
   <% else %>
@@ -33,7 +38,12 @@
       <td><%= link_to instance.last_name + instance.first_name, admin_general_customer_path(instance.id) %></td>
       <td>---------</td>
       <td><%= instance.address %></td>
-      <td></td>
+      <td><% if instance.is_deleted == false %>
+          <p class="text-success">有効</p>
+        <% else %>
+           <p class="text-secondary">退会</p>
+        <% end %>
+      </td>
     </tr>
   <% end %>
 
