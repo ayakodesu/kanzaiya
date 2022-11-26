@@ -21,112 +21,76 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
-        <% if admin_signed_in? %>
 
+    <% if admin_signed_in? %>
         <%= link_to admin_top_path, class: 'nav-link text-light' do %>
           Home
         <% end %>
-
-
         <%= link_to admin_orders_path, class: 'nav-link text-light' do %>
           注文履歴一覧
         <% end %>
-
-
-
         <%= link_to admin_customers_path, class: 'nav-link text-light' do %>
           会員一覧
         <% end %>
-
-
-
         <%= link_to new_admin_item_path, class: 'nav-link text-light' do %>
           商品新規登録
         <% end %>
-
-
         <%= link_to admin_items_path, class: 'nav-link text-light' do %>
           商品一覧
         <% end %>
-
-
         <%= link_to admin_genres_path, class: 'nav-link text-light' do %>
           ジャンル一覧
         <% end %>
-
-
         <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link text-light' do %>
           <p class="border rounded">ログアウト</p>
-        <% end %>
-
-
-          <% end %>
+    <% end %>
+    <% end %>
 
 
 
-          <% if customer_signed_in? %>
-
+    <% if customer_signed_in? %>
           <%= link_to public_path, class: 'nav-link text-light' do %>
-          Home
+              Home
           <% end %>
-
-
           <%= link_to public_items_path, class: 'nav-link text-light' do %>
-          商品一覧
+              商品一覧
           <% end %>
-
           <%= link_to public_orders_path, class: 'nav-link text-light' do %>
-          注文履歴一覧
+              注文履歴一覧
           <% end %>
-
           <%= link_to public_customer_path, class: 'nav-link text-light' do %>
-          会員ページ
+              会員ページ
           <% end %>
-
           <%= link_to public_about_path, class: 'nav-link text-light' do %>
-          プロフィール
+              プロフィール
           <% end %>
-
-           <%= link_to destroy_customer_session_path, method: :delete, class: 'nav-link text-light' do %>
+             <%= link_to destroy_customer_session_path, method: :delete, class: 'nav-link text-light' do %>
           <p class="border rounded">ログアウト</p>
-
-          <% end %>
-
-          <% end %>
+    <% end %>
+    <% end %>
 
 
-          <% if general_customer_signed_in? %>
 
+      <% if general_customer_signed_in? %>
           <%= link_to general_public_path, class: 'nav-link text-light' do %>
-          Home
+              Home
           <% end %>
-
-
           <%= link_to general_public_items_path, class: 'nav-link text-light' do %>
-          商品一覧
+              商品一覧
           <% end %>
-
           <%= link_to general_public_orders_path, class: 'nav-link text-light' do %>
-          注文履歴一覧
+              注文履歴一覧
           <% end %>
-
           <%= link_to general_public_customer_path, class: 'nav-link text-light' do %>
-          会員ページ
+              会員ページ
           <% end %>
-
           <%= link_to general_public_about_path, class: 'nav-link text-light' do %>
-          プロフィール
+              プロフィール
           <% end %>
-
-           <%= link_to destroy_general_customer_session_path, method: :delete, class: 'nav-link text-light' do %>
+              <%= link_to destroy_general_customer_session_path, method: :delete, class: 'nav-link text-light' do %>
           <p class="border rounded">ログアウト</p>
-
-          <% end %>
-
-          <% end %>
-
-
-
+      <% end %>
+      <% end %>
 
       </ul>
     </div>
