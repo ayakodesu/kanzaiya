@@ -1,2 +1,109 @@
-<h1>Admin::GeneralCustomers#edit</h1>
-<p>Find me in app/views/admin/general_customers/edit.html.erb</p>
+<div class="container">
+    <div class="row mt-5 justify-content-center">
+      <h4>会員編集</h4>
+    </div>
+
+
+    <%= form_with model: @general_customer, url: admin_general_customer_path do |f| %>
+
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-2">
+      会員ID
+    </div>
+    <div class="col-2">
+      <%= @general_customer.id %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-2">
+      名前
+    </div>
+    <div class="col-2">
+      <%= f.text_field :last_name, placeholder: "姓" %>
+      <%= f.text_field :first_name, placeholder: "名" %>
+    </div>
+  </div>
+
+
+  <div class="row mb-3">
+    <div class="col-2">
+      ふりがな
+    </div>
+    <div class="col-2">
+      <%= f.text_field :last_name_kana, placeholder: "せい" %>
+      <%= f.text_field :first_name_kana, placeholder: "名" %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-2">
+      会社名
+    </div>
+    <div class="col-2">
+      <%= f.text_field :corporation, placeholder: "〇〇産業　株式会社" %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-2">
+      住所
+    </div>
+    <div class="col-2">
+      <%= f.text_field :address, placeholder: "東京都千代田区" %>
+    </div>
+  </div>
+
+
+  <div class="row mb-3">
+    <div class="col-2">
+      TEL
+    </div>
+    <div class="col-2">
+      <%= f.text_field :telephone_number, placeholder: "09012345678" %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-2">
+      email
+  　</div>
+  　<div class="col-2">
+  　  <%=f.text_field :email, placeholder: "〇〇@gmail.com" %>
+  　 </div>
+  </div>
+
+
+  <div class="row mb-3">
+    <div class="col-2">
+      会員ステータス
+    </div>
+     <div class="col-2"><%= f.radio_button :is_deleted, :false %>
+         <%= f.label :is_deleted, "有効" %>
+      </div>
+      <div class="col-2"><%= f.radio_button :is_deleted, :true %>
+         <%= f.label :is_deleted, "退会" %>
+      </div>
+    </div>
+
+
+  <div class="row mb-3">
+    <div class="col-2">
+      <%= f.submit "変更を保存", class: "btn btn-success" %>
+    </div>
+  </div>
+
+
+
+
+
+</div>
+
+    <% end %>
+
+
+
+
+
+</div>
