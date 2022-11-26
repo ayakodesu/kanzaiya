@@ -3,5 +3,6 @@ class Admin::OrdersController < ApplicationController
   end
 
   def index
+    @orders = Order.find(params[:id])
   end
 end
