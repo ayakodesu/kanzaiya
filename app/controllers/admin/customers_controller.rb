@@ -9,10 +9,12 @@ class Admin::CustomersController < ApplicationController
   end
 
   def show
+
     @customer = Customer.find(params[:id])
     @general_customer = GeneralCustomer.find(params[:id])
     @instances = @customer
     @instances = @general_customer
+
   end
 
   def edit
