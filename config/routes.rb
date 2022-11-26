@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'general_customers/edit'
+    get 'general_customers/index'
+    get 'general_customers/show'
+  end
   namespace :general_public do
     get '/' => 'homes#top'
     get "/home/about" => "homes#about", as: "about"
@@ -9,6 +14,7 @@ Rails.application.routes.draw do
     resources :addresses, only: [:create, :edit, :index, :update, :destroy]
     resources :cart_items, only: [:index, :create, :update, :destroy]
     resources :favorites, only: [:index, :create, :destroy]
+
 
   end
 
@@ -30,15 +36,13 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'top' => 'homes#top'
     get "/home/about" => "homes#about", as: "about"
-
-
     resources :homes, only: [:new, :index, :create, :edit, :update, :destroy]
     resources :genres, only: [:index, :create, :edit, :update, :destroy]
     get 'genres/edit/:id' => 'genres#edit'
     resources :items, only: [:new, :index, :create, :edit, :show, :update, :destroy]
-
     resources :orders, only: [:show, :index]
     resources :customers, only: [:index, :show, :create, :edit, :update, :destroy]
+    resources :general_customers, only: [:index, :show, :create, :edit, :update, :destroy]
 
 
 

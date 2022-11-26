@@ -30,7 +30,7 @@
   <% else %>
     <tr>
      <td><%= instance.id %></td>
-      <td><%= link_to instance.last_name + instance.first_name, admin_customer_path(instance.id) %></td>
+      <td><%= link_to instance.last_name + instance.first_name, admin_general_customer_path(instance.id) %></td>
       <td>---------</td>
       <td><%= instance.address %></td>
       <td></td>
