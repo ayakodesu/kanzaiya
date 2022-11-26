@@ -1,5 +1,6 @@
 class Admin::GeneralCustomersController < ApplicationController
   def edit
+     @general_customer = GeneralCustomer.find(params[:id])
 
   end
 

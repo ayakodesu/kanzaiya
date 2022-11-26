@@ -114,8 +114,12 @@
       <div class="col-3">
         会員ステータス
       </div>
-      <div class="col-4">
-
+      <div class="col-2">
+        <% if @customer.is_deleted == false %>
+          <p class="text-success">有効</p>
+        <% else %>
+          <p class="text-secondary">退会</p>
+        <% end %>
       </div>
     </div>
 
