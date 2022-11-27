@@ -3,10 +3,7 @@
       <h4>ショッピングカート</h4>
     </div>
 
-
-
-
-  <table border="2" style="border-collapse: collapse">
+<table border="2" style="border-collapse: collapse">
     <thead>
       <tr>
         <th>商品名</th>
@@ -19,34 +16,33 @@
     </thead>
 
   <tbody>
-    <tr>
-
-      <%= @cart_items.each do |cart_item| %>
+    <% @cart_items.each do |cart_item| %>
+      <tr>
         <td><%= image_tag cart_item.item.image, size: "50x50" %><%= cart_item.item.name %>
-        <%= cart_item.item.shape %>
-        <%= cart_item.item.size %></td>
+          <%= cart_item.item.shape %>
+          <%= cart_item.item.size %></td>
         <td>¥<%= cart_item.item.last_price %></td>
         <td>
-        <%= form_with model: cart_item, url: public_cart_item_path(cart_item.id), method: :patch do |f| %>
-        <%= f.text_field :amount %>
-        <%= f.submit "変更", class: "btn btn-success" %>
-        <% end %>
+          <%= form_with model: cart_item, url: public_cart_item_path(cart_item.id), method: :patch do |f| %>
+            <%= f.text_field :amount %>
+            <%= f.submit "変更", class: "btn btn-success" %>
+          <% end %>
         </td>
-        <td>¥<%= cart_item.subtotal %></td>
-        <td><%= link_to "削除", public_destroy_cart_item_path(cart_item.id), method: :delete, class: "btn btn-outline-danger btn-sm" %></td>
+          <td>¥<%= cart_item.subtotal %></td>
+          <td><%= link_to "削除", public_destroy_cart_item_path(cart_item.id), method: :delete, class: "btn btn-outline-danger btn-sm" %></td>
 
-<% @total += cart_item.subtotal %>
-    </tr>
-
+        <% @total += cart_item.subtotal %>
+      </tr>
     <% end %>
-
   </tbody>
-  </table>
+
+</table>
+
 
   <div class="container">
     <div class="row">
       <div class="col">
-        <span class="border border-dark">合計金額（税込）¥<%= @total %></span>
+        <span class="border border-dark">定価合計  ¥<%= @total %></span>
       </div>
     </div>
   </div>
@@ -61,7 +57,7 @@
   <% end %>
 
 
-  <div class="container">
+<div class="container">
   <div class="row">
     <div class="col">
       <%= link_to "カートを空にする", public_destroy_all_cart_items_path, method: :delete, class: "btn btn-danger" %>
@@ -71,4 +67,4 @@
 
 
 
-  </div>
+</div>
