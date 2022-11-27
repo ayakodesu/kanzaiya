@@ -14,7 +14,7 @@
 </table>
 
     <body>
-      <%= @orders.each do |order| %>
+      <% @orders.each do |order| %>
         <tr>
           <td><%= order.created_at.strftime('%Y年%m月%d日') %></td>
           <td><%= order.last_name + order.first_name %></td>

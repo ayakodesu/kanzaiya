@@ -1,6 +1,8 @@
 class Public::ItemsController < ApplicationController
   def index
     @items = Item.all
+    @genres = Genre.all.page(params[:page])
+    @items = Item.order('id DESC').limit(8)
   end
 
 
