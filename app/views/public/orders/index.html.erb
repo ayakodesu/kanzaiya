@@ -4,20 +4,26 @@
       <h4>注文履歴一覧</h4>
     </div>
 
-<div class="row">
-  <div class="col">
-    注文日時
-  </div>
-  <dic class="col">
+    <table class="table table-hover table-bordered table-sm">
+    <thead>
+      <th>注文日時</th>
+      <th>配送先名</th>
+      <th>配送先</th>
+      <th>ステータス</th>
+    </thread>
+</table>
 
-  </dic>
-</div>
+    <body>
+      <%= @orders.each do |order| %>
+        <tr>
+          <td><%= order.created_at.strftime('%Y年%m月%d日') %></td>
+          <td><%= order.last_name + order.first_name %></td>
+          <td><%= order.address %></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </body>
 
-<div class="row">
-  <div class="col">
-    配送先
-  </div>
-  <dic class="col">
 
-  </dic>
-</div>
+
+

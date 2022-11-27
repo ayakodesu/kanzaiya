@@ -13,7 +13,7 @@ class Public::OrdersController < ApplicationController
 
 private
   def order_params
-    params.require(:order).permit(:genre_id, :name, :introduction, :price, :is_active, :image)
+    params.require(:order).permit(:last_name, :first_name, :address, :introduction, :price, :is_active)
   end
 
 end
