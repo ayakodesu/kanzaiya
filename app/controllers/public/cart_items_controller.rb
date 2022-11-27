@@ -5,7 +5,6 @@ class Public::CartItemsController < ApplicationController
   end
 
   def create
-
     new_cart_item = current_customer.cart_items.new(cart_item_params)
     cart_item = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
     if cart_item.present?
@@ -31,9 +30,15 @@ class Public::CartItemsController < ApplicationController
     redirect_to public_cart_items_path
   end
 
+  def destroy
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.destroy
+    redirect_to public_cart_items_path
+  end
 
 
-    private
+
+private
   def cart_item_params
     params.require(:cart_item).permit(:item_id, :amount)
   end
