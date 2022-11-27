@@ -59,12 +59,80 @@
         </div>
        </div>
      </div>
+
+      </div>
+</div>
   <% end %>
 <% end %>
 
+
+
+
+  <% if customer_signed_in? %>
+
+<div class="container">
+    <h3>新着商品</h3>
+
+<div class="row">
+    <% @items.each do |item| %>
+
+    <% if item.is_active %>
+            <div class="col">
+                <%= link_to (image_tag item.image, size: '200x200'), public_item_path(item.id) %>
+
+            <div class="col">
+                <strong>商品名</strong>
+                <%= item.name %>
+
+            <div class="col">
+                <strong>価格</strong>
+                <%= item.last_price %>
+
+            </div>
+            </div>
+            </div>
+    <% end %>
+
+
+
+
+    <% end %>
     </div>
 </div>
+<% end %>
+
+<% if general_customer_signed_in? %>
+
+<div class="container">
+    <h3>新着商品</h3>
+
+<div class="row">
+    <% @items.each do |item| %>
+
+    <% if item.is_active %>
+            <div class="col">
+                <%= link_to (image_tag item.image, size: '200x200'), public_item_path(item.id) %>
+
+            <div class="col">
+                <strong>商品名</strong>
+                <%= item.name %>
+
+            <div class="col">
+                <strong>価格</strong>
+                <%= item.last_price %>
+
+            </div>
+            </div>
+            </div>
+    <% end %>
 
 
 
+
+    <% end %>
+    </div>
 </div>
+<% end %>
+
+
+
