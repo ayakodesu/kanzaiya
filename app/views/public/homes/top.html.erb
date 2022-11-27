@@ -67,71 +67,79 @@
 
 
 
+<% if customer_signed_in? %>
 
-  <% if customer_signed_in? %>
-
-<div class="container">
+  <div class="container">
     <h3>新着商品</h3>
 
-<div class="row">
+  <div class="row">
     <% @items.each do |item| %>
 
     <% if item.is_active %>
-            <div class="col">
-                <%= link_to (image_tag item.image, size: '200x200'), public_item_path(item.id) %>
+        <div class="col">
+          <%= link_to (image_tag item.image, size: '150x150'), public_item_path(item.id) %>
 
             <div class="col">
-                <strong>商品名</strong>
+              <strong>商品名</strong>
                 <%= item.name %>
+                <br />
 
-            <div class="col">
-                <strong>価格</strong>
+              <strong>型</strong>
+                <%= item.shape %>
+                <br />
+
+              <strong>サイズ</strong>
+                <%= item.size %>
+                <br />
+
+              <strong>定価</strong>
                 <%= item.last_price %>
 
             </div>
-            </div>
-            </div>
+        </div>
+    <% end %>
+    <% end %>
+  </div>
+  </div>
     <% end %>
 
 
-
-
-    <% end %>
-    </div>
-</div>
-<% end %>
 
 <% if general_customer_signed_in? %>
 
-<div class="container">
-    <h3>新着商品</h3>
+  <div class="container">
+      <h3>新着商品</h3>
 
-<div class="row">
+  <div class="row">
     <% @items.each do |item| %>
 
-    <% if item.is_active %>
-            <div class="col">
-                <%= link_to (image_tag item.image, size: '200x200'), public_item_path(item.id) %>
+     <% if item.is_active %>
+        <div class="col">
+            <%= link_to (image_tag item.image, size: '150x150'), public_item_path(item.id) %>
 
-            <div class="col">
-                <strong>商品名</strong>
-                <%= item.name %>
+          <div class="col">
+            <strong>商品名</strong>
+              <%= item.name %>
+              <br />
 
-            <div class="col">
-                <strong>価格</strong>
-                <%= item.last_price %>
+            <strong>型</strong>
+              <%= item.shape %>
+              <br />
 
-            </div>
-            </div>
-            </div>
+            <strong>サイズ</strong>
+              <%= item.size %>
+              <br />
+
+            <strong>定価</strong>
+              <%= item.last_price %>
+
+          </div>
+        </div>
+
     <% end %>
-
-
-
-
     <% end %>
-    </div>
-</div>
+  </div>
+  </div>
 <% end %>
 
 
