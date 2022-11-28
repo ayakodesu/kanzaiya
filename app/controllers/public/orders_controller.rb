@@ -33,7 +33,8 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+   @orders = current_customer.orders
+
   end
 
 private
