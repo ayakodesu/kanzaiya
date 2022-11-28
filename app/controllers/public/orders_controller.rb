@@ -1,6 +1,8 @@
 class Public::OrdersController < ApplicationController
   def new
     @order = Order.new
+    @addresses = current_customer.addresses
+    @customer = current_customer
   end
 
   def index
