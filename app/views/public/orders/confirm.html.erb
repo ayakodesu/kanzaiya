@@ -4,21 +4,27 @@
     </div>
 </div>
 
-
-<table class="table table-hover table-bordered table-sm">
+<div class="container">
+    <div class="row">
+      <div class="col-6 center">
+<table class="table table-bordered table-sm">
   <thead>
-    <th>商品画像</th>
-    <th>商品名</th>
-    <th>型</th>
-    <th>サイズ</th>
+
+    <th>商品名 / 型 / サイズ</th>
     <th>数量</th>
     <th>定価</th>
+
   </thead>
 
   <tbody>
     <% @cart_items.each do |cart_item| %>
       <tr>
-        <td></td>
+
+        <td><%= cart_item.item.name %> /
+        <%= cart_item.item.shape %> /
+        <%= cart_item.item.size %></td>
+        <td><%= cart_item.amount %></td>
+        <td>¥<%= cart_item.item.last_price %></td>
       </tr>
 
 
