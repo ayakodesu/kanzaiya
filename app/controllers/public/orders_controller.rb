@@ -28,6 +28,27 @@ class Public::OrdersController < ApplicationController
 
   end
 
+  def create
+    @order = Order.new(order_params)
+    @order.save
+      current_customer.cart_items.each do |cart_item|
+      order_detail = OrderDetail.new
+      order_detail.order_id = @order.id
+      order_detail.item_id = cart_item.item.id
+      order_detail.price = @order.total_payment
+      order_detail.amount = cart_item.amount
+      order_detail.save
+    end
+    current_customer.cart_items.destroy_all
+    redirect_to public_orders_complete_path
+
+  end
+
+
+  def complete
+  end
+
+
   def index
     @orders = Order.all
   end
