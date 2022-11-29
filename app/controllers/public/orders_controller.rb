@@ -6,7 +6,8 @@ class Public::OrdersController < ApplicationController
   end
 
   def confirm
-     @cart_items = current_customer.cart_items
+
+    @cart_items = current_customer.cart_items
     @order = Order.new(order_params)
     @order.shipping_cost = 800
     @select_address = params[:order][:select_address]
