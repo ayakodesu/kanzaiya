@@ -3,6 +3,10 @@ class Public::CustomersController < ApplicationController
     @items = Item.order('id DESC').limit(6)
   end
 
+  def index
+
+  end
+
   def edit
   end
 end
