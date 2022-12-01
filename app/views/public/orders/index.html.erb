@@ -11,18 +11,20 @@
       <th>配送先</th>
       <th>ステータス</th>
     </thread>
-</table>
+
 
     <body>
       <% @orders.each do |order| %>
         <tr>
-          <td><%= order.created_at.strftime('%Y年%m月%d日') %></td>
-          <td><%= order.full_name %></td>
+          <td><%= order.created_at.strftime('%Y年%m月%d日 %H:%M:%S') %></td>
+          <td></td>
           <td><%= order.address %></td>
           <td></td>
         </tr>
       <% end %>
     </body>
+
+    </table>
 
 
 
