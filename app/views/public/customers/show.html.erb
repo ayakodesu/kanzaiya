@@ -5,32 +5,30 @@
 </div>
 
 
-会員内容編集
-
-カート内確認
-
-注文履歴一覧
-
 <div class="container">
     <div class="row mt-5 justify-content-center">
 
 <div class="card title-center" style="width: 13rem;">
-    <%= link_to admin_top_path, class: "card-title" do %>
-      <i class="fa-solid fa-cart-flatbed-suitcase fa-3x pl-4 ml-5 mt-3"></i>
+    <%= link_to public_cart_items_path, class: "card-title" do %>
+      <i class="fa-solid fa-cart-flatbed-suitcase fa-3x pl-4 ml-5 mt-4"></i>
       <div class="card-body text-center">
         配送先編集
-    <% end %>
+      </li>
       </div>
+    <% end %>
+
 </div>
 
 
 <div class="card title-center" style="width: 13rem;">
-    <%= link_to admin_top_path, class: "card-title" do %>
-      <i class="fa-solid fa-cart-flatbed-suitcase fa-3x pl-4 ml-5 mt-3 "></i>
-      <div class="card-body text-center">
+    <%= link_to edit_public_customer_path, class: "card-title" do %>
+      <i class="fa-solid fa-user fa-3x pl-4 ml-5 mt-4"></i><br />
+      <div class="card-body ml-4">
         会員情報編集
+        </li>
+        </div>
     <% end %>
-      </div>
+
 </div>
 
 
@@ -43,21 +41,25 @@
 
 <div class="card title-center" style="width: 13rem;">
     <%= link_to public_cart_items_path, class: "card-title" do %>
-      <i class="fa-solid fa-cart-flatbed-suitcase fa-3x pl-4 ml-5 mt-3"></i>
+      <i class="fa-solid fa-cart-arrow-down fa-3x pl-4 ml-5 mt-4"></i>
       <div class="card-body text-center">
         カート内確認
-    <% end %>
+      </li>
       </div>
+    <% end %>
+
 </div>
 
 
 <div class="card title-center" style="width: 13rem;">
     <%= link_to public_orders_path, class: "card-title" do %>
-      <i class="fa-solid fa-cart-flatbed-suitcase fa-3x pl-4 ml-5 mt-3 "></i>
+      <i class="fa-solid fa-piggy-bank fa-3x pl-4 ml-5 mt-4"></i>
       <div class="card-body text-center">
         注文履歴一覧
+        </li>
+        </div>
     <% end %>
-      </div>
+
 </div>
 
 
