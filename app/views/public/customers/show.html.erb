@@ -11,12 +11,57 @@
 
 注文履歴一覧
 
+<div class="container">
+    <div class="row mt-5 justify-content-center">
 
-<div class="card" style="width: 18rem;">
-<i class="fa-solid fa-cart-flatbed-suitcase fa-3x mt-4"></i>
-  <div class="card-body">
-    <h5 class="card-title-center pl-4 ml-5">配送先編集</h5>
-  </div>
+<div class="card title-center" style="width: 13rem;">
+    <%= link_to admin_top_path, class: "card-title" do %>
+      <i class="fa-solid fa-cart-flatbed-suitcase fa-3x pl-4 ml-5 mt-3"></i>
+      <div class="card-body text-center">
+        配送先編集
+    <% end %>
+      </div>
+</div>
+
+
+<div class="card title-center" style="width: 13rem;">
+    <%= link_to admin_top_path, class: "card-title" do %>
+      <i class="fa-solid fa-cart-flatbed-suitcase fa-3x pl-4 ml-5 mt-3 "></i>
+      <div class="card-body text-center">
+        会員情報編集
+    <% end %>
+      </div>
+</div>
+
+
+
+</div>
+</div>
+
+
+    <div class="row mt-5 justify-content-center">
+
+<div class="card title-center" style="width: 13rem;">
+    <%= link_to public_cart_items_path, class: "card-title" do %>
+      <i class="fa-solid fa-cart-flatbed-suitcase fa-3x pl-4 ml-5 mt-3"></i>
+      <div class="card-body text-center">
+        カート内確認
+    <% end %>
+      </div>
+</div>
+
+
+<div class="card title-center" style="width: 13rem;">
+    <%= link_to public_orders_path, class: "card-title" do %>
+      <i class="fa-solid fa-cart-flatbed-suitcase fa-3x pl-4 ml-5 mt-3 "></i>
+      <div class="card-body text-center">
+        注文履歴一覧
+    <% end %>
+      </div>
+</div>
+
+
+
 </div>
 
 
