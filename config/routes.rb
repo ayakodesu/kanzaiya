@@ -22,11 +22,13 @@ Rails.application.routes.draw do
   namespace :public do
 
    get '/' => 'homes#top'
-    get "/home/about" => "homes#about", as: "about"
-    post 'orders/confirm' => 'orders#confirm'
-    get 'orders/complete' => 'orders#complete'
-    post 'orders/complete' => 'orders#complete'
+   get "/home/about" => "homes#about", as: "about"
+   post 'orders/confirm' => 'orders#confirm'
+   get 'orders/complete' => 'orders#complete'
+   post 'orders/complete' => 'orders#complete'
+
     resources :orders, only: [:new, :index, :create, :destroy, :show]
+
     resources :items, only: [:index, :create, :show, :update, :destroy]
     delete '/cart_items/destroy_all' => 'cart_items#destroy_all', as: 'destroy_all_cart_items'
     resource :customer, only: [:create, :edit, :show, :update, :destroy]
@@ -34,8 +36,12 @@ Rails.application.routes.draw do
     patch ':id/withdraw/:name' => 'customers#withdraw', as: 'withdraw_user'
 
     resources :addresses, only: [:create, :edit, :index, :update, :destroy]
+    delete 'addresses/:id' =>'addresses#destroy', as: 'destroy_address'
+    patch ':id/adderss/:name' => 'addresses#cart_item', as: 'adderss_user'
+
     resources :cart_items, only: [:index, :create, :update, :destroy]
     delete 'cart_items/:id' =>'cart_items#destroy', as: 'destroy_cart_item'
+
     resources :favorites, only: [:index, :create, :destroy]
 
   end
