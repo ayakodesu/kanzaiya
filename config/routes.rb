@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     get 'customers' => 'customers#index'
     patch ':id/withdraw/:name' => 'customers#withdraw', as: 'withdraw_user'
 
-    resources :addresses, only: [:create, :edit, :index, :update, :destroy]
+    resources :addresses, only: [:new, :create, :edit, :index, :update, :destroy]
     delete 'addresses/:id' =>'addresses#destroy', as: 'destroy_address'
     patch ':id/adderss/:name' => 'addresses#cart_item', as: 'adderss_user'
 

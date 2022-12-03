@@ -1,4 +1,5 @@
 class Public::AddressesController < ApplicationController
+  before_action :authenticate_customer!, only: [:index]
 
   def new
     @address = Address.new
@@ -15,8 +16,7 @@ class Public::AddressesController < ApplicationController
 
   def create
     @address = Address.new(address_params)
-
-    @address.save!
+    @address.save
     redirect_to public_addresses_path
   end
 
