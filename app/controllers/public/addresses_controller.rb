@@ -7,7 +7,7 @@ class Public::AddressesController < ApplicationController
 
   def index
     @address = Address.new
-    @addresses = current_customer.addresses
+    @addresses = current_customer.addresses.page(params[:page])
   end
 
   def edit
@@ -35,7 +35,7 @@ class Public::AddressesController < ApplicationController
   private
 
   def address_params
-    params.require(:address).permit(:name, :postal_code, :address, :customer_id)
+    params.require(:address).permit(:name, :postal_code, :telephone_number, :address, :customer_id)
   end
 
 end
