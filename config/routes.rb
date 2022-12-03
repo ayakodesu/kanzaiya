@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     delete '/cart_items/destroy_all' => 'cart_items#destroy_all', as: 'destroy_all_cart_items'
     resource :customer, only: [:create, :edit, :show, :update, :destroy]
     get 'customers' => 'customers#index'
+    patch ':id/withdraw/:name' => 'customers#withdraw', as: 'withdraw_user'
 
     resources :addresses, only: [:create, :edit, :index, :update, :destroy]
     resources :cart_items, only: [:index, :create, :update, :destroy]

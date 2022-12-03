@@ -1,6 +1,10 @@
 class Public::CustomersController < ApplicationController
   def show
-    @items = Item.order('id DESC').limit(6)
+    @customer = current_customer
+  end
+
+  def update
+
   end
 
   def index
