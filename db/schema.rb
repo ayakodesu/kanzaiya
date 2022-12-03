@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2022_11_19_130627) do
     t.string "postal_code", null: false
     t.string "address", null: false
     t.integer "customer_id", null: false
-    t.integer "general_customer_id", null: false
+    t.integer "general_customer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
