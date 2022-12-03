@@ -3,14 +3,24 @@ class Public::CustomersController < ApplicationController
     @customer = current_customer
   end
 
-  def update
 
-  end
 
   def index
 
   end
 
   def edit
+    @customer = current_customer
   end
+
+  def update
+    @customer = current_customer
+    @customer.update(customer_params)
+    redirect_to public_customer_path
+  end
+
+  def customer_params
+    params.require(:customer).permit(:last_name, :first_name, :corporation, :last_name_kana, :first_name_kana, :postal_code, :address, :telephone_number, :email)
+  end
+
 end

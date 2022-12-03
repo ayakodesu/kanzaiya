@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row mt-5 justify-content-center">
+      <h4>会員情報編集</h4>
+    </div>
+</div>
+
+<%= form_with model: @customer, url: public_customer_path do |f| %>
+
+<div class="container">
+
+    <div class="row mb-3">
+      <div class="col-2">氏名</div>
+      <div class="col-3"><%= f.text_field :last_name, placeholder: "姓" %></div>
+      <div class="col-3"><%= f.text_field :first_name, placeholder: "名" %></div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-2">かな</div>
+      <div class="col-3"><%= f.text_field :last_name_kana, placeholder: "せい" %></div>
+      <div class="col-3"><%= f.text_field :first_name_kana, placeholder: "めい" %></div>
+    </div>
+
+
+    <div class="row mb-3">
+      <div class="col-2">法人名</div>
+      <div class="col-3"><%= f.text_field :corporation, placeholder: "〇〇〇工業　株式会社" %></div>
+    </div>
+
+     <div class="row mb-3">
+      <div class="col-2">郵便番号</div>
+      <div class="col-3"><%= f.text_field :postal_code %></div>
+    </div>
+
+
+
+
+    <div class="row mb-3">
+      <div class="col-2">住所</div>
+      <div class="col-3"><%= f.text_field :address %></div>
+    </div>
+
+
+
+
+    <div class="row mb-3">
+      <div class="col-2">TEL</div>
+      <div class="col-3"><%= f.text_field :telephone_number %></div>
+    </div>
+
+
+
+    <div class="row mb-3">
+      <div class="col-2">email</div>
+        <div class="col-3"><%= f.text_field :email %></div>
+     </div>
+
+
+</div>
+
+<%= f.submit "変更を保存", class: "btn btn-success" %>
+
+
+
+<% end %>
