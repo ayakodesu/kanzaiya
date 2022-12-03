@@ -7,7 +7,7 @@
       <thead>
         <th>購入日時</th>
         <th>購入者</th>
-        <th>数量</th>
+        <th>購入商品</th>
         <th>購入ステータス</th>
       </thead>
 
@@ -17,7 +17,7 @@
       <% @orders.each do |order| %>
         <tr>
           <td><%= order.created_at.strftime('%Y年%m月%d日 %H:%M:%S') %></td>
-          <td><%= order.name %></td>
+          <td><%= order.customer.full_name %></td>
           <td></td>
           <td></td>
         </tr>
