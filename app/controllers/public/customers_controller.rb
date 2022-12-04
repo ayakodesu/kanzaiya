@@ -6,8 +6,7 @@ class Public::CustomersController < ApplicationController
 
 
   def index
-    
-
+    @customer = current_customer
   end
 
   def edit
@@ -18,6 +17,10 @@ class Public::CustomersController < ApplicationController
     @customer = current_customer
     @customer.update(customer_params)
     redirect_to public_customer_path
+  end
+
+  def unsubscribe
+    @customer = current_customer
   end
 
   def customer_params
