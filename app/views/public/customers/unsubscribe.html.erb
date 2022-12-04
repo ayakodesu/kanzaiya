@@ -22,5 +22,7 @@
     </div>
 
 <div class="row mt-5 justify-content-center">
-    <%= link_to "退会する", public_withdraw_user_path(@customer), method: :patch, class: "btn btn-sm btn-danger", "data-confirm" => "本当に退会しますか？" %>
+  <%= link_to "退会する", public_withdraw_user_path(@customer), method: :patch, class: "btn btn-sm btn-danger", "data-confirm" => "本当に退会しますか？" %>
+  <%= link_to "退会しない", public_customers_path, class: "btn btn-sm btn-primary" %>
 </div>
+

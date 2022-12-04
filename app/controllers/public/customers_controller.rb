@@ -1,4 +1,6 @@
 class Public::CustomersController < ApplicationController
+
+
   def show
     @customer = current_customer
   end
@@ -21,6 +23,13 @@ class Public::CustomersController < ApplicationController
 
   def unsubscribe
     @customer = current_customer
+  end
+
+  def withdraw
+    @customer = current_customer
+    @customer.update(is_deleted: true)
+    reset_session
+    redirect_to public_path
   end
 
   def customer_params
