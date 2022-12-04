@@ -9,20 +9,24 @@
 
 <div class="container">
     <div class="row mt-5 justify-content-center">
-      <i class="fa-solid fa-triangle-exclamation fa-3x"></i>
+      <i class="fa-solid fa-triangle-exclamation fa-3x "style="color: gold;" ></i>
     </div>
     <div class="row mt-5 justify-content-center">
-      <h4>退会手続き前にご確認ください</h4>
+      <h4><font color="#ff0000">退会手続き前にご確認ください</font></h4>
     </div>
 
-    <div class="row mt-5 justify-content-center">
-      <h5>退会された場合、注文履歴や配送先など登録した情報が<br>
-      すべて削除されます。<br>
+    <div class="row mt-5 justify-content-center text-center">
+      <h5>退会された場合、注文履歴や配送先など登録した情報が
+      <font color="#ff0000">すべて削除されます。</font><br>
       よろしければ下記の「退会する」ボタンで退会手続きできます。</h5>
     </div>
 
 <div class="row mt-5 justify-content-center">
+  <div class="col-2 text-center">
   <%= link_to "退会する", public_withdraw_user_path(@customer), method: :patch, class: "btn btn-sm btn-danger", "data-confirm" => "本当に退会しますか？" %>
+  </div>
+  <div class="col-2 text-center">
   <%= link_to "退会しない", public_customers_path, class: "btn btn-sm btn-primary" %>
+  </div>
 </div>
 
