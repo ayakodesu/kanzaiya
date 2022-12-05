@@ -37,6 +37,8 @@ class Public::OrdersController < ApplicationController
       order_detail.item_id = cart_item.item.id
       order_detail.price = @order.total_payment
       order_detail.amount = cart_item.amount
+      order_detail.shape = cart_item.shape
+      order_detail.size = cart_item.size
       order_detail.save
     end
     current_customer.cart_items.destroy_all
@@ -55,7 +57,9 @@ class Public::OrdersController < ApplicationController
 
   def show
    @orders = current_customer.orders
-
+    @order = Order.find(params[:id])
+    @order_details = @order.order_details
+    @order.shipping_cost = 800
   end
 
 private

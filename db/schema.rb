@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(version: 2022_11_19_130627) do
     t.integer "item_id", null: false
     t.integer "customer_id", null: false
     t.integer "general_customer_id"
+    t.string "shape"
+    t.integer "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -131,11 +133,11 @@ ActiveRecord::Schema.define(version: 2022_11_19_130627) do
     t.integer "genre_id", null: false
     t.string "name", null: false
     t.text "introduction"
-    t.integer "last_price"
+    t.integer "last_price", null: false
     t.boolean "is_active", default: true, null: false
     t.string "shape"
     t.integer "size"
-    t.integer "amount"
+    t.integer "amount", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -145,6 +147,8 @@ ActiveRecord::Schema.define(version: 2022_11_19_130627) do
     t.integer "item_id", null: false
     t.integer "price", null: false
     t.integer "amount", null: false
+    t.string "shape"
+    t.integer "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
