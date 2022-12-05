@@ -12,6 +12,7 @@
       <th>注文日時</th>
       <th>配送先名</th>
       <th>配送先</th>
+      <th>TEL</th>
       <th>ステータス</th>
     </thead>
 
@@ -20,8 +21,10 @@
       <% @orders.each do |order| %>
         <tr>
           <td><%= link_to order.created_at.strftime('%Y年%m月%d日 %H:%M:%S'), public_order_path(order.id) %></td>
+          <td><%= order.name %></td>
+          <td>〒<%= order.postal_code %><br>
+          <%= order.address %></td>
           <td></td>
-          <td><%= order.address %></td>
           <td></td>
         </tr>
       <% end %>
