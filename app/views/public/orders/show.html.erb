@@ -19,11 +19,20 @@
             </tr>
         </thead>
 
+<tbody>
 
+  <% @order_details.each do |order_detail| %>
+  <tr>
+    <td><%= order_detail.item.name %></td>
+    <td><%= order_detail.item.size %></td>
+    <td><%= order_detail.item.last_price %></td>
+    <td><%= order_detail.amount %></td>
+    <td>¥<%= order_detail.amount * order_detail.item.last_price %></td>
+  </tr>
+  <% end %>
 
-
-
-        </table>
+</tbody>
+    </table>
 
 
     </div>
