@@ -5,6 +5,7 @@
 
     <table class="table table-hover table-bordered table-sm">
     <thead>
+      <th>お気に入り</th>
       <th>商品画像</th>
       <th>ジャンル</th>
       <th>商品名/型/サイズ</th>
@@ -16,6 +17,7 @@
       <% @items.each do |item| %>
 
     <tr>
+      <td><i class="fa-regular fa-star fa-2x mt-3 "></i></td>
       <td>
       <%= link_to public_item_path(item.id) do %>
       <%= image_tag item.image, size: '50x50'%>
