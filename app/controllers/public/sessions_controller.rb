@@ -22,7 +22,8 @@ class Public::SessionsController < Devise::SessionsController
   # protected
 
 
-
+# 以下を追加
+# 以下を追加
 
 
 
