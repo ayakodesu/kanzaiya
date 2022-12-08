@@ -34,11 +34,14 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :create, :show, :update, :destroy]
     delete '/cart_items/destroy_all' => 'cart_items#destroy_all', as: 'destroy_all_cart_items'
 
+
     resource :customer, only: [:create, :edit, :show, :update, :destroy]
     get '/customer/index' => 'customers#index', as: 'customers'
     get 'unsubscribe/:name' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
     patch ':id/withdraw/:name' => 'customers#withdraw', as: 'withdraw_user'
     put 'withdraw/:name' => 'customer#withdraw'
+
+
 
     resources :addresses, only: [:new, :create, :edit, :index, :update, :destroy]
     delete 'addresses/:id' =>'addresses#destroy', as: 'destroy_address'
@@ -48,6 +51,7 @@ Rails.application.routes.draw do
     delete 'cart_items/:id' =>'cart_items#destroy', as: 'destroy_cart_item'
 
     resources :favorites, only: [:index, :create, :destroy]
+
 
 
 
@@ -69,9 +73,7 @@ Rails.application.routes.draw do
 
   end
 
-resources :records do
-  resource :favorites, only: [:create, :destroy]
- end
+
 
 
 devise_scope :user do
