@@ -96,11 +96,14 @@ ActiveRecord::Schema.define(version: 2022_11_19_130627) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "customer_id", null: false
-    t.integer "general_customer_id", null: false
-    t.integer "item_id", null: false
+    t.integer "customer_id_id", null: false
+    t.integer "general_customer_id_id", null: false
+    t.integer "item_id_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id_id"], name: "index_favorites_on_customer_id_id"
+    t.index ["general_customer_id_id"], name: "index_favorites_on_general_customer_id_id"
+    t.index ["item_id_id"], name: "index_favorites_on_item_id_id"
   end
 
   create_table "general_customers", force: :cascade do |t|
@@ -174,4 +177,7 @@ ActiveRecord::Schema.define(version: 2022_11_19_130627) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "favorites", "customer_ids"
+  add_foreign_key "favorites", "general_customer_ids"
+  add_foreign_key "favorites", "item_ids"
 end
