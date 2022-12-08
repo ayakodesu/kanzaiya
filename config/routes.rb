@@ -26,6 +26,7 @@ Rails.application.routes.draw do
    post 'orders/confirm' => 'orders#confirm'
    get 'orders/complete' => 'orders#complete'
    post 'orders/complete' => 'orders#complete'
+
    post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
 
     resources :orders, only: [:new, :index, :create, :destroy, :show]
@@ -65,11 +66,10 @@ Rails.application.routes.draw do
 
   end
 
-  # 以下を追加
-  # 以下を追加
-
-
-
+# 以下を追加
+  #devise_scope :user do
+    #post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  #end
 
 
 
