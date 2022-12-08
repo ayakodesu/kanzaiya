@@ -27,7 +27,7 @@ Rails.application.routes.draw do
    get 'orders/complete' => 'orders#complete'
    post 'orders/complete' => 'orders#complete'
 
-   post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
+   #post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
 
     resources :orders, only: [:new, :index, :create, :destroy, :show]
 
@@ -49,7 +49,10 @@ Rails.application.routes.draw do
 
     resources :favorites, only: [:index, :create, :destroy]
 
+
+
   end
+
 
 
   namespace :admin do
@@ -66,11 +69,10 @@ Rails.application.routes.draw do
 
   end
 
-# 以下を追加
-  #devise_scope :user do
-    #post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
-  #end
 
+devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
 
 
 
