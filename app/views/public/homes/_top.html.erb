@@ -1,0 +1,159 @@
+<div class="container">
+    <div class="row mt-5 justify-content-center">
+       <div class="text-center"
+            <p>
+                <h2>ようこそ! kanzaiyaへ!</h2><br>
+                <h5>このサイトは、kanzaiyaのECサイトになります。</br>
+            <div class="row mt-4 justify-content-center">
+                kanzaiyaの商品の在庫確認、ご注文が出来ます。</br></h5>
+                </br>
+            </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% if !general_customer_signed_in? %>
+  <% if !customer_signed_in? %>
+
+<div class="container">
+   <div class="row mt-5">
+
+     <div class="col text-center">
+       <div class="card" style="width: 20rem;">
+        <div class="card-header">
+          <h2>一般ユーザー様</h2>
+        </div>
+        <div class="card-body">
+          <div class="row mb-5 mt-3">
+            <div class="col text-center">
+              <%= link_to "登録済みの方", new_general_customer_session_path, class: "btn btn-primary" %>
+            </div>
+          </div>
+        <div class="row mb-5 mt-3 text-center">
+          <div class="col">
+            <%= link_to "初めての方(新規登録)", new_general_customer_registration_path, class: "btn btn-white" %>
+          </div>
+        </div>
+        </div>
+       </div>
+      </div>
+
+    <div class="col text-center">
+       <div class="card" style="width: 20rem;">
+        <div class="card-header">
+          <h2>企業ユーザー様</h2>
+        </div>
+        <div class="card-body">
+          <div class="row mb-5 mt-3">
+            <div class="col text-center">
+              <%= link_to "登録済みの方", new_customer_session_path, class: "btn btn-primary" %>
+            </div>
+          </div>
+            <div class="row mb-5 mt-3 text-center">
+              <div class="col">
+                <%= link_to "初めての方(新規登録)", new_customer_registration_path, class: "btn btn-white" %>
+              </div>
+            </div>
+        </div>
+       </div>
+     </div>
+
+      </div>
+</div>
+
+
+<%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
+
+  <% end %>
+<% end %>
+
+
+
+<% if customer_signed_in? %>
+
+
+  <div class="container">
+    <h3>新着商品</h3>
+
+  <div class="row">
+    <% @items.each do |item| %>
+
+    <% if item.is_active %>
+        <div class="col">
+
+          <%= link_to (image_tag item.image, size: '150x150'), public_item_path(item.id) %>
+
+
+            <div class="col">
+
+              <strong>商品名</strong>
+                <%= item.name %>
+                <br />
+
+              <strong>型</strong>
+                <%= item.shape %>
+                <br />
+
+              <strong>サイズ</strong>
+                <%= item.size %>
+                <br />
+
+              <strong>定価</strong>
+                ¥<%= item.last_price %>
+                <br>
+
+              <strong>お気に入り</strong>
+              <i class="fa-regular fa-star"></i>
+
+
+
+            </div>
+        </div>
+    <% end %>
+    <% end %>
+  </div>
+  </div>
+    <% end %>
+
+
+
+
+<% if general_customer_signed_in? %>
+
+  <div class="container">
+      <h3>新着商品</h3>
+
+  <div class="row">
+    <% @items.each do |item| %>
+
+     <% if item.is_active %>
+        <div class="col">
+            <%= link_to (image_tag item.image, size: '150x150'), public_item_path(item.id) %>
+
+          <div class="col">
+            <strong>商品名</strong>
+              <%= item.name %>
+              <br />
+
+            <strong>型</strong>
+              <%= item.shape %>
+              <br />
+
+            <strong>サイズ</strong>
+              <%= item.size %>
+              <br />
+
+            <strong>定価</strong>
+              ¥<%= item.last_price %>
+
+          </div>
+        </div>
+
+    <% end %>
+    <% end %>
+  </div>
+  </div>
+<% end %>
+
