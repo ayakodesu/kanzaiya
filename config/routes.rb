@@ -1,17 +1,30 @@
 Rails.application.routes.draw do
+
   namespace :admin do
-    get 'general_customers/edit'
-    get 'general_customers/index'
-    get 'general_customers/show'
+    #get 'general_customers/edit'
+    #get 'general_customers/index'
+    #get 'general_customers/show'
   end
+
+
+
+
   namespace :general_public do
     get '/' => 'homes#top'
     get "/home/about" => "homes#about", as: "about"
 
     resources :orders, only: [:new, :index, :create, :destroy, :show]
     resources :items, only: [:index, :create, :show, :update, :destroy]
+
+
     resource :customer, only: [:create, :edit, :show, :update, :destroy]
-    get 'general_customers' => 'general_customers#index'
+
+    get 'unsubscribe/:name' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
+    patch ':id/withdraw/:name' => 'general_customers#withdraw', as: 'withdraw_user'
+    put 'withdraw/:name' => 'general_customer#withdraw'
+    get '/customer/index' => 'customers#index', as: 'customers'
+
+
     resources :addresses, only: [:create, :edit, :index, :update, :destroy]
     resources :cart_items, only: [:index, :create, :update, :destroy]
     resources :favorites, only: [:index, :create, :destroy]
