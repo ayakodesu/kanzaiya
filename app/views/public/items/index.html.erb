@@ -32,6 +32,11 @@
       </td>
       <td><%= item.amount %></td>
       <td>¥<%= item.last_price %></td>
+      <% if @item.favorited_by?(current_customer) %>
+      <td><%= link_to "ブックマークを外す", item_favorites_path(@item), method: :delete %></td>
+    <% else %>
+      <td><%= link_to "ブックマーク", item_bfavorites_path(@item), method: :post %></td>
+    <% end %>
             </div>
             </div>
             </div>

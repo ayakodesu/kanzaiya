@@ -14,9 +14,17 @@ class Item < ApplicationRecord
 
   has_many :cart_items, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  def favorited_by?(customer)
+    favorites.where(customer_id: customer.id).exists?
+  end
+
+
+
+
+
   has_many :order_detalls, dependent: :destroy
   belongs_to :genre
 
-  
+
 
 end

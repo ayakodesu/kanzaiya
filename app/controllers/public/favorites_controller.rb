@@ -2,26 +2,35 @@ class Public::FavoritesController < ApplicationController
   def index
   end
 
-  def create
-     favorite = current_cutomer.favorites.build(record_id: params[:record_id])
-   if favorite.save
-    redirect_back(fallback_location: public_path)
-   else
-     @record = facorite.record
-     favorite = @record.favorite
-     redirect_back(fallback_location: public_path)
-   end
+  before_action :set_item
 
+  def create
+    @item = Item.find(params[:item_id])
+    favorite = @item.favorites.new(customer_id: current_customer.id)
+    if favorite.save
+      redirect_to request.referer
+    else
+      redirect_to request.referer
+    end
   end
 
   def destroy
-    customer = current_cutomer
-   record=Record.find(params[:record_id])
-   if favorite=Favorite.find_by(customer_id: customer.id,record_id:record.id)
-    favorite.destroy
-    redirect_back(fallback_location: public_path)
-   else
-    redirect_back(fallback_location: public_path)
-   end
+    @item = Item.find(params[:item_id])
+    favorite = @item.favorites.find_by(customer_id: current_customer.id)
+    if favorite.present?
+        favorite.destroy
+        redirect_to request.referer
+    else
+        redirect_to request.referer
+    end
   end
+
+
+  private
+
+  def set_item
+   @item = Item.find(params[:item_id])
+  end
+
+
 end

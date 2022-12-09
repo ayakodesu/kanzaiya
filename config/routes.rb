@@ -31,8 +31,10 @@ Rails.application.routes.draw do
 
     resources :orders, only: [:new, :index, :create, :destroy, :show]
 
-    resources :items, only: [:index, :create, :show, :update, :destroy]
+    resources :items, only: [:index, :create, :show, :update, :destroy] do
     delete '/cart_items/destroy_all' => 'cart_items#destroy_all', as: 'destroy_all_cart_items'
+    resource :favorites, only: [:create, :destroy]
+  end
 
 
     resource :customer, only: [:create, :edit, :show, :update, :destroy]
