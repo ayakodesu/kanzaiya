@@ -1,5 +1,6 @@
 class GeneralPublic::CustomersController < ApplicationController
   def show
+    @general_customer = current_general_customer
   end
 
   def index
@@ -7,7 +8,26 @@ class GeneralPublic::CustomersController < ApplicationController
   end
 
   def edit
+    @general_customer = current_general_customer
   end
+
+  def update
+    @general_customer = general_current_customer
+    @general_customer.update(general_customer_params)
+    redirect_to public_general_customer_path
+  end
+
+  def unsubscribe
+    @general_customer = current_general_customer
+  end
+
+  def withdraw
+    @general_customer = current_general_customer
+    @general_customer.update(is_deleted: true)
+    reset_session
+    redirect_to public_path
+  end
+
 
 
   private
