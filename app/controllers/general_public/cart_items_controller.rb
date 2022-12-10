@@ -11,7 +11,7 @@ class GeneralPublic::CartItemsController < ApplicationController
     if cart_item.present?
           cart_item.amount += params[:cart_item][:amount].to_i
             cart_item.update(amount: cart_item.amount)
-              redirect_to public_cart_items_path
+              redirect_to general_public_cart_items_path
     elsif new_cart_item.save
       redirect_to general_public_cart_items_path
     else
@@ -27,8 +27,8 @@ class GeneralPublic::CartItemsController < ApplicationController
 
   def destroy_all
     CartItem.destroy_all
-    current_customer.cart_items.destroy_all
-    redirect_to public_cart_items_path
+    current_general_customer.cart_items.destroy_all
+    redirect_to general_public_cart_items_path
   end
 
   def destroy
