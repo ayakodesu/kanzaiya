@@ -29,6 +29,9 @@ Rails.application.routes.draw do
 
 
     resources :addresses, only: [:create, :edit, :index, :update, :destroy]
+    delete 'addresses/:id' =>'addresses#destroy', as: 'destroy_address'
+    patch ':id/adderss/:name' => 'addresses#cart_item', as: 'adderss_user'
+
     resources :cart_items, only: [:index, :create, :update, :destroy]
     delete 'cart_items/:id' =>'cart_items#destroy', as: 'destroy_cart_item'
 
