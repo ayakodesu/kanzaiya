@@ -1,4 +1,5 @@
 class GeneralPublic::AddressesController < ApplicationController
+  before_action :authenticate_general_customer!, only: [:index]
 
   def new
     @address = Address.new
@@ -17,19 +18,19 @@ class GeneralPublic::AddressesController < ApplicationController
   def create
     @address = Address.new(address_params)
     @address.save
-    redirect_to general_pablic_path
+    redirect_to general_public_addresses_path
   end
 
   def update
     @address = Address.find(params[:id])
     @address.update(address_params)
-    redirect_to general_public_path
+    redirect_to general_public_addresses_path(@address)
   end
 
   def destroy
     @address = Address.find(params[:id])
     @address.destroy
-    redirect_to general_pablic_addresses_path
+    redirect_to general_public_addresses_path
   end
 
   private
