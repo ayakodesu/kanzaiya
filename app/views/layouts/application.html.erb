@@ -53,6 +53,7 @@
 
 
     <% if customer_signed_in? %>
+   
           <%= link_to public_path, class: 'nav-link text-light' do %>
               Home
           <% end %>
@@ -117,8 +118,5 @@
   </body>
 </html>
 
- <% if !customer_signed_in? %>
-<%= link_to 'ゲストログイン（閲覧用）', public_guest_sign_in_path, method: :post %>
-<% end %>
 
 

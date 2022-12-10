@@ -1,3 +1,7 @@
+
+ <%= flash[:notice] %>
+
+
 <div class="container">
     <div class="row mt-5 justify-content-center">
        <div class="text-center"
@@ -12,6 +16,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 <% if !general_customer_signed_in? %>
@@ -156,4 +162,10 @@
   </div>
   </div>
 <% end %>
+
+ <% if !customer_signed_in? %>
+<%= link_to 'ゲストログイン（閲覧用）', public_guest_sign_in_path, method: :post %>
+<% end %>
+
+
 

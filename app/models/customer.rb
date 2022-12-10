@@ -19,7 +19,7 @@ class Customer < ApplicationRecord
   def self.guest
     find_or_create_by!(email: 'guest@test.com') do |user|
       user.password = SecureRandom.urlsafe_base64 # ランダムなパスワードを生成
-      user.last_name = 'gest'
+      user.last_name = 'guest'
       user.first_name = 'user'
       user.last_name_kana = 'げすと'
       user.first_name_kana = 'ゆーざー'
