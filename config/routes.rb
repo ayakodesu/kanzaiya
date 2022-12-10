@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+
+
+
     #get 'general_customers/edit'
     #get 'general_customers/index'
     #get 'general_customers/show'
@@ -48,6 +51,8 @@ Rails.application.routes.draw do
    post 'orders/confirm' => 'orders#confirm'
    get 'orders/complete' => 'orders#complete'
    post 'orders/complete' => 'orders#complete'
+
+
 
    #post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
 
@@ -97,12 +102,9 @@ Rails.application.routes.draw do
   end
 
 
-
-
-devise_scope :user do
-    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+devise_scope :customer do
+    post 'public/guest_sign_in', to: 'public/sessions#guest_sign_in'
   end
-
 
 
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {

@@ -22,8 +22,12 @@ class Public::SessionsController < Devise::SessionsController
   # protected
 
 
-# 以下を追加
-# 以下を追加
+ def guest_sign_in
+    user = Customer.guest
+    sign_in user
+    redirect_to public_path, notice: "ゲストユーザーとしてログインしました"
+ end
+
 
 
 
