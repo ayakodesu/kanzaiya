@@ -1,0 +1,151 @@
+<div class="container">
+    <div class="row mt-5 justify-content-center">
+      <h4>注文情報入力</h4>
+    </div>
+</div>
+
+<% if customer_signed_in? %>
+<%= form_with model: @order, url: public_orders_confirm_path do |f| %>
+
+
+<div class="container">
+  <div class="row">
+    <h4>配送先</h4>
+  </div>
+  <div class="row">
+    <%= f.radio_button :select_address, 0, checked: "checked" %>
+    <%= f.label :select_address, "ご自身の住所" %>
+  </div>
+    <div class="row">
+      〒<%= @customer.postal_code %>
+        <%= @customer.address %>
+        <%= @customer.full_name %>
+    </div>
+
+    <div class="row">
+      <%= f.radio_button :select_address, 1 %>
+      <%= f.label :select_address, "登録済住所から選択" %>
+    </div>
+    <div class="row mb-2">
+      <%= f.select :address_id, options_from_collection_for_select(@addresses, :id, :address_display) %>
+    </div>
+
+
+    <div class="row">
+      <%= f.radio_button :select_address, 2 %>
+      <%= f.label :select_address, "新しいお届け先" %>
+    </div>
+    <div class="row">
+      <%= f.label :〒 %>
+      <%= f.text_field :postal_code, placeholder: "0020055" %>
+    </div>
+    <div class="row">
+      <%= f.label :住所 %>
+      <%= f.text_field :address, placeholder: "東京都千代田区丸の内1条2丁目1番5号" %>
+      <%= f.text_field :address, placeholder: "ビル名  部屋番号等" %>
+    </div>
+    <div class="row">
+      <%= f.label :宛名 %>
+      <%= f.text_field :name %>
+    </div>
+
+
+
+  <div class="row">
+    <h4>支払方法</h4>
+  </div>
+
+  <div class="row">
+    <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
+      <%= f.label :payment_method, Order.payment_methods_i18n[:credit_card] %>
+  </div>
+
+  <div class="row">
+    <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
+    <%= f.label :payment_method, Order.payment_methods_i18n[:bank_transfer] %>
+  </div>
+
+
+
+    <div class="row">
+      <%= f.submit "確認画面へ進む", class: "btn btn-primary" %>
+    </div>
+
+  </div>
+
+<% end %>
+<% end %>
+
+
+
+<% if general_customer_signed_in? %>
+<%= form_with model: @order, url: general_public_orders_confirm_path do |f| %>
+
+
+<div class="container">
+  <div class="row">
+    <h4>配送先</h4>
+  </div>
+  <div class="row">
+    <%= f.radio_button :select_address, 0, checked: "checked" %>
+    <%= f.label :select_address, "ご自身の住所" %>
+  </div>
+    <div class="row">
+      〒<%= @general_customer.postal_code %>
+        <%= @general_customer.address %>
+        <%= @general_customer.full_name %>
+    </div>
+
+    <div class="row">
+      <%= f.radio_button :select_address, 1 %>
+      <%= f.label :select_address, "登録済住所から選択" %>
+    </div>
+    <div class="row mb-2">
+      <%= f.select :address_id, options_from_collection_for_select(@addresses, :id, :address_display) %>
+    </div>
+
+
+    <div class="row">
+      <%= f.radio_button :select_address, 2 %>
+      <%= f.label :select_address, "新しいお届け先" %>
+    </div>
+    <div class="row">
+      <%= f.label :〒 %>
+      <%= f.text_field :postal_code, placeholder: "0020055" %>
+    </div>
+    <div class="row">
+      <%= f.label :住所 %>
+      <%= f.text_field :address, placeholder: "東京都千代田区丸の内1条2丁目1番5号" %>
+      <%= f.text_field :address, placeholder: "ビル名  部屋番号等" %>
+    </div>
+    <div class="row">
+      <%= f.label :宛名 %>
+      <%= f.text_field :name %>
+    </div>
+
+
+
+  <div class="row">
+    <h4>支払方法</h4>
+  </div>
+
+  <div class="row">
+    <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
+      <%= f.label :payment_method, Order.payment_methods_i18n[:credit_card] %>
+  </div>
+
+  <div class="row">
+    <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
+    <%= f.label :payment_method, Order.payment_methods_i18n[:bank_transfer] %>
+  </div>
+
+
+
+    <div class="row">
+      <%= f.submit "確認画面へ進む", class: "btn btn-primary" %>
+    </div>
+
+  </div>
+
+<% end %>
+<% end %>

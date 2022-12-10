@@ -11,7 +11,10 @@ Rails.application.routes.draw do
 
   namespace :general_public do
     get '/' => 'homes#top'
-    get "/home/about" => "homes#about", as: "about"
+   get "/home/about" => "homes#about", as: "about"
+   post 'orders/confirm' => 'orders#confirm'
+   get 'orders/complete' => 'orders#complete'
+   post 'orders/complete' => 'orders#complete'
 
     resources :orders, only: [:new, :index, :create, :destroy, :show]
     resources :items, only: [:index, :create, :show, :update, :destroy]

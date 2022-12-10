@@ -2,7 +2,7 @@ class GeneralPublic::OrdersController < ApplicationController
   def new
     @order = Order.new
     @addresses = current_general_customer.addresses
-    @customer = current_general_customer
+    @general_customer = current_general_customer
   end
 
   def confirm
