@@ -6,7 +6,7 @@ class CartItem < ApplicationRecord
     item.last_price * amount
   end
 
-  belongs_to :customer
-  #belongs_to :general_customer
+  has_one :customer
+  has_one :general_customer
   belongs_to :item
 end
