@@ -23,9 +23,8 @@ class Item < ApplicationRecord
     favorites.where(general_customer_id: general_customer.id).exists?
   end
 
-  #def self.search(search)
-    #search ? where('item LIKE ?', "%#{search}%") : all
-  #end
+
+
 
 
 

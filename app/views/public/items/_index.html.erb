@@ -4,17 +4,23 @@
     </div>
 
 
-<%#= form_tag(public_path, :method => "get") do %>
- <%#= text_field_tag :search %>
-<%#= submit_tag "Search" ,:itemname => nil ,class: "button is-info"%>
-<%# end %>
 
 
-<h2>検索</h2>
-<%= form_tag(public_items_path, method: :get) do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag 'Search', name: nil %>
+<div class="row mt-3 mb-3 justify-content-center">
+
+  <%= form_tag(public_items_path, method: :get) do %>
+  <%= text_field_tag :search, '', placeholder: "ジャンル検索" %>
+  <%= submit_tag 'Search', name: nil, class: 'btn btn-primary' %>
 <% end %>
+</div>
+
+
+
+
+
+
+
+
 
 
 
@@ -22,7 +28,7 @@
     <thead>
       <th>お気に入り</th>
       <th>商品画像</th>
-      <th>ジャンル</th>
+      <th>ジャンル名</th>
       <th>商品名/型/サイズ</th>
       <th>数量</th>
       <th>定価</th>
