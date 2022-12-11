@@ -14,16 +14,20 @@
 
 
     <body>
-      <% @orders.each do |order| %>
+      <% @instances.each do |instance| %>
+
         <tr>
-          <td><%= order.created_at.strftime('%Y年%m月%d日 %H:%M:%S') %></td>
-          <td><%= order.customer.full_name %></td>
-          <td></td>
+
+          <td><%= link_to instance.created_at.strftime('%Y年%m月%d日 %H:%M:%S'), admin_order_path(instance.id) %></td>
+          <td><%= instance.full_name %></td>
+          <td><%#= instance%></td>
           <td></td>
         </tr>
 
 <% end %>
+
     </body>
+
 </table>
 
 

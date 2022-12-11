@@ -6,6 +6,10 @@ class Admin::OrdersController < ApplicationController
   def index
     @order = Order.new
     @orders = Order.all
+    @customer = Customer.all
+    @general_customer = GeneralCustomer.all
+    @instances = @customer | @general_customer
+
   end
 
   private
