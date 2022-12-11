@@ -6,7 +6,7 @@
     <table class="table table-hover table-bordered table-sm">
       <thead>
         <th>購入日時</th>
-        <th>購入者</th>
+        <th>配送先</th>
         <th>購入商品</th>
         <th>購入ステータス</th>
       </thead>
@@ -19,8 +19,7 @@
         <tr>
 
           <td><%= link_to order.created_at.strftime('%Y年%m月%d日 %H:%M:%S'), admin_order_path(order.id) %></td>
-          <td><%= order.customer.full_name %>
-          <%= order.general_customer.full_name %></td>
+          <td><%= order.name %></td>
           <td><%#= instance.item.name %></td>
           <td></td>
         </tr>

@@ -2,7 +2,7 @@ class Public::FavoritesController < ApplicationController
   def index
   end
 
-  before_action :set_item
+  #before_action :set_item
 
   def create
     @item = Item.find(params[:item_id])
@@ -26,11 +26,11 @@ class Public::FavoritesController < ApplicationController
   end
 
 
-  private
+  #private
 
-  def set_item
-   @item = Item.find(params[:item_id])
-  end
+  #def set_item
+   #@item = Item.find(params[:item_id])
+  #end
 
 
 end
