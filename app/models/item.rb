@@ -11,6 +11,10 @@ class Item < ApplicationRecord
   end
 
 
+  #def self.search(search)
+    #search ? where('name LIKE ?', "%#{search}%") : all
+  #end
+
 
   has_many :cart_items, dependent: :destroy
   has_many :favorites, dependent: :destroy
