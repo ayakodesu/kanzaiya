@@ -6,10 +6,17 @@ class Admin::OrdersController < ApplicationController
 
   def index
     @order = Order.new
-    @orders = Order.all
+    #@orders = Order.all
     @customer = Order.all
     @general_customer = Order.all
     @orders = @customer | @general_customer
+    
+    puts "test"
+    @orders.each do |order|
+      puts "aaa"
+      puts order.full_name 
+    end
+
 
 
 
