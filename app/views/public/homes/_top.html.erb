@@ -2,26 +2,21 @@
  <%= flash[:notice] %>
 
 
-<div class="container">
-    <div class="row mt-5 justify-content-center">
-       <div class="text-center"
-            <p>
-                <h2>ようこそ! kanzaiyaへ!</h2><br>
-                <h5>このサイトは、kanzaiyaのECサイトになります。</br>
-            <div class="row mt-4 justify-content-center">
-                kanzaiyaの商品の在庫確認、ご注文が出来ます。</br></h5>
-                </br>
-            </p>
+  <header class="py-5 bg-image-full" style="background-image: url('https://cdn.pixabay.com/photo/2017/01/15/16/23/bathroom-1982011_1280.jpg')">
+            <div class="text-center my-5">
+                <h1 class="text-white fs-3 fw-bolder">ようこそ! kanzaiyaへ!</h1>
+                <h4 class="text-white fs-3 fw-bolder">このサイトは、kanzaiyaのECサイトになります。</br>
+                kanzaiyaの商品の在庫確認、ご注文が出来ます。</h4>
             </div>
-        </div>
-    </div>
-</div>
+
 
 
 
 
 <% if !general_customer_signed_in? %>
   <% if !customer_signed_in? %>
+
+
 
 <div class="container">
    <div class="row mt-5">
@@ -169,5 +164,5 @@
 <% end %>
 <% end %>
 
-
+</header>
 
