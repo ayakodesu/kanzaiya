@@ -5,7 +5,7 @@ class Public::ItemsController < ApplicationController
     #@items = Item.all.search(params[:search])
     # byebug
     genre_ids = Genre.search(params[:search]).pluck(:id)
-    @items = @items.where(genre_id: genre_ids).order('id DESC').limit(8)
+    @items = @items.where(genre_id: genre_ids).order('id DESC').limit(8).page(params[:page])
 
 
   end

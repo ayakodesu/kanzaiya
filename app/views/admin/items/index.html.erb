@@ -3,50 +3,36 @@
       <h4>商品一覧</h4>
     </div>
 
-<%= link_to "商品新規追加", new_admin_item_path, class: "btn btn-outline-info" %>
+<div class="row mt-3 mb-3 right">
+    <%= link_to "商品新規追加", new_admin_item_path, class: "btn btn-outline-info" %>
+</div>
 
-  <table class="table table-hover table-bordered table-sm">
-    <thead>
-      <th>商品画像</th>
-      <th>ジャンル</th>
-      <th>商品名/型/サイズ</th>
-      <th>数量</th>
-      <th>定価</th>
-      <th>ステータス</th>
-
-    </thread>
-
-  <tbody>
-    <% @items.each do |item| %>
-
-    <tr>
-      <td>
-      <%= link_to admin_item_path(item.id) do %>
-      <%= image_tag item.image, size: '50x50'%>
-      <% end %>
-      </td>
-      <td><%= item.genre.name %></td>
-      <td><%= link_to admin_item_path(item.id) do %>
-      <%= item.name %><br />
-      <%= item.shape %><br />
-      <%= item.size %>
-      <% end %>
-      </td>
-      <td><%= item.amount %></td>
-      <td>¥<%= item.last_price %></td>
-      <td><% if item.is_active == true %>
-          <p class="text-success">販売中</p>
-          <% else %>
-          <p class="text-secondary">販売停止中</p>
+    <div class="row">
+      <% @items.each do |item| %>
+        <div class="col-3 mb-5">
+          <div class="card">
+          <%= link_to admin_item_path(item.id) do %>
+            <%= image_tag item.image, size: '180x150'%>
           <% end %>
-      </td>
-    </tr>
-
-    <% end %>
-  </tbody>
-
-</table>
-
+            <div class="card-body p-4">
+              <div class="text-center">
+                <h5 class="fw-bolder"><%= item.genre.name %></h5>
+                  <%= link_to admin_item_path(item.id) do %>
+                    <%= item.name %>
+                    <%= item.shape %>
+                    <%= item.size %><br/>
+                  <% end %>
+                    在庫数:<%= item.amount %>
+                    定価¥<%= item.last_price %>
+              </div>
+            </div>
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <%= link_to "商品詳細", admin_item_path(item.id), class: "btn btn-outline-success" %>
+              </div>
+            </div>
+          </div>
+      <% end %>
+     </div>
 
 </div>
 
