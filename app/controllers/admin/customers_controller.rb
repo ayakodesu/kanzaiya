@@ -3,7 +3,7 @@ class Admin::CustomersController < ApplicationController
     @customer = Customer.all
     @general_customer = GeneralCustomer.all
     @instances = @customer | @general_customer
-
+    
 
 
   end

@@ -12,7 +12,7 @@ class Item < ApplicationRecord
 
 
   #def self.search(search)
-    #search ? where('name LIKE ?', "%#{search}%") : all
+    #search ? where('size LIKE ?', "%#{search}%") : all
   #end
 
 
