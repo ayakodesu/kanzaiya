@@ -14,103 +14,91 @@
 <% end %>
 </div>
 
-<%#= form_tag(public_items_path, method: :get) do %>
-  <%#= text_field_tag :search, '', placeholder: "商品検索" %>
-  <%#= submit_tag 'Search', name: nil, class: 'btn btn-primary' %>
-<%# end %>
 
 
+ <% if customer_signed_in? %>
+ <div class="row">
+ <% @items.each do |item| %>
 
+<div class="col-3 mb-5">
 
+  <div class="card">
+    <h5 class="fw-bolder"><%#= item.genre.name %></h5>
+<%= link_to public_item_path(item.id) do %>
+<%= image_tag item.image, size: '80x80'%>
+<% end %>
+<div class="card-body p-4">
+  <div class="text-center">
 
-
-
-
-
-
-
-    <table class="table table-hover table-bordered table-sm">
-    <thead>
-      <th>お気に入り</th>
-      <th>商品画像</th>
-      <th>ジャンル名</th>
-      <th>商品名/型/サイズ</th>
-      <th>数量</th>
-      <th>定価</th>
-    </thread>
-
-    <% if customer_signed_in? %>
-
-  <tbody>
-      <% @items.each do |item| %>
-
-    <tr>
-      <td><i class="fa-regular fa-star fa-2x mt-3 "></i></td>
-      <td>
-      <%= link_to public_item_path(item.id) do %>
-      <%= image_tag item.image, size: '50x50'%>
+    <h5 class="fw-bolder"><%= item.genre.name %></h5>
+    <%= link_to public_item_path(item.id) do %>
+      <%= item.name %>
+      <%= item.shape %>
+      <%= item.size %><br/>
       <% end %>
-      </td>
-      <td><%= item.genre.name %></td>
-      <td><%= link_to public_item_path(item.id) do %>
-      <%= item.name %><br />
-      <%= item.shape %><br />
-      <%= item.size %>
+      在庫数:<%= item.amount %>
+      定価¥<%= item.last_price %>
+
+  </div>
+</div>
+<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <%= link_to "商品詳細", public_item_path(item.id), class: "btn btn-outline-success" %>
+                            </div>
+
+  </div>
+</div>
+
+
+
+
+<% end %>
+</div>
+<% end %>
+
+
+
+
+
+<% if general_customer_signed_in? %>
+ <div class="row">
+ <% @items.each do |item| %>
+
+<div class="col-3 mb-5">
+
+  <div class="card">
+    <h5 class="fw-bolder"><%#= item.genre.name %></h5>
+<%= link_to general_public_item_path(item.id) do %>
+<%= image_tag item.image, size: '80x80'%>
+<% end %>
+<div class="card-body p-4">
+  <div class="text-center">
+
+    <h5 class="fw-bolder"><%= item.genre.name %></h5>
+    <%= link_to general_public_item_path(item.id) do %>
+      <%= item.name %>
+      <%= item.shape %>
+      <%= item.size %><br/>
       <% end %>
-      </td>
-      <td><%= item.amount %></td>
-      <td>¥<%= item.last_price %></td>
-      <%# if @item.favorited_by?(current_customer) %>
-      <td><%#= link_to "ブックマークを外す", item_favorites_path(@item), method: :delete %></td>
-    <% #else %>
-      <td><%#= link_to "ブックマーク", item_bfavorites_path(@item), method: :post %></td>
-    <% #end %>
-            </div>
-            </div>
-            </div>
-        <% end %>
+      在庫数:<%= item.amount %>
+      定価¥<%= item.last_price %>
 
+  </div>
+</div>
+<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <%= link_to "商品詳細", general_public_item_path(item.id), class: "btn btn-outline-success" %>
+                            </div>
 
-
-  <% end %>
+  </div>
+</div>
 
 
 
 
+<% end %>
+</div>
+<% end %>
 
 
- <% if general_customer_signed_in? %>
-
-  <tbody>
-      <% @items.each do |item| %>
-
-    <tr>
-      <td><i class="fa-regular fa-star fa-2x mt-3 "></i></td>
-      <td>
-      <%= link_to general_public_item_path(item.id) do %>
-      <%= image_tag item.image, size: '50x50'%>
-      <% end %>
-      </td>
-      <td><%= item.genre.name %></td>
-      <td><%= link_to general_public_item_path(item.id) do %>
-      <%= item.name %><br />
-      <%= item.shape %><br />
-      <%= item.size %>
-      <% end %>
-      </td>
-      <td><%= item.amount %></td>
-      <td>¥<%= item.last_price %></td>
-      <%# if @item.favorited_by?(current_general_customer) %>
-      <td><%#= link_to "ブックマークを外す", item_favorites_path(@item), method: :delete %></td>
-    <% #else %>
-      <td><%#= link_to "ブックマーク", item_bfavorites_path(@item), method: :post %></td>
-    <% #end %>
-            </div>
-            </div>
-            </div>
-        <% end %>
-
-  <% end %>
 
 
 
