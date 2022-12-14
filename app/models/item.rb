@@ -16,12 +16,15 @@ class Item < ApplicationRecord
   has_many :cart_items, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+  has_one :customer
+  has_one :general_customer
+
   #has_one :customer, optional: true
   #has_one :general_customer, optional: true
 
-  #def favorited_by?(customer)
-    #favorites.exists?(customer_id: customer.id)
-  #end
+  def favorited_by?(customer)
+    favorites.exists?(customer_id: customer.id)
+  end
 
 
 
