@@ -2,7 +2,7 @@ class Public::FavoritesController < ApplicationController
   def index
   end
 
-  #before_action :set_item
+
 
   def create
     @item = Item.find(params[:item_id])

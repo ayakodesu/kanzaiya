@@ -71,6 +71,8 @@ Rails.application.routes.draw do
 
 
 
+
+
     resources :addresses, only: [:new, :create, :edit, :index, :update, :destroy]
     delete 'addresses/:id' =>'addresses#destroy', as: 'destroy_address'
     patch ':id/adderss/:name' => 'addresses#cart_item', as: 'adderss_user'
@@ -79,7 +81,7 @@ Rails.application.routes.draw do
     delete 'cart_items/:id' =>'cart_items#destroy', as: 'destroy_cart_item'
 
     resources :favorites, only: [:index, :create, :destroy]
-
+    delete 'favorites/:id' =>'favorites#destroy', as: 'destroy_favorite'
 
 
 
