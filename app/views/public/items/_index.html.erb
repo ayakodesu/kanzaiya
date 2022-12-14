@@ -15,15 +15,22 @@
 
  <% if customer_signed_in? %>
 
+
+
     <div class="row">
      <% @items.each do |item| %>
-
       <div class="col-3 mb-5">
+        <div class="card">
+          <div class="text-right">
 
-      <div class="card">
-        <div class="text-right">
+
+
         <i class="fas fa-heart fa-2x mt-2 mr-2 ml-2"></i>
         </div>
+
+
+
+
           <%= link_to public_item_path(item.id) do %>
             <%= image_tag item.image, size: '200x150'%>
           <% end %>

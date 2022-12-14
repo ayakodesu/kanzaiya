@@ -6,23 +6,17 @@ class Public::FavoritesController < ApplicationController
 
   def create
     @item = Item.find(params[:item_id])
-    favorite = @item.favorites.new(customer_id: current_customer.id)
-    if favorite.save
-      redirect_to request.referer
-    else
-      redirect_to request.referer
-    end
+    favorite = current_customer.favorites.new(item_id: item.id)
+    favorite.save
+      redirect_to public_items_path(item)
   end
+
 
   def destroy
     @item = Item.find(params[:item_id])
-    favorite = @item.favorites.find_by(customer_id: current_customer.id)
-    if favorite.present?
-        favorite.destroy
-        redirect_to request.referer
-    else
-        redirect_to request.referer
-    end
+    favorite = current_genera_customer.favorites.find_by(item_id: item.id)
+      favorite.destroy
+        redirect_to public_items_path(item)
   end
 
 
