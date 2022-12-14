@@ -60,34 +60,30 @@
         </div>
        </div>
      </div>
-
       </div>
 </div>
-
-
-
 
   <% end %>
 <% end %>
 
 
 
+
 <% if customer_signed_in? %>
 
 
-  <div class="container">
+  <div class="container text-center">
     <h3>新着商品</h3>
 
-  <div class="row">
-    <% @items.each do |item| %>
+      <div class="row text-center">
+        <% @items.each do |item| %>
 
-    <% if item.is_active %>
-        <div class="col">
-
+        <% if item.is_active %>
+        <div class="col-3 mb-5">
+           <div class="card text-white bg-secondary border-dark">
           <%= link_to (image_tag item.image, size: '150x150'), public_item_path(item.id) %>
-
-
-            <div class="col">
+            <div class="card-body text-white bg-dark p-4">
+              <div class="text-center">
 
               <strong>商品名</strong>
                 <%= item.name %>
@@ -105,64 +101,78 @@
                 ¥<%= item.last_price %>
                 <br>
 
-              <strong>お気に入り</strong>
-              <i class="fa-regular fa-star"></i>
-
-
+              </div>
+            </div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <%= link_to "商品詳細", public_item_path(item.id), class: "btn btn-success" %>
+          </div>
 
             </div>
         </div>
-    <% end %>
-    <% end %>
+        <% end %>
+        <% end %>
+      </div>
+<% end %>
+
   </div>
-  </div>
-    <% end %>
+
 
 
 
 
 <% if general_customer_signed_in? %>
 
-  <div class="container">
-      <h3>新着商品</h3>
+  <div class="container text-center">
+    <h3>新着商品</h3>
 
-  <div class="row">
-    <% @items.each do |item| %>
+      <div class="row text-center">
+        <% @items.each do |item| %>
 
-     <% if item.is_active %>
-        <div class="col">
-            <%= link_to (image_tag item.image, size: '150x150'), public_item_path(item.id) %>
+        <% if item.is_active %>
+        <div class="col-3 mb-5">
+           <div class="card text-white bg-secondary border-dark">
+          <%= link_to (image_tag item.image, size: '150x150'), general_public_item_path(item.id) %>
+            <div class="card-body text-white bg-dark p-4">
+              <div class="text-center">
 
-          <div class="col">
-            <strong>商品名</strong>
-              <%= item.name %>
-              <br />
+              <strong>商品名</strong>
+                <%= item.name %>
+                <br />
 
-            <strong>型</strong>
-              <%= item.shape %>
-              <br />
+              <strong>型</strong>
+                <%= item.shape %>
+                <br />
 
-            <strong>サイズ</strong>
-              <%= item.size %>
-              <br />
+              <strong>サイズ</strong>
+                <%= item.size %>
+                <br />
 
-            <strong>定価</strong>
-              ¥<%= item.last_price %>
+              <strong>定価</strong>
+                ¥<%= item.last_price %>
+                <br>
 
+              </div>
+            </div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <%= link_to "商品詳細", general_public_item_path(item.id), class: "btn btn-success" %>
           </div>
-        </div>
 
-    <% end %>
-    <% end %>
-  </div>
-  </div>
+            </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
 <% end %>
+
+  </div>
+
+
 
 <% if !customer_signed_in? %>
-<% if !general_customer_signed_in? %>
-<%= link_to 'ゲストログイン（閲覧用）', public_guest_sign_in_path, method: :post %>
-<% end %>
+  <% if !general_customer_signed_in? %>
+    <%= link_to 'ゲストログイン（閲覧用）', public_guest_sign_in_path, method: :post %>
+  <% end %>
 <% end %>
 
-</header>
+  </header>
 

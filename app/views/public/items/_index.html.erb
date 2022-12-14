@@ -20,7 +20,7 @@
     <div class="row">
      <% @items.each do |item| %>
       <div class="col-3 mb-5">
-        <div class="card">
+        <div class="card text-white bg-secondary border-dark">
 
         <% if current_customer.already_favorited?(item) %>
           <%= link_to public_item_favorites_path(item), method: :delete do %>
@@ -35,7 +35,7 @@
           <%= link_to public_item_path(item.id) do %>
             <%= image_tag item.image, size: '200x150'%>
           <% end %>
-            <div class="card-body p-4">
+            <div class="card-body text-white bg-dark p-4">
               <div class="text-center">
                 <h5 class="fw-bolder"><%= item.genre.name %></h5>
                   <%= link_to public_item_path(item.id) do %>
@@ -48,7 +48,7 @@
               </div>
             </div>
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <%= link_to "商品詳細", public_item_path(item.id), class: "btn btn-outline-success" %>
+                <%= link_to "商品詳細", public_item_path(item.id), class: "btn btn-success" %>
               </div>
                 <%# if current_customer.already_favorited?(item) %>
 
