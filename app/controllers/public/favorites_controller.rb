@@ -1,5 +1,6 @@
 class Public::FavoritesController < ApplicationController
   def index
+    @favorites = current_customer.favorites.page(params[:page])
   end
 
 
@@ -26,6 +27,6 @@ class Public::FavoritesController < ApplicationController
 
 private
     def favorite_params
-      params.require(:favorite).permit(:genre_id, :name, :introduction, :shape, :size, :last_price, :favorite, :is_active, :image, :amount)
+      params.require(:favorite).permit(:genre_id, :name, :shape, :size, :last_price, :image, :amount)
     end
 end
