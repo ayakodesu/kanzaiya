@@ -6,7 +6,7 @@ class Public::FavoritesController < ApplicationController
 
 
   def create
-    @favorite = current_customer.favorites.create(item_id: params[item_id])
+    @favorite = current_customer.favorites.create(item_id: params[:item_id])
      redirect_back(fallback_location: public_items_path)
   end
 
@@ -27,6 +27,6 @@ class Public::FavoritesController < ApplicationController
 
 private
     def favorite_params
-      params.require(:favorite).permit(:genre_id, :name, :shape, :size, :last_price, :image, :amount)
+      params.require(:favorite).permit(:genre_id, :item_id, :name, :shape, :size, :last_price, :image, :amount)
     end
 end

@@ -24,7 +24,7 @@
 
         <% if current_customer.already_favorited?(item) %>
           <%= link_to public_item_favorites_path(item), method: :delete do %>
-            <i class="fas fa-heart fa-2x"></i>
+            <i class="fas fa-heart fa-3x"></i>
           <% end %>
       <% else %>
           <%= link_to public_item_favorites_path(item), method: :post do %>
