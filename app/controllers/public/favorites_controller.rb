@@ -1,6 +1,8 @@
 class Public::FavoritesController < ApplicationController
   def index
-    @favorites = current_customer.favorites.page(params[:page])
+
+    @favorite = current_customer.favorites.page(params[:page])
+    @favorites = Favorite.all
   end
 
 
