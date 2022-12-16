@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
+   namespace :admin do
 
 
 
@@ -13,37 +13,39 @@ Rails.application.routes.draw do
 
 
   namespace :general_public do
-   get '/' => 'homes#top'
+    get '/' => 'homes#top'
    get "/home/about" => "homes#about", as: "about"
    post 'orders/confirm' => 'orders#confirm'
    get 'orders/complete' => 'orders#complete'
    post 'orders/complete' => 'orders#complete'
+   delete '/cart_items/destroy_all' => 'cart_items#destroy_all', as: 'destroy_all_cart_items'
 
-   resources :orders, only: [:new, :index, :create, :destroy, :show]
+    resources :orders, only: [:new, :index, :create, :destroy, :show]
 
-   resources :items, only: [:index, :create, :show, :update, :destroy] do
-    delete '/cart_items/destroy_all' => 'cart_items#destroy_all', as: 'destroy_all_cart_items'
-    resource :favorites, only: [:create, :destroy]
+    resources :items, only: [:index, :create, :show, :update, :destroy] do
+      resource :favorites, only: [:create, :destroy]
     end
 
-   resources :favorites, only: [:index]
 
-   resource :customer, only: [:create, :edit, :show, :update, :destroy]
+    resource :customer, only: [:create, :edit, :show, :update, :destroy]
     get 'unsubscribe/:name' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
     patch ':id/withdraw/:name' => 'general_customers#withdraw', as: 'withdraw_user'
     put 'withdraw/:name' => 'general_customer#withdraw'
     get '/customer/index' => 'customers#index', as: 'customers'
 
-   resources :addresses, only: [:create, :edit, :index, :update, :destroy]
+
+    resources :addresses, only: [:create, :edit, :index, :update, :destroy]
     delete 'addresses/:id' =>'addresses#destroy', as: 'destroy_address'
     patch ':id/adderss/:name' => 'addresses#cart_item', as: 'adderss_user'
 
-   resources :cart_items, only: [:index, :create, :update, :destroy]
+    resources :cart_items, only: [:index, :create, :update, :destroy]
     delete 'cart_items/:id' =>'cart_items#destroy', as: 'destroy_cart_item'
 
-   resources :favorites, only: [:index, :create, :destroy]
-  end
 
+   resources :favorites, only: [:index]
+
+
+  end
 
   namespace :public do
 
@@ -52,6 +54,7 @@ Rails.application.routes.draw do
    post 'orders/confirm' => 'orders#confirm'
    get 'orders/complete' => 'orders#complete'
    post 'orders/complete' => 'orders#complete'
+   delete '/cart_items/destroy_all' => 'cart_items#destroy_all', as: 'destroy_all_cart_items'
 
 
 
@@ -59,13 +62,8 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :index, :create, :destroy, :show]
 
     resources :items, only: [:index, :create, :show, :update, :destroy] do
-    delete '/cart_items/destroy_all' => 'cart_items#destroy_all', as: 'destroy_all_cart_items'
-
-    resource :favorites, only: [:create, :destroy]
-
-
-
-  end
+      resource :favorites, only: [:create, :destroy]
+    end
 
 
 
@@ -86,7 +84,8 @@ Rails.application.routes.draw do
     resources :cart_items, only: [:index, :create, :update, :destroy]
     delete 'cart_items/:id' =>'cart_items#destroy', as: 'destroy_cart_item'
 
-
+    #resources :favorites, only: [:index, :create, :destroy]
+    #delete 'favorites/:id' =>'favorites#destroy', as: 'destroy_favorite'
 
     resources :favorites, only: [:index]
 
