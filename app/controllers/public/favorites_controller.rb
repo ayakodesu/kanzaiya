@@ -21,12 +21,6 @@ class Public::FavoritesController < ApplicationController
   end
 
 
-  #private
-
-  #def set_item
-   #@item = Item.find(params[:item_id])
-  #end
-
 private
     def favorite_params
       params.require(:favorite).permit(:genre_id, :item_id, :name, :shape, :size, :last_price, :image, :amount)
