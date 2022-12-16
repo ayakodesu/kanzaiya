@@ -3,7 +3,6 @@
       <h4>商品一覧</h4>
     </div>
 
-
 <div class="row mt-3 mb-3 justify-content-center">
   <%= form_tag(public_items_path, method: :get) do %>
     <%= text_field_tag :search, '', placeholder: "ジャンル検索" %>
@@ -12,34 +11,28 @@
 </div>
 
 
-
  <% if customer_signed_in? %>
-
-
-
-    <div class="row">
-     <% @items.each do |item| %>
+  <div class="row">
+    <% @items.each do |item| %>
       <div class="col-3 mb-5">
         <div class="card text-white bg-secondary border-dark">
-
         <% if current_customer.already_favorited?(item) %>
-        <div class="sample-box">
-          <%= link_to public_item_favorites_path(item), method: :delete do %>
-          <div class="heart">
-            <i class="fas fa-heart fa-2x" style="color: red;"></i>
-            </div>
-          <% end %>
-          </div>
-      <% else %>
-      <div class="sample-box">
-          <%= link_to public_item_favorites_path(item), method: :post do %>
-          <div class="heart">
-            <i class="fas fa-heart fa-2x" style="color: white;"></i>
-            </div>
+          <div class="sample-box">
+            <%= link_to public_item_favorites_path(item), method: :delete do %>
+            <div class="heart">
+              <i class="fas fa-heart fa-2x" style="color: red;"></i>
+              </div>
         <% end %>
-        </div>
-      <% end %>
-
+          </div>
+        <% else %>
+          <div class="sample-box">
+            <%= link_to public_item_favorites_path(item), method: :post do %>
+              <div class="heart">
+                <i class="fas fa-heart fa-2x" style="color: white;"></i>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
           <%= link_to public_item_path(item.id) do %>
             <%= image_tag item.image, size: '200x150'%>
           <% end %>
@@ -58,59 +51,63 @@
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                 <%= link_to "商品詳細", public_item_path(item.id), class: "btn btn-success" %>
               </div>
-                <%# if current_customer.already_favorited?(item) %>
-
-
-
-
-
+        </div>
       </div>
-      </div>
-      <% end %>
-     </div>
-<%= paginate @items %>
-
+     <% end %>
+    </div>
   <% end %>
 
 
 
-
-
 <% if general_customer_signed_in? %>
-
    <div class="row">
-     <% @items.each do |item| %>
+    <% @items.each do |item| %>
       <div class="col-3 mb-5">
-        <div class="card">
-          <div class="text-right">
-        <i class="fas fa-heart fa-2x mt-2 mr-2 ml-2"></i>
-        </div>
-          <%= link_to general_public_item_path(item.id) do %>
-            <%= image_tag item.image, size: '180x150'%>
-          <% end %>
-          <div class="card-body p-4">
-            <div class="text-center">
-              <h5 class="fw-bolder"><%= item.genre.name %></h5>
-                <%= link_to general_public_item_path(item.id) do %>
-                  <%= item.name %>
-                  <%= item.shape %>
-                  <%= item.size %><br/>
-                <% end %>
-                  在庫数:<%= item.amount %>
-                  定価¥<%= item.last_price %>
-            </div>
+        <div class="card text-white bg-secondary border-dark">
+        <% if current_general_customer.already_favorited?(item) %>
+          <div class="sample-box">
+            <%= link_to general_public_item_favorites_path(item), method: :delete do %>
+            <div class="heart">
+              <i class="fas fa-heart fa-2x" style="color: red;"></i>
+              </div>
+        <% end %>
           </div>
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-              <%= link_to "商品詳細", general_public_item_path(item.id), class: "btn btn-outline-success" %>
+        <% else %>
+          <div class="sample-box">
+            <%= link_to general_public_item_favorites_path(item), method: :post do %>
+              <div class="heart">
+                <i class="fas fa-heart fa-2x" style="color: white;"></i>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+          <%= link_to general_public_item_path(item.id) do %>
+            <%= image_tag item.image, size: '200x150'%>
+          <% end %>
+            <div class="card-body text-white bg-dark p-4">
+              <div class="text-center">
+                <h5 class="fw-bolder"><%= item.genre.name %></h5>
+                  <%= link_to general_public_item_path(item.id) do %>
+                    <%= item.name %>
+                    <%= item.shape %>
+                    <%= item.size %><br/>
+                  <% end %>
+                    在庫数:<%= item.amount %>
+                    定価¥<%= item.last_price %>
+              </div>
             </div>
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <%= link_to "商品詳細", general_public_item_path(item.id), class: "btn btn-success" %>
+              </div>
         </div>
       </div>
-    <% end %>
-   </div>
-   <%= paginate @items %>
-<% end %>
+     <% end %>
+    </div>
+  <% end %>
 
 
+
+<%= paginate @items %>
 </div>
 
 

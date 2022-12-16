@@ -13,4 +13,8 @@ class GeneralCustomer < ApplicationRecord
     self.last_name + " " + self.first_name
    end
 
+   def already_favorited?(item)
+    self.favorites.exists?(item_id: item.id)
+   end
+
 end

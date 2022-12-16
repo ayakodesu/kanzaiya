@@ -11,27 +11,25 @@ class Item < ApplicationRecord
   end
 
 
-
-
   has_many :cart_items, dependent: :destroy
   has_many :favorites, dependent: :destroy
-
   has_one :customer
   has_one :general_customer
+  has_many :order_detalls, dependent: :destroy
+  belongs_to :genre
 
-  #has_one :customer, optional: true
-  #has_one :general_customer, optional: true
+
 
   def favorited_by?(customer)
     favorites.exists?(customer_id: customer.id)
   end
 
+  def favorited_by?(general_customer)
+    favorites.exists?(general_customer_id: general_customer.id)
+  end
 
 
 
-
-  has_many :order_detalls, dependent: :destroy
-  belongs_to :genre
 
 
 

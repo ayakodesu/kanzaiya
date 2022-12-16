@@ -20,10 +20,6 @@ class Customer < ApplicationRecord
     self.last_name + " " + self.first_name
   end
 
-  #def self.search(search)
-    #search ? where('last_name LIKE ? OR first_name LIKE ?', "%#{search}%", "%#{search}%") : all
-  #end
-
 
   def self.guest
     find_or_create_by!(email: 'guest@test.com') do |user|
