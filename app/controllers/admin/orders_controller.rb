@@ -2,6 +2,9 @@ class Admin::OrdersController < ApplicationController
 
   def show
    @order = Order.find(params[:id])
+   @customer = Order.find(params[:id])
+   @general_customer = Order.find(params[:id])
+   #@instances = @customer | @general_customer
    @order_details = OrderDetail.page(params[:page])
   end
 

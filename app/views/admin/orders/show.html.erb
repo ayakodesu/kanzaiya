@@ -11,8 +11,13 @@
         購入者
       </div>
       <div class="col-4">
-        <%=  @order.name %>
+        <%= @order.name %>
+
       </div>
+
+        <%#= @instatnces.customer.full_name %>
+        <%#= @instatnces.general_customer.full_name %>
+
     </div>
   </div>
 
@@ -82,7 +87,7 @@
         <th>単位(税込)</th>
         <th>数量</th>
         <th>小計</th>
-        <th>制作ステータス</th>
+
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -92,17 +97,12 @@
     <% @order_details.each do |order_detail| %>
     <tr>
       <td><%= order_detail.item.name %></td>
-      <td><%= order_detail.item.with_tax_price %></td>
+      <td>¥<%= order_detail.item.with_tax_price %></td>
       <td><%= order_detail.amount %></td>
-      <td><%= order_detail.item.with_tax_price * order_detail.amount %></td>
-
-      <%= form_with model: order_detail , url: admin_order_path(order_detail.id) do |f| %>
-      <td><%#= f.select :making_method, OrderDetail.making_methods_i18n.invert %>
-      <%= f.submit "更新", class: "btn btn-success" %>
-      </td>
+      <td>¥<%= order_detail.item.with_tax_price * order_detail.amount %></td>
     </tr>
 
-    <% end %>
+
 
     <% end %>
     </tbody>
