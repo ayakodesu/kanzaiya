@@ -6,7 +6,7 @@
     <table class="table table-hover table-bordered table-sm">
       <thead>
         <th>購入日時</th>
-        <th>配送先</th>
+        <th>購入者</th>
         <th>購入商品</th>
         <th>購入ステータス</th>
       </thead>
@@ -14,17 +14,23 @@
 
 
     <body>
-      <% @orders.each do |order| %>
-
+      <% @instances.each do |instance| %>
+       <% if instance.class == Customer %>
         <tr>
-
-          <td><%= link_to order.created_at.strftime('%Y年%m月%d日 %H:%M:%S'), admin_order_path(order.id) %></td>
-          <td><%= order.name %></td>
+          <td><%= link_to instance.created_at.strftime('%Y年%m月%d日 %H:%M:%S'), admin_order_path(instance.id) %></td>
+          <td><%= instance.full_name %></td>
           <td><%#= instance.item.name %></td>
           <td></td>
         </tr>
+      <% else %>
+        <tr>
+          <td><%= link_to instance.created_at.strftime('%Y年%m月%d日 %H:%M:%S'), admin_order_path(instance.id) %></td>
+          <td><%= instance.full_name %></td>
+          <td><%#= instance.item.name %></td>
+          <td></td>
 
-<% end %>
+      <% end %>
+      <% end %>
 
 
     </body>

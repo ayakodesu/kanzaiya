@@ -1,4 +1,5 @@
 class Admin::OrdersController < ApplicationController
+
   def show
    @order = Order.find(params[:id])
    @order_details = OrderDetail.page(params[:page])
@@ -7,25 +8,15 @@ class Admin::OrdersController < ApplicationController
   def index
     @order = Order.new
     #@orders = Order.all
-    @customer = Order.all
-    @general_customer = Order.all
-    @orders = @customer | @general_customer
-
-
-    #puts "test"
-    #@orders.each do |order|
-      #puts "aaa"
-      #puts order.full_name
-    #end
-
-
-
-
-
+    @customer = Customer.all
+    @general_customer = GeneralCustomer.all
+    @instances = @customer | @general_customer
   end
 
   private
+
   def order_params
     params.require(:order).permit(:genre_id, :last_name, :first_name, :name, :introduction, :price, :is_active, :image)
   end
+
 end
