@@ -2,18 +2,18 @@
     <div class="row justify-content-center">
       <h4>ジャンル編集</h4>
     </div>
-  </div>
-
 
 <%= form_with model: @genre,url: admin_genre_path do |f| %>
-<div class="container">
-      <div class="row mt-3">
-
+  <div class="container">
+    <div class="row mt-3">
         <div class="col-3">
           <div><%= f.text_field :name, placeholder: "ジャンル名" %></div>
         </div>
         <div class="col-3">
           <div><%=f.submit '更新', class: "btn btn-success" %></div>
         </div>
+    </div>
+  </div>
+<% end %>
 
-  <% end %>
+</div>

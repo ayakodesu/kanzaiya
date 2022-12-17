@@ -5,14 +5,12 @@
     <div class="row">
       <h5>配送先一覧</h5>
     </div>
-</div>
 
 <div class="container">
-  <div class="row mt-4 text-left">
+  <div class="row mt-4 mb-5 text-left">
     <table class="table table table-striped">
     <thead>
       <tr>
-
         <th>住所</th>
         <th>宛名</th>
         <th>TEL</th>
@@ -20,46 +18,35 @@
       </tr>
     </thead>
 
-
-
- <tbody>
+<% if customer_signed_in? %>
+   <tbody>
       <% @addresses.each do |address| %>
       <tr>
-
         <td>〒<%= address.postal_code %>
           <%= address.address %></td>
             <td><%= address.name %></td>
             <td><%= address.telephone_number %></td>
             <td><%= link_to "編集する", edit_public_address_path(address.id), class: "btn btn-sm btn-success" %></td>
-                  <td><%= link_to "削除する", public_destroy_address_path(address.id), method: :delete, class: "btn btn-sm btn-danger", method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
-
+            <td><%= link_to "削除する", public_destroy_address_path(address.id), method: :delete, class: "btn btn-sm btn-danger", method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
       </tr>
-
       <% end %>
-  </tbody>
-
-
-
+    </tbody>
+    </table>
   </div>
-  </div>
+</div>
 
-</table>
+
 <%= paginate @addresses %>
 
-<div class="container">
+<div class="container mb-5">
  <div class="row">
       <h5>配送先追加</h5>
     </div>
   </div>
 
 <div class="container">
-
-<% if customer_signed_in? %>
- <%= form_with model: @address, url: public_addresses_path do |f| %>
-
-
-
-    <div class="row mt-3 justify-content-center">
+   <%= form_with model: @address, url: public_addresses_path do |f| %>
+    <div class="row mt-3">
       <div class="col-3">
         郵便番号(ハイフンなし)
       </div>
@@ -68,9 +55,7 @@
       </div>
     </div>
 
-
-
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-3">
       <div class="col-3">
         住所
       </div>
@@ -79,8 +64,7 @@
       </div>
     </div>
 
-
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-3">
       <div class="col-3">
         宛名
       </div>
@@ -90,41 +74,57 @@
       </div>
     </div>
 
-     <div class="row mt-3 justify-content-center">
+    <div class="row mt-3 mb-5">
       <div class="col-3">
         TEL
       </div>
-      <div class="col-2">
+      <div class="col-3">
         <%= f.text_field :telephone_number %>
       </div>
-    </div>
-
-    <div class="row mt-3 justify-content-center">
-      <%= f.submit "新規登録", class: "btn btn-success" %>
-    </div>
-
-  <% end %>
-  <% end %>
-
-
-
-  <% if general_customer_signed_in? %>
- <%= form_with model: @address, url: general_public_addresses_path do |f| %>
-
-
-
-    <div class="row mt-3 justify-content-center">
       <div class="col-3">
-        郵便番号(ハイフンなし)
+        <%= f.submit "新規登録", class: "btn btn-success" %>
       </div>
+    </div>
+
+    <% end %>
+  <% end %>
+
+
+<% if general_customer_signed_in? %>
+   <tbody>
+      <% @addresses.each do |address| %>
+      <tr>
+        <td>〒<%= address.postal_code %>
+          <%= address.address %></td>
+            <td><%= address.name %></td>
+            <td><%= address.telephone_number %></td>
+            <td><%= link_to "編集する", edit_general_public_address_path(address.id), class: "btn btn-sm btn-success" %></td>
+            <td><%= link_to "削除する", general_public_destroy_address_path(address.id), method: :delete, class: "btn btn-sm btn-danger", method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+ </table>
+  </div>
+</div>
+<%= paginate @addresses %>
+
+<div class="container mb-5">
+ <div class="row">
+      <h5>配送先追加</h5>
+    </div>
+  </div>
+
+ <%= form_with model: @address, url: general_public_addresses_path do |f| %>
+  <div class="row mt-3">
+    <div class="col-3">
+      郵便番号(ハイフンなし)
+    </div>
       <div class="col-2">
         <%= f.text_field :postal_code, placeholder: "000000" %>
       </div>
-    </div>
+  </div>
 
-
-
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-3">
       <div class="col-3">
         住所
       </div>
@@ -133,8 +133,7 @@
       </div>
     </div>
 
-
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-3">
       <div class="col-3">
         宛名
       </div>
@@ -144,28 +143,22 @@
       </div>
     </div>
 
-     <div class="row mt-3 justify-content-center">
+     <div class="row mt-3 mb-5">
       <div class="col-3">
         TEL
       </div>
-      <div class="col-2">
+      <div class="col-3">
         <%= f.text_field :telephone_number %>
+      </div>
+      <div class="col-3">
+        <%= f.submit "新規登録", class: "btn btn-success" %>
       </div>
     </div>
 
-    <div class="row mt-3 justify-content-center">
-      <%= f.submit "新規登録", class: "btn btn-success" %>
-    </div>
 
   <% end %>
-  <% end %>
-
-
-
-
-
-
-
-   </div>
+<% end %>
+  </div>
+</div>
 
 

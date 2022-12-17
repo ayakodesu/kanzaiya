@@ -13,8 +13,8 @@ class Item < ApplicationRecord
 
   has_many :cart_items, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  has_one :customer
-  has_one :general_customer
+  belongs_to :customer, optional: true
+  belongs_to :general_customer, optional: true
   has_many :order_detalls, dependent: :destroy
   belongs_to :genre
 
