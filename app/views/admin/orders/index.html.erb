@@ -15,19 +15,26 @@
 
     <body>
       <% @instances.each do |instance| %>
-       <% if instance.class == Customer %>
+
+       <% if instance.customer_id.present? %>
+       <% p "order",instance %>
+       <% p "customer",instance.customer %>
         <tr>
           <td><%= link_to instance.created_at.strftime('%Y年%m月%d日 %H:%M:%S'), admin_order_path(instance.id) %></td>
-          <td><%= instance.full_name %></td>
-          <td><%#= instance.item.name %></td>
-          <td></td>
+          <td><%= instance.customer.full_name %></td>
+          <td><%#= instance.cart_items.name %></td>
+
+      <td></td>
         </tr>
       <% else %>
+      <% p instance %>
         <tr>
           <td><%= link_to instance.created_at.strftime('%Y年%m月%d日 %H:%M:%S'), admin_order_path(instance.id) %></td>
-          <td><%= instance.full_name %></td>
+          <td><%= instance.general_customer.full_name %></td>
           <td><%#= instance.item.name %></td>
-          <td></td>
+      <td></td>
+      </tr>
+
 
       <% end %>
       <% end %>

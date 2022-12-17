@@ -17,7 +17,7 @@ class GeneralPublic::AddressesController < ApplicationController
 
   def create
     @address = Address.new(address_params)
-    @address.save
+    @address.save!
     redirect_to general_public_addresses_path
   end
 
