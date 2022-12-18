@@ -4,24 +4,6 @@
     </div>
 </div>
 
-
-
-<% content_for(:title, 'ブックマーク一覧') %>
-<div class="container pt-3">
-  <div class="row">
-    <div class="col-lg-10 offset-lg-1">
-      <!-- 検索フォーム -->
-      <form>
-        <div class="input-group mb-3"><input class="form-control" placeholder="検索ワード" type="search"/>
-          <div class="input-group-append"><input type="submit" value="検索" class="btn btn-primary"/></div>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  </div>
-</div>
-
 <div class="container">
 <table class="table table-hover table-bordered table-sm text-center">
         <thead>
@@ -32,45 +14,4 @@
             <th>サイズ</th>
             <th></th>
           </tr>
-        </thead>
-
-
-
-
-<% if customer_signed_in? %>
-  <% if @favorite.present? %>
-    <tbody>
-      <% @favorites.each do |favorite| %>
-      <tr>
-        <td><%= link_to (image_tag favorite.item.image, size: '50x50'), public_item_path(favorite.item.id) %></td>
-        <td><%= favorite.item.name %></td>
-        <td><%= favorite.item.shape %></td>
-        <td><%= favorite.item.size %></td>
-        <td><%= link_to "商品詳細", public_item_path(favorite.item.id), class: "btn btn-success" %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  <% end %>
-<% end %>
-
-
-<% if general_customer_signed_in? %>
-  <% if @favorite.present? %>
-    <tbody>
-      <% @favorites.each do |favorite| %>
-      <tr>
-        <td><%= link_to (image_tag favorite.item.image, size: '50x50'), general_public_item_path(favorite.item.id) %></td>
-        <td><%= favorite.item.name %></td>
-        <td><%= favorite.item.shape %></td>
-        <td><%= favorite.item.size %></td>
-        <td><%= link_to "商品詳細", general_public_item_path(favorite.item.id), class: "btn btn-success" %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  <% end %>
-<% end %>
-
-
-</table>
-
-</div>
+       </thead>

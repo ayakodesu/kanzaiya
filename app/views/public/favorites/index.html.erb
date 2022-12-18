@@ -1,1 +1,20 @@
 <%= render 'index', favorites: @favorites %>
+
+  <% if @favorite.present? %>
+    <tbody>
+      <% @favorites.each do |favorite| %>
+      <tr>
+        <td><%= link_to (image_tag favorite.item.image, size: '50x50'), public_item_path(favorite.item.id) %></td>
+        <td><%= favorite.item.name %></td>
+        <td><%= favorite.item.shape %></td>
+        <td><%= favorite.item.size %></td>
+        <td><%= link_to "商品詳細", public_item_path(favorite.item.id), class: "btn btn-success" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  <% end %>
+</table>
+</div>
+
+
+

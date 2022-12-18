@@ -80,79 +80,7 @@
 <% end %>
 
 
-<% if customer_signed_in? %>
-  <div class="container text-center">
-    <h3>新着商品</h3>
-      <div class="row text-center">
-        <% @items.each do |item| %>
-        <% if item.is_active %>
-        <div class="col-3 mb-5">
-           <div class="card text-black bg-white border-dark">
-          <%= link_to (image_tag item.image, size: '150x150'), public_item_path(item.id) %>
-            <div class="card-body text-black p-4">
-              <div class="text-center">
-              <strong>商品名</strong>
-                <%= item.name %>
-                <br />
-              <strong>型</strong>
-                <%= item.shape %>
-                 <br />
-              <strong>サイズ</strong>
-                <%= item.size %>
-                <br />
-              <strong>定価</strong>
-                ¥<%= item.last_price %>
-                <br>
-              </div>
-            </div>
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <%= link_to "商品詳細", public_item_path(item.id), class: "btn btn-success" %>
-          </div>
-            </div>
-        </div>
-        <% end %>
-        <% end %>
-      </div>
-    </div>
-<% end %>
 
-
-
-<% if general_customer_signed_in? %>
-  <div class="container text-center">
-    <h3>新着商品</h3>
-      <div class="row text-center">
-        <% @items.each do |item| %>
-        <% if item.is_active %>
-        <div class="col-3 mb-5">
-           <div class="card text-black bg-white border-dark">
-          <%= link_to (image_tag item.image, size: '150x150'), general_public_item_path(item.id) %>
-            <div class="card-body text-black p-4">
-              <div class="text-center">
-              <strong>商品名</strong>
-                <%= item.name %>
-                <br />
-              <strong>型</strong>
-                <%= item.shape %>
-                <br />
-              <strong>サイズ</strong>
-                <%= item.size %>
-                 <br />
-              <strong>定価</strong>
-                ¥<%= item.last_price %>
-                <br>
-              </div>
-            </div>
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <%= link_to "商品詳細", general_public_item_path(item.id), class: "btn btn-success" %>
-          </div>
-          </div>
-        </div>
-        <% end %>
-        <% end %>
-      </div>
-    </div>
-<% end %>
 
 
 
