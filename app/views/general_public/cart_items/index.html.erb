@@ -1,1 +1,47 @@
 <%= render 'public/cart_items/index', cart_items: @cart_items %>
+
+  <tbody>
+    <% @cart_items.each do |cart_item| %>
+      <tr>
+        <td><%= image_tag cart_item.item.image, size: "50x50" %><%= cart_item.item.name %>
+            <%= cart_item.item.shape %>
+            <%= cart_item.item.size %></td>
+        <td>¥<%= cart_item.item.last_price %></td>
+        <td>X</td>
+        <td>
+          <%= form_with model: cart_item, url: general_public_cart_item_path(cart_item.id), method: :patch do |f| %>
+            <%= f.text_field :amount %>
+            <%= f.submit "変更", class: "btn btn-success" %>
+          <% end %>
+        </td>
+          <td>¥<%= cart_item.subtotal %></td>
+          <td><%= link_to "削除", general_public_destroy_cart_item_path(cart_item.id), method: :delete, class: "btn btn-outline-danger btn-sm" %></td>
+
+        <% @total += cart_item.subtotal %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <span class="border border-dark">合計(定価)  ¥<%= @total %></span>
+      </div>
+    </div>
+  </div>
+
+<div class="text-left">
+  <td><%= link_to "買い物を続ける", general_public_items_path, class: "btn btn-primary btn-sm" %></td>
+</div>
+  <% if !@cart_items.blank? %>
+    <td><%= link_to "情報入力に進む", new_general_public_order_path, class: "btn btn-warning btn-sm" %></td>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <%= link_to "カートを空にする", general_public_destroy_all_cart_items_path, method: :delete, class: "btn btn-danger" %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
