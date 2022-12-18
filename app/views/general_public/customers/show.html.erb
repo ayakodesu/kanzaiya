@@ -1,2 +1,32 @@
 <%= render 'public/customers/show', customers: @customers %>
 
+<div class="container">
+    <div class="row mt-5 justify-content-center">
+        <div class="col-4">
+     <%= form_with model: @general_customer, url: edit_general_public_customer_path do |f| %>
+      <table class="table table-borderless table-striped">
+    <tr><th>氏名</th>
+    <td><%= @general_customer.last_name + @general_customer.first_name %></td></tr>
+
+    <tr><th>かな</th>
+   <td><%= @general_customer.last_name_kana + @general_customer.first_name_kana %></td></tr>
+
+
+
+    <tr><th>住所</th>
+    <td>〒<%= @general_customer.postal_code %><br />
+    <%= @general_customer.address %></td></tr>
+
+
+    <tr><th>TEL</th>
+    <td><%= @general_customer.telephone_number %></td></tr>
+
+    <tr><th>email</th>
+    <td><%= @general_customer.email %></td></tr>
+      </table>
+    <% end %>
+     <%= link_to "編集する", edit_general_public_customer_path, class: "btn btn-sm btn-success" %>
+        </div>
+      </div>
+    </div>
+</div>

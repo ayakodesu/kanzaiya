@@ -1,1 +1,39 @@
 <%= render 'public/customers/edit', customer: @customer %>
+
+  <%= form_with model: @general_customer, url: general_public_customer_path do |f| %>
+  <table class="table">
+    <tr><th>氏名</th>
+      <td><%= f.text_field :last_name, placeholder: "姓" %></td>
+      <td><%= f.text_field :first_name, placeholder: "名" %></td>
+    </tr>
+
+    <tr><th>かな</th>
+      <td><%= f.text_field :last_name_kana, placeholder: "せい" %></td>
+      <td><%= f.text_field :first_name_kana, placeholder: "めい" %></td>
+    </tr>
+
+    <tr><th>郵便番号</th>
+      <td><%= f.text_field :postal_code %></td>
+    </tr>
+
+    <tr><th>住所</th>
+      <td><%= f.text_field :address %></td>
+    </tr>
+
+    <tr><th>TEL</th>
+      <td><%= f.text_field :telephone_number %></td>
+    </tr>
+
+    <tr><th>email</th>
+      <td><%= f.text_field :email %></td>
+     </tr>
+  </table>
+
+  <div class="row mb-3 justify-content-center">
+    <%= f.submit "変更を保存", class: "btn btn-success" %>
+  </div>
+
+  <% end %>
+
+
+</div>

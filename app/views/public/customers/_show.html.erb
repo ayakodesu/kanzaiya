@@ -9,79 +9,8 @@
         <div class="col-4">
 
 
-<% if customer_signed_in? %>
-    <%= form_with model: @customer, url: edit_public_customer_path do |f| %>
 
-      <table class="table table-borderless table-striped">
-
-    <tr><th>氏名</th>
-    <td><%= @customer.last_name + @customer.first_name %></td></tr>
-
-    <tr><th>かな</th>
-    <td><%= @customer.last_name_kana + @customer.first_name_kana %></td></tr>
-
-    <tr><th>法人名</th>
-    <td><%= @customer.corporation %></td></tr>
-
-    <tr><th>住所</th>
-    <td>〒<%= @customer.postal_code %><br />
-    <%= @customer.address %></td></tr>
-
-
-    <tr><th>TEL</th>
-    <td><%= @customer.telephone_number %></td></tr>
-
-    <tr><th>email</th>
-    <td><%= @customer.email %></td></tr>
-
-
-    </table>
-
-
-    <% end %>
-
-     <%= link_to "編集する", edit_public_customer_path, class: "btn btn-sm btn-success" %>
-
-    <% end %>
-
-
-
-
-    <% if general_customer_signed_in? %>
-    <%= form_with model: @general_customer, url: edit_general_public_customer_path do |f| %>
-
-      <table class="table table-borderless table-striped">
-
-    <tr><th>氏名</th>
-    <td><%= @general_customer.last_name + @general_customer.first_name %></td></tr>
-
-    <tr><th>かな</th>
-   <td><%= @general_customer.last_name_kana + @general_customer.first_name_kana %></td></tr>
-
-
-
-    <tr><th>住所</th>
-    <td>〒<%= @general_customer.postal_code %><br />
-    <%= @general_customer.address %></td></tr>
-
-
-    <tr><th>TEL</th>
-    <td><%= @general_customer.telephone_number %></td></tr>
-
-    <tr><th>email</th>
-    <td><%= @general_customer.email %></td></tr>
-
-
-    </table>
-
-
-    <% end %>
-
-     <%= link_to "編集する", edit_general_public_customer_path, class: "btn btn-sm btn-success" %>
-
-    <% end %>
-
-        </div>
+   
     </div>
 </div>
 
