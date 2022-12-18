@@ -9,7 +9,11 @@
         購入者
       </div>
       <div class="col-4">
-        <%= @order.name %>
+　　　　<% if @order.customer_id.present? %>
+          <%= @order.customer.full_name %>
+        <% else %>
+          <%= @order.general_customer.full_name %>
+        <% end %>
       </div>
     </div>
   </div>
