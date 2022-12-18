@@ -1,2 +1,17 @@
 
 <%= render 'index', orders: @orders %>
+
+
+    <body>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= link_to order.created_at.strftime('%Y年%m月%d日 %H:%M:%S'), public_order_path(order.id) %></td>
+          <td><%= order.name %></td>
+          <td>〒<%= order.postal_code %><br>
+          <%= order.address %></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </body>
+  </table>
+  </div>
