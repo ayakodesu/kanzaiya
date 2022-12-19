@@ -43,15 +43,18 @@
           <td><%= f.text_field :last_price, placeholder: "10,000" %></td></tr>
 
         <th>販売ステータス</th>
-        　<td><%= f.radio_button :is_active, :true %>
+          <td><%= f.radio_button :is_active, :true %>
           <%= f.label :is_active, "販売中" %>
           <%= f.radio_button :is_active, :false %>
           <%= f.label :is_active, "販売停止中" %></td>
     </table>
 
-  <div class="row mb-5 text-center">
-    <div class="col">
+  <div class="row mb-5 text-center justify-content-center">
+    <div class="col-3">
       <%= f.submit "変更を保存", class: "btn btn-success" %>
+    </div>
+      <div class="col-3">
+      <%= link_to "戻る", admin_item_path(@item.id) %>
     </div>
   </div>
 

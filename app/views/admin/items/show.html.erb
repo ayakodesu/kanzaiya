@@ -43,13 +43,15 @@
   </table>
 
 <div class="container mb-5">
-  <div class="row">
-    <div class="col">
+  <div class="row text-right justify-content-center">
+    <div class="col-3">
       <%= link_to "編集する", edit_admin_item_path(@item.id), class: "btn btn-sm btn-success" %>
+    </div>
+    <div class="col-3">
+      <%= link_to "戻る", admin_items_path %>
     </div>
   </div>
 </div>
-
     </div>
   </div>
 </div>
