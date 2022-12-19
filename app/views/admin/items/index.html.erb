@@ -24,6 +24,11 @@
                   <% end %>
                     在庫数:<%= item.amount %>
                     定価¥<%= item.last_price %>
+                    <td><% if item.is_active == true %>
+                      <p class="text-success">販売中</p>
+                    <% else %>
+                      <p class="text-secondary">販売停止中</p>
+                    <% end %>
               </div>
             </div>
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
