@@ -4,7 +4,7 @@
     </div>
 
 
-    <%= form_with model: @customer, url: admin_customer_path do |f| %>
+<%= form_with model: @customer, url: admin_customer_path do |f| %>
 
 <div class="container">
   <div class="row mb-3">
@@ -42,7 +42,7 @@
       会社名
     </div>
     <div class="col-2">
-      <%= f.text_field :corporation, placeholder: "〇〇産業　株式会社" %>
+      <%= f.text_field :corporation, placeholder: "〇〇産業 株式会社" %>
     </div>
   </div>
 
@@ -68,10 +68,10 @@
   <div class="row mb-3">
     <div class="col-2">
       email
-  　</div>
-  　<div class="col-2">
-  　  <%=f.text_field :email, placeholder: "〇〇@gmail.com" %>
-  　 </div>
+    </div>
+    <div class="col-2">
+    <%=f.text_field :email, placeholder: "〇〇@gmail.com" %>
+    </div>
   </div>
 
 

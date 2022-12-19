@@ -1,2 +1,56 @@
-<h1>Admin::GeneralCustomers#index</h1>
-<p>Find me in app/views/admin/general_customers/index.html.erb</p>
+<div class="container">
+    <div class="row mt-5 justify-content-center">
+      <h4>会員一覧</h4>
+    </div>
+
+
+    <table class="table table-hover table-bordered table-sm">
+      <thead>
+        <th>会員ID</th>
+        <th >名前</th>
+        <th>企業</th>
+        <th>住所</th>
+        <th>会員ステータス</th>
+      </thead>
+
+
+ <tbody>
+
+  <% @instances.each do |instance| %>
+    <% if instance.class == Customer %>
+    <tr>
+      <td><%= instance.id %></td>
+      <td><%= link_to instance.last_name + instance.first_name, admin_customer_path(instance.id) %></td>
+      <td><%= instance.corporation %></td>
+      <td><%= instance.address %></td>
+      <td><% if instance.is_deleted == false %>
+          <p class="text-success">有効</p>
+        <% else %>
+           <p class="text-secondary">退会</p>
+        <% end %>
+      </td>
+    </tr>
+
+  <% else %>
+    <tr>
+     <td><%= instance.id %></td>
+      <td><%= link_to instance.last_name + instance.first_name, admin_general_customer_path(instance.id) %></td>
+      <td>---------</td>
+      <td><%= instance.address %></td>
+      <td><% if instance.is_deleted == false %>
+          <p class="text-success">有効</p>
+        <% else %>
+           <p class="text-secondary">退会</p>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+
+  <% end %>
+
+
+  </tbody>
+
+    </table>
+
+</div>
