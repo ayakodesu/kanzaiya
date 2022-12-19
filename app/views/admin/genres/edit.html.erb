@@ -1,19 +1,19 @@
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row mt-5 justify-content-center">
       <h4>ジャンル編集</h4>
     </div>
 
 <%= form_with model: @genre,url: admin_genre_path do |f| %>
-  <div class="container">
-    <div class="row mt-3">
-        <div class="col-3">
-          <div><%= f.text_field :name, placeholder: "ジャンル名" %></div>
-        </div>
-        <div class="col-3">
-          <div><%=f.submit '更新', class: "btn btn-success" %></div>
-        </div>
+    <div class="container">
+      <div class="row mt-5 mb-5 justify-content-center">
+        <table>
+          <tr><th><%= f.text_field :name, placeholder: "ジャンル名" %></th></td>
+          <td><%=f.submit '更新', class: "btn btn-success" %></td></tr>
+        </table>
+      </div>
+<% end %>
+    <div class="row mt-5 mb-5 justify-content-center">
+      <%= link_to '戻る', admin_genres_path %>
+    </div>
     </div>
   </div>
-<% end %>
-
-</div>
