@@ -1,102 +1,67 @@
-<div class="container">
-    <div class="row mt-5 justify-content-center">
-      <h4>商品編集/数量変更</h4>
+
+
+<%= form_with model: @item, url: admin_item_path do |f| %>
+
+<div class="container mt-5">
+  <div class="row mt-3 justify-content-center">
+    <div class="col-6 text-center">
+      <h1>在庫数量</h1><br/><br/>
+      <table class="table table-borderless table-striped">
+       <th>数量</th>
+    <td><%= f.text_field :amount, placeholder: "20" %></td>
+    </table>
+      <h3>現在の画像</h3><br/><br/>
+    <%= image_tag @item.image, size: '200x200' %>
     </div>
 
-
-    <%= form_with model: @item, url: admin_item_path do |f| %>
-
-
-  <div class="row text-right">
-    <div class="col">
-      数量
-      <%= f.text_field :amount, placeholder: "20" %>
+  <div class="col-6">
+    <div class="row mt-3 justify-content-center">
+    <h1>商品編集</h1>
     </div>
-  </div>
+    <table class="table table-borderless table-striped">
+      <th>商品画像</th>
+        <td><%= f.file_field :image, accept: "image/*" %></td></tr>
 
-    <div class="row text-center">
-      <div class="col">
-        商品画像
-        <%= f.file_field :image, accept: "image/*" %>
-      </div>
-    </div>
+        <th>ジャンル</th>
+          <td><%= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: '--選択してください--'}, class: 'sample' %></td></tr>
 
-    <div class="row text-center">
-      <div class="col">
-        ジャンル
-        <%= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: '--選択してください--'}, class: 'sample' %>
-      </div>
-    </div>
+        <th>商品名</th>
+          <td><%= f.text_field :name, placeholder: "商品名" %></td></tr>
+
+        <th>商品説明</th>
+          <td><%= f.text_area :introduction, placeholder: "ここに説明文を記述" %></td></tr>
 
 
-    <div class="row text-center">
-      <div class="col">
-        商品名
-        <%= f.text_field :name, placeholder: "商品名" %>
-      </div>
-    </div>
+        <th>型</th>
+          <td><%= f.text_field :shape, placeholder: "エルボ" %></td></tr>
+
+        <th>サイズ</th>
+          <td><%= f.text_field :size, placeholder: "15" %></td></tr>
 
 
-  <div class="row text-center">
-    <div class="col">
-      商品説明
-      <%= f.text_area :introduction, placeholder: "ここに説明文を記述" %>
-    </div>
-  </div>
+        <th>定価</th>
+          <td><%= f.text_field :last_price, placeholder: "10,000" %></td></tr>
 
+        <th>販売ステータス</th>
+        　<td><%= f.radio_button :is_active, :true %>
+          <%= f.label :is_active, "販売中" %>
+          <%= f.radio_button :is_active, :false %>
+          <%= f.label :is_active, "販売停止中" %></td>
+    </table>
 
-  <div class="row text-center">
-    <div class="col">
-      型
-      <%= f.text_field :shape, placeholder: "エルボ" %>
-    </div>
-  </div>
-
-
-  <div class="row text-center">
-    <div class="col">
-      サイズ
-      <%= f.text_field :size, placeholder: "15" %>
-    </div>
-  </div>
-
-
-
-
-
-  <div class="row text-center">
-    <div class="col">
-      定価
-      <%= f.text_field :last_price, placeholder: "10,000" %>
-    </div>
-  </div>
-
-  <div class="row justify-content-center">
-        <div class="col-2">
-          販売ステータス
-        </div>
-
-        <%= f.radio_button :is_active, :true %>
-        <%= f.label :is_active, "販売中" %>
-
-        <%= f.radio_button :is_active, :false %>
-        <%= f.label :is_active, "販売停止中" %>
-
-      </div>
-
-
-  <div class="row text-center">
+  <div class="row mb-5 text-center">
     <div class="col">
       <%= f.submit "変更を保存", class: "btn btn-success" %>
     </div>
   </div>
 
-
-
-
     <% end %>
-
-
-
-
 </div>
+</div>
+</div>
+</div>
+
+
+
+
+
