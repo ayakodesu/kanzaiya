@@ -1,6 +1,16 @@
 <%= render 'index', cart_items: @cart_items %>
 
 
+<% if !@cart_items.blank? %>
+ <div class="row mb-4">
+      <div class="col text-right">
+
+        <%= link_to "カートを空にする", public_destroy_all_cart_items_path, method: :delete, class: "btn btn-danger btn-sm" %>
+        <i class="fa-solid fa-trash-can"></i>
+      </div>
+    </div>
+<% end %>
+
   <tbody>
     <% @cart_items.each do |cart_item| %>
       <tr>
@@ -26,27 +36,26 @@
 </table>
 
 
-  <div class="container">
+ <div class="container">
     <div class="row">
-      <div class="col">
-        <span class="border border-dark">合計(定価)  ¥<%= @total %></span>
+      <div class="col text-right">
+        <h3>合計(定価)  ¥<%= @total %></h3>
       </div>
     </div>
   </div>
 
-<div class="text-left">
-  <td><%= link_to "買い物を続ける", public_items_path, class: "btn btn-primary btn-sm" %></td>
-</div>
-  <% if !@cart_items.blank? %>
-    <td><%= link_to "情報入力に進む", new_public_order_path, class: "btn btn-warning btn-sm" %></td>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <%= link_to "カートを空にする", public_destroy_all_cart_items_path, method: :delete, class: "btn btn-danger" %>
-        </div>
-      </div>
+<div class="container mb-5">
+  <div class="row mt-5 justify-content-center">
+    <div class="col-3 text-right text-center">
+    <td><%= link_to "買い物を続ける", public_items_path, class: "btn btn-primary" %></td>
     </div>
-  <% end %>
+      <% if !@cart_items.blank? %>
+        <div class="col-3 text-right text-center">
+          <%= link_to "情報入力に進む", new_public_order_path, class: "btn btn-warning" %>
+        </div>
+    </div>
+  </div>
+<% end %>
 </div>
 
 
