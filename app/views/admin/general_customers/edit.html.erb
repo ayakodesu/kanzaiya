@@ -3,99 +3,53 @@
       <h4>会員編集</h4>
     </div>
 
+<%= form_with model: @general_customer, url: admin_general_customer_path do |f| %>
 
-    <%= form_with model: @general_customer, url: admin_general_customer_path do |f| %>
+  <div class="container">
+    <div class="row mt-5 justify-content-center">
+      <div class="col-6">
+        <table class="table table-borderless table-striped">
+          <tr><th>会員ID</th>
+          <td><%= @general_customer.id %></td></tr>
 
-<div class="container">
-  <div class="row mb-3">
-    <div class="col-2">
-      会員ID
-    </div>
-    <div class="col-2">
-      <%= @general_customer.id %>
-    </div>
-  </div>
+          <tr><th>名前</th>
+          <td><%= f.text_field :last_name, placeholder: "姓" %>
+          <%= f.text_field :first_name, placeholder: "名" %></td>
 
-  <div class="row mb-3">
-    <div class="col-2">
-      名前
-    </div>
-    <div class="col-2">
-      <%= f.text_field :last_name, placeholder: "姓" %>
-      <%= f.text_field :first_name, placeholder: "名" %>
-    </div>
-  </div>
+          <tr><th>ふりがな</th>
+          <td><%= f.text_field :last_name_kana, placeholder: "せい" %>
+          <%= f.text_field :first_name_kana, placeholder: "名" %></td>
 
+          <tr><th>会社名</th>
+          <td><%= f.text_field :corporation, placeholder: "〇〇産業 株式会社" %></td>
 
-  <div class="row mb-3">
-    <div class="col-2">
-      ふりがな
-    </div>
-    <div class="col-2">
-      <%= f.text_field :last_name_kana, placeholder: "せい" %>
-      <%= f.text_field :first_name_kana, placeholder: "名" %>
-    </div>
-  </div>
+          <tr><th>住所</th>
+          <td><%= f.text_field :address, placeholder: "東京都千代田区" %></td>
 
+          <tr><th>TEL</th>
+          <td><%= f.text_field :telephone_number, placeholder: "09012345678" %></td>
 
-  <div class="row mb-3">
-    <div class="col-2">
-      住所
-    </div>
-    <div class="col-2">
-      <%= f.text_field :address, placeholder: "東京都千代田区" %>
-    </div>
-  </div>
+          <tr><th>email</th>
+          <td><%=f.text_field :email, placeholder: "〇〇@gmail.com" %></td>
 
+          <tr><th>会員ステータス</th>
+          <td><%= f.radio_button :is_deleted, :false %>
+            <%= f.label :is_deleted, "有効" %>
+            <%= f.radio_button :is_deleted, :true %>
+            <%= f.label :is_deleted, "退会" %></td>
+        </table>
 
-  <div class="row mb-3">
-    <div class="col-2">
-      TEL
-    </div>
-    <div class="col-2">
-      <%= f.text_field :telephone_number, placeholder: "09012345678" %>
-    </div>
-  </div>
-
-  <div class="row mb-3">
-    <div class="col-2">
-      email
-    </div>
-    <div class="col-2">
-    <%=f.text_field :email, placeholder: "〇〇@gmail.com" %>
-    </div>
-  </div>
-
-
-  <div class="row mb-3">
-    <div class="col-2">
-      会員ステータス
-    </div>
-     <div class="col-2"><%= f.radio_button :is_deleted, :false %>
-         <%= f.label :is_deleted, "有効" %>
-      </div>
-      <div class="col-2"><%= f.radio_button :is_deleted, :true %>
-         <%= f.label :is_deleted, "退会" %>
-      </div>
-    </div>
-
-
-  <div class="row mb-3">
-    <div class="col-2">
+  <div class="container mb-5">
+    <div class="row mt-2 mb-4 justify-content-center text-center">
       <%= f.submit "変更を保存", class: "btn btn-success" %>
     </div>
+    <div class="row mt-2 mb-5 justify-content-center">
+        <%= link_to "戻る", admin_general_customer_path(@general_customer.id) %>
+      </div>
   </div>
 
-
-
-
-
-</div>
-
-    <% end %>
-
-
-
-
-
+<% end %>
+      </div>
+    </div>
+  </div>
 </div>
