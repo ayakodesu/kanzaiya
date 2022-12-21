@@ -40,6 +40,7 @@ class GeneralPublic::OrdersController < ApplicationController
       order_detail.shape = cart_item.shape
       order_detail.size = cart_item.size
       order_detail.save
+      cart_item.item.update(amount: cart_item.item.amount - cart_item.amount)
     end
     current_general_customer.cart_items.destroy_all
     redirect_to general_public_orders_complete_path
@@ -56,7 +57,7 @@ class GeneralPublic::OrdersController < ApplicationController
   end
 
   def show
-   @orders = current_general_customer.orders
+    @orders = current_general_customer.orders
     @order = Order.find(params[:id])
     @order_details = @order.order_details
     @order.shipping_cost = 800
