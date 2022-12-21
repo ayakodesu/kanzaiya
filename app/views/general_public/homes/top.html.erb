@@ -4,6 +4,9 @@
 
   <div class="container text-center">
     <h3>新着商品</h3>
+    </div>
+    <div class="container text-center">
+    <header class="py-5 bg-image-full" style="background-image: url('https://cdn.pixabay.com/photo/2022/06/14/15/26/background-7262228_1280.jpg')">
       <div class="row text-center">
         <% @items.each do |item| %>
         <% if item.is_active %>
@@ -26,14 +29,12 @@
                 <br>
               </div>
             </div>
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <%= link_to "商品詳細", general_public_item_path(item.id), class: "btn btn-success" %>
-          </div>
           </div>
         </div>
         <% end %>
         <% end %>
       </div>
-    </div>
+</div>
 
+</header>
 

@@ -5,8 +5,8 @@
 $loginfonts: 13px/20px "Open Sans", Tahoma, Verdana, sans-serif;
 
 //colors
-$fontscolor: #a7a599;
-$loginbg: #dcdcdc;
+$fontscolor: #323232;
+$loginbg: #f3f3f3;
 $headerbg: #1abc9c;
 $buttoncolor: #16a085;
 $buttonhover: rgba(26, 188, 156, 1);
@@ -336,3 +336,7 @@ input[type="submit"]:focus {
 }
 
 
+.like-btn {
+ color: #808080;
+
+ }
