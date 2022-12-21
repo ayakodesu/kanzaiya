@@ -31,6 +31,7 @@ class Public::OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.save
+
       current_customer.cart_items.each do |cart_item|
       order_detail = OrderDetail.new
       order_detail.order_id = @order.id
@@ -40,6 +41,7 @@ class Public::OrdersController < ApplicationController
       order_detail.shape = cart_item.shape
       order_detail.size = cart_item.size
       order_detail.save
+      cart_item.item.update(amount: cart_item.item.amount - cart_item.amount)
     end
     current_customer.cart_items.destroy_all
     redirect_to public_orders_complete_path
