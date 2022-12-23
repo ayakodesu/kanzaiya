@@ -1,6 +1,9 @@
-ja:
+ ja:
     enums:
       order:
         payment_method:
           credit_card: "クレジットカード"
           bank_transfer: "銀行振込"
+        status:
+          waiting_for_payment: "未入金"
+          payment_confirmation: "入金済み"

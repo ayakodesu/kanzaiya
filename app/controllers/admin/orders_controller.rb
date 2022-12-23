@@ -5,6 +5,7 @@ class Admin::OrdersController < ApplicationController
    @order_details = @order.order_details
   end
 
+
   def index
     @order = Order.new
     #@orders = Order.all
@@ -12,6 +13,7 @@ class Admin::OrdersController < ApplicationController
     @general_customer = Order.all
     @instances = @customer | @general_customer
     #@order_details = OrderDetail.page(params[:page])
+    @order_details = @order.order_details
 
   end
 
