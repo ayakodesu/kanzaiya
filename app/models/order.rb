@@ -11,6 +11,9 @@ class Order < ApplicationRecord
     self.last_name + " " + self.first_name
   end
 
+enum order_status: {
+     "未入金":0, "入金済み":1
+  }
 
 
 end

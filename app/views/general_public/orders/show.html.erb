@@ -1,5 +1,6 @@
 <%= render 'public/orders/show', orders: @orders %>
 
+<div class="container">
 <tbody>
   <% @order_details.each do |order_detail| %>
   <tr>
@@ -11,18 +12,13 @@
   </tr>
   <% end %>
 </tbody>
-    </table>
-    </div>
-  </div>
+</table>
 </div>
 
-<div class="container">
-  <div class="row"></div>
-</div>
-<div class="container">
-    <div class="row mt-5 justify-content-center">
+<div class="col-6">
+    <div class="row justify-content-center">
       <%= form_with model: @order, url: edit_general_public_customer_path do |f| %>
-      <table class="table table-hover table-bordered table-sm">
+      <table class="table table-bordered table-sm">
         <tr>
           <th>注文日時</th>
           <td><%= @order.created_at.strftime('%Y年%m月%d日 %H:%M:%S') %></td>
@@ -50,7 +46,7 @@
         </tr>
 
   <div class="col-6">
-    <table border="1" style="border-collapse: collapse">
+   <table class="table table-bordered table-sm" style="border-collapse: collapse">
       <strong>請求情報</strong>
         <tr>
           <th bgcolor = "lightsteelblue">商品合計</th>
@@ -68,6 +64,7 @@
         </tr>
     </table>
   </div>
-
-    <% end %>
+      <% end %>
+</div>
+</div>
 </div>

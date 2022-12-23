@@ -10,18 +10,17 @@
     <div class="row">
       <% @items.each do |item| %>
         <div class="col-3 mb-5">
-          <div class="card">
           <%= link_to admin_item_path(item.id) do %>
+          <div class="card">
+             <div class="text-center">
             <%= image_tag item.image, size: '180x150'%>
-          <% end %>
+              </div>
             <div class="card-body p-4">
               <div class="text-center">
                 <h5 class="fw-bolder"><%= item.genre.name %></h5>
-                  <%= link_to admin_item_path(item.id) do %>
                     <%= item.name %>
                     <%= item.shape %>
                     <%= item.size %><br/>
-                  <% end %>
                     在庫数:<%= item.amount %>
                     定価¥<%= item.last_price %>
                     <td><% if item.is_active == true %>
@@ -31,10 +30,8 @@
                     <% end %>
               </div>
             </div>
-              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <%= link_to "商品詳細", admin_item_path(item.id), class: "btn btn-outline-success" %>
-              </div>
             </div>
+            <% end %>
           </div>
       <% end %>
      </div>

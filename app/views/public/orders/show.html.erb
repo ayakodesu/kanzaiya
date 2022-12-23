@@ -1,5 +1,8 @@
 <%= render 'show', orders: @orders %>
 
+
+
+<div class="container">
 <tbody>
   <% @order_details.each do |order_detail| %>
   <tr>
@@ -13,14 +16,12 @@
 </tbody>
 </table>
     </div>
-  </div>
-</div>
 
 
-<div class="container">
-    <div class="row mt-5 justify-content-center">
+<div class="col-6">
+    <div class="row justify-content-center">
       <%= form_with model: @order, url: edit_public_customer_path do |f| %>
-      <table class="table table-hover table-bordered table-sm">
+      <table class="table table-bordered table-sm">
         <tr>
           <th>注文日時</th>
           <td><%= @order.created_at.strftime('%Y年%m月%d日 %H:%M:%S') %></td>
@@ -46,9 +47,11 @@
           <th>ステータス</th>
           <td><%= @order.status %></td>
         </tr>
+    </div>
+    </div>
 
   <div class="col-6">
-    <table border="1" style="border-collapse: collapse">
+    <table class="table table-bordered table-sm" style="border-collapse: collapse">
       <strong>請求情報</strong>
         <tr>
           <th bgcolor = "lightsteelblue">商品合計</th>
@@ -68,4 +71,7 @@
   </div>
 
 <% end %>
+</div>
+
+</div>
 </div>

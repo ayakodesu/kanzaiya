@@ -16,9 +16,9 @@
         <% end %>
       </div>
     </div>
-  </div>
 
-  <div class="container">
+
+
     <div class="row mt-3">
       <div class="col-2">
         注文日
@@ -27,9 +27,9 @@
         <%= @order.created_at %>
       </div>
     </div>
-  </div>
 
-  <div class="container">
+
+
     <div class="row mt-3">
       <div class="col-2">
         配送先
@@ -40,9 +40,9 @@
         <%= @order.name %>
       </div>
     </div>
-  </div>
 
-  <div class="container">
+
+
     <div class="row mt-3">
       <div class="col-2">
         支払方法
@@ -51,22 +51,22 @@
         <%= @order.payment_method_i18n %>
       </div>
     </div>
-  </div>
 
-<%= form_with model: @order, url: admin_order_path do |f| %>
-  <div class="container">
-    <div class="row mt-3 mb-5">
+
+
+    <div class="row mt-3">
       <div class="col-2">
         注文ステータス
       </div>
       <div class="col-2">
+        <%= form_with model: @order, url: admin_order_path, method: :patch, local: true do |f| %>
+          <%= f.select :order_status, Order.order_statuses.keys, class: "order_status" %>
+          <%= f.submit "更新" , class: "btn btn-outline-success" %>
       </div>
-      <div class="col-2">
-      <%= f.submit "更新", class: "btn btn-success" %>
-      </div>
+        <% end %>
     </div>
   </div>
-<% end %>
+
 
 
 <div class="container">
@@ -98,7 +98,7 @@
     </div>
 </div>
 <%= form_with model: @order, url: edit_public_customer_path do |f| %>
-  <div class="col text-right">
+  <div class="col mb-5 text-right">
     <strong>商品合計</strong>
       ¥<%= @order.total_payment %><br />
     <strong>送料</strong>

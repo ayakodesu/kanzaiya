@@ -9,10 +9,12 @@
     <header class="py-5 bg-image-full" style="background-image: url('https://cdn.pixabay.com/photo/2022/06/14/15/26/background-7262228_1280.jpg')">
       <div class="row text-center">
         <% @items.each do |item| %>
+        <%= link_to general_public_item_path(item.id) do %>
         <% if item.is_active %>
         <div class="col-3 mb-5">
            <div class="card text-black bg-white border-dark">
           <%= link_to (image_tag item.image, size: '150x150'), general_public_item_path(item.id) %>
+          <%= link_to general_public_item_path(item.id) do %>
             <div class="card-body text-black p-4">
               <div class="text-center">
               <strong>商品名</strong>
@@ -29,8 +31,10 @@
                 <br>
               </div>
             </div>
+            <% end %>
           </div>
         </div>
+        <% end %>
         <% end %>
         <% end %>
       </div>

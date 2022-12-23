@@ -5,10 +5,12 @@
     <h3>新着商品</h3>
       <div class="row text-center">
         <% @items.each do |item| %>
+          <%= link_to public_item_path(item.id) do %>
         <% if item.is_active %>
         <div class="col-3 mb-5">
            <div class="card text-black bg-white border-dark">
           <%= link_to (image_tag item.image, size: '150x150'), public_item_path(item.id) %>
+          <%= link_to public_item_path(item.id) do %>
             <div class="card-body text-black p-4">
               <div class="text-center">
               <strong>商品名</strong>
@@ -25,9 +27,10 @@
                 <br>
               </div>
             </div>
-
+            <% end %>
             </div>
-        </div>
+          </div>
+        <% end %>
         <% end %>
         <% end %>
       </div>
