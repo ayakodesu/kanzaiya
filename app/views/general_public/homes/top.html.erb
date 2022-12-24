@@ -6,7 +6,7 @@
     <h3>新着商品</h3>
     </div>
     <div class="container text-center">
-    <header class="py-5 bg-image-full" style="background-image: url('https://cdn.pixabay.com/photo/2022/06/14/15/26/background-7262228_1280.jpg')">
+
       <div class="row text-center">
         <% @items.each do |item| %>
         <%= link_to general_public_item_path(item.id) do %>
@@ -38,7 +38,9 @@
         <% end %>
         <% end %>
       </div>
+      <div class="py-5 bg-image-full" style="background-image: url('https://chojugiga.com/c/choju53_0034/s256_choju53_0034_8.png')">
+      </div>
 </div>
 
-</header>
+
 

@@ -2,16 +2,23 @@
  <%= flash[:notice] %>
 
 
-  <header class="py-5 bg-image-full" style="background-image: url('https://cdn.pixabay.com/photo/2017/01/15/16/23/bathroom-1982011_1280.jpg')">
+
     <div class="text-center my-5">
-      <h1 class="text-white fs-3 fw-bolder">ようこそ! kanzaiyaへ!</h1>
-        <h4 class="text-white fs-3 fw-bolder">このサイトは、kanzaiyaのECサイトになります。</br>
+
+<header class="py-5 bg-image-full" style="background-image: url('https://beiz.jp/images_M/white/white_00032.jpg')">
+
+      <div class="c02 active"><h1>ようこそ! kanzaiyaへ!</h1>
+          <h4>このサイトは、kanzaiyaのECサイトになります。</br>
           kanzaiyaの商品の在庫確認、ご注文が出来ます。</h4>
-          <h3>当社は、幅広く豊富に商品を取り揃えております。</h3>
+       </div>
+        <div class="c07 active"><h3>当社は、幅広く豊富に商品を取り揃えております。</h3>
           <h3>置いていない商品も、取り寄せ可能なものはございますので</h3>
           <h3>お気軽にお申し付けください！</h3>
-    </div>
-    </header>
+        </div>
+
+
+
+
 
 <% if !general_customer_signed_in? %>
   <% if !customer_signed_in? %>
@@ -79,6 +86,7 @@
   <% end %>
 <% end %>
 
+</header>
 
 
 
