@@ -1,10 +1,40 @@
 <%= render 'public/orders/show', orders: @orders %>
 
 <div class="container">
+  <div class="row mt-3 justify-content-center">
+    <div class="col-6">
+  <table class="table table-bordered table-sm">
+    <%= form_with model: @order, url: edit_general_public_customer_path do |f| %>
+      <tr>
+        <th>現場名</th>
+        <td><%= @order.spot %>分</td>
+      </tr>
+      <% end %>
+  </table>
+  </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table table-hover table-bordered table-sm">
+        <thead>
+          <tr>
+            <th>商品</th>
+            <th>型</th>
+            <th>サイズ</th>
+            <th>定価</th>
+            <th>個数</th>
+            <th>合計</th>
+            </tr>
+        </thead>
 <tbody>
   <% @order_details.each do |order_detail| %>
   <tr>
     <td><%= order_detail.item.name %></td>
+    <td><%= order_detail.item.shape %></td>
     <td><%= order_detail.item.size %></td>
     <td><%= order_detail.item.last_price %></td>
     <td><%= order_detail.amount %></td>
@@ -40,10 +70,6 @@
           <td><%= @order.payment_method_i18n %></td>
         </tr>
 
-        <tr>
-          <th>ステータス</th>
-          <td><%= @order.status %></td>
-        </tr>
 
   <div class="col-6">
    <table class="table table-bordered table-sm" style="border-collapse: collapse">

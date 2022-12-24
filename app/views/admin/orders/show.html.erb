@@ -52,21 +52,6 @@
       </div>
     </div>
 
-
-
-    <div class="row mt-3">
-      <div class="col-2">
-        注文ステータス
-      </div>
-      <div class="col-2">
-        <%= form_with model: @order, url: admin_order_path, method: :patch, local: true do |f| %>
-        <%= f.select :status, Order.statuses_i18n.keys, class: "status" %>
-      </div>
-      <div class="col-2">
-        <%= f.submit "更新" , class: "btn btn-outline-success" %>
-      </div>
-        <% end %>
-    </div>
   </div>
 
 

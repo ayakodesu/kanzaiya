@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2022_11_19_130627) do
     t.integer "general_customer_id"
     t.string "shape"
     t.integer "size"
+    t.string "spot"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -149,6 +150,7 @@ ActiveRecord::Schema.define(version: 2022_11_19_130627) do
     t.integer "amount", null: false
     t.string "shape"
     t.integer "size"
+    t.string "spot"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -159,6 +161,7 @@ ActiveRecord::Schema.define(version: 2022_11_19_130627) do
     t.string "postal_code", null: false
     t.string "address", null: false
     t.string "name", null: false
+    t.string "spot"
     t.integer "shipping_cost", null: false
     t.integer "total_payment", null: false
     t.integer "payment_method", default: 0, null: false

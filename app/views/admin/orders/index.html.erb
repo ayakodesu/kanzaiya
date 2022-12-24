@@ -8,8 +8,6 @@
         <th>購入日時</th>
         <th>購入者</th>
 
-        <th>注文ステータス</th>
-
       </thead>
     <body>
       <% @instances.each do |instance| %>
@@ -19,16 +17,12 @@
         <tr>
           <td><%= link_to instance.created_at.strftime('%Y年%m月%d日 %H:%M:%S'), admin_order_path(instance.id) %></td>
           <td><%= instance.customer.full_name %></td>
-
-          <td><%= @order.status_i18n %></td>
         </tr>
       <% else %>
         <% p instance %>
           <tr>
             <td><%= link_to instance.created_at.strftime('%Y年%m月%d日 %H:%M:%S'), admin_order_path(instance.id) %></td>
             <td><%= instance.general_customer.full_name %></td>
-
-            <td><%= @order.status_i18n %></td>
           </tr>
         <% end %>
       <% end %>

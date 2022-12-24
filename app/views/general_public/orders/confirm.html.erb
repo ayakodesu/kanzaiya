@@ -3,6 +3,19 @@
 <div class="container">
   <div class="row mt-3 justify-content-center">
     <div class="col-6">
+  <table class="table table-bordered table-sm">
+      <tr>
+        <th>現場名</th>
+        <td><%= @order.spot %>分</td>
+      </tr>
+  </table>
+  </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row mt-3 justify-content-center">
+    <div class="col-6">
       <table class="table table-bordered table-sm">
         <thead>
           <th>商品名 / 型 / サイズ</th>
@@ -70,6 +83,8 @@
         <%= f.hidden_field :shipping_cost, :value => 800 %>
         <%= f.hidden_field :total_payment, :value => total %>
         <%= f.hidden_field :general_customer_id, :value => current_general_customer.id %>
+        <%= f.hidden_field :spot, :value => @order.spot %>
+
 
       <%= f.submit "注文を確定する", class: "btn btn-success" %>
     </div>

@@ -7,6 +7,7 @@ class CreateOrderDetails < ActiveRecord::Migration[6.1]
       t.integer :amount, null: false
       t.string :shape
       t.integer :size
+      t.string :spot
 
 
 

@@ -7,6 +7,7 @@ class CreateCartItems < ActiveRecord::Migration[6.1]
       t.integer :general_customer_id
       t.string :shape
       t.integer :size
+      t.string :spot
 
       t.timestamps
     end
