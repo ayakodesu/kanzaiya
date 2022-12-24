@@ -17,6 +17,8 @@
           <td><%= @item.shape %></td>
           <tr><th>サイズ</th>
           <td><%= @item.size %></td>
+          <tr><th>現在の在庫数</th>
+          <td><%= @item.amount %></td>
           <tr><th>数量</th>
           <td><%= f.text_field :amount, placeholder: "個数を入力してください" %></td>
           <%= f.hidden_field :item_id, :value => @item.id %>

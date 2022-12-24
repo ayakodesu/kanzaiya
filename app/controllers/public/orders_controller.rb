@@ -29,19 +29,23 @@ class Public::OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
-    @order.save
-
-      current_customer.cart_items.each do |cart_item|
+    order = Order.new(order_params)
+    order.save
+    current_customer.cart_items.each do |cart_item|
       order_detail = OrderDetail.new
-      order_detail.order_id = @order.id
+      order_detail.order_id = order.id
       order_detail.item_id = cart_item.item.id
-      order_detail.price = @order.total_payment
+      order_detail.price = order.total_payment
       order_detail.amount = cart_item.amount
       order_detail.shape = cart_item.shape
       order_detail.size = cart_item.size
-      order_detail.save
-      cart_item.item.update(amount: cart_item.item.amount - cart_item.amount)
+      if order_detail.save
+        cart_item.item.update(amount: cart_item.item.amount - cart_item.amount)
+      else
+        order.delete
+        flash[:alert]=order_detail.errors.messages[:amount][0]
+        redirect_to public_cart_items_path and return
+      end
     end
     current_customer.cart_items.destroy_all
     redirect_to public_orders_complete_path
@@ -55,6 +59,7 @@ class Public::OrdersController < ApplicationController
 
   def index
     @orders = current_customer.orders.page(params[:page])
+    #@order_details = @cart_item.order_details
   end
 
   def show

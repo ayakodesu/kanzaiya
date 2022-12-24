@@ -2,6 +2,9 @@
     <div class="row mt-5 justify-content-center">
       <h4>ショッピングカート</h4>
     </div>
+  <% flash.each do |message_tyep,message| %>
+    <%=message%>
+  <%end%>
 
 
   <table class="table table-hover table-bordered table-sm text-center">
