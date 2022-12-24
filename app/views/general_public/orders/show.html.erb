@@ -30,15 +30,17 @@
             <th>合計</th>
             </tr>
         </thead>
+        <% total = 0 %>
 <tbody>
   <% @order_details.each do |order_detail| %>
   <tr>
     <td><%= order_detail.item.name %></td>
     <td><%= order_detail.item.shape %></td>
     <td><%= order_detail.item.size %></td>
-    <td><%= order_detail.item.last_price %></td>
+    <td>¥<%= order_detail.item.with_tax_price %></td>
     <td><%= order_detail.amount %></td>
-    <td>¥<%= order_detail.amount * order_detail.item.last_price %></td>
+    <td>¥<%= order_detail.item.with_tax_price * order_detail.amount %></td>
+
   </tr>
   <% end %>
 </tbody>

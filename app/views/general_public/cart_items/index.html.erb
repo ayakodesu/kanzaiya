@@ -14,7 +14,7 @@
         <td><%= image_tag cart_item.item.image, size: "50x50" %><%= cart_item.item.name %>
             <%= cart_item.item.shape %>
             <%= cart_item.item.size %></td>
-        <td>¥<%= cart_item.item.last_price %></td>
+        <td>¥<%= cart_item.item.with_tax_price %></td>
         <td>X</td>
         <td>
           <%= form_with model: cart_item, url: general_public_cart_item_path(cart_item.id), method: :patch do |f| %>
@@ -34,7 +34,7 @@
   <div class="container">
     <div class="row">
       <div class="col text-right">
-        <h3>合計(定価)  ¥<%= @total %></h3>
+        <h3>総合計(税込み)  ¥<%= @total %></h3>
       </div>
     </div>
   </div>
@@ -53,6 +53,5 @@
 <% end %>
 
 
-</div>
 </div>
 </div>
