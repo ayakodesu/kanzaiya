@@ -22,6 +22,7 @@
         <thead>
           <tr>
             <th>商品</th>
+            <th>型</th>
             <th>サイズ</th>
             <th>単価(税込み)</th>
             <th>個数</th>
@@ -33,6 +34,7 @@
   <% @order_details.each do |order_detail| %>
   <tr>
     <td><%= order_detail.item.name %></td>
+    <td><%= order_detail.item.shape %></td>
     <td><%= order_detail.item.size %></td>
     <td>¥<%= order_detail.item.with_tax_price %></td>
     <td><%= order_detail.amount %></td>
