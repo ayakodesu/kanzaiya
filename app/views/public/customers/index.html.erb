@@ -1,10 +1,11 @@
 <%= render 'mypage', customers: @customers %>
 
 
-
 <div class="container">
-    <div class="row mt-5 justify-content-center">
-
+  <p style="text-align: left">
+  <%= image_tag('鳥みどり', size: '150x100') %>
+  </p>
+<div class="row mt-5 justify-content-center">
 <div class="card title-center" style="width: 13rem;">
     <%= link_to public_addresses_path, class: "card-title" do %>
       <i class="fa-solid fa-cart-flatbed-suitcase fa-3x pl-4 ml-5 mt-4"></i>
@@ -63,12 +64,17 @@
 
 </div>
 
+<p style="text-align: right">
+  <%= image_tag('受付ウサギオレンジ', size: '45x250') %>
+</p>
 
 <div class="container">
-    <div class="row mt-5 justify-content-center">
+    <div class="row mb-5 justify-content-center">
   <%= link_to "退会する", public_confirm_unsubscribe_path(@customer) %>
 </div>
 </div>
+
+
 
 </div>
 
