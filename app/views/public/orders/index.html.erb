@@ -10,6 +10,15 @@
           <td><%= order.name %></td>
           <td>〒<%= order.postal_code %><br>
           <%= order.address %></td>
+          <td>
+            <%# order.order_details.each do |order_detail| %>
+				      <%#= order_detail.item.name %>
+				      <%#= order_detail.item.shape %>
+				      <%#= order_detail.item.size %>
+				      <%#= order_detail.item.amount %><br />
+			     <%# end %>
+			    </td>
+			    <td>¥<%#= order.total_payment + order.shipping_cost %></td>
         </tr>
       <% end %>
     </body>
