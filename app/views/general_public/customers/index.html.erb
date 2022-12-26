@@ -6,69 +6,50 @@
   <p style="text-align: left">
   <%= image_tag('鳥みどり', size: '150x100') %>
   </p>
-    <div class="row mt-5 justify-content-center">
-
-<div class="card title-center" style="width: 13rem;">
-    <%= link_to general_public_addresses_path, class: "card-title" do %>
-      <i class="fa-solid fa-cart-flatbed-suitcase fa-3x pl-4 ml-5 mt-4"></i>
-      <div class="card-body text-center">
-        配送先追加・編集
-      </li>
-      </div>
-    <% end %>
-
-</div>
-
-
-<div class="card title-center" style="width: 13rem;">
-    <%= link_to general_public_customer_path, class: "card-title" do %>
-      <i class="fa-solid fa-user fa-3x pl-4 ml-5 mt-4"></i><br />
-      <div class="card-body ml-2">
-        会員情報確認・編集
-        </li>
+   <div class="row mb-5 gx-4 gx-lg-5">
+      <%= link_to general_public_customer_path, class: "card-title", class: "link" do %>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="mt-5">
+        <div class="mb-2"><h4><i class="fa-solid fa-cart-flatbed-suitcase fa-3x"></i></h4></div>
+        <h3 class="h4 mb-2">配送先登録・編集</h3>
+          <p class="text-muted mb-0">配送先の新規登録、編集ができます</p>
         </div>
-    <% end %>
-
-</div>
-
-
-
-</div>
-</div>
-
-
-    <div class="row mt-5 justify-content-center">
-
-<div class="card title-center" style="width: 13rem;">
-    <%= link_to general_public_cart_items_path, class: "card-title" do %>
-      <i class="fa-solid fa-cart-arrow-down fa-3x pl-4 ml-5 mt-4"></i>
-      <div class="card-body text-center">
-        カート内確認
-      </li>
+      <% end %>
       </div>
-    <% end %>
 
-</div>
-
-
-<div class="card title-center" style="width: 13rem;">
-    <%= link_to general_public_orders_path, class: "card-title" do %>
-      <i class="fa-solid fa-piggy-bank fa-3x pl-4 ml-5 mt-4"></i>
-      <div class="card-body text-center">
-        注文履歴一覧
-        </li>
+      <%= link_to general_public_customer_path, class: "card-title", class: "link" do %>
+      <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+          <div class="mb-2"><h4><i class="fa-solid fa-user fa-3x"></i></h4></div>
+          <h3 class="h4 mb-2">会員登録確認・編集</h3>
+            <p class="text-muted mb-0">ご自身の登録情報の確認、編集できます</p>
+          </div>
+        <% end %>
         </div>
-    <% end %>
+
+        <%= link_to general_public_cart_items_path, class: "card-title", class: "link" do %>
+        <div class="col-lg-3 col-md-6 text-center">
+            <div class="mt-5">
+            <div class="mb-2"><h4><i class="fa-solid fa-cart-arrow-down fa-3x"></i></h4></div>
+            <h3 class="h4 mb-2">カート内確認</h3>
+              <p class="text-muted mb-0">カート内にある商品の確認ができます</p>
+            </div>
+        <% end %>
+        </div>
+
+
+        <%= link_to general_public_orders_path, class: "card-title", class: "link" do %>
+        <div class="col-lg-3 col-md-6 text-center">
+            <div class="mt-5">
+            <div class="mb-2"><h4><i class="fa-solid fa-piggy-bank fa-3x"></i></h4></div>
+            <h3 class="h4 mb-2">注文履歴一覧</h3>
+              <p class="text-muted mb-0">過去に注文したモノが確認できます</p>
+            </div>
+        <% end %>
+        </div>
+    </div>
 
 </div>
-
-
-
-</div>
-
-<p style="text-align: right">
-  <%= image_tag('受付ウサギオレンジ', size: '450x250') %>
-</p>
 
 
 <div class="container">
