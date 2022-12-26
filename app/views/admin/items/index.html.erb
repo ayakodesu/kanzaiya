@@ -10,7 +10,7 @@
     <div class="row">
       <% @items.each do |item| %>
         <div class="col-3 mb-5">
-          <%= link_to admin_item_path(item.id) do %>
+          <%= link_to admin_item_path(item.id), class: "link" do %>
           <div class="card">
              <div class="text-center">
             <%= image_tag item.image, size: '180x150'%>
@@ -24,9 +24,9 @@
                     在庫数:<%= item.amount %>
                     定価¥<%= item.last_price %>
                     <td><% if item.is_active == true %>
-                      <p class="text-success">販売中</p>
+                      <h4><p class="text-success">販売中</p></h4>
                     <% else %>
-                      <p class="text-secondary">販売停止中</p>
+                      <h4><p class="text-secondary">販売停止中</p></h4>
                     <% end %>
               </div>
             </div>

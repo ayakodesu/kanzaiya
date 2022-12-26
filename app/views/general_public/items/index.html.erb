@@ -30,7 +30,7 @@
             <% end %>
           </div>
         <% end %>
-          <%= link_to general_public_item_path(item.id) do %>
+          <%= link_to general_public_item_path(item.id), class: "link" do %>
             <%= image_tag item.image, size: '200x150'%>
 
             <div class="card-body text-black bg-white p-4">
