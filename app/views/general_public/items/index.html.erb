@@ -11,6 +11,7 @@
    <div class="container text-center">
     <div class="row mt-5">
     <% @items.each do |item| %>
+    <% if item.is_active %>
       <div class="col-3 mb-5">
         <div class="card text-black bg-white border-dark">
         <% if current_general_customer.already_favorited?(item) %>
@@ -48,6 +49,8 @@
             <% end %>
         </div>
       </div>
+      <% end %>
      <% end %>
       </div>
+      <%= paginate @items %>
     </div>

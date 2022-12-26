@@ -1,5 +1,6 @@
 <%= render 'public/favorites/index', favorites: @favorites %>
 
+<%= paginate @favorites %>
   <% if @favorite.present? %>
     <tbody>
       <% @favorites.each do |favorite| %>
@@ -15,4 +16,5 @@
     </tbody>
   <% end %>
 </table>
+<%= paginate @favorites %>
 </div>

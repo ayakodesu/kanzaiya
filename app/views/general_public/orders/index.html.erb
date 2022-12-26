@@ -1,5 +1,6 @@
 <%= render 'public/orders/index', orders: @orders %>
 
+<%= paginate @orders %>
     <body>
       <% @orders.each do |order| %>
         <tr>
@@ -13,6 +14,7 @@
       <% end %>
     </body>
   </table>
+  <%= paginate @orders %>
+
 </div>
 
-<%= paginate @orders %>
