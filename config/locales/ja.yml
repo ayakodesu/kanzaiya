@@ -7,3 +7,12 @@
         status:
           waiting_for_payment: "未入金"
           payment_confirmation: "入金済み"
+    devise:
+      sessions:
+        customer:
+          signed_in: 'ログインしました。'
+          signed_out: 'ログアウトしました。'
+        general_customer:
+          signed_in: 'ログインしました。'
+          signed_out: 'ログアウトしました。'
+

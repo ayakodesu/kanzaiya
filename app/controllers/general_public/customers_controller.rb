@@ -12,9 +12,11 @@ class GeneralPublic::CustomersController < ApplicationController
   end
 
   def update
-    @general_customer = general_current_customer
-    @general_customer.update(general_customer_params)
-    redirect_to public_general_customer_path
+    @general_customer = current_general_customer
+    if @general_customer.update(general_customer_params)
+      flash[:notice] = "変更を保存しました"
+    redirect_to general_public_customer_path
+    end
   end
 
   def unsubscribe
