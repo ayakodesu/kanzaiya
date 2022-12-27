@@ -12,6 +12,8 @@ class Customer < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
 
+
+
   def already_favorited?(item)
     self.favorites.exists?(item_id: item.id)
   end

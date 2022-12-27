@@ -8,6 +8,7 @@ class Admin::GeneralCustomersController < ApplicationController
     @customer = Customer.all
     @general_customer = GeneralCustomer.all
     @instances = @customer | @general_customer
+
   end
 
   def show
