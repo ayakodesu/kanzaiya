@@ -17,15 +17,20 @@ class GeneralPublic::AddressesController < ApplicationController
 
   def create
     @address = Address.new(address_params)
-    @address.save!
+    @address.save
     redirect_to general_public_addresses_path
   end
 
+
   def update
-    @address = Address.find(params[:id])
-    @address.update(address_params)
-    redirect_to general_public_addresses_path(@address)
+   @address = Address.find(params[:id])
+    if @address.update(address_params)
+     flash[:notice] = "変更を保存しました"
+   redirect_to general_public_addresses_path(@aderess)
+    end
   end
+
+
 
   def destroy
     @address = Address.find(params[:id])

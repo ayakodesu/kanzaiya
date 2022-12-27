@@ -34,7 +34,11 @@ Rails.application.routes.draw do
     get '/customer/index' => 'customers#index', as: 'customers'
 
 
-    resources :addresses, only: [:create, :edit, :index, :update, :destroy]
+    #resources :addresses, only: [:create, :edit, :index, :update, :destroy]
+    #delete 'addresses/:id' =>'addresses#destroy', as: 'destroy_address'
+    #patch ':id/adderss/:name' => 'addresses#cart_item', as: 'adderss_user'
+
+    resources :addresses, only: [:new, :create, :edit, :index, :update, :destroy]
     delete 'addresses/:id' =>'addresses#destroy', as: 'destroy_address'
     patch ':id/adderss/:name' => 'addresses#cart_item', as: 'adderss_user'
 
@@ -59,7 +63,7 @@ Rails.application.routes.draw do
 
 
 
-    resources :orders, only: [:new, :index, :create, :destroy, :show]
+  resources :orders, only: [:new, :index, :create, :destroy, :show]
 
     resources :items, only: [:index, :create, :show, :update, :destroy] do
       resource :favorites, only: [:create, :destroy]
@@ -73,9 +77,9 @@ Rails.application.routes.draw do
     patch ':id/withdraw/:name' => 'customers#withdraw', as: 'withdraw_user'
     put 'withdraw/:name' => 'customer#withdraw'
 
-    resources :addresse, only: [:new, :create, :edit, :index, :update, :destroy]
+    resources :addresses, only: [:new, :create, :edit, :index, :update, :destroy]
     delete 'addresses/:id' =>'addresses#destroy', as: 'destroy_address'
-    patch ':id/adderss/:name' => 'addresses#cart_item', as: 'adderss_customer'
+    patch ':id/adderss/:name' => 'addresses#cart_item', as: 'adderss_user'
 
 
     resources :cart_items, only: [:index, :create, :update, :destroy]

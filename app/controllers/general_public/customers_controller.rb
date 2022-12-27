@@ -19,6 +19,7 @@ class GeneralPublic::CustomersController < ApplicationController
     end
   end
 
+
   def unsubscribe
     @general_customer = current_general_customer
   end
