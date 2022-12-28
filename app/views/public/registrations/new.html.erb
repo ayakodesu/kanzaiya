@@ -5,7 +5,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "public/shared/error_messages", resource: resource %>
 <div class="container">
-  <div class="row mt-5">
+  <div class="row mt-5 text-left">
     <div class="col">
  <table class="table">
    <tr><th><%= f.label :法人名 %></th>
@@ -22,12 +22,12 @@
     <td><%= f.text_field :telephone_number, placeholder: "09012345678" %></td>
     </tr>
     <tr><th><%= f.label :お名前 %></th>
-      <td><%= f.text_field :last_name, placeholder: "山田(姓)" %></td>
-      <td><%= f.text_field :first_name, placeholder: "太郎(名)" %></td>
+      <td><%= f.text_field :last_name, placeholder: "山田(姓)" %>
+          <%= f.text_field :first_name, placeholder: "太郎(名)" %></td>
     </tr>
     <tr><th><%= f.label :ふりがな %></th>
-      <td><%= f.text_field :last_name_kana, placeholder: "やまだ(せい)" %></td>
-      <td><%= f.text_field :first_name_kana, placeholder: "たろう(めい)" %></td>
+      <td><%= f.text_field :last_name_kana, placeholder: "やまだ(せい)" %>
+          <%= f.text_field :first_name_kana, placeholder: "たろう(めい)" %></td>
     </tr>
     <tr><th><%= f.label :email %></th>
       <td><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "〇〇〇@gmail.com", :size=>"60"  %></td>
@@ -44,22 +44,22 @@
 
 
   </table>
+    </div>
+</div>
 
-  <div class="row mb-4">
+  <div class="row mb-4 mt-4">
       <div class="col">
     <%= f.submit "Sign up", class: "btn btn-success" %>
   </div>
   </div>
     </div>
-  </div>
-</div>
+
 
 <% end %>
 <div class="row mb-5 mt-3">
   <div class="col">
+    登録済みの方はこちらから
     <%= render "public/shared/links" %>
   </div>
 </div>
-
-
 </div>
