@@ -9,10 +9,13 @@
     <%= submit_tag 'Search', name: nil, class: 'btn btn-primary' %>
   <% end %>
 </div>
+<%= paginate @items %>
 
 <div class="row mt-3 mb-3 justify-content-center">
     <%= link_to "商品新規追加", new_admin_item_path, class: "btn btn-outline-info" %>
 </div>
+
+
 
     <div class="row">
       <% @items.each do |item| %>
@@ -42,6 +45,6 @@
           </div>
       <% end %>
      </div>
+     <%= paginate @items %>
 </div>
 
-<%= paginate @items %>
