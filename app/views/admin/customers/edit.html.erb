@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row mt-5 justify-content-center">
-      <h4>会員編集</h4>
+      <div class="font"><h4>会員編集</h4></div>
     </div>
 </div>
 
@@ -14,8 +14,8 @@
       <td><%= @customer.id %></td></tr>
 
       <tr><th>名前</th>
-      <td><%= f.text_field :last_name, placeholder: "姓" %>
-      <%= f.text_field :first_name, placeholder: "名" %></td>
+      <td><div class="font"><%= f.text_field :last_name, placeholder: "姓" %>
+      <%= f.text_field :first_name, placeholder: "名" %></div></td>
 
       <tr><th>ふりがな</th>
       <td><%= f.text_field :last_name_kana, placeholder: "せい" %>

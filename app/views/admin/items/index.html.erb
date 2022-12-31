@@ -1,6 +1,6 @@
 <div class="container text-center">
     <div class="row mt-5 justify-content-center">
-      <h4>商品一覧</h4>
+      <div class="font"><h4>商品一覧</h4></div>
     </div>
 
 <div class="row mt-3 mb-3 justify-content-center">
@@ -27,17 +27,19 @@
               </div>
             <div class="card-body p-4">
               <div class="text-center">
+                <div class="font">
                 <h5 class="fw-bolder"><%= item.genre.name %></h5>
                     <%= item.name %>
-                    <%= item.shape %>
-                    <%= item.size %><br/>
-                    在庫数:<%= item.amount %>
-                    定価¥<%= item.last_price %>
+                    <%= item.shape %><br />
+                    サイズ:<%= item.size %><br/>
+                    在庫数:<%= item.amount %><br />
+                    単価:¥<%= item.last_price %>
                     <td><% if item.is_active == true %>
                       <h4><p class="text-success">販売中</p></h4>
                     <% else %>
                       <h4><p class="text-secondary">販売停止中</p></h4>
                     <% end %>
+              </div>
               </div>
             </div>
             </div>

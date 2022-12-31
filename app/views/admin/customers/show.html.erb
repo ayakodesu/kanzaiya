@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row mt-5 justify-content-center">
-      <h4>会員詳細</h4>
+      <div class="font"><h4>会員詳細</h4></div>
     </div>
 </div>
 
@@ -10,38 +10,39 @@
       <table class="table table-borderless table-striped">
 
         <tr><th>会員ID</th>
-        <td><%= @customer.id %></td></tr>
+        <td><div class="font"><%= @customer.id %></div></td></tr>
 
         <tr><th>名前</th>
-        <td><%= @customer.full_name %>様</td></tr>
+        <td><div class="font"><%= @customer.full_name %>様</div></td></tr>
 
         <tr><th>ふりがな</th>
-        <td><%= @customer.last_name_kana %>
-        <%= @customer.first_name_kana %>様</td></tr>
+        <td><div class="font"><%= @customer.last_name_kana %>
+        <%= @customer.first_name_kana %>様</div></td></tr>
 
         <tr><th>法人名</th>
-        <td><%= @customer.corporation %></td></tr>
+        <td><div class="font"><%= @customer.corporation %></div></td></tr>
 
         <tr><th>〒</th>
-        <td><%= @customer.postal_code %></td></tr>
+        <td><div class="font"><%= @customer.postal_code %></div></td></tr>
 
 
         <tr><th>住所</th>
-        <td><%= @customer.address %></td></tr>
+        <td><div class="font"><%= @customer.address %></div></td></tr>
 
         <tr><th>電話番号</th>
-        <td><%= @customer.telephone_number %></td></tr>
+        <td><div class="font"><%= @customer.telephone_number %></div></td></tr>
 
         <tr><th>email</th>
-        <td><%= @customer.email %></td></tr>
+        <td><div class="font"><%= @customer.email %></div></td></tr>
 
         <tr><th>会員ステータス</th>
 
-        <td><% if @customer.is_deleted == false %>
+        <td><div class="font"><% if @customer.is_deleted == false %>
           <p class="text-success">有効</p>
         <% else %>
           <p class="text-secondary">退会</p>
         <% end %>
+        </div>
         </td></tr>
       </table>
     </div>
