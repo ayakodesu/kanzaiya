@@ -1,6 +1,8 @@
 <%= render 'public/orders/index', orders: @orders %>
 
 <%= paginate @orders %>
+
+
     <body>
       <% @orders.each do |order| %>
         <tr>

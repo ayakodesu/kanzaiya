@@ -12,9 +12,9 @@
 
 
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand">kanzaiya</a>
+   <a class="navbar-brand p-3"><%= image_tag 'kanzaiya_font_4_clear.png', :size =>'150x50' %></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,13 +25,13 @@
       <ul class="navbar-nav">
 
     <% if admin_signed_in? %>
-        <%= link_to admin_top_path, class: 'nav-link text-light' do %>
+        <%= link_to admin_top_path, class: 'nav-link text-black' do %>
           Home
         <% end %>
-        <%= link_to admin_orders_path, class: 'nav-link text-light' do %>
+        <%= link_to admin_orders_path, class: 'nav-link text-black' do %>
           注文履歴一覧
         <% end %>
-        <%= link_to admin_customers_path, class: 'nav-link text-light' do %>
+        <%= link_to admin_customers_path, class: 'nav-link text-black' do %>
           会員一覧
         <% end %>
         <%= link_to new_admin_item_path, class: 'nav-link text-light' do %>
