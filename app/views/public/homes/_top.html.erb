@@ -2,22 +2,16 @@
  <%= flash[:notice] %>
 
 
-
     <div class="text-center my-5">
-
-<header class="py-5 bg-image-full" style="background-image: url('https://beiz.jp/images_M/white/white_00032.jpg')">
-
       <div class="c02 active"><h1>ようこそ! kanzaiyaへ!</h1>
-          <h4>このサイトは、kanzaiyaのECサイトになります。</br>
+          <div class="test_box font_test"><h4>このサイトは、kanzaiyaのECサイトになります。</br>
           kanzaiyaの商品の在庫確認、ご注文が出来ます。</h4>
+          </div>
        </div>
         <div class="c07 active"><h3>当社は、幅広く豊富に商品を取り揃えております。</h3>
           <h3>置いていない商品も、取り寄せ可能なものはございますので</h3>
           <h3>お気軽にお申し付けください！</h3>
         </div>
-
-
-
 
 
 <% if !general_customer_signed_in? %>
@@ -86,7 +80,7 @@
   <% end %>
 <% end %>
 
-</header>
+
 
 
 

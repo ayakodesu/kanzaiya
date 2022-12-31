@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=BioRhyme+Expanded');
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
@@ -441,6 +442,39 @@ footer {
   color: #fff;
 }
 
+
 html,　body {
   height: 100%;
+}
+
+/*ナビゲーションバー*/
+.basic-3 {
+  background:
+      linear-gradient(#96514d 0 0)
+      bottom /var(--d, 0) 3px
+      no-repeat;
+  transition:0.5s;
+}
+.basic-3:hover {
+  --d: 100%;
+}
+
+/*ログアウト*/
+.thick-6 {
+  background:
+    linear-gradient(#e3acae 0 0)
+    left /100% var(--d, 0%) no-repeat;
+  transition: 0.5s;
+}
+.thick-6:hover {
+  --d: 100%;
+  color: #fff;
+}
+
+.test_box {
+    font-size:  25px;       /* 文字サイズ指定 */
+    margin:  20px;          /* 空白指定 */
+}
+.font_test {
+    font-family: 'BioRhyme Expanded', serif;    /* フォントの種類指定 */
 }

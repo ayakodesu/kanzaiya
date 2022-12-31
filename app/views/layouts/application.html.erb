@@ -8,6 +8,7 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded" rel="stylesheet">
   </head>
 
 
@@ -25,95 +26,122 @@
       <ul class="navbar-nav">
 
     <% if admin_signed_in? %>
-        <%= link_to admin_top_path, class: 'nav-link text-black' do %>
-          Home
+      <div class="basic-3">
+        <%= link_to admin_top_path, class: 'nav-link text-dark' do %>
+        Home
         <% end %>
-        <%= link_to admin_orders_path, class: 'nav-link text-black' do %>
-          注文履歴一覧
+      </div>
+      <div class="basic-3">
+        <%= link_to admin_orders_path, class: 'nav-link text-dark' do %>
+        注文履歴一覧
         <% end %>
-        <%= link_to admin_customers_path, class: 'nav-link text-black' do %>
+      </div>
+      <div class="basic-3">
+        <%= link_to admin_customers_path, class: 'nav-link text-dark' do %>
           会員一覧
         <% end %>
-        <%= link_to new_admin_item_path, class: 'nav-link text-light' do %>
+      </div>
+      <div class="basic-3">
+        <%= link_to new_admin_item_path, class: 'nav-link text-dark' do %>
           商品新規登録
         <% end %>
-        <%= link_to admin_items_path, class: 'nav-link text-light' do %>
+      </div>
+      <div class="basic-3">
+        <%= link_to admin_items_path, class: 'nav-link text-dark' do %>
           商品一覧
         <% end %>
-        <%= link_to admin_genres_path, class: 'nav-link text-light' do %>
+      </div>
+      <div class="basic-3">
+        <%= link_to admin_genres_path, class: 'nav-link text-dark' do %>
           ジャンル一覧
         <% end %>
-        <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link text-light' do %>
-          <p class="border rounded">ログアウト</p>
-    <% end %>
+      </div>
+      <div class="thick-6">
+        <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' do %>
+          ログアウト
+        <% end %>
+      </div>
+
     <% end %>
 
 
 
     <% if customer_signed_in? %>
-
-
-
-          <%= link_to public_path, class: 'nav-link text-light' do %>
-              Home
+        <div class="basic-3">
+          <%= link_to public_path, class: 'nav-link text-dark' do %>
+          Home
           <% end %>
-          <%= link_to public_customers_path, class: 'nav-link text-light' do %>
-              マイページ
+        </div>
+        <div class="basic-3">
+          <%= link_to public_customers_path, class: 'nav-link text-dark' do %>
+          マイページ
           <% end %>
-          <%= link_to public_items_path, class: 'nav-link text-light' do %>
-              商品一覧
+        </div>
+        <div class="basic-3">
+          <%= link_to public_items_path, class: 'nav-link text-dark' do %>
+          商品一覧
           <% end %>
-          <%= link_to public_orders_path, class: 'nav-link text-light' do %>
-              注文履歴一覧
+        </div>
+        <div class="basic-3">
+          <%= link_to public_orders_path, class: 'nav-link text-dark' do %>
+          注文履歴一覧
           <% end %>
-
-          <%= link_to public_cart_items_path, class: 'nav-link text-light' do %>
-              カート内確認
+        </div>
+         <div class="basic-3">
+          <%= link_to public_cart_items_path, class: 'nav-link text-dark' do %>
+          カート内確認
           <% end %>
-
-          <%= link_to public_favorites_path, class: 'nav-link text-light' do %>
-              お気に入り
+        </div>
+        <div class="basic-3">
+          <%= link_to public_favorites_path, class: 'nav-link text-dark' do %>
+          お気に入り
           <% end %>
-
-
-          <%= link_to public_about_path, class: 'nav-link text-light' do %>
-              会社概要
+        </div>
+        <div class="thick-6">
+          <%= link_to destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' do %>
+          ログアウト
           <% end %>
-             <%= link_to destroy_customer_session_path, method: :delete, class: 'nav-link text-light' do %>
-          <p class="border rounded">ログアウト</p>
-    <% end %>
+        </div>
     <% end %>
 
 
 
       <% if general_customer_signed_in? %>
-          <%= link_to general_public_path, class: 'nav-link text-light' do %>
+        <div class="basic-3">
+          <%= link_to general_public_path, class: 'nav-link text-dark' do %>
               Home
           <% end %>
-          <%= link_to general_public_customers_path, class: 'nav-link text-light' do %>
+        </div>
+        <div class="basic-3">
+          <%= link_to general_public_customers_path, class: 'nav-link text-dark' do %>
               マイページ
           <% end %>
-          <%= link_to general_public_items_path, class: 'nav-link text-light' do %>
-              商品一覧
+        </div>
+        <div class="basic-3">
+          <%= link_to general_public_items_path, class: 'nav-link text-dark' do %>
+            商品一覧
           <% end %>
-          <%= link_to general_public_orders_path, class: 'nav-link text-light' do %>
-              注文履歴一覧
+        </div>
+        <div class="basic-3">
+          <%= link_to general_public_orders_path, class: 'nav-link text-dark' do %>
+            注文履歴一覧
           <% end %>
-
-          <%= link_to general_public_cart_items_path, class: 'nav-link text-light' do %>
-              カート内確認
+        </div>
+        <div class="basic-3">
+          <%= link_to general_public_cart_items_path, class: 'nav-link text-dark' do %>
+            カート内確認
           <% end %>
-
-           <%= link_to general_public_favorites_path, class: 'nav-link text-light' do %>
-              お気に入り
-          <% end %>
-
-          <%= link_to general_public_about_path, class: 'nav-link text-light' do %>
-              会社概要
-          <% end %>
-              <%= link_to destroy_general_customer_session_path, method: :delete, class: 'nav-link text-light' do %>
-          <p class="border rounded">ログアウト</p>
-      <% end %>
+        </div>
+        <div class="basic-3">
+           <%= link_to general_public_favorites_path, class: 'nav-link text-dark' do %>
+            お気に入り
+            <% end %>
+        </div>
+        <div class="thick-6">
+            <%= link_to destroy_general_customer_session_path, method: :delete, class: 'nav-link text-dark' do %>
+            ログアウト
+            <% end %>
+        </div>
       <% end %>
 
       </ul>
@@ -129,10 +157,7 @@
 </html>
 
 
-
-
-
-<footer class="pt-5 pb-4">
+<footer class="text-dark pt-5 pb-4">
     <div class="container">
       <div class="row no-gutters">
         <div class="col-md-4">
@@ -143,7 +168,7 @@
         <div class="col-md-8">
           <ul class="p-0 list-unstyled">
             <li>
-              <%= link_to "会社概要", public_about_path, title: "Locense informations", class: "text-white-50" %>
+              <%= link_to "会社概要", public_about_path, title: "Locense informations", class: "text-dark-50" %>
 
               </li>
 
