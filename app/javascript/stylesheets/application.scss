@@ -496,3 +496,43 @@ html,　body {
 .font3 {
     font-family: 'Hachi Maru Pop', cursive;
 }
+
+/*admin吹き出し*/
+.balloon{
+  position: relative;
+  padding: 20px;
+  width: 500px;
+  height: 250px;
+  line-height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  color: #000000;
+  letter-spacing: 0.2em;
+  font-size: 14px;
+  background-color: #a5c9c1;
+}
+/* 大きい丸 */
+.balloon::before{
+  content: '';
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background-color: #a5c9c1;
+  left: -35px;
+  bottom: 15px;
+  width: 30px;
+  height: 30px;
+}
+/*小さい丸*/
+.balloon::after{
+  content: '';
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background-color: #a5c9c1;
+  left: -55px;
+  bottom: 10px;
+  width: 15px;
+  height: 15px;
+}
+

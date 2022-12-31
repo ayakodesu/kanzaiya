@@ -1,7 +1,7 @@
 
 <div class="container mt-5">
 
-    <h2>kanzaiya社員用トップページ</h2>
+    <div class="font"><h2>kanzaiya社員用トップページ</h2></div>
 </div>
 
 <div class="container mt-5 mb-5">
@@ -9,34 +9,48 @@
     <div class="col">
   <div class="card" style="width: 20rem;">
     <div class="card-header">
-     <h4>メニュー</h4>
+      <div class="font1">
+     <h2>メニュー</h2>
+       </div>
     </div>
 
     <div class="card-body">
       <ul class="list-group list-group-flush">
 
-      <%= link_to admin_items_path do %>
-     <i class="fa-solid fa-bag-shopping"></i>
-      商品一覧
+      <div class="font3">
+      <%= link_to admin_items_path, class: 'link' do %>
+      <h4><i class="fa-solid fa-bag-shopping"></i>
+      商品一覧(在庫追加)
+      </h4>
       <% end %>
+      </div>
       <br />
 
-      <%= link_to  admin_customers_path do %>
-      <i class="fa-solid fa-users"></i>
+      <div class="font3">
+      <%= link_to  admin_customers_path, class: 'link' do %>
+      <h4><i class="fa-solid fa-users"></i>
       会員一覧
+      </h4>
       <% end %>
+      </div>
       <br />
 
-      <%= link_to admin_orders_path do %>
-      <i class="fa-solid fa-cart-shopping"></i>
+      <div class="font3">
+      <%= link_to admin_orders_path, class: 'link' do %>
+      <h4><i class="fa-solid fa-cart-shopping"></i>
       注文履歴一覧
+      </h4>
       <% end %>
+      </div>
       <br />
 
-      <%= link_to admin_genres_path do %>
-      <i class="fa-solid fa-gear"></i>
+      <div class="font3">
+      <%= link_to admin_genres_path, class: 'link' do %>
+      <h4><i class="fa-solid fa-gear"></i>
       ジャンル一覧&追加
+      </h4>
       <% end %>
+      </div>
       <br />
 
 
@@ -45,9 +59,16 @@
   </div>
 </div>
 
-<div class="col">
-  <p>在庫追加はこちら</p>
-  <%= link_to "商品一覧", admin_items_path %>から
+
+<div class="balloon">
+
+  在庫追加は
+  <div class="font3">
+  <%= link_to admin_items_path, class: 'link' do %>
+  <h4>商品一覧</h4>
+  <% end %>
+  </div>
+  から
 </div>
 
 </div>

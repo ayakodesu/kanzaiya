@@ -27,50 +27,62 @@
       <ul class="navbar-nav">
 
     <% if admin_signed_in? %>
-    <div class="box font2">
+    <div class="font1">
       <div class="basic-3">
         <%= link_to admin_top_path, class: 'nav-link text-dark' do %>
         Home
         <% end %>
       </div>
       </div>
+    <div class="font1">
       <div class="basic-3">
         <%= link_to admin_orders_path, class: 'nav-link text-dark' do %>
         注文履歴一覧
         <% end %>
       </div>
+    </div>
+    <div class="font1">
       <div class="basic-3">
         <%= link_to admin_customers_path, class: 'nav-link text-dark' do %>
           会員一覧
         <% end %>
       </div>
+    </div>
+    <div class="font1">
       <div class="basic-3">
         <%= link_to new_admin_item_path, class: 'nav-link text-dark' do %>
           商品新規登録
         <% end %>
       </div>
+    </div>
+    <div class="font1">
       <div class="basic-3">
         <%= link_to admin_items_path, class: 'nav-link text-dark' do %>
           商品一覧
         <% end %>
       </div>
+    </div>
+    <div class="font1">
       <div class="basic-3">
         <%= link_to admin_genres_path, class: 'nav-link text-dark' do %>
           ジャンル一覧
         <% end %>
       </div>
+    </div>
+    <div class="font1">
       <div class="thick-6">
         <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' do %>
           ログアウト
         <% end %>
       </div>
+    </div>
 
     <% end %>
 
 
 
     <% if customer_signed_in? %>
-      
+      <div class="font1">
         <div class="basic-3">
           <%= link_to public_path, class: 'nav-link text-dark' do %>
           Home
@@ -124,41 +136,55 @@
 
 
       <% if general_customer_signed_in? %>
+      <div class="font1">
         <div class="basic-3">
           <%= link_to general_public_path, class: 'nav-link text-dark' do %>
               Home
           <% end %>
         </div>
+      </div>
+      <div class="font1">
         <div class="basic-3">
           <%= link_to general_public_customers_path, class: 'nav-link text-dark' do %>
               マイページ
           <% end %>
         </div>
+      </div>
+      <div class="font1">
         <div class="basic-3">
           <%= link_to general_public_items_path, class: 'nav-link text-dark' do %>
             商品一覧
           <% end %>
         </div>
+      </div>
+      <div class="font1">
         <div class="basic-3">
           <%= link_to general_public_orders_path, class: 'nav-link text-dark' do %>
             注文履歴一覧
           <% end %>
         </div>
+      </div>
+      <div class="font1">
         <div class="basic-3">
           <%= link_to general_public_cart_items_path, class: 'nav-link text-dark' do %>
             カート内確認
           <% end %>
         </div>
+      </div>
+      <div class="font1">
         <div class="basic-3">
            <%= link_to general_public_favorites_path, class: 'nav-link text-dark' do %>
             お気に入り
             <% end %>
         </div>
+      </div>
+      <div class="font1">
         <div class="thick-6">
             <%= link_to destroy_general_customer_session_path, method: :delete, class: 'nav-link text-dark' do %>
             ログアウト
             <% end %>
         </div>
+      </div>
       <% end %>
 
       </ul>
@@ -178,21 +204,20 @@
     <div class="container">
       <div class="row no-gutters">
         <div class="col-md-4">
-          <P>kanzaiyaのECサイト</P>
+          <div class="font1">kanzaiyaのECサイト</div>
           <%#= image_tag('バス.png')%>
 
         </div>
         <div class="col-md-8">
           <ul class="p-0 list-unstyled">
             <li>
-              <%= link_to "会社概要", public_about_path, title: "Locense informations", class: "text-dark-50" %>
-
-              </li>
-
+              <div class="font1">
+              <%= link_to '会社概要', public_about_path, class: "link"%>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
-    </div>
   </footer>
 
 
