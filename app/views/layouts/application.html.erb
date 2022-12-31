@@ -8,9 +8,10 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Klee+One&family=Noto+Sans+JP:wght@700;900&family=Zen+Maru+Gothic:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Kiwi+Maru&family=Klee+One&family=Noto+Sans+JP:wght@700;900&family=Stick&family=Zen+Maru+Gothic:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Kiwi+Maru&family=Klee+One&family=Noto+Sans+JP:wght@700;900&family=Stick&family=Zen+Kurenaido&family=Zen+Maru+Gothic:wght@700&display=swap" rel="stylesheet">
   </head>
-
 
 
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#e9dacb">
@@ -26,10 +27,12 @@
       <ul class="navbar-nav">
 
     <% if admin_signed_in? %>
+    <div class="box font2">
       <div class="basic-3">
         <%= link_to admin_top_path, class: 'nav-link text-dark' do %>
         Home
         <% end %>
+      </div>
       </div>
       <div class="basic-3">
         <%= link_to admin_orders_path, class: 'nav-link text-dark' do %>
@@ -67,41 +70,55 @@
 
 
     <% if customer_signed_in? %>
+      
         <div class="basic-3">
           <%= link_to public_path, class: 'nav-link text-dark' do %>
           Home
           <% end %>
         </div>
+      </div>
+      <div class="font1">
         <div class="basic-3">
           <%= link_to public_customers_path, class: 'nav-link text-dark' do %>
           マイページ
           <% end %>
         </div>
+      </div>
+      <div class="font1">
         <div class="basic-3">
           <%= link_to public_items_path, class: 'nav-link text-dark' do %>
           商品一覧
           <% end %>
         </div>
+      </div>
+      <div class="font1">
         <div class="basic-3">
           <%= link_to public_orders_path, class: 'nav-link text-dark' do %>
           注文履歴一覧
           <% end %>
         </div>
+      </div>
+      <div class="font1">
          <div class="basic-3">
           <%= link_to public_cart_items_path, class: 'nav-link text-dark' do %>
           カート内確認
           <% end %>
         </div>
+      </div>
+      <div class="font1">
         <div class="basic-3">
           <%= link_to public_favorites_path, class: 'nav-link text-dark' do %>
           お気に入り
           <% end %>
         </div>
+      </div>
+      <div class="font1">
         <div class="thick-6">
           <%= link_to destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' do %>
           ログアウト
           <% end %>
         </div>
+      </div>
     <% end %>
 
 

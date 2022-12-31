@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=BioRhyme+Expanded');
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Klee+One&family=Noto+Sans+JP:wght@700;900&family=Zen+Maru+Gothic:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Kiwi+Maru&family=Klee+One&family=Noto+Sans+JP:wght@700;900&family=Stick&family=Zen+Maru+Gothic:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Kiwi+Maru&family=Klee+One&family=Noto+Sans+JP:wght@700;900&family=Stick&family=Zen+Kurenaido&family=Zen+Maru+Gothic:wght@700&display=swap');
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
@@ -353,10 +355,7 @@ input[type="submit"]:focus {
 }
 
 
-
-
-
-
+/*文字アニメーション*/
 .c02{
   background-image: linear-gradient(to bottom, rgba(#333,0) 0%, rgba(#333,1) 50%);
   background-size: 100% 200%;
@@ -376,6 +375,7 @@ input[type="submit"]:focus {
     background-position: 0% 100%;
   }
 }
+
 
 
 .c07{
@@ -423,13 +423,6 @@ input[type="submit"]:focus {
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
-
-.h2.h3.h4.p.a {
-     font-family: 'Kosugi Maru', sans-serif;
-}
-
-
 footer {
   width: 100%;
   height: 100px;
@@ -471,10 +464,35 @@ html,　body {
   color: #fff;
 }
 
-.test_box {
-    font-size:  25px;       /* 文字サイズ指定 */
-    margin:  20px;          /* 空白指定 */
+
+/*フォントデザイン*/
+
+/*.box {
+    font-size:  35px;       /* 文字サイズ指定 */
+    /*margin:  20px;          /* 空白指定 */
+/*}*/
+
+/*商品名・top紹介文*/
+.font {
+    font-family: 'Kiwi Maru', serif;  /* フォントを指定 */
 }
-.font_test {
-    font-family: 'BioRhyme Expanded', serif;    /* フォントの種類指定 */
+
+/*.box1 {
+    font-size:  25px;       /* 文字サイズ指定 */
+    /*margin:  20px;          /* 空白指定 */
+/*}*/
+
+/*top紹介文・ナビゲーションバー*/
+.font1 {
+    font-family: 'Stick', sans-serif;
+}
+
+/*top紹介文*/
+.font2 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+/*新着商品*/
+.font3 {
+    font-family: 'Hachi Maru Pop', cursive;
 }

@@ -2,7 +2,7 @@
 
 
   <div class="container text-center">
-    <h3>新着商品</h3>
+    <div class="font3"><h2>新着商品</h2></div>
       <div class="row text-center">
         <% @items.each do |item| %>
           <%= link_to public_item_path(item.id) do %>
@@ -13,18 +13,20 @@
           <%= link_to public_item_path(item.id), class: "link" do %>
             <div class="card-body text-black p-4">
               <div class="text-center">
+                <div class="font">
               <strong>商品名</strong>
-                <%= item.name %>
+                :<%= item.name %>
                 <br />
               <strong>型</strong>
-                <%= item.shape %>
+                :<%= item.shape %>
                  <br />
               <strong>サイズ</strong>
-                <%= item.size %>
+                :<%= item.size %>
                 <br />
-              <strong>定価</strong>
-                ¥<%= item.last_price %>
+              <strong>単価</strong>
+                :¥<%= item.last_price %>
                 <br>
+              </div>
               </div>
             </div>
             <% end %>
@@ -34,7 +36,8 @@
         <% end %>
         <% end %>
       </div>
-    </div>
+
+  </div>
 
 
 
