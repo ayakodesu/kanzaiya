@@ -4,9 +4,9 @@
 <% if !@cart_items.blank? %>
  <div class="row mb-4">
       <div class="col text-right">
-
-        <%= link_to "カートを空にする", public_destroy_all_cart_items_path, method: :delete, class: "btn btn-danger btn-sm" %>
-        <i class="fa-solid fa-trash-can"></i>
+        <%= link_to public_destroy_all_cart_items_path, method: :delete, class: "btn btn-danger btn-sm" do %>
+        <i class="fa-solid fa-trash-can"></i> カートを空にする
+        <% end %>
       </div>
     </div>
 <% end %>
