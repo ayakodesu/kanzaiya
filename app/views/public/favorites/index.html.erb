@@ -4,7 +4,7 @@
   <% if @favorite.present? %>
     <tbody>
       <% @favorites.each do |favorite| %>
-      <tr>
+      <tr bgcolor="#f5f5f5">
         <td><%= link_to (image_tag favorite.item.image, size: '50x50'), public_item_path(favorite.item.id) %></td>
         <td><%= favorite.item.name %></td>
         <td><%= favorite.item.shape %></td>
