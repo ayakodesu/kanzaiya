@@ -1,8 +1,8 @@
 <%= render 'show', customers: @customers %>
 
 <div class="container">
-    <div class="row mt-5 justify-content-center">
-        <div class="col-4">
+    <div class="row justify-content-center">
+        <div class="col-6">
   <%= form_with model: @customer, url: edit_public_customer_path do |f| %>
     <table class="table table-borderless table-striped">
     <tr><th>氏名</th>

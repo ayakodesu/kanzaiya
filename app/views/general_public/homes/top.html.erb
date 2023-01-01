@@ -1,19 +1,16 @@
 <%= render 'public/homes/top', homes: @homes %>
 
+<header class="py-5 bg-image-full" style="background-image: url('https://beiz.jp/images_M/white/white_00032.jpg')">
 
-
-  <div class="container text-center">
-     <div class="font3"><h2>新着商品</h2></div>
-    </div>
-    <div class="container text-center">
-
+   <div class="container text-center">
+    <div class="font3"><h2>新着商品</h2></div>
       <div class="row text-center">
         <% @items.each do |item| %>
-        <%= link_to general_public_item_path(item.id) do %>
+          <%= link_to general_public_item_path(item.id) do %>
         <% if item.is_active %>
-        <div class="col-3 mb-5">
-           <div class="card text-black bg-white border-dark">
-          <%= link_to (image_tag item.image, size: '150x150'), general_public_item_path(item.id) %>
+        <div class="col-3 mt-5 mb-5">
+          <div class="card h-100">
+          <%= link_to (image_tag item.image, size: '250x200'), general_public_item_path(item.id) %>
           <%= link_to general_public_item_path(item.id), class: "link" do %>
             <div class="card-body text-black p-4">
               <div class="text-center">
@@ -23,26 +20,27 @@
                 <br />
               <strong>型</strong>
                 :<%= item.shape %>
-                <br />
+                 <br />
               <strong>サイズ</strong>
                 :<%= item.size %>
-                 <br />
-              <strong>定価</strong>
+                <br />
+              <strong>在庫数</strong>
+                :<%= item.amount %>
+                <br />
+              <strong>単価</strong>
                 :¥<%= item.last_price %>
                 <br>
               </div>
               </div>
             </div>
             <% end %>
+            </div>
           </div>
-        </div>
         <% end %>
         <% end %>
         <% end %>
       </div>
 
-
-</div>
-
-
+  </div>
+</header>
 

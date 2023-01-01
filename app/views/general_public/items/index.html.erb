@@ -26,14 +26,13 @@
           <div class="sample-box">
             <%= link_to general_public_item_favorites_path(item), method: :post do %>
               <div class="heart">
-                <i class="far fa-heart like-btn fa-2x" ></i>
+                <i class="far fa-heart like-btn fa-2x" style="color: black;" ></i>
               </div>
             <% end %>
           </div>
         <% end %>
           <%= link_to general_public_item_path(item.id), class: "link" do %>
-            <%= image_tag item.image, size: '200x150'%>
-
+            <%= image_tag item.image, size: '250x200' %>
             <div class="card-body text-black bg-white p-4">
               <div class="text-center">
                 <h5 class="fw-bolder"><%= item.genre.name %></h5>
@@ -52,3 +51,4 @@
       </div>
       <%= paginate @items %>
     </div>
+  </header>
