@@ -5,79 +5,52 @@
   </div>
 </div>
 
-<div class="container mt-5 mb-3">
-  <div class="row ">
-    <div class="col">
-  <div class="card" style="width: 20rem;">
-    <div class="card-header">
-      <div class="font1">
-     <h2>メニュー</h2>
-       </div>
+
+<div class="container">
+  <div class="row mb-5 gx-4 gx-lg-5">
+      <%= link_to admin_items_path, class: "card-title", class: "link" do %>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="mt-5">
+        <div class="mb-2"><h4><i class="fa-solid fa-bag-shopping fa-3x"></i></h4></div>
+        <h3 class="h4 mb-2">商品一覧(在庫追加)</h3>
+          <p class="text-muted mb-0">商品の確認ができます<br />
+          商品が入荷したらこちらから商品を探して編集画面から追加してください</p>
+        </div>
+      <% end %>
+      </div>
+
+
+      <%= link_to admin_customers_path, class: "card-title", class: "link" do %>
+      <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+          <div class="mb-2"><h4><i class="fa-solid fa-user fa-3x"></i></h4></div>
+          <h3 class="h4 mb-2">会員一覧確認・編集</h3>
+            <p class="text-muted mb-0">会員様の登録情報の確認、編集ができます</p>
+          </div>
+        <% end %>
+        </div>
+
+        <%= link_to public_cart_items_path, class: "card-title", class: "link" do %>
+        <div class="col-lg-3 col-md-6 text-center">
+            <div class="mt-5">
+            <div class="mb-2"><h4><i class="fa-solid fa-cart-shopping fa-3x"></i></h4></div>
+            <h3 class="h4 mb-2">注文履歴一覧</h3>
+              <p class="text-muted mb-0">会員様のご注文履歴が、確認できます</p>
+            </div>
+        <% end %>
+        </div>
+
+
+        <%= link_to public_orders_path, class: "card-title", class: "link" do %>
+        <div class="col-lg-3 col-md-6 text-center">
+            <div class="mt-5">
+            <div class="mb-2"><h4><i class="fa-solid fa-gear fa-3x"></i></h4></div>
+            <h3 class="h4 mb-2">ジャンル一覧&追加</h3>
+              <p class="text-muted mb-0">ジャンルの確認と追加ができます</p>
+            </div>
+        <% end %>
+        </div>
     </div>
-
-    <div class="card-body">
-      <ul class="list-group list-group-flush">
-
-      <div class="font">
-      <%= link_to admin_items_path, class: 'link' do %>
-      <h4><i class="fa-solid fa-bag-shopping"></i>
-      商品一覧(在庫追加)
-      </h4>
-      <% end %>
-      </div>
-      <br />
-
-      <div class="font">
-      <%= link_to  admin_customers_path, class: 'link' do %>
-      <h4><i class="fa-solid fa-users"></i>
-      会員一覧
-      </h4>
-      <% end %>
-      </div>
-      <br />
-
-      <div class="font">
-      <%= link_to admin_orders_path, class: 'link' do %>
-      <h4><i class="fa-solid fa-cart-shopping"></i>
-      注文履歴一覧
-      </h4>
-      <% end %>
-      </div>
-      <br />
-
-      <div class="font">
-      <%= link_to admin_genres_path, class: 'link' do %>
-      <h4><i class="fa-solid fa-gear"></i>
-      ジャンル一覧&追加
-      </h4>
-      <% end %>
-      </div>
-      <br />
-
-
-      </ul>
-    </div>
-  </div>
-</div>
-
-<div class="col">
-  <%= image_tag('余白', size: '200x200') %>
-  <%= image_tag('パソコン女の子', size: '250x250') %>
-</div>
-
-
-
-<div class="balloon">
-  在庫追加は
-  <div class="font3">
-  <%= link_to admin_items_path, class: 'link' do %>
-  <h4>商品一覧</h4>
-  <% end %>
-  </div>
-  から
-
-</div>
-
 </div>
 </div>
 

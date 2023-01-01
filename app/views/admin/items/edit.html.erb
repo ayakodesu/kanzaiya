@@ -5,18 +5,18 @@
 <div class="container mt-5">
   <div class="row mt-3 justify-content-center">
     <div class="col-6 text-center">
-      <h1>在庫数量</h1><br/><br/>
+      <div class="font"><h1>在庫数量</h1></div><br/><br/>
       <table class="table table-borderless table-striped">
        <th>数量</th>
     <td><%= f.text_field :amount, placeholder: "20" %></td>
     </table>
-      <h3>現在の画像</h3><br/><br/>
-    <%= image_tag @item.image, size: '200x200' %>
+      <div class="font"><h1>現在の画像</h1></div><br/><br/>
+    <%= image_tag @item.image, size: '350x300' %>
     </div>
 
   <div class="col-6">
     <div class="row mt-3 justify-content-center">
-    <h1>商品編集</h1>
+    <div class="font"><h1>商品編集</h1></div>
     </div>
     <table class="table table-borderless table-striped">
       <th>商品画像</th>
@@ -50,17 +50,16 @@
     </table>
 
   <div class="row mb-5 text-center justify-content-center">
-    <div class="col-3">
-      <%= f.submit "変更を保存", class: "btn btn-success" %>
-    </div>
-      <div class="col-3">
+    <div class="col-3 text-center">
       <%= link_to "戻る", admin_item_path(@item.id) %>
     </div>
+      <div class="col-3 text-center">
+        <%= f.submit "変更を保存", class: "btn btn-success" %>
+    </div>
   </div>
-
     <% end %>
-</div>
-</div>
+  </div>
+  </div>
 </div>
 </div>
 
