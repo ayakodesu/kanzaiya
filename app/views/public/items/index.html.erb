@@ -31,7 +31,7 @@
           </div>
         <% end %>
           <%= link_to public_item_path(item.id), class: "link" do %>
-            <%= image_tag item.image, size: '200x150'%>
+            <%= image_tag item.image, size: '250x200'%>
             <div class="card-body text-black bg-white p-4">
               <div class="text-center">
                 <h5 class="fw-bolder"><%= item.genre.name %></h5>
@@ -39,7 +39,7 @@
                     <%= item.shape %><br/>
                     サイズ:<%= item.size %><br/>
                     在庫数:<%= item.amount %><br/>
-                    単価¥<%= item.last_price %>
+                    単価:¥<%= item.last_price %>
               </div>
             </div>
           <% end %>

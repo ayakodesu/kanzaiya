@@ -2,73 +2,80 @@
 
 <%= form_with model: @order, url: general_public_orders_confirm_path do |f| %>
 
-<div class="container ">
-  <div class="row">
+<div class="container">
+  <div class="row mb-3">
+    <div class ="col">
     <h4>現場名</h4>
   </div>
-  <div class="row mb-3">
+  </div>
+  <div class="row mb-3 justify-content-center">
     <%= f.label :現場名%>
     <%= f.text_field :spot %>分
   </div>
-</div>
 
-<div class="container">
-  <div class="row">
-    <h4>配送先</h4>
+
+  <div class="row mb-3">
+    <div class ="col">
+      <h4>配送先</h4>
+    </div>
   </div>
-  <div class="row">
+  <div class="row mb-3 justify-content-center">
     <%= f.radio_button :select_address, 0, checked: "checked" %>
     <strong><%= f.label :select_address, "ご自身の住所" %></strong>
   </div>
-    <div class="row mb-3">
+    <div class="row mb-3 justify-content-center">
       〒<%= @general_customer.postal_code %>
         <%= @general_customer.address %>
         <%= @general_customer.full_name %>
     </div>
 
-    <div class="row">
+    <div class="row mb-3 justify-content-center">
       <%= f.radio_button :select_address, 1 %>
       <strong><%= f.label :select_address, "登録済住所から選択" %></strong>
     </div>
-    <div class="row mb-3">
+   <div class="row mb-3 justify-content-center">
       <%= f.select :address_id, options_from_collection_for_select(@addresses, :id, :address_display) %>
     </div>
 
-    <div class="row">
+    <div class="row mb-3 justify-content-center">
       <%= f.radio_button :select_address, 2 %>
       <strong><%= f.label :select_address, "新しいお届け先" %></strong>
     </div>
-    <div class="row mb-2">
+    <div class="row mb-3 justify-content-center">
       <%= f.label :〒 %>
       <%= f.text_field :postal_code, placeholder: "0020055" %>
     </div>
-    <div class="row mb-2">
+    <div class="row mb-3 justify-content-center">
       <%= f.label :住所 %>
       <%= f.text_field :address, placeholder: "東京都千代田区丸の内1条2丁目1番5号" %>
     </div>
-    <div class="row mb-2">
+    <div class="row mb-3 justify-content-center">
       <%= f.label :宛名 %>
       <%= f.text_field :name %>
     </div>
 
-  <div class="row">
+  <div class="row mb-3">
+    <div class ="col">
     <h4>支払方法</h4>
+    </div>
   </div>
 
-  <div class="row mb-3">
+  <div class="row mb-3 justify-content-center">
     <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
     <strong><%= f.label :payment_method, Order.payment_methods_i18n[:credit_card] %></strong>
   </div>
 
-  <div class="row mb-3">
+  <div class="row mb-3 justify-content-center">
     <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
     <strong><%= f.label :payment_method, Order.payment_methods_i18n[:bank_transfer] %></strong>
   </div>
 
-    <div class="row mb-5">
-      <%= f.submit "確認画面へ進む", class: "btn btn-primary" %>
-    </div>
-
+  <div class="row mb-3 justify-content-center">
+    <%= f.submit "確認画面へ進む", class: "btn btn-primary" %>
   </div>
+
+</div>
 <% end %>
 </div>
+</div>
+</header>
