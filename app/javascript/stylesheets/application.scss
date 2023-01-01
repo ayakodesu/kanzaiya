@@ -509,7 +509,7 @@ html,　body {
   color: #000000;
   letter-spacing: 0.2em;
   font-size: 14px;
-  background-color: #a5c9c1;
+  background-color: #FFFFFF;
 }
 /* 大きい丸 */
 .balloon::before{
@@ -517,7 +517,7 @@ html,　body {
   position: absolute;
   display: block;
   border-radius: 50%;
-  background-color: #a5c9c1;
+  background-color: #FFFFFF;
   left: -35px;
   bottom: 15px;
   width: 30px;
@@ -529,7 +529,7 @@ html,　body {
   position: absolute;
   display: block;
   border-radius: 50%;
-  background-color: #a5c9c1;
+  background-color: #FFFFFF;
   left: -55px;
   bottom: 10px;
   width: 15px;
@@ -582,5 +582,7 @@ h4:after {
  width: 160px;
  height: 500px;
 }
+
+
 
 

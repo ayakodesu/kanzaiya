@@ -1,19 +1,24 @@
 
  <%= flash[:notice] %>
 
-
-    <div class="text-center my-5">
-      <div class="c02 active"><div class="box font2"><h1>ようこそ! kanzaiyaへ!</h1></div>
-          <div class="box font"><h3>このサイトは、kanzaiyaのECサイトになります。</br>
-          kanzaiyaの商品の在庫確認、ご注文が出来ます。</h3>
+<header class="py-5 bg-image-full" style="background-image: url('https://cdn.pixabay.com/photo/2015/05/05/09/38/united-nations-building-753506_1280.jpg')">
+  <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-dark">
+          <div class="c02 active"><div class="box font2"><h1 class="display-4 fw-bolder">ようこそ! kanzaiyaへ!</h1></div>
+            <p class="lead fw-normal text-white-50 mb-0">
+              <div class="box font">
+                <h3>このサイトは、kanzaiyaのECサイトになります。</br>
+                    kanzaiyaの商品の在庫確認、ご注文が出来ます。</h3></p>
+                <div class="box1 font1">
+                <h5>当社は、幅広く豊富に商品を取り揃えております。<br>
+                    置いていない商品も、取り寄せ可能なものはございますのでお気軽にお申し付けください！</h5>
+                </div>
+              </div>
           </div>
-
-        <div class="box1 font1"><h5>当社は、幅広く豊富に商品を取り揃えております。<br>
-          置いていない商品も、取り寄せ可能なものはございますので
-          お気軽にお申し付けください！</h5>
-        </div>
       </div>
     </div>
+</header>
+
 
 <% if !general_customer_signed_in? %>
   <% if !customer_signed_in? %>
