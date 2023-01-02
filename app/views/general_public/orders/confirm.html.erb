@@ -74,7 +74,10 @@
   </div>
 
   <div class="container">
-    <div class="row mt-5 mb-5 justify-content-end">
+     <div class="row mt-5 mb-5 justify-content-end">
+      <div class="col-2">
+        <%= link_to "戻る", new_general_public_order_path %>
+      </div>
 
       <%= form_with model: @order, url: general_public_orders_path, method: :post do |f| %>
 
@@ -87,10 +90,11 @@
         <%= f.hidden_field :general_customer_id, :value => current_general_customer.id %>
         <%= f.hidden_field :spot, :value => @order.spot %>
 
-
+  <div class="col-6">
       <%= f.submit "注文を確定する", class: "btn btn-success" %>
-    </div>
   </div>
+  </div>
+</div>
       <% end %>
 </div>
 </div>

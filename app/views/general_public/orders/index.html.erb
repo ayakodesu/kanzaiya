@@ -2,7 +2,6 @@
 
 <%= paginate @orders %>
 
-
     <body>
       <% @orders.each do |order| %>
         <tr bgcolor="#f5f5f5">
@@ -16,6 +15,10 @@
     </body>
   </table>
   <%= paginate @orders %>
+
+<div class="row mt-5 justify-content-center">
+  <%= link_to "Myページへ戻る", general_public_customers_path %>
+</div>
 
 </div>
 </header>
