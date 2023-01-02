@@ -14,29 +14,29 @@
       <table class="table table-borderless table-striped">
         <tr><th>会員ID</th>
         <td><div class="font"><%= @customer.id %></div></td></tr>
-        
+
         <tr><th>名前</th>
         <td><div class="font"><%= @customer.full_name %>様</div></td></tr>
-        
+
         <tr><th>ふりがな</th>
         <td><div class="font"><%= @customer.last_name_kana %>
         <%= @customer.first_name_kana %>様</div></td></tr>
-        
+
         <tr><th>法人名</th>
         <td><div class="font"><%= @customer.corporation %></div></td></tr>
-        
+
         <tr><th>〒</th>
         <td><div class="font"><%= @customer.postal_code %></div></td></tr>
-        
+
         <tr><th>住所</th>
         <td><div class="font"><%= @customer.address %></div></td></tr>
-        
+
         <tr><th>電話番号</th>
         <td><div class="font"><%= @customer.telephone_number %></div></td></tr>
-        
+
         <tr><th>email</th>
         <td><div class="font"><%= @customer.email %></div></td></tr>
-        
+
         <tr><th>会員ステータス</th>
         <td><div class="font"><% if @customer.is_deleted == false %>
           <p class="text-success">有効</p>
@@ -49,14 +49,16 @@
     </div>
   </div>
 
-<div class="container mb-5">
-    <div class="row mt-2 mb-4 justify-content-center text-center">
-        <%= link_to "編集する",  edit_admin_customer_path(@customer.id), class: "btn btn-success" %>
-     </div>
-      <div class="row mt-2 mb-5 justify-content-center">
-        <%= link_to "戻る", admin_customers_path %>
-      </div>
-    </div>
+
+<div class="row mt-3 mb-5 justify-content-center">
+  <div class="col-3 text-center">
+    <%= link_to "戻る", admin_customers_path %>
+  </div>
+  <div class="col-3 text-center">
+    <%= link_to "編集する",  edit_admin_customer_path(@customer.id), class: "btn btn-success" %>
+  </div>
+</div>
+
 </div>
 
 </div>
