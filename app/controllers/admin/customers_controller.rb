@@ -17,6 +17,7 @@ class Admin::CustomersController < ApplicationController
   def update
     @customer = Customer.find(params[:id])
     @customer.update(customer_params)
+     flash[:success] = "変更を保存しました"
     redirect_to admin_customer_path(@customer)
   end
 

@@ -12,6 +12,7 @@ class Admin::GenresController < ApplicationController
   def create
     @genre = Genre.new(genre_params)
     @genre.save
+      flash[:info] = "新規ジャンルを保存しました"
     redirect_to admin_genres_path(@genre.id)
   end
 
@@ -22,6 +23,7 @@ class Admin::GenresController < ApplicationController
   def update
     @genre = Genre.find(params[:id])
     @genre.update(genre_params)
+      flash[:success] = "変更を保存しました"
     redirect_to admin_genres_path(@genre.id)
   end
 

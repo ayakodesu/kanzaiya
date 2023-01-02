@@ -1,14 +1,19 @@
 class Admin::GeneralCustomersController < ApplicationController
   def edit
      @general_customer = GeneralCustomer.find(params[:id])
+  end
 
+  def update
+    @general_customer = GeneralCustomer.find(params[:id])
+    @general_customer.update(general_customer_params)
+     flash[:success] = "変更を保存しました"
+    redirect_to admin_general_customer_path(@general_customer)
   end
 
   def index
     @customer = Customer.all
     @general_customer = GeneralCustomer.all
     @instances = @customer | @general_customer
-
   end
 
   def show

@@ -1,3 +1,7 @@
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+
 <div class="container">
     <div class="row mt-5 justify-content-center">
       <div class="font"><h4>会員詳細</h4></div>
@@ -8,35 +12,32 @@
   <div class="row mt-5 justify-content-center">
     <div class="col-6">
       <table class="table table-borderless table-striped">
-
         <tr><th>会員ID</th>
         <td><div class="font"><%= @customer.id %></div></td></tr>
-
+        
         <tr><th>名前</th>
         <td><div class="font"><%= @customer.full_name %>様</div></td></tr>
-
+        
         <tr><th>ふりがな</th>
         <td><div class="font"><%= @customer.last_name_kana %>
         <%= @customer.first_name_kana %>様</div></td></tr>
-
+        
         <tr><th>法人名</th>
         <td><div class="font"><%= @customer.corporation %></div></td></tr>
-
+        
         <tr><th>〒</th>
         <td><div class="font"><%= @customer.postal_code %></div></td></tr>
-
-
+        
         <tr><th>住所</th>
         <td><div class="font"><%= @customer.address %></div></td></tr>
-
+        
         <tr><th>電話番号</th>
         <td><div class="font"><%= @customer.telephone_number %></div></td></tr>
-
+        
         <tr><th>email</th>
         <td><div class="font"><%= @customer.email %></div></td></tr>
-
+        
         <tr><th>会員ステータス</th>
-
         <td><div class="font"><% if @customer.is_deleted == false %>
           <p class="text-success">有効</p>
         <% else %>

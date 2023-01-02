@@ -20,7 +20,7 @@ class Public::CustomersController < ApplicationController
   def update
     @customer = current_customer
     if @customer.update(customer_params)
-      flash[:notice] = "変更を保存しました"
+      flash[:success] = "変更を保存しました"
     redirect_to public_customer_path
     end
   end

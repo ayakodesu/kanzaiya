@@ -14,7 +14,7 @@ class GeneralPublic::CustomersController < ApplicationController
   def update
     @general_customer = current_general_customer
     if @general_customer.update(general_customer_params)
-      flash[:notice] = "変更を保存しました"
+      flash[:success] = "変更を保存しました"
     redirect_to general_public_customer_path
     end
   end

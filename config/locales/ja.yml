@@ -15,4 +15,13 @@
         general_customer:
           signed_in: 'ログインしました。'
           signed_out: 'ログアウトしました。'
+        admin:
+          signed_in: 'ログインしました。'
+          signed_out: 'ログアウトしました。'
+      registrations:
+        customer:
+          signed_up: 'ようこそ！'
+        general_customer:
+          signed_up: 'ようこそ！'
+
 

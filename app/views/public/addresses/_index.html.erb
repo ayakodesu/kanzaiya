@@ -1,5 +1,7 @@
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
 <header class="py-5 bg-image-full" style="background-image: url('https://beiz.jp/images_M/white/white_00032.jpg')">
-<%= flash[:notice] %>
 
 <div class="container">
     <div class="row mt-5 justify-content-center">
@@ -20,7 +22,6 @@
         <th colspan="3"></th>
       </tr>
     </thead>
-
   </div>
 </div>
 
