@@ -1,10 +1,12 @@
+<header class="py-5 bg-image-full" style="background-image: url('https://beiz.jp/images_M/white/white_00032.jpg')">
+
 <div class="container">
     <div class="row mt-5 justify-content-center">
       <div class="font"><h4>会員一覧</h4></div>
     </div>
 
 
-    <table class="table table-hover table-bordered table-sm">
+    <table class="table table-secondary table-bordered table-sm">
       <thead>
         <div class="font">
         <th>会員ID</th>
@@ -19,7 +21,7 @@
 
   <% @instances.each do |instance| %>
     <% if instance.class == Customer %>
-    <tr>
+    <tr bgcolor="#f5f5f5">
       <td><%= instance.id %></td>
       <td><%= link_to instance.last_name + instance.first_name, admin_customer_path(instance.id) %></td>
       <td><%= instance.corporation %></td>
@@ -33,7 +35,7 @@
     </tr>
 
   <% else %>
-    <tr>
+    <tr bgcolor="#f5f5f5">
      <td><%= instance.id %></td>
       <td><%= link_to instance.last_name + instance.first_name, admin_general_customer_path(instance.id) %></td>
       <td>---------</td>
@@ -55,3 +57,4 @@
     </table>
 
 </div>
+</header>
