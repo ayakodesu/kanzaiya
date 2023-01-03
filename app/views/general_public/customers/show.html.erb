@@ -1,10 +1,8 @@
 <%= render 'public/customers/show', customers: @customers %>
 
-
-
 <div class="container">
-    <div class="row mt-5 justify-content-center">
-        <div class="col-4">
+    <div class="row justify-content-center">
+        <div class="col-6">
      <%= form_with model: @general_customer, url: edit_general_public_customer_path do |f| %>
       <table class="table table-borderless table-striped">
     <tr><th>氏名</th>
@@ -28,8 +26,8 @@
       </table>
     <% end %>
 
-  <div class="container mb-5">
-    <div class="row mt-5 justify-content-center">
+
+    <div class="row mt-5 mb-5 justify-content-center">
       <div class="col-5 text-center">
       <%= link_to "戻る", general_public_customers_path %>
       </div>
@@ -37,7 +35,7 @@
       <%= link_to "編集する", edit_general_public_customer_path, class: "btn btn-sm btn-success" %>
       </div>
     </div>
-  </div>
+
 
       </div>
     </div>

@@ -3,17 +3,17 @@
 <%= form_with model: @customer, url: public_customer_path do |f| %>
   <table class="table">
     <tr><th>氏名</th>
-      <td><%= f.text_field :last_name, placeholder: "姓" %></td>
-      <td><%= f.text_field :first_name, placeholder: "名" %></td>
+      <td><%= f.text_field :last_name, placeholder: "姓" %>
+          <%= f.text_field :first_name, placeholder: "名" %></td>
     </tr>
 
     <tr><th>かな</th>
-      <td><%= f.text_field :last_name_kana, placeholder: "せい" %></td>
-      <td><%= f.text_field :first_name_kana, placeholder: "めい" %></td>
+      <td><%= f.text_field :last_name_kana, placeholder: "せい" %>
+          <%= f.text_field :first_name_kana, placeholder: "めい" %></td>
     </tr>
 
     <tr><th>法人名</th>
-      <td><%= f.text_field :corporation, placeholder: "〇〇〇工業　株式会社" %></td>
+      <td><%= f.text_field :corporation, placeholder: "〇〇〇工業　株式会社", :size=>"60" %></td>
     </tr>
 
     <tr><th>郵便番号</th>
@@ -21,7 +21,7 @@
     </tr>
 
     <tr><th>住所</th>
-      <td><%= f.text_field :address %></td>
+      <td><%= f.text_field :address, :size=>"60" %></td>
     </tr>
 
     <tr><th>TEL</th>

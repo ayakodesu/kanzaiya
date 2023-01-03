@@ -2,12 +2,13 @@
     <div class="row mt-5 justify-content-center">
       <h4>会員編集</h4>
     </div>
+</div>
 
 <%= form_with model: @general_customer, url: admin_general_customer_path do |f| %>
 
   <div class="container">
     <div class="row mt-5 justify-content-center">
-      <div class="col-6">
+      <div class="col-8">
         <table class="table table-borderless table-striped">
           <tr><th>会員ID</th>
           <td><%= @general_customer.id %></td></tr>
@@ -21,7 +22,7 @@
           <%= f.text_field :first_name_kana, placeholder: "名" %></td>
 
           <tr><th>住所</th>
-          <td><%= f.text_field :address, placeholder: "東京都千代田区" %></td>
+          <td><%= f.text_field :address, placeholder: "東京都千代田区", :size=>"60" %></td>
 
           <tr><th>TEL</th>
           <td><%= f.text_field :telephone_number, placeholder: "09012345678" %></td>
@@ -35,6 +36,9 @@
             <%= f.radio_button :is_deleted, :true %>
             <%= f.label :is_deleted, "退会" %></td>
         </table>
+        </div>
+      </div>
+
 
   <div class="row mt-5 mb-5 justify-content-center">
     <div class="col-5 text-center">
@@ -48,5 +52,4 @@
 <% end %>
       </div>
     </div>
-  </div>
-</div>
+
