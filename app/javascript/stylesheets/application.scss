@@ -356,25 +356,23 @@ input[type="submit"]:focus {
 
 
 /*文字アニメーション*/
-.c02{
-  background-image: linear-gradient(to bottom, rgba(#333,0) 0%, rgba(#333,1) 50%);
-  background-size: 100% 200%;
-  background-position: 0% -100%;
-  background-repeat: no-repeat;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+
+.c03{
+  color: #e7d4e3; background: #a675a5;
+  clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
   &.active{
-    animation-name: kf_c02;
-    animation-duration: 2s;
+    animation-name: kf_c03;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
   }
 }
-@keyframes kf_c02 {
+@keyframes kf_c03 {
   100%{
-    background-position: 0% 100%;
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
   }
 }
+
+
 
 
 
@@ -584,5 +582,36 @@ h4:after {
 }
 
 
+.gradient-text {
+  display: inline-block;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  background-image: linear-gradient(135deg, #24ff72, #2196f3);
+}
 
+.c02{
+  background-image: linear-gradient(to bottom, rgba(#333,0) 0%, rgba(#333,1) 50%);
+  background-size: 100% 200%;
+  background-position: 0% -100%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  background-image: linear-gradient(135deg, #24ff72, #2196f3);
+  &.active{
+    animation-name: kf_c02;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes kf_c02 {
+  100%{
+    background-position: 0% 100%;
+  }
+}
 
