@@ -6,6 +6,15 @@
       <div class="font"><h4>企業会員一覧</h4></div>
     </div>
 
+<div class="row mt-3 mb-3 justify-content-center">
+  <%= form_tag(public_customers_path, method: :get) do %>
+    <%= text_field_tag :search, '', placeholder: "名前検索" %>
+    <%= submit_tag 'Search', full_name: nil, class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+
+
     <table class="table table-secondary table-bordered table-sm">
       <thead>
         <div class="font">
@@ -23,7 +32,7 @@
     <%# if instance.class == Customer %>
     <tr bgcolor="#f5f5f5">
       <td><%= customer.id %></td>
-      <td><%= link_to customer.last_name + customer.first_name, admin_customer_path(customer.id) %></td>
+      <td><%= link_to customer.full_name, admin_customer_path(customer.id) %></td>
       <td><%= customer.corporation %></td>
       <td><%= customer.address %></td>
       <td><% if customer.is_deleted == false %>

@@ -18,7 +18,7 @@
     <%# if instance.class == Customer %>
     <tr bgcolor="#f5f5f5">
       <td><%= general_customer.id %></td>
-      <td><%= link_to general_customer.last_name + general_customer.first_name, admin_general_customer_path(general_customer.id) %></td>
+      <td><%= link_to general_customer.full_name, admin_general_customer_path(general_customer.id) %></td>
       <td><%= general_customer.address %></td>
       <td><% if general_customer.is_deleted == false %>
           <p class="text-success">有効</p>

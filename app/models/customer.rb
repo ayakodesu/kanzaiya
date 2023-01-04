@@ -11,7 +11,9 @@ class Customer < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
-
+  def self.search(search)
+    search ? where('full_name LIKE ?', "%#{search}%") : all
+  end
 
 
   def already_favorited?(item)

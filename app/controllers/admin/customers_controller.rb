@@ -2,9 +2,8 @@ class Admin::CustomersController < ApplicationController
 
   def index
     @customers = Customer.all
-    @general_customers = GeneralCustomer.all
     #@instances = @customer | @general_customer
-
+    @customers = Customer.search(params[:search])
   end
 
   def show
