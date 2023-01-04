@@ -11,7 +11,7 @@
     <div class="row mt-5">
     <% @items.each do |item| %>
     <% if item.is_active %>
-      <div class="col-3 mb-5">
+      <div class="col-lg-3 col-md-5 mb-5 text-center">
         <div class="card text-black bg-white border-dark">
         <% if current_customer.already_favorited?(item) %>
           <div class="sample-box">
