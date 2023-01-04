@@ -1,54 +1,37 @@
 <header class="py-5 bg-image-full" style="background-image: url('https://beiz.jp/images_M/white/white_00032.jpg')">
 <div class="container">
     <div class="row mt-5 justify-content-center">
-      <div class="font"><h4>会員一覧</h4></div>
+      <div class="font"><h4>一般会員一覧</h4></div>
     </div>
 
     <table class="table table-secondary table-bordered table-sm">
       <thead>
         <th>会員ID</th>
-        <th >名前</th>
-        <th>企業</th>
+        <th>名前</th>
         <th>住所</th>
         <th>会員ステータス</th>
       </thead>
 
  <tbody>
 
-  <% @instances.each do |instance| %>
-    <% if instance.class == Customer %>
+  <% @general_customers.each do |general_customer| %>
+    <%# if instance.class == Customer %>
     <tr bgcolor="#f5f5f5">
-      <td><%= instance.id %></td>
-      <td><%= link_to instance.last_name + instance.first_name, admin_customer_path(instance.id) %></td>
-      <td><%= instance.corporation %></td>
-      <td><%= instance.address %></td>
-      <td><% if instance.is_deleted == false %>
+      <td><%= general_customer.id %></td>
+      <td><%= link_to general_customer.last_name + general_customer.first_name, admin_general_customer_path(general_customer.id) %></td>
+      <td><%= general_customer.address %></td>
+      <td><% if general_customer.is_deleted == false %>
           <p class="text-success">有効</p>
         <% else %>
            <p class="text-secondary">退会</p>
         <% end %>
       </td>
     </tr>
-
-  <% else %>
-    <tr bgcolor="#f5f5f5">
-     <td><%= instance.id %></td>
-      <td><%= link_to instance.last_name + instance.first_name, admin_general_customer_path(instance.id) %></td>
-      <td>---------</td>
-      <td><%= instance.address %></td>
-      <td><% if instance.is_deleted == false %>
-          <p class="text-success">有効</p>
-        <% else %>
-           <p class="text-secondary">退会</p>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
   <% end %>
   </tbody>
 
     </table>
-<div class="row mt-2 mb-5 justify-content-center">
+<div class="row mt-5 mb-5 justify-content-center">
   <%= link_to "Homeへ戻る", admin_top_path %>
 </div>
 </div>

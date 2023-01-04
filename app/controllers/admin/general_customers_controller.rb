@@ -11,9 +11,7 @@ class Admin::GeneralCustomersController < ApplicationController
   end
 
   def index
-    @customer = Customer.all
-    @general_customer = GeneralCustomer.all
-    @instances = @customer | @general_customer
+    @general_customers = GeneralCustomer.all
   end
 
   def show
