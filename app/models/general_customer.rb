@@ -9,6 +9,9 @@ class GeneralCustomer < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+ def self.search(search)
+    search ? where('last_name LIKE ? OR first_name LIKE ?', "%#{search}%","%#{search}%") : all
+ end
 
 
    def full_name

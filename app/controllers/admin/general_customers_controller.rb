@@ -12,6 +12,7 @@ class Admin::GeneralCustomersController < ApplicationController
 
   def index
     @general_customers = GeneralCustomer.all
+    @general_customers = GeneralCustomer.search(params[:search])
   end
 
   def show
