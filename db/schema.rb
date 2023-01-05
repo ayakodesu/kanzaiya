@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2022_11_19_130627) do
     t.string "name", null: false
     t.string "postal_code", null: false
     t.string "address", null: false
+    t.string "spot"
     t.integer "customer_id"
     t.string "telephone_number", null: false
     t.integer "general_customer_id"

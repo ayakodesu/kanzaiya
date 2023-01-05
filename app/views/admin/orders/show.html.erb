@@ -29,7 +29,7 @@
       <% end %>
     </tbody>
         </table>
-      </div>
+    </div>
 
   <div class="col-6">
     <div class="row justify-content-center">
@@ -64,14 +64,15 @@
           <th>支払方法</th>
           <td><%= @order.payment_method_i18n %></td>
         </tr>
+      <% end %>
     </div>
-    </div>
-<% end %>
+  </div>
+
 
 
 <div class="col-3">
   <table class="table table-bordered table-sm" style="border-collapse: collapse">
-<%= form_with model: @order, url: edit_public_customer_path do |f| %>
+  <%= form_with model: @order, url: edit_public_customer_path do |f| %>
     <th bgcolor = "lightsteelblue">商品合計</th>
       <td>¥<%= @order.total_payment %></td><tr/>
     <th bgcolor = "lightsteelblue">送料</th>
@@ -81,12 +82,12 @@
   <% end %>
   </table>
   </div>
+
+  </div>
 </div>
-    </div>
 </div>
 
 <div class="row mt-2 mb-5 justify-content-center">
   <%= link_to "戻る", admin_orders_path %>
 </div>
 
-</div>

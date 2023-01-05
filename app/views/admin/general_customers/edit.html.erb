@@ -6,39 +6,39 @@
 
 <%= form_with model: @general_customer, url: admin_general_customer_path do |f| %>
 
-  <div class="container">
-    <div class="row mt-5 justify-content-center">
-      <div class="col-8">
-        <table class="table table-borderless table-striped">
-          <tr><th>会員ID</th>
-          <td><%= @general_customer.id %></td></tr>
+<div class="container">
+  <div class="row mt-5 justify-content-center">
+    <div class="col-8">
+      <table class="table table-borderless table-striped">
+        <tr><th>会員ID</th>
+        <td><%= @general_customer.id %></td></tr>
 
-          <tr><th>名前</th>
-          <td><%= f.text_field :last_name, placeholder: "姓" %>
-          <%= f.text_field :first_name, placeholder: "名" %></td>
+        <tr><th>名前</th>
+        <td><%= f.text_field :last_name, placeholder: "姓" %>
+        <%= f.text_field :first_name, placeholder: "名" %></td>
 
-          <tr><th>ふりがな</th>
-          <td><%= f.text_field :last_name_kana, placeholder: "せい" %>
-          <%= f.text_field :first_name_kana, placeholder: "名" %></td>
+        <tr><th>ふりがな</th>
+        <td><%= f.text_field :last_name_kana, placeholder: "せい" %>
+        <%= f.text_field :first_name_kana, placeholder: "名" %></td>
 
-          <tr><th>住所</th>
-          <td><%= f.text_field :address, placeholder: "東京都千代田区", :size=>"60" %></td>
+        <tr><th>住所</th>
+        <td><%= f.text_field :address, placeholder: "東京都千代田区", :size=>"60" %></td>
 
-          <tr><th>TEL</th>
-          <td><%= f.text_field :telephone_number, placeholder: "09012345678" %></td>
+        <tr><th>TEL</th>
+        <td><%= f.text_field :telephone_number, placeholder: "09012345678" %></td>
 
-          <tr><th>email</th>
-          <td><%=f.text_field :email, placeholder: "〇〇@gmail.com" %></td>
+        <tr><th>email</th>
+        <td><%=f.text_field :email, placeholder: "〇〇@gmail.com" %></td>
 
-          <tr><th>会員ステータス</th>
-          <td><%= f.radio_button :is_deleted, :false %>
-            <%= f.label :is_deleted, "有効" %>
-            <%= f.radio_button :is_deleted, :true %>
-            <%= f.label :is_deleted, "退会" %></td>
+        <tr><th>会員ステータス</th>
+        <td><%= f.radio_button :is_deleted, :false %>
+          <%= f.label :is_deleted, "有効" %>
+          <%= f.radio_button :is_deleted, :true %>
+          <%= f.label :is_deleted, "退会" %></td>
+
         </table>
-        </div>
-      </div>
-
+    </div>
+  </div>
 
   <div class="row mt-5 mb-5 justify-content-center">
     <div class="col-5 text-center">
@@ -48,8 +48,8 @@
       <%= f.submit "変更を保存", class: "btn btn-success" %>
       </div>
   </div>
-
+</div>
 <% end %>
-      </div>
-    </div>
+
+
 

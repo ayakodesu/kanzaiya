@@ -4,14 +4,15 @@
 
 <div class="container mt-5">
   <div class="row mt-3 justify-content-center">
+
     <div class="col-6 text-center">
       <div class="font"><h1>在庫数量</h1></div><br/><br/>
-      <table class="table table-borderless table-striped">
-       <th>数量</th>
-    <td><%= f.text_field :amount, placeholder: "20" %></td>
-    </table>
+        <table class="table table-borderless table-striped">
+           <th>数量</th>
+            <td><%= f.text_field :amount, placeholder: "20" %></td>
+        </table>
       <div class="font"><h1>現在の画像</h1></div><br/><br/>
-    <%= image_tag @item.image, size: '350x300' %>
+      <%= image_tag @item.image, size: '350x300' %>
     </div>
 
   <div class="col-6">
@@ -57,11 +58,11 @@
         <%= f.submit "変更を保存", class: "btn btn-success" %>
     </div>
   </div>
-    <% end %>
+
   </div>
   </div>
 </div>
-</div>
+<% end %>
 
 
 

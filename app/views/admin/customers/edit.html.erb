@@ -7,15 +7,16 @@
 <%= form_with model: @customer, url: admin_customer_path do |f| %>
 
 <div class="container">
-<div class="row mt-5 justify-content-center">
+  <div class="row mt-5 justify-content-center">
     <div class="col-8">
+
     <table class="table table-borderless table-striped">
       <tr><th>会員ID</th>
       <td><%= @customer.id %></td></tr>
 
       <tr><th>名前</th>
-      <td><div class="font"><%= f.text_field :last_name, placeholder: "姓" %>
-      <%= f.text_field :first_name, placeholder: "名" %></div></td>
+      <td><%= f.text_field :last_name, placeholder: "姓" %>
+      <%= f.text_field :first_name, placeholder: "名" %></td>
 
       <tr><th>ふりがな</th>
       <td><%= f.text_field :last_name_kana, placeholder: "せい" %>
@@ -40,20 +41,19 @@
           <%= f.label :is_deleted, "退会" %></td>
     </table>
 
-
-     <div class="row mt-5 mb-5 justify-content-center">
-       <div class="col-5 text-center">
-        <%= link_to "戻る", admin_customer_path(@customer.id) %>
+  <div class="row mt-5 mb-5 justify-content-center">
+    <div class="col-5 text-center">
+      <%= link_to "戻る", admin_customer_path(@customer.id) %>
     </div>
     <div class="col-5 text-center">
       <%= f.submit "変更を保存", class: "btn btn-success" %>
-
-      </div>
+    </div>
   </div>
 
+    </div>
+  </div>
 </div>
-  </div>
 <% end %>
-</div>
-</div>
+
+
 

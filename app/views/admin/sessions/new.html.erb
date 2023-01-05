@@ -4,8 +4,7 @@
     <h1>社員用  ログイン</h1>
 
     <form class="form" method="post">
-
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <p class="field">
         <div class="row mt-5 justify-content-center">
         <i class="fa-regular fa-envelope fa-2x"></i>
@@ -17,18 +16,18 @@
         <div class="row justify-content-center">
            <i class="fa fa-lock fa-2x"></i>
         <%= f.password_field :password, placeholder: "パスワード", autocomplete: "current-password"%>
-
         </div>
       </p>
 
       <p class="submit"><input type="submit" name="sent" value="Login"></p>
+      <% end %>
 
-<% end %>
-<%= render "admin/shared/links" %>
+      <%= render "admin/shared/links" %>
     </form>
-  </div> <!--/ Login-->
+</div> <!--/ Login-->
 
 <div class="copyright">
-    <p>Copyright &copy; 2022. Kanzaiya</a></p>
+    <p>Copyright &copy; 2023. Kanzaiya</p>
+</div>
 
 </header>
