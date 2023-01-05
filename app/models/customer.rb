@@ -16,6 +16,7 @@ class Customer < ApplicationRecord
   end
 
 
+
   def already_favorited?(item)
     self.favorites.exists?(item_id: item.id)
   end
