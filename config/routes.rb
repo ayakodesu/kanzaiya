@@ -73,7 +73,7 @@ Rails.application.routes.draw do
 
     resource :customer, only: [:create, :edit, :show, :update, :destroy]
     get '/customer/index' => 'customers#index', as: 'customers'
-    get 'unsubscribe/:name' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
+    get 'unsubscribe' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
     patch ':id/withdraw/:name' => 'customers#withdraw', as: 'withdraw_user'
     put 'withdraw/:name' => 'customer#withdraw'
 

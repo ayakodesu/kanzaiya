@@ -7,7 +7,7 @@
     </div>
 
 <div class="row mt-3 mb-3 justify-content-center">
-  <%= form_tag(public_customers_path, method: :get) do %>
+  <%= form_tag(admin_customers_path, method: :get) do %>
     <%= text_field_tag :search, '', placeholder: "名前検索" %>
     <%= submit_tag 'Search', full_name: nil, class: 'btn btn-primary' %>
   <% end %>
