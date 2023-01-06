@@ -2,7 +2,8 @@ class GeneralPublic::ItemsController < ApplicationController
   def index
     @items = Item.all
     genre_ids = Genre.search(params[:search]).pluck(:id)
-    @items = @items.where(genre_id: genre_ids).order('id DESC').limit(8).page(params[:page])
+    @items = @items.where(genre_id: genre_ids).order('id DESC').limit(8)
+    @items = Item.search(params[:search]).page(params[:page])
 
   end
 
