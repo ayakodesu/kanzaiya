@@ -12,8 +12,9 @@ class Customer < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   def self.search(search)
-    search ? where('last_name LIKE ? OR first_name LIKE ?', "%#{search}%","%#{search}%") : all
+    search ? where('last_name LIKE ? OR first_name LIKE ? OR corporation LIKE ? OR address LIKE ?', "%#{search}%","%#{search}%","%#{search}%","%#{search}%") : all
   end
+
 
 
 

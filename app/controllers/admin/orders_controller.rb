@@ -9,13 +9,10 @@ class Admin::OrdersController < ApplicationController
 
   def index
     @order = Order.new
-    #@orders = Order.all
     @customer = Order.all
     @general_customer = Order.all
     @instances = @customer | @general_customer
-    #@order_details = OrderDetail.page(params[:page])
     @order_details = @order.order_details
-
   end
 
   private

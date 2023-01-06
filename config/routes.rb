@@ -34,10 +34,6 @@ Rails.application.routes.draw do
     get '/customer/index' => 'customers#index', as: 'customers'
 
 
-    #resources :addresses, only: [:create, :edit, :index, :update, :destroy]
-    #delete 'addresses/:id' =>'addresses#destroy', as: 'destroy_address'
-    #patch ':id/adderss/:name' => 'addresses#cart_item', as: 'adderss_user'
-
     resources :addresses, only: [:new, :create, :edit, :index, :update, :destroy]
     delete 'addresses/:id' =>'addresses#destroy', as: 'destroy_address'
     patch ':id/adderss/:name' => 'addresses#cart_item', as: 'adderss_user'
