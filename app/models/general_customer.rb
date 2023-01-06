@@ -10,20 +10,16 @@ class GeneralCustomer < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
  def self.search(search)
-    search ? where('last_name LIKE ? OR first_name LIKE ?', "%#{search}%","%#{search}%") : all
+    search ? where('last_name LIKE ? OR first_name LIKE ? OR address LIKE ?', "%#{search}%","%#{search}%","%#{search}%") : all
  end
 
- #def self.search(search)
-    #search ? where('address LIKE ?', "%#{search}%") : all
- #end
 
+ def full_name
+   self.last_name + " " + self.first_name
+ end
 
-   def full_name
-    self.last_name + " " + self.first_name
-   end
-
-   def already_favorited?(item)
-    self.favorites.exists?(item_id: item.id)
-   end
+ def already_favorited?(item)
+   self.favorites.exists?(item_id: item.id)
+ end
 
 end

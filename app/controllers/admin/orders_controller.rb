@@ -9,9 +9,9 @@ class Admin::OrdersController < ApplicationController
 
   def index
     @order = Order.new
-    @customer = Order.all
-    @general_customer = Order.all
-    @instances = @customer | @general_customer
+    @customers = Order.all
+    @general_customers = Order.all
+    @instances = @customers | @general_customers
     @order_details = @order.order_details
   end
 
