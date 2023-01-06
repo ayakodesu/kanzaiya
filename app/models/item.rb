@@ -15,7 +15,9 @@ class Item < ApplicationRecord
   has_many :order_detalls, dependent: :destroy
   belongs_to :genre
 
-
+def self.search(search)
+  search ? where('genre_id LIKE ? OR name LIKE ? OR size LIKE ? OR shape LIKE ?', "%#{search}%","%#{search}%","%#{search}%","%#{search}%") : all
+end
 
   def favorited_by?(customer)
     favorites.exists?(customer_id: customer.id)
@@ -24,12 +26,5 @@ class Item < ApplicationRecord
   def favorited_by?(general_customer)
     favorites.exists?(general_customer_id: general_customer.id)
   end
-
-
-
-
-
-
-
 
 end

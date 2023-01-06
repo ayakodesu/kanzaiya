@@ -3,7 +3,8 @@ class Admin::ItemsController < ApplicationController
     @item = Item.all
     @items = Item.page(params[:page])
     genre_ids = Genre.search(params[:search]).pluck(:id)
-    @items = @items.where(genre_id: genre_ids).order('id DESC').limit(8).page(params[:page])
+    @items = @items.where(genre_id: genre_ids).order('id DESC').limit(8)
+    @items = Item.search(params[:search]).page(params[:page])
   end
 
   def create
