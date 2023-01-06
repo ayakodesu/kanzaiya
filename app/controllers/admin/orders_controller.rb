@@ -13,6 +13,7 @@ class Admin::OrdersController < ApplicationController
     @general_customers = Order.all
     @instances = @customers | @general_customers
     @order_details = @order.order_details
+    #@orders = @instances.search(params[:search])
   end
 
   private

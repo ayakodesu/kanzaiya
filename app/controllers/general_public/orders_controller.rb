@@ -57,8 +57,8 @@ class GeneralPublic::OrdersController < ApplicationController
 
 
   def index
-    @orders = current_general_customer.orders.page(params[:page]).per(5)
-
+    @orders = current_general_customer.orders
+    @orders = current_general_customer.orders.search(params[:search]).page(params[:page])
   end
 
   def show
