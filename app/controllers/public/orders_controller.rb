@@ -21,11 +21,8 @@ class Public::OrdersController < ApplicationController
       @order.postal_code = @address.postal_code
       @order.address = @address.address
       @order.name = @address.name
-
     else
-
     end
-
   end
 
   def create
@@ -49,13 +46,10 @@ class Public::OrdersController < ApplicationController
     end
     current_customer.cart_items.destroy_all
     redirect_to public_orders_complete_path
-
   end
-
 
   def complete
   end
-
 
   def index
     @orders = current_customer.orders
@@ -73,5 +67,4 @@ private
   def order_params
     params.require(:order).permit(:customer_id, :spot, :postal_code, :address, :name, :shipping_cost, :total_payment, :payment_method, :status)
   end
-
 end

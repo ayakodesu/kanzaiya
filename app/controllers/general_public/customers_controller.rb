@@ -19,7 +19,6 @@ class GeneralPublic::CustomersController < ApplicationController
     end
   end
 
-
   def unsubscribe
     @general_customer = current_general_customer
   end
@@ -30,8 +29,6 @@ class GeneralPublic::CustomersController < ApplicationController
     reset_session
     redirect_to public_path
   end
-
-
 
   private
   def general_customer_params

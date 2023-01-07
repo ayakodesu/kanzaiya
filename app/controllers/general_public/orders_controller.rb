@@ -21,11 +21,8 @@ class GeneralPublic::OrdersController < ApplicationController
       @order.postal_code = @address.postal_code
       @order.address = @address.address
       @order.name = @address.name
-
     else
-
     end
-
   end
 
   def create
@@ -51,10 +48,8 @@ class GeneralPublic::OrdersController < ApplicationController
     redirect_to general_public_orders_complete_path
   end
 
-
   def complete
   end
-
 
   def index
     @orders = current_general_customer.orders

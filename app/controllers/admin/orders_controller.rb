@@ -5,8 +5,6 @@ class Admin::OrdersController < ApplicationController
    @order_details = @order.order_details
   end
 
-
-
   def index
     #@order = Order.new
     #@customers = Order.all
@@ -14,8 +12,6 @@ class Admin::OrdersController < ApplicationController
     #@instances = Order.all
     @instances = Order.search(params[:search])
     #@order_details = @order.order_details
-    #@orders = Customer.search(params[:search]) + GeneralCustomer.search(params[:search])
-
   end
 
   private
@@ -23,5 +19,4 @@ class Admin::OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:genre_id, :last_name, :first_name, :spot, :name, :size, :shape, :introduction, :price, :is_active, :image, :customer_id, :general_customer_id)
   end
-
 end

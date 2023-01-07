@@ -5,7 +5,6 @@ class GeneralPublic::AddressesController < ApplicationController
     @address = Address.new
   end
 
-
   def index
     @address = Address.new
     @addresses = current_general_customer.addresses.page(params[:page])
@@ -21,7 +20,6 @@ class GeneralPublic::AddressesController < ApplicationController
     redirect_to general_public_addresses_path
   end
 
-
   def update
    @address = Address.find(params[:id])
     if @address.update(address_params)
@@ -29,8 +27,6 @@ class GeneralPublic::AddressesController < ApplicationController
    redirect_to general_public_addresses_path(@aderess)
     end
   end
-
-
 
   def destroy
     @address = Address.find(params[:id])
@@ -43,5 +39,4 @@ class GeneralPublic::AddressesController < ApplicationController
   def address_params
    params.require(:address).permit(:name, :postal_code, :telephone_number, :address, :general_customer_id)
   end
-
 end

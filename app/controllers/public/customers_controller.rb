@@ -1,17 +1,13 @@
 class Public::CustomersController < ApplicationController
 
-
   def show
     @customer = current_customer
   end
-
-
 
   def index
     @customer = current_customer
     @customers = Customer.all
   end
-
 
   def edit
     @customer = current_customer
@@ -35,7 +31,6 @@ class Public::CustomersController < ApplicationController
     reset_session
     redirect_to public_path
   end
-
 
 private
   def customer_params

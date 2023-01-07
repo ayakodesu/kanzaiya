@@ -35,7 +35,7 @@ class GeneralPublic::SessionsController < Devise::SessionsController
   # end
 
 
-   protected
+protected
 def general_customer_state
   @general_customer = GeneralCustomer.find_by(email: params[:general_customer][:email])
   return if !@general_customer

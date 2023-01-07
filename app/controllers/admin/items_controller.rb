@@ -12,7 +12,6 @@ class Admin::ItemsController < ApplicationController
     @item.save!
       flash[:info] = "商品を新規登録しました"
     redirect_to admin_items_path(@item.id)
-
   end
 
   def new
