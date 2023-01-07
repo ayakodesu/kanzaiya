@@ -4,8 +4,6 @@ class Customer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
-
   has_many :addresses, dependent: :destroy
   has_many :cart_items, dependent: :destroy
   has_many :orders, dependent: :destroy
@@ -15,9 +13,6 @@ class Customer < ApplicationRecord
     search ? where('last_name LIKE ? OR first_name LIKE ? OR corporation LIKE ? OR address LIKE ?', "%#{search}%","%#{search}%","%#{search}%","%#{search}%") : all
   end
 
-
-
-
   def already_favorited?(item)
     self.favorites.exists?(item_id: item.id)
   end
@@ -25,7 +20,6 @@ class Customer < ApplicationRecord
   def full_name
     self.last_name + " " + self.first_name
   end
-
 
   def self.guest
     find_or_create_by!(email: 'guest@test.com') do |user|

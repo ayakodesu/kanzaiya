@@ -13,7 +13,6 @@ class GeneralCustomer < ApplicationRecord
     search ? where('last_name LIKE ? OR first_name LIKE ? OR address LIKE ?', "%#{search}%","%#{search}%","%#{search}%") : all
  end
 
-
  def full_name
    self.last_name + " " + self.first_name
  end

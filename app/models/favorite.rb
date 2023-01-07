@@ -6,12 +6,5 @@ class Favorite < ApplicationRecord
   belongs_to :general_customer, optional: true
   belongs_to :item
 
-  #validates_uniqueness_of :item_id, scope: customer_id
-  #validates_uniqueness_of :item_id, scope: general_customer_id
-
-
-
-
-
 end
 
