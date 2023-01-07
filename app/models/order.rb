@@ -9,7 +9,7 @@ class Order < ApplicationRecord
   enum status: { waiting_for_payment: 0, payment_confirmation: 1 }
 
   def self.search(search)
-    search ? where('spot LIKE ? OR address LIKE ? OR name LIKE?', "%#{search}%","%#{search}%","%#{search}%") : all
+    search ? where('spot LIKE ? OR address LIKE ? OR name LIKE ?', "%#{search}%","%#{search}%","%#{search}%") : all
   end
 
   def full_name

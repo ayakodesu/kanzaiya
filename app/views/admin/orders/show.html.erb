@@ -35,6 +35,15 @@
       <%= form_with model: @order, url: edit_public_customer_path do |f| %>
       <table class="table table-bordered table-sm">
         <tr>
+          <th>会社名</th>
+          <td><% if @order.customer_id.present? %>
+                <%= @order.customer.corporation %>
+              <% else %>
+                一般ユーザー
+              <% end %>
+          </td>
+        </tr>
+         <tr>
           <th>購入者</th>
           <td><% if @order.customer_id.present? %>
                 <%= @order.customer.full_name %>
