@@ -10,6 +10,13 @@
 
   <div class="col-lg-4 col-md-5 mb-3 text-center">
   <%= form_tag(general_public_orders_path, method: :get) do %>
+    <%= text_field_tag :search, '', placeholder: "配送先名検索" %>
+    <%= submit_tag '配送先名検索', name: nil %>
+  <% end %>
+  </div>
+
+  <div class="col-lg-4 col-md-5 mb-3 text-center">
+  <%= form_tag(general_public_orders_path, method: :get) do %>
     <%= text_field_tag :search, '', placeholder: "住所検索" %>
     <%= submit_tag '住所検索', address: nil %>
   <% end %>
@@ -20,7 +27,7 @@
 <div class="row mb-3 justify-content-center">
   <%= form_tag(general_public_orders_path, method: :get) do %>
     <%= text_field_tag :search, '', placeholder: "キーワード検索", :size=>"50" %>
-    <%= submit_tag 'キーワード検索', spot: nil, address: nil %>
+    <%= submit_tag 'キーワード検索', name: nil, spot: nil, address: nil %>
   <% end %>
 </div>
 
