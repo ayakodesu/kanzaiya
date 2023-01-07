@@ -3,31 +3,28 @@
 <div class="row mt-3 mb-3 justify-content-center">
   <div class="col-lg-4 col-md-5 mb-3 text-center">
     <%= form_tag(general_public_items_path, method: :get) do %>
-      <%= text_field_tag :search, '', placeholder: "ジャンル検索" %>
-      <%= submit_tag 'ジャンル検索', genre_id: nil %>
-    <% end %>
-  </div>
-
-  <div class="col-lg-4 col-md-5 mb-3 text-center">
-    <%= form_tag(general_public_items_path, method: :get) do %>
       <%= text_field_tag :search, '', placeholder: "商品名検索" %>
       <%= submit_tag '商品名検索', name: nil %>
     <% end %>
   </div>
-
-  <div class="col-lg-3 col-md-5 mb-3 text-center">
+  <div class="col-lg-4 col-md-5 mb-3 text-center">
   <%= form_tag(general_public_items_path, method: :get) do %>
     <%= text_field_tag :search, '', placeholder: "例)エルボ" %>
     <%= submit_tag '型検索', shape: nil %>
   <% end %>
   </div>
+
+  <div class="col-lg-4 col-md-5 mb-3 text-center">
+  <%= form_tag(general_public_items_path, method: :get) do %>
+    <%= text_field_tag :search, '', placeholder: "例)20" %>
+    <%= submit_tag 'サイズ検索', size: nil %>
+  <% end %>
+  </div>
 </div>
-
-
 <div class="row mb-3 justify-content-center">
   <%= form_tag(general_public_items_path, method: :get) do %>
     <%= text_field_tag :search, '', placeholder: "キーワード検索", :size=>"50" %>
-    <%= submit_tag 'キーワード検索', name: nil, shape: nil, size: nil %>
+    <%= submit_tag 'キーワード検索', genre_id: nil, name: nil, shape: nil, size: nil %>
   <% end %>
 </div>
 
