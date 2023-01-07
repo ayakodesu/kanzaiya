@@ -15,7 +15,6 @@
   </div>
 </div>
 
-
 <div class="container">
   <div class="row">
     <div class="col">
@@ -55,23 +54,19 @@
           <th>注文日時</th>
           <td><%= @order.created_at.strftime('%Y年%m月%d日 %H:%M:%S') %></td>
         </tr>
-
         <tr>
           <th>宛先</th>
           <td>〒<%= @order.postal_code %><br>
           <%= @order.address %></td>
         </tr>
-
         <tr>
           <th>宛名</th>
           <td><%= @order.name %></td>
         </tr>
-
         <tr>
           <th>支払方法</th>
           <td><%= @order.payment_method_i18n %></td>
         </tr>
-
 
   <div class="col-6">
    <table class="table table-bordered table-sm" style="border-collapse: collapse">
@@ -80,12 +75,10 @@
           <th bgcolor = "lightsteelblue">商品合計</th>
           <td>¥<%= @order.total_payment %></td>
         </tr>
-
         <tr>
           <th bgcolor = "lightsteelblue">配送料</th>
           <td>¥<%= @order.shipping_cost %></td>
         </tr>
-
         <tr>
           <th bgcolor = "lightsteelblue">ご請求額</th>
           <td>¥<%= @order.total_payment + @order.shipping_cost %></td>

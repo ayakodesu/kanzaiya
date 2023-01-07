@@ -23,14 +23,12 @@
   </div>
 </div>
 
-
 <div class="row mb-3 justify-content-center">
   <%= form_tag(general_public_orders_path, method: :get) do %>
     <%= text_field_tag :search, '', placeholder: "キーワード検索", :size=>"50" %>
     <%= submit_tag 'キーワード検索', name: nil, spot: nil, address: nil %>
   <% end %>
 </div>
-
 
 <%= paginate @orders %>
 
@@ -46,7 +44,8 @@
       <% end %>
     </body>
   </table>
-  <%= paginate @orders %>
+
+<%= paginate @orders %>
 
 <div class="row mt-5 justify-content-center">
   <%= link_to "Myページへ戻る", general_public_customers_path %>

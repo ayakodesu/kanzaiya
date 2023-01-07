@@ -3,39 +3,30 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-6">
-     <%= form_with model: @general_customer, url: edit_general_public_customer_path do |f| %>
-      <table class="table table-borderless table-striped">
+    <%= form_with model: @general_customer, url: edit_general_public_customer_path do |f| %>
+  <table class="table table-borderless table-striped">
     <tr><th>氏名</th>
-    <td><%= @general_customer.last_name + @general_customer.first_name %></td></tr>
-
+      <td><%= @general_customer.last_name + @general_customer.first_name %></td></tr>
     <tr><th>かな</th>
-   <td><%= @general_customer.last_name_kana + @general_customer.first_name_kana %></td></tr>
-
-
-
+       <td><%= @general_customer.last_name_kana + @general_customer.first_name_kana %></td></tr>
     <tr><th>住所</th>
-    <td>〒<%= @general_customer.postal_code %><br />
-    <%= @general_customer.address %></td></tr>
-
-
+      <td>〒<%= @general_customer.postal_code %><br />
+      <%= @general_customer.address %></td></tr>
     <tr><th>TEL</th>
-    <td><%= @general_customer.telephone_number %></td></tr>
-
+      <td><%= @general_customer.telephone_number %></td></tr>
     <tr><th>email</th>
-    <td><%= @general_customer.email %></td></tr>
-      </table>
+      <td><%= @general_customer.email %></td></tr>
+   </table>
     <% end %>
 
-
-    <div class="row mt-5 mb-5 justify-content-center">
-      <div class="col-5 text-center">
+  <div class="row mt-5 mb-5 justify-content-center">
+    <div class="col-5 text-center">
       <%= link_to "戻る", general_public_customers_path %>
-      </div>
-      <div class="col-5 text-center">
-      <%= link_to "編集する", edit_general_public_customer_path, class: "btn btn-sm btn-success" %>
-      </div>
     </div>
-
+    <div class="col-5 text-center">
+      <%= link_to "編集する", edit_general_public_customer_path, class: "btn btn-sm btn-success" %>
+    </div>
+  </div>
 
       </div>
     </div>
