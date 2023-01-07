@@ -8,12 +8,14 @@ class Admin::OrdersController < ApplicationController
 
 
   def index
-    @order = Order.new
-    @customers = Order.all
-    @general_customers = Order.all
-    @instances = @customers | @general_customers
-    @order_details = @order.order_details
-    #@orders = @instances.search(params[:search])
+    #@order = Order.new
+    #@customers = Order.all
+    #@general_customers = Order.all
+    #@instances = Order.all
+    @instances = Order.search(params[:search])
+    #@order_details = @order.order_details
+    #@orders = Customer.search(params[:search]) + GeneralCustomer.search(params[:search])
+
   end
 
   private
