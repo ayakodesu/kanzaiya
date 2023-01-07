@@ -37,12 +37,12 @@
 
 
  <div class="container">
-    <div class="row">
-      <div class="col text-right">
-        <h3>総合計(税込み)  ¥<%= @total %></h3>
-      </div>
+  <div class="row">
+    <div class="col text-right">
+      <h3>総合計(税込み)  ¥<%= @total %></h3>
     </div>
   </div>
+</div>
 
 <div class="container mb-5">
   <div class="row mt-5 justify-content-center">
@@ -58,11 +58,10 @@
 <% end %>
 </div>
 
-
 </div>
 </div>
-<div class="row mt-2 mb-5 justify-content-center">
-  <%= link_to "Myページへ戻る", public_customers_path %>
-</div>
+  <div class="row mt-2 mb-5 justify-content-center">
+    <%= link_to "Myページへ戻る", public_customers_path %>
+  </div>
 
 </header>

@@ -12,7 +12,6 @@
    <tr><th><%= f.label :法人名 %></th>
       <td><%= f.text_field :corporation, placeholder: "山田設備 株式会社", :size=>"60"  %></td>
     </tr>
-
     <tr><th><%= f.label :〒 %></th>
       <td><%= f.text_field :postal_code, placeholder: "0010001" %></td>
     </tr>
@@ -43,18 +42,16 @@
     <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
   </tr>
 
-
   </table>
     </div>
 </div>
 
   <div class="row mb-4 mt-4">
-      <div class="col">
-    <%= f.submit "Sign up", class: "btn btn-success" %>
-  </div>
-  </div>
+    <div class="col">
+      <%= f.submit "Sign up", class: "btn btn-success" %>
     </div>
-
+  </div>
+</div>
 
 <% end %>
 <div class="row mb-5 mt-3">

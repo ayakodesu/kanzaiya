@@ -6,25 +6,18 @@
   <%= form_with model: @customer, url: edit_public_customer_path do |f| %>
     <table class="table table-borderless table-striped">
     <tr><th>氏名</th>
-    <td><%= @customer.last_name + @customer.first_name %></td></tr>
-
+      <td><%= @customer.last_name + @customer.first_name %></td></tr>
     <tr><th>かな</th>
-    <td><%= @customer.last_name_kana + @customer.first_name_kana %></td></tr>
-
+      <td><%= @customer.last_name_kana + @customer.first_name_kana %></td></tr>
     <tr><th>法人名</th>
-    <td><%= @customer.corporation %></td></tr>
-
+      <td><%= @customer.corporation %></td></tr>
     <tr><th>住所</th>
-    <td>〒<%= @customer.postal_code %><br />
-    <%= @customer.address %></td></tr>
-
-
+      <td>〒<%= @customer.postal_code %><br />
+      <%= @customer.address %></td></tr>
     <tr><th>TEL</th>
-    <td><%= @customer.telephone_number %></td></tr>
-
+      <td><%= @customer.telephone_number %></td></tr>
     <tr><th>email</th>
-    <td><%= @customer.email %></td></tr>
-
+      <td><%= @customer.email %></td></tr>
     </table>
   <% end %>
 
@@ -38,7 +31,6 @@
     </div>
   </div>
 
-      </div>
     </div>
   </div>
 </div>

@@ -20,9 +20,6 @@
     </div>
 </header>
 
-
-
-
 <% if !general_customer_signed_in? %>
   <% if !customer_signed_in? %>
 <div class="container">
@@ -67,7 +64,6 @@
        </div>
      </div>
 
-
 <div class="col-4 text-center">
        <div class="card" style="width: 20rem;">
         <div class="card-header">
@@ -81,10 +77,11 @@
               <%= link_to 'ゲストログイン（閲覧用）', public_guest_sign_in_path, method: :post %>
             </div>
           </div>
+        </div>
+        </div>
 </div>
-</div>
-</div>
-</div>
+
+  </div>
 </div>
   <% end %>
 <% end %>
