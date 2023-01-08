@@ -13,7 +13,7 @@
       <%= f.text_field :spot %>分
   </div>
   <div class="row mb-3">
-    <div class ="col ">
+    <div class ="col">
     <h4>配送先</h4>
   </div>
   </div>
@@ -24,7 +24,8 @@
     <div class="row mb-3 justify-content-center">
       〒<%= @customer.postal_code %>
         <%= @customer.address %><br/>
-        <%= @customer.full_name %>
+        お名前:<%= @customer.full_name %><br/>
+        TEL:<%= @customer.telephone_number %>
     </div>
      <div class="row mb-3 justify-content-center">
       <%= f.radio_button :select_address, 1 %>
@@ -48,6 +49,10 @@
     <div class="row mb-3 justify-content-center">
       <%= f.label :宛名 %>
       <%= f.text_field :name %>
+    </div>
+    <div class="row mb-3 justify-content-center">
+      <%= f.label :TEL %>
+      <%= f.text_field :telephone_number %>
     </div>
 
   <div class="row mb-3">

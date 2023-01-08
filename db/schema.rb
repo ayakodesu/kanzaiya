@@ -163,15 +163,11 @@ ActiveRecord::Schema.define(version: 2022_11_19_130627) do
     t.string "address", null: false
     t.string "name", null: false
     t.string "spot"
+    t.string "telephone_number", null: false
     t.integer "shipping_cost", null: false
     t.integer "total_payment", null: false
     t.integer "payment_method", default: 0, null: false
     t.integer "status", default: 0, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

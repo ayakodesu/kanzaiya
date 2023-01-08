@@ -47,7 +47,9 @@
           <%= link_to admin_item_path(item.id), class: "link" do %>
           <div class="card">
              <div class="text-center">
-            <%= image_tag item.image, size: '250x200'%>
+               <%# if item.image.attached? %>
+                <%= image_tag item.image, size: '250x200'%>
+              <% #end %>
               </div>
             <div class="card-body p-4">
               <div class="text-center">
