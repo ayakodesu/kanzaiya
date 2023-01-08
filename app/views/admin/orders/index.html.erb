@@ -13,10 +13,10 @@
   </div>
 
   <div class="col-lg col-md-5 mb-3 text-center">
-  <%#= form_tag(admin_orders_path, method: :get) do %>
-    <%#= text_field_tag :search, '', placeholder: "会社名検索" %>
-    <%#= submit_tag '会社名検索', corporation: nil %>
-  <%# end %>
+  <%= form_tag(admin_orders_path, method: :get) do %>
+    <%= text_field_tag :search, '', placeholder: "会社名検索" %>
+    <%= submit_tag '会社名検索', corporation: nil %>
+  <% end %>
   </div>
 
   <div class="col-lg col-md-5 mb-3 text-center">
@@ -37,7 +37,7 @@
 <div class="row mb-3 justify-content-center">
   <%= form_tag(admin_orders_path, method: :get) do %>
     <%= text_field_tag :search, '', placeholder: "キーワード検索", :size=>"50" %>
-    <%= submit_tag 'キーワード検索', name: nil, spot: nil, address: nil %>
+    <%= submit_tag 'キーワード検索', corporation: nil, name: nil, spot: nil, address: nil %>
   <% end %>
 </div>
 
