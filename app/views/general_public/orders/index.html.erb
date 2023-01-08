@@ -30,7 +30,7 @@
   <% end %>
 </div>
 
-<%= paginate @orders %>
+<%#= paginate @orders %>
 
     <body>
       <% @orders.each do |order| %>
@@ -46,7 +46,7 @@
     </body>
   </table>
 
-<%= paginate @orders %>
+<%#= paginate @orders %>
 
 <div class="row mt-5 justify-content-center">
   <%= link_to "Myページへ戻る", general_public_customers_path %>

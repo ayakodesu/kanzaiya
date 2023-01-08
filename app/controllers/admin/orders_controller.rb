@@ -9,7 +9,7 @@ class Admin::OrdersController < ApplicationController
     #@order = Order.new
     #@customers = Order.all
     #@general_customers = Order.all
-    #@instances = Order.all
+    #@instances = Order.all.order('id DESC').page(params[:page])
     @instances = Order.search(params[:search])
     #@order_details = @order.order_details
   end
