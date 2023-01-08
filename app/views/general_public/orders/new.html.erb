@@ -25,7 +25,8 @@
     <div class="row mb-3 justify-content-center">
       〒<%= @general_customer.postal_code %>
         <%= @general_customer.address %>
-        <%= @general_customer.full_name %>
+        お名前:<%= @general_customer.full_name %><br/>
+        TEL:<%= @general_customer.telephone_number %>
     </div>
 
     <div class="row mb-3 justify-content-center">
@@ -51,6 +52,10 @@
     <div class="row mb-3 justify-content-center">
       <%= f.label :宛名 %>
       <%= f.text_field :name %>
+    </div>
+    <div class="row mb-3 justify-content-center">
+      <%= f.label :TEL %>
+      <%= f.text_field :telephone_number %>
     </div>
 
   <div class="row mb-3">

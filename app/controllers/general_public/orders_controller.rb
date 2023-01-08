@@ -14,6 +14,7 @@ class GeneralPublic::OrdersController < ApplicationController
       @order.postal_code = current_general_customer.postal_code
       @order.address = current_general_customer.address
       @order.name = current_general_customer.last_name + current_general_customer.first_name
+      @order.telephone_number = current_general_customer.telephone_number
 
     elsif @select_address == "1"
       @address_id = params[:order][:address_id]
@@ -21,6 +22,7 @@ class GeneralPublic::OrdersController < ApplicationController
       @order.postal_code = @address.postal_code
       @order.address = @address.address
       @order.name = @address.name
+      @order.telephone_number = @address.telephone_number
     else
     end
   end
@@ -65,7 +67,7 @@ class GeneralPublic::OrdersController < ApplicationController
 
 private
   def order_params
-    params.require(:order).permit(:general_customer_id, :postal_code, :spot, :address, :name, :shipping_cost, :total_payment, :payment_method, :status)
+    params.require(:order).permit(:general_customer_id, :telephone_number, :postal_code, :spot, :address, :name, :shipping_cost, :total_payment, :payment_method, :status)
   end
 
 end
