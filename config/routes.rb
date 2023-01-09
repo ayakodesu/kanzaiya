@@ -55,7 +55,7 @@ Rails.application.routes.draw do
     get "/home/about" => "homes#about", as: "about"
     resources :homes, only: [:new, :index, :create, :edit, :update, :destroy]
     resources :genres, only: [:index, :create, :edit, :update, :destroy]
-    get 'genres/edit/:id' => 'genres#edit'
+    #get 'genres/edit/:id' => 'genres#edit'
     resources :items, only: [:new, :index, :create, :edit, :show, :update, :destroy]
     resources :orders, only: [:show, :index]
     resources :customers, only: [:index, :show, :create, :edit, :update, :destroy]

@@ -30,7 +30,7 @@ class Admin::ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.update(item_params)
       flash[:success] = "変更を保存しました"
-    redirect_to admin_items_path(@item.id)
+    redirect_to admin_item_path(@item.id)
   end
 
   private
