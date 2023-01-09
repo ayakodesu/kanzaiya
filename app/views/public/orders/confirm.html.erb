@@ -24,7 +24,6 @@
           <th>合計</th>
         </thead>
         <% total = 0 %>
-    </div>
 
     <tbody>
       <% @cart_items.each do |cart_item| %>
@@ -40,26 +39,12 @@
         </tr>
       <% end %>
     </tbody>
+  </table>
+  </div>
 
   <div class="col-6">
-    <table border="1" style="border-collapse: collapse">
-      <tr>
-        <th bgcolor = "lavender">送料</th>
-        <td>¥<%= @order.shipping_cost %></td>
-      </tr>
-      <tr>
-        <th bgcolor = "lavender">商品合計</th>
-          <td>¥<%= total %></td>
-      </tr>
-      <tr>
-        <th bgcolor = "lavender">請求金額</th>
-      <td>¥<%= @order.shipping_cost + total %></td>
-      </tr>
-       </table>
-    </div>
-
-  <div class="col-6">
-    <table class="table table-bordered table-sm">
+    <div class="row justify-content-center">
+      <table class="table table-bordered table-sm">
       <tr>
         <th>お支払方法</th>
         <td><%= @order.payment_method_i18n %></td>
@@ -74,8 +59,28 @@
     </table>
   </div>
 
+  <div class="col-6 float-right">
+    <table class="table table-bordered" style="border-collapse: collapse">
+      <tr>
+        <th>送料</th>
+        <td>¥<%= @order.shipping_cost %></td>
+      </tr>
+      <tr>
+        <th>商品合計</th>
+          <td>¥<%= total %></td>
+      </tr>
+      <tr>
+        <th bgcolor = "silver"><h5>請求金額</h5></th>
+      <td th bgcolor = "silver"><h5>¥<%= @order.shipping_cost + total %></h5></td>
+      </tr>
+       </table>
+  </div>
+  </div>
+
+
+
   <div class="container">
-    <div class="row mt-5 mb-5 justify-content-end">
+    <div class="row mt-5 mb-5 justify-content-center">
       <div class="col-2">
         <%= link_to "戻る", new_public_order_path %>
       </div>
