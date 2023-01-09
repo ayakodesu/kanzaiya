@@ -6,12 +6,13 @@
   <%= form_tag(public_orders_path, method: :get) do %>
     <%= text_field_tag :search, '', placeholder: "現場名検索" %>
     <%= submit_tag '現場名検索', spot: nil %>
+    <%= hidden_field_tag 'search_method', "spot" %>
   <% end %>
   </div>
 
   <div class="col-lg-4 col-md-5 mb-3 text-center">
   <%= form_tag(public_orders_path, method: :get) do %>
-    <%= text_field_tag :search, '', placeholder: "配送先名検索" %>
+    <%= text_field_tag :search, '', placeholder: "フルネーム検索" %>
     <%= submit_tag '配送先名検索', name: nil%>
     <%= hidden_field_tag 'search_method', "shipping_address" %>
   <% end %>

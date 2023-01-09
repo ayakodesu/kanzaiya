@@ -55,9 +55,9 @@ class Public::OrdersController < ApplicationController
 
   def index
     if params[:search_method] == "shipping_address" && !params[:search].blank?
-      @orders = current_customer.orders.where(name: params[:search]).page(params[:page])
+      @orders = current_customer.orders.where(name: params[:search])
     else
-      @orders = current_customer.orders
+      @orders = current_customer.orders.search(params[:search]).page(params[:page])
     end
   end
 
