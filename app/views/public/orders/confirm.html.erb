@@ -59,7 +59,7 @@
     </table>
   </div>
 
-  <div class="col-6 float-right">
+  <div class="col-lg-6 col-md-5 mb-3 float-right">
     <table class="table table-bordered" style="border-collapse: collapse">
       <tr>
         <th>送料</th>
@@ -81,7 +81,7 @@
 
   <div class="container">
     <div class="row mt-5 mb-5 justify-content-center">
-      <div class="col-2">
+      <div class="col-3">
         <%= link_to "戻る", new_public_order_path %>
       </div>
       <%= form_with model: @order, url: public_orders_path, method: :post do |f| %>
@@ -96,10 +96,9 @@
         <%= f.hidden_field :spot, :value => @order.spot %>
         <%= f.hidden_field :telephone_number, :value => @order.telephone_number %>
 
-    <div class="col-6">
+    <div class="col-3">
       <%= f.submit "注文を確定する", class: "btn btn-success" %>
     </div>
-
     </div>
   </div>
     <% end %>
