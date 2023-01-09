@@ -6,7 +6,6 @@
   <%= form_tag(public_orders_path, method: :get) do %>
     <%= text_field_tag :search, '', placeholder: "現場名検索" %>
     <%= submit_tag '現場名検索', spot: nil %>
-    <%= hidden_field_tag 'search_method', "spot" %>
   <% end %>
   </div>
 
@@ -27,13 +26,14 @@
 </div>
 
 <div class="row mb-3 justify-content-center">
-  <%= form_tag(public_orders_path, method: :get) do %>
-    <%= text_field_tag :search, '', placeholder: "キーワード検索", :size=>"50" %>
-    <%= submit_tag 'キーワード検索', name: nil, spot: nil, address: nil %>
-  <% end %>
+  <%#= form_tag(public_orders_path, method: :get) do %>
+    <%#= text_field_tag :search, '', placeholder: "キーワード検索", :size=>"50" %>
+    <%#= submit_tag 'キーワード検索', name: nil, spot: nil, address: nil %>
+    <%#= hidden_field_tag 'search_method', "spot" %>
+    <%#= hidden_field_tag 'search_method', "name" %>
+    <%#= hidden_field_tag 'search_method', "shipping_address" %>
+  <%# end %>
 </div>
-
- <%#= paginate @orders %>
 
     <body>
       <% @orders.each do |order| %>
@@ -53,5 +53,4 @@
   <%= link_to "Myページへ戻る", public_customers_path %>
 </div>
 
-  <%#= paginate @orders %>
 </header>

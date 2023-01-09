@@ -54,8 +54,11 @@ class GeneralPublic::OrdersController < ApplicationController
   end
 
   def index
-    #@orders = current_general_customer.orders
-    @orders = current_general_customer.orders.search(params[:search]).page(params[:page])
+    if params[:search_method] == "shipping_address" && !params[:search].blank?
+      @orders = current_general_customer.orders.where(name: params[:search])
+    else
+      @orders = current_general_customer.orders.search(params[:search])#.page(params[:page])
+    end
   end
 
   def show
