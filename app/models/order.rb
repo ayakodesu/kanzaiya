@@ -8,6 +8,10 @@ class Order < ApplicationRecord
   enum payment_method: { credit_card: 0, bank_transfer: 1 }
   enum status: { waiting_for_payment: 0, payment_confirmation: 1 }
 
+  def full_name
+    self.last_name + " " + self.first_name
+  end
+
   def self.search(search)
     if Rails.env.production?
     else
@@ -17,10 +21,5 @@ class Order < ApplicationRecord
              where('orders.spot LIKE ? OR orders.name LIKE ? OR orders.address LIKE ? OR customers.corporation LIKE ? OR c_full_name LIKE ? OR g_full_name LIKE ?' ,"%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%") : all
     end
   end
-
-  def full_name
-    self.last_name + " " + self.first_name
-  end
-
 
 end
