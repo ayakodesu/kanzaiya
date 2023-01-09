@@ -20,8 +20,8 @@
           signed_out: 'ログアウトしました。'
       registrations:
         customer:
-          signed_up: 'ようこそ！'
+          signed_up: '会員登録ありがとうざいます！'
         general_customer:
-          signed_up: 'ようこそ！'
+          signed_up: '会員登録ありがとうございます！'
 
 
