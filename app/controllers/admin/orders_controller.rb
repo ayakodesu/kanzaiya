@@ -10,9 +10,14 @@ class Admin::OrdersController < ApplicationController
     #@customers = Order.all
     #@general_customers = Order.all
     #@instances = Order.all.order('id DESC').page(params[:page])
-    @instances = Order.search(params[:search]).order('id DESC')
-    #@order_details = @order.order_details
+    @instances = Order.all
+    if params[:search].present?
+      @instances = Order.search(params[:search])
+    else
+      @instances = Order.all
+    end
   end
+
 
   private
 
