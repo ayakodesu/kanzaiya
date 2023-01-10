@@ -16,9 +16,8 @@
      <table class="table table-secondary table-bordered table-sm">
       <thead>
         <th>購入日時</th>
-        <th>購入者</th>
-        <th>会社名</th>
         <th>現場名</th>
+        <th>配送先名</th>
         <th>配送先</th>
       </thead>
     <body>
@@ -28,18 +27,16 @@
          <% p "customer",instance.customer %>
         <tr bgcolor="#f5f5f5">
           <td><%= link_to instance.created_at.strftime('%Y年%m月%d日 %H:%M:%S'), admin_order_path(instance.id) %></td>
-          <td><%= instance.customer.full_name %></td>
-          <td><%= instance.customer.corporation %></td>
           <td><%= instance.spot %></td>
+          <td><%= instance.name %></td>
           <td><%= instance.address %></td>
         </tr>
       <% else %>
         <% p instance %>
           <tr bgcolor="#f5f5f5">
             <td><%= link_to instance.created_at.strftime('%Y年%m月%d日 %H:%M:%S'), admin_order_path(instance.id) %></td>
-            <td><%= instance.general_customer.full_name %></td>
-            <td>----(一般)----</td>
             <td><%= instance.spot %></td>
+            <td><%= instance.name %></td>
             <td><%= instance.address %></td>
           </tr>
         <% end %>
