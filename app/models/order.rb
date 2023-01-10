@@ -13,13 +13,12 @@ class Order < ApplicationRecord
   end
 
   def self.search(search)
-    if Rails.env.production?
-    else
+    #if Rails.env.production?
+    #else
     #customer_ids = Customer.where('first_name LIKE ? OR last_name LIKE ?', "%太郎%", "%太郎%").pluck(:id)
     #general_customer_ids = GeneralCustomer.where('first_name LIKE ? OR last_name LIKE ?', "%太郎%", "%太郎%").pluck(:id)
-    search ? left_joins(:customer).left_joins(:general_customer).select('orders.id, customers.corporation, orders.name, orders.telephone_number, orders.customer_id, orders.general_customer_id, orders.postal_code, orders.spot, orders.address, orders.created_at, customers.last_name, customers.first_name, (customers.last_name || customers.first_name) AS c_full_name, general_customers.first_name, general_customers.last_name, (general_customers.last_name || general_customers.first_name) AS g_full_name').
-             where('orders.spot LIKE ? OR orders.name LIKE ? OR orders.address LIKE ? OR customers.corporation LIKE ? OR c_full_name LIKE ? OR g_full_name LIKE ?' ,"%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%") : all
-    end
+    left_joins(:customer).left_joins(:general_customer).select('orders.id, customers.corporation, orders.name, orders.telephone_number, orders.customer_id, orders.general_customer_id, orders.postal_code, orders.spot, orders.address, orders.created_at, customers.last_name, customers.first_name, (customers.last_name || customers.first_name) AS c_full_name, general_customers.first_name, general_customers.last_name, (general_customers.last_name || general_customers.first_name) AS g_full_name').
+             where('orders.spot LIKE ? OR orders.name LIKE ? OR orders.address LIKE ?  OR g_full_name LIKE ?' ,"%#{search}%","%#{search}%","%#{search}%","%#{search}%")
   end
 
 end
