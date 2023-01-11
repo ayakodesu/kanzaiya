@@ -12,6 +12,8 @@
   <% end %>
 </div>
 
+<%= paginate @customers %>
+
 <table class="table table-secondary table-bordered table-sm">
   <thead>
     <div class="font">
@@ -41,7 +43,9 @@
 </tbody>
 
 </table>
+<%= paginate @customers %>
     </div>
+
 
 <div class="row mt-5 mb-5 justify-content-center">
   <%= link_to "Homeへ戻る", admin_top_path %>

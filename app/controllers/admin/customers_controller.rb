@@ -1,9 +1,14 @@
 class Admin::CustomersController < ApplicationController
 
   def index
-    @customers = Customer.all
+    if params[:search].present?
+      @customers = Customer.search(params[:search]).page(params[:page]).per(10)
+    else
+      @customers = Customer.all.page(params[:page]).per(10)
+    end
+    #@customers = Customer.all
     #@instances = @customer | @general_customer
-    @customers = Customer.search(params[:search])
+    #@customers = Customer.search(params[:search])
   end
 
   def show

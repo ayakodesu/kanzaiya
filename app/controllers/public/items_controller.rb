@@ -1,9 +1,9 @@
 class Public::ItemsController < ApplicationController
   def index
     if params[:search].present?
-      @items = Item.search(params[:search]).order('id DESC').limit(8).page(params[:page])
+      @items = Item.search(params[:search]).order('id DESC').page(params[:page]).per(3)
     else
-      @items = Item.all.order('id DESC').limit(8).page(params[:page])
+      @items = Item.all.order('id DESC').page(params[:page]).per(3)
     end
     #@items = Item.all
     #genre_ids = Genre.search(params[:search]).pluck(:id)

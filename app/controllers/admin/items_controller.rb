@@ -1,10 +1,13 @@
 class Admin::ItemsController < ApplicationController
   def index
-    #@item = Item.all
-    #@items = Item.page(params[:page])
+    if params[:search].present?
+      @items = Item.search(params[:search]).order('id DESC').page(params[:page]).per(3)
+    else
+      @items = Item.all.order('id DESC').page(params[:page]).per(3)
+    end
     #genre_ids = Genre.search(params[:search]).pluck(:id)
     #@items = @items.where(genre_id: genre_ids).order('id DESC').limit(8).page(params[:page])
-    @items = Item.search(params[:search]).order('id DESC').limit(8).page(params[:page])
+    #@items = Item.search(params[:search]).order('id DESC').limit(8).page(params[:page])
   end
 
   def create

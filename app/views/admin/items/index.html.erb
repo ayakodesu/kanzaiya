@@ -15,13 +15,13 @@
   <% end %>
 </div>
 
-<%= paginate @items %>
-
 <div class="row mt-3 mb-3 justify-content-end">
   <div class="col-lg-4 col-md-5 mb-3 text-center">
     <%= link_to "商品新規追加", new_admin_item_path, class: "btn btn-info" %>
   </div>
 </div>
+
+<%= paginate @items %>
 
     <div class="row">
       <% @items.each do |item| %>
