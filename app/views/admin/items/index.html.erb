@@ -41,7 +41,7 @@
                     <%= item.shape %><br />
                     サイズ:<%= item.size %><br/>
                     在庫数:<%= item.amount %><br />
-                    単価:¥<%= item.last_price %>
+                    単価(税抜):¥<%= item.last_price %>
                     <td><% if item.is_active == true %>
                       <h4><p class="text-success">販売中</p></h4>
                     <% else %>

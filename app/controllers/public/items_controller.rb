@@ -1,13 +1,10 @@
 class Public::ItemsController < ApplicationController
   def index
     if params[:search].present?
-      @items = Item.search(params[:search]).order('id DESC').page(params[:page]).per(3)
+      @items = Item.search(params[:search]).order('id DESC').page(params[:page]).per(10)
     else
-      @items = Item.all.order('id DESC').page(params[:page]).per(3)
+      @items = Item.all.order('id DESC').page(params[:page]).per(10)
     end
-    #@items = Item.all
-    #genre_ids = Genre.search(params[:search]).pluck(:id)
-    #@items = @items.where(genre_id: genre_ids).order('id DESC').limit(8).page(params[:page])
   end
 
   def show

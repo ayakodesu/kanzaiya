@@ -22,7 +22,7 @@
           <tr><th>数量</th>
           <td><%= f.text_field :amount, placeholder: "個数を入力してください" %></td>
           <%= f.hidden_field :item_id, :value => @item.id %>
-          <tr><th>単価</th>
+          <tr><th>単価(税抜)</th>
           <td>¥<%= @item.last_price %></td>
        </table>
           <div class="row mt-5 mb-5 justify-content-center">

@@ -5,10 +5,6 @@ class GeneralPublic::ItemsController < ApplicationController
     else
       @items = Item.all.order('id DESC').page(params[:page]).per(3)
     end
-    #@items = Item.all
-    #genre_ids = Genre.search(params[:search]).pluck(:id)
-    #@items = @items.where(genre_id: genre_ids).order('id DESC').limit(8).page(params[:page])
-    #@items = Item.search(params[:search]).order('id DESC').limit(8).page(params[:page])
   end
 
   def show

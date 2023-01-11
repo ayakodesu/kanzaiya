@@ -55,9 +55,9 @@ class GeneralPublic::OrdersController < ApplicationController
 
   def index
     if params[:search].present?
-      @orders = current_general_customer.orders.search(params[:search]).page(params[:page]).per(3)
+      @orders = current_general_customer.orders.search(params[:search]).page(params[:page]).per(10).order(created_at: 'DESC')
     else
-      @orders = current_general_customer.orders.page(params[:page]).per(3)
+      @orders = current_general_customer.orders.page(params[:page]).per(10).order(created_at: 'DESC')
     end
   end
 
