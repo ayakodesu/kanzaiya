@@ -55,9 +55,9 @@ class Public::OrdersController < ApplicationController
 
   def index
     if params[:search].present?
-      @orders = current_customer.orders.search(params[:search])
+      @orders = current_customer.orders.search(params[:search]).limit(8).page(params[:page])
     else
-      @orders = current_customer.orders
+      @orders = current_customer.orders.search(params[:search]).limit(8).page(params[:page])
     end
 
   end
