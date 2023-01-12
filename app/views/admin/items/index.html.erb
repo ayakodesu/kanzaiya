@@ -11,13 +11,13 @@
 <div class="row mb-3 justify-content-center">
   <%= form_tag(admin_items_path, method: :get) do %>
     <%= text_field_tag :search, '', placeholder: "キーワード検索", :size=>"50" %>
-    <%= submit_tag 'キーワード検索', name: nil, shape: nil, size: nil %>
+    <%= submit_tag 'キーワード検索', name: nil, shape: nil, size: nil, class: "btn-gradient-blue" %>
   <% end %>
 </div>
 
 <div class="row mt-3 mb-3 justify-content-end">
   <div class="col-lg-4 col-md-5 mb-3 text-center">
-    <%= link_to "商品新規追加", new_admin_item_path, class: "btn btn-info" %>
+    <%= link_to "商品新規追加", new_admin_item_path, class: "btn-gradient-pink" %>
   </div>
 </div>
 

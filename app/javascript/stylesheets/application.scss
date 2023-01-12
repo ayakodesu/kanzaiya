@@ -840,3 +840,20 @@ h4:after {
   background-image: linear-gradient(65deg, #2e8b57, #66cdaa);
 }
 
+
+
+
+/*キーワード検索ボタン*/
+.btn-gradient-blue {
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #000;
+  background-image: linear-gradient(65deg, #68a4d9, #a0d8ef);
+  transition: .4s;
+}
+
+.btn-gradient-blue:hover {
+  background-image: linear-gradient(65deg, #68a4d9, #a0d8ef);
+}

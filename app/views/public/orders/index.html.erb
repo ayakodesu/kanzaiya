@@ -4,7 +4,7 @@
 <div class="row mb-3 justify-content-center">
   <%= form_tag(public_orders_path, method: :get) do %>
     <%= text_field_tag :search, '', placeholder: "キーワード検索", :size=>"50" %>
-    <%= submit_tag 'キーワード検索', name: nil, spot: nil, address: nil %>
+    <%= submit_tag 'キーワード検索', name: nil, spot: nil, address: nil, class: "btn-gradient-blue" %>
   <% end %>
 </div>
 

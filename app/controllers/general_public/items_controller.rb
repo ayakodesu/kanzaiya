@@ -1,9 +1,9 @@
 class GeneralPublic::ItemsController < ApplicationController
   def index
     if params[:search].present?
-      @items = Item.search(params[:search]).order('id DESC').page(params[:page]).per(3)
+      @items = Item.search(params[:search]).order('id DESC').page(params[:page]).per(10)
     else
-      @items = Item.all.order('id DESC').page(params[:page]).per(3)
+      @items = Item.all.order('id DESC').page(params[:page]).per(10)
     end
   end
 

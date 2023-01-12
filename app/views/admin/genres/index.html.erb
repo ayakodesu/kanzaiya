@@ -14,7 +14,7 @@
         <table>
           <tr><th>ジャンル名</th></td>
           <td><%= f.text_field :name, placeholder: "ジャンル名" %></td>
-          <td><%=f.submit '新規投稿', class: "btn btn-success" %></td></tr>
+          <td><%=f.submit '新規投稿', class: "btn-gradient-green" %></td></tr>
           </table>
         </div>
       </div>
@@ -36,7 +36,7 @@
             <% @genres.each do |genre| %>
               <tr>
                 <td><%= genre.name %></td>
-                <td><%= link_to "編集する", edit_admin_genre_path(genre.id), class: "btn btn-sm btn-success" %></td>
+                <td><%= link_to "編集する", edit_admin_genre_path(genre.id), class: "btn-gradient-green" %></td>
               </tr>
             <% end %>
           </tbody>
