@@ -1,5 +1,30 @@
 <%= render 'top', homes: @homes %>
 
+<div class="container">
+  <div class="row mb-5 gx-4 gx-lg-5">
+<%= link_to public_items_path, class: "card-title", class: "link" do %>
+  <div class="col-lg-6 col-md-6 text-center">
+    <div class="mt-5">
+      <div class="mb-2"><h4><i class="fa-solid fa-shop fa-3x"></i></i></h4></div>
+        <h3 class="h4 mb-2">商品一覧</h3>
+          <p class="text-muted mb-0">取扱商品が確認できます。こちらから購入できます。</p>
+    </div>
+<% end %>
+  </div>
+
+
+ <%= link_to public_orders_path, class: "card-title", class: "link" do %>
+    <div class="col-lg-6 col-md-6 text-center">
+      <div class="mt-5">
+        <div class="mb-2"><h4><i class="fa-solid fa-piggy-bank fa-3x"></i></h4></div>
+          <h3 class="h4 mb-2">注文履歴一覧</h3>
+            <p class="text-muted mb-0">過去に注文したモノが確認できます</p>
+      </div>
+<% end %>
+    </div>
+  </div>
+</div>
+
 <% if customer_signed_in? %>
 <header class="py-5 bg-image-full" style="background-image: url('https://beiz.jp/images_M/white/white_00032.jpg')">
   <div class="container text-center">
