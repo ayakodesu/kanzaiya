@@ -12,9 +12,9 @@ class Admin::OrdersController < ApplicationController
     #@instances = Order.all.order('id DESC').page(params[:page])
     #@instances = Order.all
     if params[:search].present?
-      @instances = Order.search(params[:search]).page(params[:page]).per(10)
+      @instances = Order.searchs(params[:search]).page(params[:page]).per(10).order(created_at: 'DESC')
     else
-      @instances = Order.all.page(params[:page]).per(10)
+      @instances = Order.all.page(params[:page]).per(10).order(created_at: 'DESC')
     end
   end
 
