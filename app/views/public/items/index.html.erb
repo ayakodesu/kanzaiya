@@ -8,6 +8,15 @@
   <% end %>
 </div>
 
+<% @genres.each do |genre| %>
+    <%= link_to public_items_path(@items) do %>
+      <div class="genre-content">
+        <%= genre.name %>
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      </div>
+    <% end %>
+  <% end %>
+
  <div class="container text-center">
     <div class="row mt-5">
     <% @items.each do |item| %>
