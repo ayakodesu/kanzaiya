@@ -25,7 +25,7 @@
         <td>
           <%= form_with model: cart_item, url: public_cart_item_path(cart_item.id), method: :patch do |f| %>
             <%= f.text_field :amount %>
-            <%= f.submit "変更", class: "btn-gradient-radius" %>
+            <%= f.submit "変更", class: "btn-gradient-green" %>
           <% end %>
         </td>
           <td>¥<%= cart_item.subtotal %></td>

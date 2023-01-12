@@ -9,8 +9,8 @@
         <td><%= favorite.item.name %></td>
         <td><%= favorite.item.shape %></td>
         <td><%= favorite.item.size %></td>
-        <td><%= link_to "商品詳細", general_public_item_path(favorite.item.id), class: "btn btn-success" %></td>
-        <td><%= link_to "削除する", general_public_item_favorites_path(favorite.item.id), method: :delete, class: "btn btn-danger", method: :delete %></td>
+        <td><%= link_to "商品詳細", general_public_item_path(favorite.item.id), class: "btn-gradient-green" %></td>
+        <td><%= link_to "削除する", general_public_item_favorites_path(favorite.item.id), method: :delete, class: "btn-gradient-dark", method: :delete %></td>
       </tr>
       <% end %>
     </tbody>

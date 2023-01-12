@@ -6,8 +6,8 @@
           <%= address.address %></td>
             <td><%= address.name %></td>
             <td><%= address.telephone_number %></td>
-            <td><%= link_to "編集する", edit_public_address_path(address.id), class: "btn btn-sm btn-success" %></td>
-            <td><%= link_to "削除する", public_destroy_address_path(address.id), method: :delete, class: "btn btn-sm btn-danger", method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+            <td><%= link_to "編集する", edit_public_address_path(address.id), class: "btn-gradient-green" %></td>
+            <td><%= link_to "削除する", public_destroy_address_path(address.id), method: :delete, class: "btn-gradient-dark", method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
       </tr>
       <% end %>
     </tbody>
@@ -65,7 +65,7 @@
         <%= link_to "戻る", public_customers_path %>
       </div>
       <div class="col-2 text-center">
-        <%= f.submit "新規登録", class: "btn btn-success" %>
+        <%= f.submit "新規登録", class: "btn-gradient-green" %>
       </div>
     </div>
     <% end %>

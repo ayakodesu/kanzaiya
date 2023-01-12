@@ -822,3 +822,21 @@ h4:after {
 .btn-gradient-dark:hover {
   background-image: linear-gradient(65deg, #dc143c, #ffb6c1);
 }
+
+
+
+/*更新と編集ボタン*/
+.btn-gradient-green {
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #000;
+  background-image: linear-gradient(65deg, #2e8b57, #66cdaa);
+  transition: .4s;
+}
+
+.btn-gradient-green:hover {
+  background-image: linear-gradient(65deg, #2e8b57, #66cdaa);
+}
+
