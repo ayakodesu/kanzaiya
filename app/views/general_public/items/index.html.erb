@@ -36,12 +36,12 @@
             <%= image_tag item.image, size: '250x200' %>
             <div class="card-body text-black bg-white p-4">
               <div class="text-center">
-                <h5 class="fw-bolder"><%= item.genre.name %></h5>
-                    <%= item.name %>
-                    <%= item.shape %><br/>
-                    サイズ:<%= item.size %><br/>
-                    在庫数:<%= item.amount %><br/>
-                    単価(税抜)¥<%= item.last_price %>
+                <h5 class="fw-bolder"><%= item.name %></h5>
+                    <strong>ジャンル:</strong><%= item.genre.name %><br/>
+                    <strong>型:</strong><%= item.shape %><br/>
+                    <strong>サイズ:</strong><%= item.size %><br/>
+                    <strong>在庫数:</strong><%= item.amount %><br/>
+                    <strong>単価(税抜):</strong>¥<%= item.last_price %>
               </div>
             </div>
             <% end %>

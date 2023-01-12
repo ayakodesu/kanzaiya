@@ -36,12 +36,12 @@
             <div class="card-body p-4">
               <div class="text-center">
                 <div class="font">
-                <h5 class="fw-bolder"><%= item.genre.name %></h5>
-                    <%= item.name %>
-                    <%= item.shape %><br />
-                    サイズ:<%= item.size %><br/>
-                    在庫数:<%= item.amount %><br />
-                    単価(税抜):¥<%= item.last_price %>
+                <h5 class="fw-bolder"><%= item.name %></h5>
+                    <strong>ジャンル:</strong><%= item.genre.name %><br/>
+                    <strong>型:</strong><%= item.shape %><br />
+                    <strong>サイズ:</strong><%= item.size %><br/>
+                    <strong>在庫数:</strong><%= item.amount %><br />
+                    <strong>単価(税抜):</strong>¥<%= item.last_price %>
                     <td><% if item.is_active == true %>
                       <h4><p class="text-success">販売中</p></h4>
                     <% else %>
