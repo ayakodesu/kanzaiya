@@ -488,20 +488,11 @@ html,　body {
 
 /*フォントデザイン*/
 
-/*.box {
-    font-size:  35px;       /* 文字サイズ指定 */
-    /*margin:  20px;          /* 空白指定 */
-/*}*/
 
 /*商品名・top紹介文*/
 .font {
     font-family: 'Kiwi Maru', serif;  /* フォントを指定 */
 }
-
-/*.box1 {
-    font-size:  25px;       /* 文字サイズ指定 */
-    /*margin:  20px;          /* 空白指定 */
-/*}*/
 
 /*top紹介文・ナビゲーションバー*/
 .font1 {
@@ -520,45 +511,6 @@ html,　body {
 
 .font4 {
   font-family: 'Noto Sans JP', sans-serif;
-}
-
-/*admin吹き出し*/
-.balloon{
-  position: relative;
-  padding: 20px;
-  width: 500px;
-  height: 250px;
-  line-height: 80px;
-  border-radius: 50%;
-  text-align: center;
-  color: #000000;
-  letter-spacing: 0.2em;
-  font-size: 14px;
-  background-color: #FFFFFF;
-}
-/* 大きい丸 */
-.balloon::before{
-  content: '';
-  position: absolute;
-  display: block;
-  border-radius: 50%;
-  background-color: #FFFFFF;
-  left: -35px;
-  bottom: 15px;
-  width: 30px;
-  height: 30px;
-}
-/*小さい丸*/
-.balloon::after{
-  content: '';
-  position: absolute;
-  display: block;
-  border-radius: 50%;
-  background-color: #FFFFFF;
-  left: -55px;
-  bottom: 10px;
-  width: 15px;
-  height: 15px;
 }
 
 
@@ -611,6 +563,7 @@ h4:after {
 
 
 .box5 {
+  border-radius: 20px;
   width: 700px;
   height: 250px;
   position: relative;
@@ -618,7 +571,7 @@ h4:after {
   left: 15%;
   /*left: 50%;*/
   /*transform: translate(-50%,-50%);*/
-  background:rgba(219,129,39,0.6);
+  background:rgba(255,255,255,0.7);
 }
 
 
