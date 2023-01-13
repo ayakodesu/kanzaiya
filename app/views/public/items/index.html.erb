@@ -8,12 +8,13 @@
   <% end %>
 </div>
 
-<%= form_with model: @item, local: true do |f| %>
-  <div class="form_input">
-    <%= f.label :genre_id %>
-    <%= f.collection_select :genre_id, Genre.all, :id, :name, :include_blank => "ジャンルを選択してください" %>
-<% end %>
-
+<div class="row mb-3 justify-content-center">
+  <%= form_with model: @item, local: true do |f| %>
+    <div class="form_input">
+      <%= f.label :genre_id %>
+      <%= f.collection_select :genre_id, Genre.all, :id, :name, :include_blank => "ジャンルを選択してください" %>
+  <% end %>
+</div>
 
  <div class="container text-center">
     <div class="row mt-5">

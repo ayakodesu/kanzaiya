@@ -5,7 +5,7 @@ class Public::ItemsController < ApplicationController
     else
       @items = Item.all.order('id DESC').page(params[:page]).per(10)
     end
-      @genres = Genre.search(params[:search])
+      #@genres = Genre.search(params[:search])
   end
 
   def show
