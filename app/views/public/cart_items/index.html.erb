@@ -3,7 +3,7 @@
 
 <% if !@cart_items.blank? %>
  <div class="row mb-4">
-      <div class="col text-right">
+   <div class="col-lg col-md-5 text-right">
         <%= link_to public_destroy_all_cart_items_path, method: :delete, class: "btn-gradient-dark" do %>
         <i class="fa-solid fa-trash-can"></i> カートを空にする
         <% end %>

@@ -5,7 +5,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-lg col-md-5">
         <table class="table table-hover table-bordered table-sm">
           <thead>
             <tr>
@@ -30,7 +30,7 @@
         </table>
     </div>
 
-  <div class="col-6">
+  <div class="col-lg-6 col-md-5">
     <div class="row justify-content-center">
       <%= form_with model: @order, url: edit_public_customer_path do |f| %>
       <table class="table table-bordered table-sm">
@@ -73,7 +73,7 @@
     </div>
   </div>
 
-<div class="col-3">
+<div class="col-lg-3 col-md-5">
   <table class="table table-bordered table-sm" style="border-collapse: collapse">
   <%= form_with model: @order, url: edit_public_customer_path do |f| %>
     <th bgcolor = "lightsteelblue">商品合計</th>

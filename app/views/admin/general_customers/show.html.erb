@@ -4,12 +4,12 @@
 
 <div class="container">
     <div class="row mt-5 justify-content-center">
-      <h4>会員詳細</h4>
+      <h4>一般ユーザー会員詳細</h4>
     </div>
 
 <div class="container">
   <div class="row mt-5 justify-content-center">
-    <div class="col-8">
+    <div class="col-lg-8 col-md-5">
       <table class="table table-borderless table-striped">
 
         <tr><th>会員ID</th>
@@ -48,10 +48,10 @@
   </div>
 
     <div class="row mt-5 mb-5 justify-content-center">
-      <div class="col-2 text-center">
+      <div class="col-3 text-center">
         <%= link_to "戻る", admin_general_customers_path %>
      </div>
-      <div class="col-2 text-center">
+      <div class="col-3 text-center">
         <%= link_to "編集する",  edit_admin_general_customer_path(@general_customer.id), class: "btn-gradient-green" %>
       </div>
     </div>
