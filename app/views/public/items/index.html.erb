@@ -10,7 +10,8 @@
 
 <div class="row mb-3 justify-content-center">
 <%= form_tag(public_items_path, method: :get) do %>
-  <%= select_tag(:genre_id, options_for_select([["砲金","1"],["DV","2"],["Wプレス","3"],["MRジョイント","4"],["モルコ","5"],["吊り金具","6"]])) %>
+<%= select_tag :genre_id, options_from_collection_for_select( Genre.all, :id, :name) %>
+  <%#= select_tag(:search, options_for_select([["砲金","1"],["DV","2"],["Wプレス","3"],["MRジョイント","4"],["モルコ","5"],["吊り金具","6"]])) %>
   <%#= select_tag(:name, @name) %>
   <%= submit_tag "絞り込み", class: "btn-gradient-pink" %>
 <% end %>

@@ -2,17 +2,18 @@ class Public::ItemsController < ApplicationController
   def index
     if params[:search].present?
       @items = Item.search(params[:search]).order('id DESC').page(params[:page]).per(10)
+    elsif params[:genre_id].present?
+      @items = Item.where(genre_id: params[:genre_id]).page(params[:page]).per(10)
     else
       @items = Item.all.order('id DESC').page(params[:page]).per(10)
     end
-    @genre = Genre.all
-    @name = Genre.group(:name).pluck(:name).sort
   end
 
   def search
-    @genres = Genre.where('name LIKE ?', "%#{params[:name]}%")
-    @name = Genre.group(:name).pluck(:name).sort
+    @items = Items.where('genre_id LIKE ?', "%#{params[:name]}%")
   end
+
+
 
   def show
     @item = Item.find(params[:id])

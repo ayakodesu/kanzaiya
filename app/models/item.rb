@@ -18,7 +18,8 @@ class Item < ApplicationRecord
   end
 
   def search
-    @genres = Genre.where('genre_id LIKE ?', "%#{params[:name]}%")
+    @items = Items.where('genre_id LIKE ?', "%#{search}%")
+    @name = Item.group(:name).pluck(:name).sort
   end
 
   def favorited_by?(customer)
