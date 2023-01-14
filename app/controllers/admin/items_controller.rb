@@ -4,6 +4,8 @@ class Admin::ItemsController < ApplicationController
       @items = Item.search(params[:search]).order('id DESC').page(params[:page]).per(10)
     elsif params[:genre_id].present?
       @items = Item.where(genre_id: params[:genre_id]).page(params[:page]).per(10)
+    elsif params[:amount].present?
+      @items = Item.where(amount: params[:amount]).page(params[:page]).per(10)
     else
       @items = Item.all.order('id DESC').page(params[:page]).per(10)
     end

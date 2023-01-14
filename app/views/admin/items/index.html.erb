@@ -9,22 +9,35 @@
     </div>
 
 <div class="row mb-3 justify-content-center">
+  <div class="col-lg col-md-5 mb-3 text-center">
   <%= form_tag(admin_items_path, method: :get) do %>
     <%= text_field_tag :search, '', placeholder: "キーワード検索", :size=>"50" %>
     <%= submit_tag 'キーワード検索', name: nil, shape: nil, size: nil, class: "btn-gradient-blue" %>
   <% end %>
+  </div>
 </div>
 
 <div class="row mb-3 justify-content-center">
+  <div class="col-lg-4 col-md-5 mb-3 text-center">
   <%= form_tag(admin_items_path, method: :get) do %>
   <%= select_tag :genre_id, options_from_collection_for_select( Genre.all, :id, :name) %>
-  <%= submit_tag "ジャンル検索", class: "btn-gradient-radius" %>
+  <%= submit_tag "ジャンル検索", class: "btn-gradient-blue" %>
 <% end %>
+  </div>
+
+<div class="col-lg-4 col-md-5 mb-3 text-center">
+  <%= form_tag(admin_items_path, method: :get) do %>
+    <%= text_field_tag :amount, '', placeholder: "在庫数検索" %>
+    <%= submit_tag '在庫数検索', amount: nil, class: "btn-gradient-blue" %>
+  <% end %>
+</div>
 </div>
 
-<div class="row mt-3 mb-3 justify-content-end">
+<div class="row mt-3 mb-3 justify-content-center">
   <div class="col-lg-4 col-md-5 mb-3 text-center">
-    <%= link_to "商品新規追加", new_admin_item_path, class: "btn-gradient-pink" %>
+    <%= link_to new_admin_item_path, class: "btn-gradient-pink" do%>
+    <i class="fa-solid fa-circle-plus"></i><strong>商品新規追加</strong>
+    <% end %>
   </div>
 </div>
 
