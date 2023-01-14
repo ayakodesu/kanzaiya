@@ -9,12 +9,6 @@ class Public::ItemsController < ApplicationController
     end
   end
 
-  def search
-    @items = Items.where('genre_id LIKE ?', "%#{params[:name]}%")
-  end
-
-
-
   def show
     @item = Item.find(params[:id])
     @cart_item = CartItem.new
