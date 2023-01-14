@@ -6,4 +6,9 @@ class Genre < ApplicationRecord
     search ? where('name LIKE ?', "%#{search}%") : all
   end
 
+  def search
+    @genres = Genre.where('genre_id LIKE ?', "%#{params[:name]}%")
+  end
+
+
 end

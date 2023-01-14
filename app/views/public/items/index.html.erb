@@ -9,11 +9,11 @@
 </div>
 
 <div class="row mb-3 justify-content-center">
-  <%= form_with model: @item, local: true do |f| %>
-    <div class="form_input">
-      <%= f.label :genre_id %>
-      <%= f.collection_select :genre_id, Genre.all, :id, :name, :include_blank => "ジャンルを選択してください" %>
-  <% end %>
+<%= form_tag(public_items_path, method: :get) do %>
+  <%= select_tag(:genre_id, options_for_select([["砲金","1"],["DV","2"],["Wプレス","3"],["MRジョイント","4"],["モルコ","5"],["吊り金具","6"]])) %>
+  <%#= select_tag(:name, @name) %>
+  <%= submit_tag "絞り込み", class: "btn-gradient-pink" %>
+<% end %>
 </div>
 
  <div class="container text-center">

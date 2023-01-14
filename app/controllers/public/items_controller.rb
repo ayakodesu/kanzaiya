@@ -5,7 +5,13 @@ class Public::ItemsController < ApplicationController
     else
       @items = Item.all.order('id DESC').page(params[:page]).per(10)
     end
-      #@genres = Genre.search(params[:search])
+    @genre = Genre.all
+    @name = Genre.group(:name).pluck(:name).sort
+  end
+
+  def search
+    @genres = Genre.where('name LIKE ?', "%#{params[:name]}%")
+    @name = Genre.group(:name).pluck(:name).sort
   end
 
   def show

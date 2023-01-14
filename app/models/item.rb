@@ -14,7 +14,11 @@ class Item < ApplicationRecord
   belongs_to :genre
 
   def self.search(search)
-    search ? where('genre_id LIKE ? OR name LIKE ? OR size LIKE ? OR shape LIKE ?' ,"%#{search}%","%#{search}%","%#{search}%","%#{search}%") : all
+    search ? where('name LIKE ? OR size LIKE ? OR shape LIKE ?' ,"%#{search}%","%#{search}%","%#{search}%") : all
+  end
+
+  def search
+    @genres = Genre.where('genre_id LIKE ?', "%#{params[:name]}%")
   end
 
   def favorited_by?(customer)
