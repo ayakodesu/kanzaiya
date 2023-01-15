@@ -6,13 +6,13 @@
 <div class="container">
   <div class="row">
     <div class="col-lg col-md-5">
-        <table class="table table-hover table-bordered table-sm">
+        <table class="table table-hover table-bordered table-sm" style="border-collapse: collapse">
           <thead>
             <tr>
-              <th>商品名</th>
-              <th>単位(税込)</th>
-              <th>数量</th>
-              <th>小計</th>
+              <th bgcolor = "silver">商品名</th>
+              <th bgcolor = "silver">単位(税込)</th>
+              <th bgcolor = "silver">数量</th>
+              <th bgcolor = "silver">小計</th>
             </tr>
           </thead>
     <tbody>
@@ -35,7 +35,7 @@
       <%= form_with model: @order, url: edit_public_customer_path do |f| %>
       <table class="table table-bordered table-sm">
         <tr>
-          <th>会社名</th>
+          <th bgcolor = "silver">会社名</th>
           <td><% if @order.customer_id.present? %>
                 <%= @order.customer.corporation %>
               <% else %>
@@ -44,7 +44,7 @@
           </td>
         </tr>
          <tr>
-          <th>購入者</th>
+          <th bgcolor = "silver">購入者</th>
           <td><% if @order.customer_id.present? %>
                 <%= @order.customer.full_name %>
               <% else %>
@@ -53,38 +53,41 @@
           </td>
         </tr>
         <tr>
-          <th>注文日時</th>
+          <th bgcolor = "silver">注文日時</th>
           <td><%= @order.created_at.strftime('%Y年%m月%d日 %H:%M:%S') %></td>
         </tr>
         <tr>
-          <th>宛先</th>
+          <th bgcolor = "silver">宛先</th>
           <td>〒<%= @order.postal_code %><br>
-          <%= @order.address %></td>
+          <%= @order.address %><br>
+          <%= @order.telephone_number %></td>
         </tr>
         <tr>
-          <th>宛名</th>
+          <th bgcolor = "silver">宛名</th>
           <td><%= @order.name %></td>
         </tr>
         <tr>
-          <th>支払方法</th>
+          <th bgcolor = "silver">支払方法</th>
           <td><%= @order.payment_method_i18n %></td>
         </tr>
       <% end %>
     </div>
   </div>
 
-<div class="col-lg-3 col-md-5">
+<div class="col-lg-6 col-md-5">
+  <div class="row justify-content-center">
   <table class="table table-bordered table-sm" style="border-collapse: collapse">
   <%= form_with model: @order, url: edit_public_customer_path do |f| %>
-    <th bgcolor = "lightsteelblue">商品合計</th>
+    <th bgcolor = "silver">商品合計</th>
       <td>¥<%= @order.total_payment %></td><tr/>
-    <th bgcolor = "lightsteelblue">送料</th>
+    <th bgcolor = "silver">送料</th>
       <td>¥<%= @order.shipping_cost %></td><tr/>
-    <th bgcolor = "lightsteelblue">請求合計金額</th>
-      <td>¥<%= @order.total_payment + @order.shipping_cost %></td>
+    <th bgcolor = "cadetblue">請求合計金額</th>
+      <td >¥<%= @order.total_payment + @order.shipping_cost %></td>
   <% end %>
   </table>
   </div>
+</div>
 
   </div>
 </div>

@@ -2,10 +2,10 @@
 
 <div class="container">
   <div class="row mt-3 justify-content-center">
-    <div class="col-lg-6 col-md-5 text-center">
+    <div class="col-lg-6 col-md-5">
   <table class="table table-bordered table-sm">
       <tr>
-        <th>現場名</th>
+        <th bgcolor = "silver">現場名</th>
         <td><%= @order.spot %>分</td>
       </tr>
   </table>
@@ -15,13 +15,13 @@
 
 <div class="container">
   <div class="row mt-3 justify-content-center">
-    <div class="col-lg-6 col-md-5 mb-5 text-center">
+    <div class="col-lg-6 col-md-5 mb-5">
       <table class="table table-bordered table-sm">
         <thead>
-          <th>商品名 / 型 / サイズ</th>
-          <th>数量</th>
-          <th>単価(税込み)</th>
-          <th>合計</th>
+          <th bgcolor = "silver">商品名 / 型 / サイズ</th>
+          <th bgcolor = "silver">数量</th>
+          <th bgcolor = "silver">単価(税込み)</th>
+          <th bgcolor = "silver">合計</th>
         </thead>
         <% total = 0 %>
 
@@ -42,39 +42,37 @@
   </table>
   </div>
 
-  <div class="col-lg-6 col-md-5 mb-5 text-center">
+  <div class="col-lg-4 col-md-5 mb-5">
     <div class="row justify-content-center">
       <table class="table table-bordered table-sm">
       <tr>
-        <th>お支払方法</th>
+        <th bgcolor = "silver">お支払方法</th>
         <td><%= @order.payment_method_i18n %></td>
       </tr>
       <tr>
-        <th>お届け先</th>
+        <th bgcolor = "silver">お届け先</th>
         <td>〒<%= @order.postal_code %><br />
             <%= @order.address %><br />
             <%= @order.name %><br />
             TEL:<%= @order.telephone_number %></td>
       </tr>
-    </table>
-  </div>
+      </table>
 
-  <div class="col-lg-6 col-md-5 mb-3 float-right">
     <table class="table table-bordered" style="border-collapse: collapse">
       <tr>
-        <th>商品合計</th>
+        <th bgcolor = "silver">商品合計</th>
           <td>¥<%= total %></td>
       </tr>
       <tr>
-        <th>送料</th>
+        <th bgcolor = "silver">送料</th>
         <td>¥<%= @order.shipping_cost %></td>
       </tr>
       <tr>
-        <th bgcolor = "silver"><h5>請求金額</h5></th>
-      <td th bgcolor = "silver"><h5>¥<%= @order.shipping_cost + total %></h5></td>
+        <th bgcolor = "cadetblue">請求金額</th>
+        <td>¥<%= @order.shipping_cost + total %></td>
       </tr>
        </table>
-  </div>
+       </div>
   </div>
 
   <div class="container">
@@ -100,5 +98,5 @@
     </div>
   </div>
     <% end %>
-  </div>
+
 </div>
