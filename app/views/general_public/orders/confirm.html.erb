@@ -34,7 +34,7 @@
           <%= cart_item.item.size %></td>
           <td><%= cart_item.amount %></td>
           <td>¥<%= cart_item.item.with_tax_price.to_s(:delimited, delimiter: ',') %></td>
-          <td>¥<%= cart_item.item.with_tax_price * cart_item.amount %></td>
+          <td>¥<%= cart_item.item.with_tax_price.to_s(:delimited) * cart_item.amount %></td>
           <% total += cart_item.subtotal %>
         </tr>
       <% end %>

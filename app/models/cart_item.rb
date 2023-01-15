@@ -12,7 +12,7 @@ class CartItem < ApplicationRecord
 
   def cart_item_amount_cannot_be_greater_than_item_amount
     if amount > item.amount
-      errors.add(:amount, "※在庫合計数よりを注文数が多いです。")
+      errors.add(:amount, "※在庫合計数よりを注文数が上回っています。")
     end
   end
 

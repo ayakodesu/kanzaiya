@@ -17,8 +17,9 @@
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#e9dacb">
   <div class="container-fluid">
    <a class="navbar-brand p-3"><%= image_tag 'kanzaiya_font_5_clear.png', :size =>'200x50' %></a>
-
+  <% if flash[:notice]!="※在庫数より注文数が上回っています。" %>
    <%= flash[:notice] %>
+  <% end %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

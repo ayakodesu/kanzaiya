@@ -1,8 +1,20 @@
 class Public::OrdersController < ApplicationController
   def new
-    @order = Order.new
-    @addresses = current_customer.addresses
-    @customer = current_customer
+    cart_items = current_customer.cart_items
+    flg=true
+    cart_items.each do |cart_item|
+      if cart_item.item.amount < cart_item.amount
+        flg=false
+      end
+    end
+    if flg
+      @order = Order.new
+      @addresses = current_customer.addresses
+      @customer = current_customer
+    else
+      flash[:notice] = "※在庫数より注文数が上回っています。"
+      redirect_to public_cart_items_path
+    end
   end
 
   def confirm
