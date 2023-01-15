@@ -367,7 +367,7 @@ input[type="submit"]:focus {
   color: transparent;
   &.active{
     animation-name: kf_c02;
-    animation-duration: 2s;
+    animation-duration: 5s;
     animation-fill-mode: forwards;
   }
 }
@@ -865,3 +865,4 @@ img{
     max-width: 100%;
     height: auto;
 }
+
