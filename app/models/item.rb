@@ -17,10 +17,6 @@ class Item < ApplicationRecord
     search ? where('name LIKE ? OR size LIKE ? OR shape LIKE ?' ,"%#{search}%","%#{search}%","%#{search}%") : all
   end
 
-  def search
-    @items = Items.where('genre_id LIKE ?', "%#{search}%")
-    @name = Item.group(:name).pluck(:name).sort
-  end
 
   def favorited_by?(customer)
     favorites.exists?(customer_id: customer.id)

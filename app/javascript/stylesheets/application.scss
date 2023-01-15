@@ -396,42 +396,6 @@ input[type="submit"]:focus {
 }
 
 
-
-
-
-.c07{
-  padding: 26px 26px;
-  background-image:
-    linear-gradient(to bottom, transparent 10px, #f3981d 10px, #a675a5 13px, transparent 13px),
-    linear-gradient(to left,   transparent 10px, #ed6d35 10px, #a675a5 13px, transparent 13px),
-    linear-gradient(to top,    transparent 10px, #e95464 10px, #a675a5 13px, transparent 13px),
-    linear-gradient(to right,  transparent 10px, #79c06e 10px, #a675a5 13px, transparent 13px);
-  background-repeat: no-repeat;
-  background-size: 0% 100%, 100% 0%, 0% 100%, 100% 0%;
-  background-position: top left, top left, right bottom, right bottom;
-  &.active{
-    animation-name: kf_c07a, kf_c07b;
-    animation-duration: 1.5s, 0s;
-    animation-delay: 0s, 0.75s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards,
-  }
-  @keyframes kf_c07a {
-    50%{
-      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
-    }
-    100%{
-      background-size: 0% 100%, 100% 0%, 0% 100%, 100% 0%;
-    }
-  }
-  @keyframes kf_c07b {
-    100%{
-      background-position: right bottom, right bottom, top left, top left;
-    }
-  }
-}
-
-
 .link {
     text-decoration: none;
     color: black ;
@@ -863,6 +827,6 @@ h4:after {
 /*画像サイズ*/
 img{
     max-width: 100%;
-    height: auto;
+    /*height: auto;*/
 }
 

@@ -61,7 +61,7 @@
                     <strong>型:</strong><%= item.shape %><br />
                     <strong>サイズ:</strong><%= item.size %><br/>
                     <strong>在庫数:</strong><%= item.amount %><br />
-                    <strong>単価(税抜):</strong>¥<%= item.last_price %>
+                    <strong>単価(税抜):</strong>¥<%= item.last_price.to_s(:delimited, delimiter: ',') %>
                     <td><% if item.is_active == true %>
                       <h4><p class="text-success">販売中</p></h4>
                     <% else %>

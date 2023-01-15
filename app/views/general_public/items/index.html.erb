@@ -48,7 +48,7 @@
                     <strong>型:</strong><%= item.shape %><br/>
                     <strong>サイズ:</strong><%= item.size %><br/>
                     <strong>在庫数:</strong><%= item.amount %><br/>
-                    <strong>単価(税抜):</strong>¥<%= item.last_price %>
+                    <strong>単価(税抜):</strong>¥<%= item.last_price.to_s(:delimited, delimiter: ',') %>
               </div>
             </div>
             <% end %>

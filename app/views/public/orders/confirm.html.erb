@@ -33,7 +33,7 @@
           <%= cart_item.item.shape %> /
           <%= cart_item.item.size %></td>
           <td><%= cart_item.amount %></td>
-          <td>¥<%= cart_item.item.with_tax_price %></td>
+          <td>¥<%= cart_item.item.with_tax_price.to_s(:delimited, delimiter: ',') %></td>
           <td>¥<%= cart_item.item.with_tax_price * cart_item.amount %></td>
           <% total += cart_item.subtotal %>
         </tr>
@@ -61,7 +61,7 @@
     <table class="table table-bordered" style="border-collapse: collapse">
       <tr>
         <th bgcolor = "silver">商品合計</th>
-          <td>¥<%= total %></td>
+          <td>¥<%= total.to_s(:delimited, delimiter: ',') %></td>
       </tr>
       <tr>
         <th bgcolor = "silver">送料</th>

@@ -21,7 +21,7 @@
         <td><%= order_detail.item.name %>/
         <%= order_detail.item.shape %>/
         <%= order_detail.item.size %></td>
-        <td>¥<%= order_detail.item.with_tax_price %></td>
+        <td>¥<%= order_detail.item.with_tax_price.to_s(:delimited, delimiter: ',') %></td>
         <td><%= order_detail.amount %></td>
         <td>¥<%= order_detail.item.with_tax_price * order_detail.amount %></td>
       </tr>
@@ -79,7 +79,7 @@
   <table class="table table-bordered table-sm" style="border-collapse: collapse">
   <%= form_with model: @order, url: edit_public_customer_path do |f| %>
     <th bgcolor = "silver">商品合計</th>
-      <td>¥<%= @order.total_payment %></td><tr/>
+      <td>¥<%= @order.total_payment.to_s(:delimited, delimiter: ',') %></td><tr/>
     <th bgcolor = "silver">送料</th>
       <td>¥<%= @order.shipping_cost %></td><tr/>
     <th bgcolor = "cadetblue">請求合計金額</th>

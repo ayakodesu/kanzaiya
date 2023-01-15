@@ -54,7 +54,7 @@
                 :<%= item.amount %>
                 <br />
               <strong>単価(税抜)</strong>
-                :¥<%= item.last_price %>
+                :¥<%= item.last_price.to_s(:delimited, delimiter: ',') %>
                 <br>
               </div>
               </div>

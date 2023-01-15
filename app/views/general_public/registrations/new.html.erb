@@ -30,13 +30,13 @@
     <tr><th><%= f.label :email %></th>
       <td><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "〇〇〇@gmail.com", :size=>"60"  %></td>
     </tr>
-    <tr><th><%= f.label :password %>
+    <tr><th><%= f.label :パスワード %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> 文字以上)</em></th>
       <% end %>
     <td><%= f.password_field :password, autocomplete: "new-password" %></td>
     </tr>
-    <tr><th><%= f.label :password_confirmation %></th>
+    <tr><th><%= f.label :パスワード再確認 %></th>
     <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
   </tr>
 
