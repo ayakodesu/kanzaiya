@@ -10,7 +10,7 @@ class GeneralPublic::OrdersController < ApplicationController
     if flg
       @order = Order.new
       @addresses = current_general_customer.addresses
-      @customer = current_general_customer
+      @general_customer = current_general_customer
     else
       flash[:notice] = "※在庫数より注文数が上回っています。"
       redirect_to general_public_cart_items_path

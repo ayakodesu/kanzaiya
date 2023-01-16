@@ -53,8 +53,8 @@
                 <strong>在庫数</strong>
                 :<%= item.amount %>
                 <br />
-              <strong>単価(税抜)</strong>
-                :¥<%= item.last_price.to_s(:delimited, delimiter: ',') %>
+              <strong>単価(税込み)</strong>
+                :¥<%= item.with_tax_price.to_s(:delimited, delimiter: ',') %>
                 <br>
               </div>
               </div>

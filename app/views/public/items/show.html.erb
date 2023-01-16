@@ -21,8 +21,8 @@
           <tr><th>数量</th>
           <td><%= f.text_field :amount, placeholder: "個数を入力してください" %></td>
           <%= f.hidden_field :item_id, :value => @item.id %>
-          <tr><th>単価(税抜)</th>
-          <td>¥<%= @item.last_price.to_s(:delimited, delimiter: ',') %></td>
+          <tr><th>単価(税込み)</th>
+          <td>¥<%= @item.with_tax_price.to_s(:delimited, delimiter: ',') %></td>
           </table>
           <div class="row mt-5 mb-5 justify-content-center">
             <div class="col-3">

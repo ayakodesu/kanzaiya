@@ -14,18 +14,20 @@
   <tbody>
     <% @cart_items.each do |cart_item| %>
       <tr bgcolor="#f5f5f5">
-        <td><%= image_tag cart_item.item.image, size: "50x50" %><%= cart_item.item.name %>
+        <td><%= image_tag cart_item.item.image, size: "50x50" %>
+            <%= cart_item.item.name %>
             <%= cart_item.item.shape %>
-            <%= cart_item.item.size %></td>
-        <td>¥<%= cart_item.item.with_tax_price.to_s(:delimited, delimiter: ',') %></td>
-        <td><h3><%= cart_item.item.amount %></h3></td>
+            <%= cart_item.item.size %>
+        </td>
+        <td><h5><p class="text-right">¥<%= cart_item.item.with_tax_price.to_s(:delimited, delimiter: ',') %></p></h5></td>
+        <td><h3><p class="text-center"><%= cart_item.item.amount %></p></h3></td>
         <td>
           <%= form_with model: cart_item, url: general_public_cart_item_path(cart_item.id), method: :patch do |f| %>
             <%= f.text_field :amount %>
-            <%= f.submit "更新する", class: "btn-gradient-green" %>
+            <%= f.submit "更新", class: "btn-gradient-green" %>
           <% end %>
         </td>
-          <td>¥<%= cart_item.subtotal.to_s(:delimited, delimiter: ',') %></td>
+          <td><h5><p class="text-right">¥<%= cart_item.subtotal.to_s(:delimited, delimiter: ',') %></p></h5></td>
           <td><%= link_to "削除", general_public_destroy_cart_item_path(cart_item.id), method: :delete, class: "btn-gradient-dark" %></td>
 
         <% @total += cart_item.subtotal %>
@@ -37,7 +39,7 @@
   <div class="container">
     <div class="row">
       <div class="col text-right">
-        <h3>総合計(税込み)  ¥<%= @total.to_s(:delimited, delimiter: ',') %></h3>
+        <h3>総合計(税込み)¥<%= @total.to_s(:delimited, delimiter: ',') %></h3>
       </div>
     </div>
   </div>
@@ -60,11 +62,9 @@
 <% end %>
 </div>
 
-<div class="row mt-2 justify-content-center">
+</div>
+</div>
+<div class="row mt-2 mb-5 justify-content-center">
   <%= link_to "Myページへ戻る", general_public_customers_path %>
 </div>
-
-</div>
-</div>
-
 </header>

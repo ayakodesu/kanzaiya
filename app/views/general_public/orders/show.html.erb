@@ -36,9 +36,9 @@
     <td><%= order_detail.item.name %></td>
     <td><%= order_detail.item.shape %></td>
     <td><%= order_detail.item.size %></td>
-    <td>¥<%= order_detail.item.with_tax_price %></td>
+    <td><p class="text-right">¥<%= order_detail.item.with_tax_price.to_s(:delimited, delimiter: ',') %></p></td>
     <td><%= order_detail.amount %></td>
-    <td>¥<%= order_detail.item.with_tax_price * order_detail.amount %></td>
+    <td><p class="text-right">¥<%= (order_detail.item.with_tax_price * order_detail.amount).to_s(:delimited, delimiter: ',') %></p></td>
 
   </tr>
   <% end %>
@@ -77,15 +77,15 @@
       <strong>請求情報</strong>
         <tr>
           <th bgcolor = "silver">商品合計</th>
-          <td>¥<%= @order.total_payment %></td>
+          <td><p class="text-right">¥<%= @order.total_payment.to_s(:delimited, delimiter: ',') %></p></td>
         </tr>
         <tr>
           <th bgcolor = "silver">配送料</th>
-          <td>¥<%= @order.shipping_cost %></td>
+          <td><p class="text-right">¥<%= @order.shipping_cost %></p></td>
         </tr>
         <tr>
           <th bgcolor = "cadetblue">ご請求額</th>
-          <td>¥<%= @order.total_payment + @order.shipping_cost %></td>
+          <td><p class="text-right">¥<%= (@order.total_payment + @order.shipping_cost).to_s(:delimited, delimiter: ',') %></p></td>
         </tr>
     </table>
   </div>

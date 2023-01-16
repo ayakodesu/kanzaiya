@@ -33,8 +33,8 @@
           <%= cart_item.item.shape %> /
           <%= cart_item.item.size %></td>
           <td><%= cart_item.amount %></td>
-          <td>¥<%= cart_item.item.with_tax_price.to_s(:delimited, delimiter: ',') %></td>
-          <td>¥<%= cart_item.item.with_tax_price.to_s(:delimited) * cart_item.amount %></td>
+          <td><p class="text-right">¥<%= cart_item.item.with_tax_price.to_s(:delimited, delimiter: ',') %></p></td>
+          <td><p class="text-right">¥<%= (cart_item.item.with_tax_price * cart_item.amount).to_s(:delimited, delimiter: ',') %></p></td>
           <% total += cart_item.subtotal %>
         </tr>
       <% end %>
@@ -61,15 +61,15 @@
     <table class="table table-bordered" style="border-collapse: collapse">
       <tr>
          <th bgcolor = "silver">商品合計</th>
-        <td>¥<%= total.to_s(:delimited, delimiter: ',') %></td>
+        <td><p class="text-right">¥<%= total.to_s(:delimited, delimiter: ',') %></p></td>
       </tr>
       <tr>
         <th bgcolor = "silver">送料</th>
-        <td>¥<%= @order.shipping_cost %></td>
+        <td><p class="text-right">¥<%= @order.shipping_cost %></p></td>
       </tr>
       <tr>
-        <th bgcolor = "cadetblue">請求金額</th>
-        <td>¥<%= @order.shipping_cost + total %></td>
+        <th bgcolor = "cadetblue"><h5>請求金額</h5></th>
+        <td><h5><p class="text-right">¥<%= (@order.shipping_cost + total).to_s(:delimited, delimiter: ',') %></p></h5></td>
       </tr>
        </table>
   </div>
