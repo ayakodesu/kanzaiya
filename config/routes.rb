@@ -12,10 +12,10 @@ Rails.application.routes.draw do
       resource :favorites, only: [:create, :destroy]
     end
     resource :customer, only: [:create, :edit, :show, :update, :destroy]
-    get 'unsubscribe/:name' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
-    patch ':id/withdraw/:name' => 'general_customers#withdraw', as: 'withdraw_user'
-    put 'withdraw/:name' => 'general_customer#withdraw'
     get '/customer/index' => 'customers#index', as: 'customers'
+    get 'unsubscribe/:name' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
+    patch ':id/withdraw/:name' => 'customers#withdraw', as: 'withdraw_user'
+    put 'withdraw/:name' => 'customer#withdraw'
     resources :addresses, only: [:new, :create, :edit, :index, :update, :destroy]
     delete 'addresses/:id' =>'addresses#destroy', as: 'destroy_address'
     patch ':id/adderss/:name' => 'addresses#cart_item', as: 'adderss_user'
