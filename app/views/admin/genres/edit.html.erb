@@ -7,7 +7,7 @@
       <h4>ジャンル編集</h4>
     </div>
 
-<%= form_with model: @genre,url: admin_genre_path do |f| %>
+  <%= form_with model: @genre,url: admin_genre_path do |f| %>
     <div class="container">
 
       <div class="row mt-5 mb-5 justify-content-center">
@@ -16,7 +16,7 @@
           <td><%=f.submit '更新', class: "btn-gradient-green" %></td></tr>
         </table>
       </div>
-<% end %>
+  <% end %>
     <div class="row mt-5 mb-5 justify-content-center">
       <%= link_to '戻る', admin_genres_path %>
     </div>
