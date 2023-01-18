@@ -1,4 +1,6 @@
 class Public::ItemsController < ApplicationController
+  before_action :authenticate_customer!
+
   def index
     if params[:search].present?
       @items = Item.search(params[:search]).order('id DESC').page(params[:page]).per(10)

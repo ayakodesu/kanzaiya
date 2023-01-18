@@ -1,4 +1,5 @@
 class GeneralPublic::OrdersController < ApplicationController
+  before_action :authenticate_general_customer!
   def new
      cart_items = current_general_customer.cart_items
     flg=true

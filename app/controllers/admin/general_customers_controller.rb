@@ -1,4 +1,6 @@
 class Admin::GeneralCustomersController < ApplicationController
+  before_action :authenticate_admin!
+
   def edit
      @general_customer = GeneralCustomer.find(params[:id])
   end

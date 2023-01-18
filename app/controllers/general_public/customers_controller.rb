@@ -1,4 +1,5 @@
 class GeneralPublic::CustomersController < ApplicationController
+  before_action :authenticate_general_customer!
   def show
     @general_customer = current_general_customer
   end

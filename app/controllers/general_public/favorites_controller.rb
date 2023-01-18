@@ -1,4 +1,5 @@
 class GeneralPublic::FavoritesController < ApplicationController
+  before_action :authenticate_general_customer!
 
   def index
     @favorite = current_general_customer.favorites

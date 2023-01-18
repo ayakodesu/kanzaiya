@@ -1,4 +1,6 @@
 class Admin::ItemsController < ApplicationController
+  before_action :authenticate_admin!
+
   def index
     if params[:search].present?
       @items = Item.search(params[:search]).order('id DESC').page(params[:page]).per(10)
