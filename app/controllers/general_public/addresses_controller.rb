@@ -1,5 +1,5 @@
 class GeneralPublic::AddressesController < ApplicationController
-  before_action :authenticate_general_customer!, only: [:index]
+  before_action :authenticate_general_customer!
 
   def new
     @address = Address.new
