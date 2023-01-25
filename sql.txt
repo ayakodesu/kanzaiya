@@ -1,0 +1,1 @@
+order = Order.left_joins(:customer).left_joins(:general_customer).select('orders.id, customers.last_name, customers.first_name, (customers.last_name || customers.first_name) AS c_full_name, general_customers.first_name, general_customers.last_name, (general_customers.last_name || general_customers.first_name) AS g_full_name')
