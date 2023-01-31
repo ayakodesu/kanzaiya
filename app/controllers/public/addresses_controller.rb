@@ -16,8 +16,8 @@ class Public::AddressesController < ApplicationController
 
   def create
     @address = Address.new(address_params)
-    @address.save
-    redirect_to public_addresses_path
+      @address.save
+      redirect_to public_addresses_path
   end
 
   def update

@@ -22,7 +22,16 @@
  <div class="row mt-3 justify-content-center">
     <h5>配送先追加</h5>
   </div>
-</div>
+
+
+<% if @address.errors.any? %>
+  <%= @address.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @address.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <div class="container">
    <%= form_with model: @address, url: public_addresses_path do |f| %>
@@ -69,6 +78,7 @@
       </div>
     </div>
     <% end %>
+</div>
 </div>
 </div>
 </header>
