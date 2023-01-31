@@ -3,6 +3,9 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   validates :image, presence: true
+  validates :name, presence: true
+  validates :amount, presence: true
+  validates :last_price, presence: true
 
   def with_tax_price
     (last_price * 1.1).floor
