@@ -9,6 +9,16 @@
 </div>
 
 <%= paginate @orders %>
+
+<div class="container">
+<table class="table table-secondary table-bordered table-sm border="1" style="border-collapse: collapse"">
+    <thead>
+      <th>注文日時</th>
+      <th>現場名</th>
+      <th>配送先名</th>
+      <th>配送先</th>
+    </thead>
+
     <body>
       <% @orders.each do |order| %>
         <tr bgcolor="#f5f5f5">
@@ -22,6 +32,8 @@
       <% end %>
     </body>
   </table>
+ </div>
+
 <%= paginate @orders %>
 <div class="row mt-2 justify-content-center">
   <%= link_to "Myページへ戻る", public_customers_path %>
