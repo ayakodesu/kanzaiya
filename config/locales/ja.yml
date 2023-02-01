@@ -23,6 +23,19 @@
           signed_up: '会員登録ありがとうざいます！'
         general_customer:
           signed_up: '会員登録ありがとうございます！'
+    activerecord:
+      attributes:
+        item:
+          image: '画像'
+          name: '名前'
+          amount: '数量'
+          last_price: '金額'
+          genre: 'ジャンル'
+        address:
+          postal_code: '郵便番号'
+          name: '名前'
+          telephone_number: 'TEL'
+          address: '住所'
 
 
 

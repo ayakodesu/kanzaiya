@@ -16,8 +16,12 @@ class Public::AddressesController < ApplicationController
 
   def create
     @address = Address.new(address_params)
-      @address.save
+    if @address.save
       redirect_to public_addresses_path
+    else
+      @addresses = current_customer.addresses.page(params[:page])
+      render :index
+    end
   end
 
   def update
