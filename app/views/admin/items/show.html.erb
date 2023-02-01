@@ -51,6 +51,7 @@
     </div>
     <div class="col-3 text-center">
        <%= link_to "編集する", edit_admin_item_path(@item.id), class: "btn-gradient-green" %>
+       <%= link_to "削除する", admin_destroy_item_path(@item.id), method: :delete, class: "btn-gradient-dark", method: :delete, "data-confirm" => "本当に削除しますか？" %>
     </div>
   </div>
 </div>
