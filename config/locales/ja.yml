@@ -27,7 +27,7 @@
       attributes:
         item:
           image: '画像'
-          name: '名前'
+          name: '商品名'
           amount: '数量'
           last_price: '金額'
           genre: 'ジャンル'
