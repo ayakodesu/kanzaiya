@@ -79,6 +79,9 @@ class Public::OrdersController < ApplicationController
   def show
     @orders = current_customer.orders
     @order = Order.find(params[:id])
+    unless @order.customer == current_customer
+      redirect_to  public_order_path
+    end
     @order_details = @order.order_details
     @order.shipping_cost = 800
   end
