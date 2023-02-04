@@ -29,12 +29,9 @@ class Admin::GenresController < ApplicationController
   end
 
   def destroy
-    if  @genre = Genre.find(params[:id])
-        @genre.delete
-        redirect_to admin_genres_path
-    else
-        redirect_to admin_genres_path
-    end
+    @genre = Genre.find(params[:id])
+    @genre.delete
+    redirect_to admin_genres_path
   end
 
   private
