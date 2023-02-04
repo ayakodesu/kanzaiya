@@ -64,7 +64,7 @@
               <div class="text-center">
                 <div class="font">
                 <h5 class="fw-bolder"><%= item.name %></h5>
-                    <strong>ジャンル:</strong><%= item.genre.name %><br/>
+                    <strong>ジャンル:</strong><%= item.genre.try(:name) %><br/>
                     <strong>型:</strong><%= item.shape %><br />
                     <strong>サイズ:</strong><%= item.size %><br/>
                     <strong>在庫数:</strong><%= item.amount %><br />
