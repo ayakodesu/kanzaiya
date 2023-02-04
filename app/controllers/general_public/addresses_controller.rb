@@ -12,6 +12,9 @@ class GeneralPublic::AddressesController < ApplicationController
 
   def edit
     @address = Address.find(params[:id])
+    unless @address.general_customer == current_general_customer
+      redirect_to  edit_general_public_address_path
+    end
   end
 
   def create

@@ -12,6 +12,9 @@ class Public::AddressesController < ApplicationController
 
   def edit
     @address = Address.find(params[:id])
+    unless @address.customer == current_customer
+      redirect_to  edit_public_address_path
+    end
   end
 
   def create
