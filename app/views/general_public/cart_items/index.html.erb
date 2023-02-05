@@ -13,6 +13,7 @@
 
   <tbody>
     <% @cart_items.each do |cart_item| %>
+    <% if cart_item.item.is_active %>
       <tr bgcolor="#f5f5f5">
         <td><%= link_to (image_tag cart_item.item.image, size: "50x50"), general_public_item_path(cart_item.item.id) %>
             <%= cart_item.item.name %>
@@ -32,6 +33,7 @@
 
         <% @total += cart_item.subtotal %>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
