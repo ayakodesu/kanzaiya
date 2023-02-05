@@ -1,5 +1,16 @@
 <%= render 'edit', customers: @customers %>
 
+<div class="row mt-5 mb-5 justify-content-center">
+<% if @customer.errors.any? %>
+  <%= @customer.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @customer.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+</div>
+
 <%= form_with model: @customer, url: public_customer_path do |f| %>
   <table class="table">
     <tr><th>氏名</th>

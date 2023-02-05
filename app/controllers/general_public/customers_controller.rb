@@ -16,7 +16,9 @@ class GeneralPublic::CustomersController < ApplicationController
     @general_customer = current_general_customer
     if @general_customer.update(general_customer_params)
       flash[:success] = "変更を保存しました"
-    redirect_to general_public_customer_path
+      redirect_to general_public_customer_path
+    else
+      render :edit
     end
   end
 
