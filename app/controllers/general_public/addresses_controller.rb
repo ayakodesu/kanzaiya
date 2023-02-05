@@ -30,8 +30,10 @@ class GeneralPublic::AddressesController < ApplicationController
   def update
    @address = Address.find(params[:id])
     if @address.update(address_params)
-     flash[:success] = "変更を保存しました"
-   redirect_to general_public_addresses_path(@aderess)
+      flash[:success] = "変更を保存しました"
+      redirect_to general_public_addresses_path(@aderess)
+    else
+      render :edit
     end
   end
 
