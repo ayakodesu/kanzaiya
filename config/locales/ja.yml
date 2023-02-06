@@ -46,6 +46,7 @@
           address: '住所'
           telephone_number: 'TEL'
           email: 'メールアドレス'
+          password: 'パスワード'
         general_customer:
           last_name: '姓'
           first_name: '名'
@@ -55,6 +56,8 @@
           address: '住所'
           telephone_number: 'TEL'
           email: 'メールアドレス'
+          password: 'パスワード'
+
 
 
 
