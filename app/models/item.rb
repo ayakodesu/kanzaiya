@@ -2,7 +2,7 @@ class Item < ApplicationRecord
 
   has_one_attached :image
 
-  validates :image, presence: true
+  validates :image, presence: true, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..2.megabytes }
   validates :name, presence: true
   validates :amount, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 0}
   validates :last_price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 0}
@@ -38,3 +38,20 @@ class Item < ApplicationRecord
   end
 
 end
+
+# == Schema Information
+#
+# Table name: items
+#
+#  id           :integer          not null, primary key
+#  amount       :integer          not null
+#  introduction :text
+#  is_active    :boolean          default(TRUE), not null
+#  last_price   :integer          not null
+#  name         :string           not null
+#  shape        :string
+#  size         :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  genre_id     :integer          not null
+#

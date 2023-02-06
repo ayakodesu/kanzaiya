@@ -1,5 +1,6 @@
 class GeneralPublic::AddressesController < ApplicationController
   before_action :authenticate_general_customer!
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def new
     @address = Address.new
@@ -11,10 +12,7 @@ class GeneralPublic::AddressesController < ApplicationController
   end
 
   def edit
-    @address = Address.find(params[:id])
-    unless @address.general_customer == current_general_customer
-      redirect_to  edit_general_public_address_path
-    end
+
   end
 
   def create
@@ -28,7 +26,6 @@ class GeneralPublic::AddressesController < ApplicationController
   end
 
   def update
-   @address = Address.find(params[:id])
     if @address.update(address_params)
       flash[:success] = "変更を保存しました"
       redirect_to general_public_addresses_path(@aderess)
@@ -38,12 +35,16 @@ class GeneralPublic::AddressesController < ApplicationController
   end
 
   def destroy
-    @address = Address.find(params[:id])
-    @address.destroy
+    @address.destroy if @address
     redirect_to general_public_addresses_path
   end
 
   private
+  
+  def correct_user
+    @address = current_general_customer.addresses.find_by(id: params[:id])
+    redirect_to  root_path unless @address
+  end
 
   def address_params
    params.require(:address).permit(:name, :postal_code, :telephone_number, :address, :general_customer_id)

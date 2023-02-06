@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "public/homes#top"
 
   namespace :general_public do
     get '/' => 'homes#top'
