@@ -12,9 +12,13 @@ class Admin::GenresController < ApplicationController
 
   def create
     @genre = Genre.new(genre_params)
-    @genre.save
+    if @genre.save
       flash[:info] = "新規ジャンルを保存しました"
-    redirect_to admin_genres_path(@genre.id)
+      redirect_to admin_genres_path(@genre.id)
+    else
+      flash[:danger] = "保存できませんでした"
+      redirect_to admin_genres_path
+    end
   end
 
   def edit
