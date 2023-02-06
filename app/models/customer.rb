@@ -9,14 +9,21 @@ class Customer < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
-  validates :last_name, presence: true
-  validates :first_name, presence: true
-  validates :last_name_kana, presence: true
-  validates :first_name_kana, presence: true
-  validates :corporation, presence: true
-  validates :postal_code, presence: true
-  validates :address, presence: true
-  validates :telephone_number, presence: true
+  VALID_POSTAL_CODE_REGEX = /\A\d{7}\z/
+  VALID_TELEPHONE_NUMBER_REGEX = /\A\d{10,11}\z/
+
+  validates :last_name, presence: true, length: { maximum: 10 }
+  validates :first_name, presence: true, length: { maximum: 10 }
+  validates :last_name_kana, presence: true, length: { maximum: 20 }
+  validates :first_name_kana, presence: true, length: { maximum: 20 }
+  validates :corporation, presence: true, length: { maximum: 50 }
+  validates :postal_code, presence: true, format: {
+                                            with: VALID_POSTAL_CODE_REGEX,
+                                            message: "は半角英数７桁で入力して下さい。" }
+  validates :address, presence: true, length: { maximum: 100 }
+  validates :telephone_number, presence: true, format: {
+                                            with: VALID_TELEPHONE_NUMBER_REGEX,
+                                            message: "は半角英数10~11桁で入力して下さい。" }
   validates :email, presence: true
 
   def self.search(search)

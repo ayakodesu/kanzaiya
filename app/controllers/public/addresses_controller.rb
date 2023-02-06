@@ -1,5 +1,6 @@
 class Public::AddressesController < ApplicationController
   before_action :authenticate_customer!
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def new
     @address = Address.new
@@ -11,10 +12,7 @@ class Public::AddressesController < ApplicationController
   end
 
   def edit
-    @address = Address.find(params[:id])
-    unless @address.customer == current_customer
-      redirect_to  edit_public_address_path
-    end
+
   end
 
   def create
@@ -44,6 +42,11 @@ class Public::AddressesController < ApplicationController
   end
 
   private
+
+  def correct_user
+    @address = current_customer.addresses.find_by(id: params[:id])
+    redirect_to  root_path unless @address
+  end
 
   def address_params
     params.require(:address).permit(:name, :postal_code, :spot, :telephone_number, :address, :customer_id)
