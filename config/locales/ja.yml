@@ -57,9 +57,7 @@
           telephone_number: 'TEL'
           email: 'メールアドレス'
           password: 'パスワード'
-      errors:
-        messages:
-          not_saved: 'エラー'
+
 
 
 
