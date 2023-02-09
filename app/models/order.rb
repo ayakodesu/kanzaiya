@@ -4,6 +4,18 @@ class Order < ApplicationRecord
   belongs_to :general_customer, optional: true
   has_many :order_details, dependent: :destroy
 
+  VALID_POSTAL_CODE_REGEX = /\A\d{7}\z/
+  VALID_TELEPHONE_NUMBER_REGEX = /\A\d{10,11}\z/
+
+  validates :name, presence: true, length: { maximum: 10 }
+  validates :postal_code, presence: true, format: {
+                                            with: VALID_POSTAL_CODE_REGEX,
+                                            message: "は半角英数７桁で入力して下さい。" }
+  validates :telephone_number, presence: true, format: {
+                                            with: VALID_TELEPHONE_NUMBER_REGEX,
+                                            message: "は半角英数10~11桁で入力して下さい。" }
+  validates :address, presence: true, length: { maximum: 100 }
+
   enum payment_method: { credit_card: 0, bank_transfer: 1 }
   enum status: { waiting_for_payment: 0, payment_confirmation: 1 }
 
