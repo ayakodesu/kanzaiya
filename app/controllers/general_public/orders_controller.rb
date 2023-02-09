@@ -37,6 +37,11 @@ class GeneralPublic::OrdersController < ApplicationController
       @order.name = @address.name
       @order.telephone_number = @address.telephone_number
     else
+      unless @order.valid?
+        @addresses = current_general_customer.addresses
+        @general_customer = current_general_customer
+        render :new
+      end
     end
   end
 

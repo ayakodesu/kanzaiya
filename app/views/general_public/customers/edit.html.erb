@@ -2,12 +2,14 @@
 
 <div class="row mt-5 mb-5 justify-content-center">
 <% if @general_customer.errors.any? %>
+  <div class="alert-danger">
   <%= @general_customer.errors.count %>件のエラーが発生しました
   <ul>
     <% @general_customer.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>
+  </div>
 <% end %>
 </div>
 

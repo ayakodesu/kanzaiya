@@ -18,14 +18,18 @@
   </div>
   </div>
 
-  <% if @order.errors.any? %>
-  <%= @order.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @order.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+<div class="row mb-3 justify-content-center">
+<% if @order.errors.any? %>
+  <div class="alert-danger">
+    <%= @order.errors.count %>件のエラーが発生しました
+    <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
+</div>
 
    <div class="row mb-3 justify-content-center">
     <%= f.radio_button :select_address, 0, checked: "checked" %>
