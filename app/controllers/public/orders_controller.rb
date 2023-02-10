@@ -1,5 +1,6 @@
 class Public::OrdersController < ApplicationController
   before_action :authenticate_customer!
+  #before_action :correct_user, only: [:index, :show, :update]
 
   def new
     cart_items = current_customer.cart_items
@@ -83,15 +84,19 @@ class Public::OrdersController < ApplicationController
 
   def show
     @orders = current_customer.orders
-    @order = Order.find(params[:id])
-    unless @order.customer == current_customer
-      redirect_to  public_order_path
-    end
+    @order = current_customer.orders.find(params[:id])
     @order_details = @order.order_details
     @order.shipping_cost = 800
   end
 
 private
+
+  #def correct_user
+    #@order = current_customer.orders.find_by(id: params[:id])
+    #redirect_to  root_path unless @order
+  #end
+
+
   def order_params
     params.require(:order).permit(:customer_id, :spot, :postal_code, :telephone_number, :address, :name, :shipping_cost, :total_payment, :payment_method, :status)
   end
