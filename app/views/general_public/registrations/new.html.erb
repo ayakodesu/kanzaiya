@@ -15,13 +15,13 @@
     <div class="col">
  <table class="table">
     <tr><th><%= f.label :〒 %></th>
-      <td><%= f.text_field :postal_code, placeholder: "0010001" %></td>
+      <td><%= f.text_field :postal_code, placeholder: "0010001(半角英数7桁)" %></td>
     </tr>
     <tr><th><%= f.label :住所 %></th>
       <td><%= f.text_field :address, placeholder: "東京都千代田区丸の内1丁目1-1", :size=>"60"  %></td>
     </tr>
     <tr><th><%= f.label :電話番号 %></th>
-    <td><%= f.text_field :telephone_number, placeholder: "09012345678" %></td>
+    <td><%= f.text_field :telephone_number, placeholder: "09012345678(半角英数10~11桁)", :size=>"30" %></td>
     </tr>
     <tr><th><%= f.label :お名前 %></th>
       <td><%= f.text_field :last_name, placeholder: "山田(姓)" %>
