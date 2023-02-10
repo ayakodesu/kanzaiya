@@ -7,9 +7,12 @@ class Admin::GeneralCustomersController < ApplicationController
 
   def update
     @general_customer = GeneralCustomer.find(params[:id])
-    @general_customer.update(general_customer_params)
-     flash[:success] = "変更を保存しました"
-    redirect_to admin_general_customer_path(@general_customer)
+    if  @general_customer.update(general_customer_params)
+        flash[:success] = "変更を保存しました"
+        redirect_to admin_general_customer_path(@general_customer)
+    else
+        render :edit
+    end
   end
 
   def index

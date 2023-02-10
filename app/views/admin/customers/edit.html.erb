@@ -4,6 +4,19 @@
     </div>
 </div>
 
+<div class="row mt-3 mb-5 justify-content-center">
+<% if @customer.errors.any? %>
+  <div class="alert-danger">
+  <%= @customer.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @customer.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  </div>
+<% end %>
+</div>
+
 <%= form_with model: @customer, url: admin_customer_path do |f| %>
 
 <div class="container">
@@ -23,6 +36,9 @@
 
         <tr><th>会社名</th>
         <td><%= f.text_field :corporation, placeholder: "〇〇産業 株式会社" %></td>
+
+        <tr><th>〒</th>
+        <td><%= f.text_field :postal_code, placeholder: "000000000" %></td>
 
         <tr><th>住所</th>
         <td><%= f.text_field :address, placeholder: "東京都千代田区", :size=>"60" %></td>

@@ -4,6 +4,19 @@
     </div>
 </div>
 
+<div class="row mt-3 mb-5 justify-content-center">
+<% if @general_customer.errors.any? %>
+  <div class="alert-danger">
+  <%= @general_customer.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @general_customer.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  </div>
+<% end %>
+</div>
+
 <%= form_with model: @general_customer, url: admin_general_customer_path do |f| %>
 
 <div class="container">
@@ -20,6 +33,9 @@
         <tr><th>ふりがな</th>
         <td><%= f.text_field :last_name_kana, placeholder: "せい" %>
         <%= f.text_field :first_name_kana, placeholder: "名" %></td>
+
+        <tr><th>〒</th>
+        <td><%= f.text_field :postal_code, placeholder: "000000000" %></td>
 
         <tr><th>住所</th>
         <td><%= f.text_field :address, placeholder: "東京都千代田区", :size=>"60" %></td>
