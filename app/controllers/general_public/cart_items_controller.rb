@@ -13,10 +13,16 @@ class GeneralPublic::CartItemsController < ApplicationController
           cart_item.amount += params[:cart_item][:amount].to_i
             cart_item.update(amount: cart_item.amount)
               redirect_to general_public_cart_items_path
-    elsif new_cart_item.save
-      redirect_to general_public_cart_items_path
+    #elsif new_cart_item.save
+      #redirect_to general_public_cart_items_path
     else
-      redirect_to general_public_cart_items_path
+      if new_cart_item.save
+        redirect_to general_public_cart_items_path
+      else
+        @item = Item.find(params[:cart_item][:item_id])
+        @cart_item = new_cart_item
+        render "general_public/items/show"
+      end
     end
   end
 

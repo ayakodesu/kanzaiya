@@ -1,13 +1,15 @@
-<%= render "show", items: @items %>
+<%= render "/public/items/show", items: @items %>
 
 <div class="row mt-5 mb-5 justify-content-center">
-<% if @item.errors.any? %>
-  <%= @item.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @item.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+<% if @cart_item.errors.any? %>
+  <div class="alert-danger">
+    <%= @cart_item.errors.count %>件のエラーが発生しました
+    <ul>
+      <% @cart_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 </div>
 

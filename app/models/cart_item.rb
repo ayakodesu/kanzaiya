@@ -6,6 +6,8 @@ class CartItem < ApplicationRecord
     item.with_tax_price * amount
   end
 
+  validates :amount, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 0}
+
   belongs_to :customer, optional: true
   belongs_to :general_customer, optional: true
   belongs_to :item

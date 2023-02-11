@@ -64,6 +64,8 @@
           name: '名前'
         genre:
           name: 'ジャンル名'
+        cart_item:
+          amount: '数量'
 
 
 

@@ -1,5 +1,17 @@
 <%= render 'public/items/show', items: @items %>
 
+<div class="row mt-5 mb-5 justify-content-center">
+<% if @cart_item.errors.any? %>
+  <div class="alert-danger">
+    <%= @cart_item.errors.count %>件のエラーが発生しました
+    <ul>
+      <% @cart_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+</div>
 
   <%= form_with model: @cart_item, url: general_public_cart_items_path do |f| %>
 <div class="container">
