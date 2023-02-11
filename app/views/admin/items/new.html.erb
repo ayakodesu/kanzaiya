@@ -21,29 +21,29 @@
   <div class="row mt-5 justify-content-center">
     <div class="col-6">
     <table class="table table-borderless table-striped">
-      <th>商品画像</th>
+      <th>商品画像<font color="red">(必須)</font></th>
       <td><%= f.file_field :image, accept: "image/*" %></td></tr>
 
-      <th>ジャンル</th>
+      <th>ジャンル<font color="red">(必須)</font></th>
       <td><%= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: '--選択してください--'}, class: 'sample' %></td></tr>
 
-      <th>商品名</th>
+      <th>商品名<font color="red">(必須)</font></th>
       <td><%= f.text_field :name, placeholder: "商品名" %></td></tr>
 
       <th>型</th>
       <td><%= f.text_field :shape, placeholder: "エルボ" %></td></tr>
 
       <th>サイズ</th>
-      <td><%= f.text_field :size, placeholder: "サイズを入力" %></td></tr>
+      <td><%= f.text_field :size, placeholder: "サイズを入力(半角数字)" %></td></tr>
 
-      <th>数量</th>
-      <td><%= f.text_field :amount, placeholder: "在庫個数入力" %></td></tr>
+      <th>数量<font color="red">(必須)</font></th>
+      <td><%= f.text_field :amount, placeholder: "在庫個数入力(半角数字)" %></td></tr>
 
       <th>商品説明</th>
       <td><%= f.text_area :introduction, placeholder: "説明文入力" %></td></tr>
 
-      <th>単価(税込み)</th>
-      <td><%= f.text_field :last_price, placeholder: "10,000" %></td></tr>
+      <th>単価(税込み)<font color="red">(必須)</font></th>
+      <td><%= f.text_field :last_price, placeholder: "10,000(半角数字)" %></td></tr>
     </table>
 
     </div>

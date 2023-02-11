@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   validates :amount, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 0}
   validates :last_price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 0}
 
+
   def with_tax_price
     (last_price * 1.1).floor
   end
