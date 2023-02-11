@@ -7,17 +7,17 @@
       <h4>ジャンル編集</h4>
     </div>
 
-    <div class="row mt-3 mb-5 justify-content-center">
-<% if @genre.errors.any? %>
-  <div class="alert-danger">
-  <%= @genre.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @genre.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-  </div>
-<% end %>
+<div class="row mt-3 mb-5 justify-content-center">
+  <% if @genre.errors.any? %>
+    <div class="alert-danger">
+    <%= @genre.errors.count %>件のエラーが発生しました
+    <ul>
+      <% @genre.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    </div>
+  <% end %>
 </div>
 
   <%= form_with model: @genre,url: admin_genre_path do |f| %>
