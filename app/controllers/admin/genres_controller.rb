@@ -31,8 +31,7 @@ class Admin::GenresController < ApplicationController
         flash[:success] = "変更を保存しました"
         redirect_to admin_genres_path(@genre.id)
     else
-      flash[:danger] = "変更できませんでした"
-      redirect_to admin_genres_path
+      render :edit
     end
   end
 

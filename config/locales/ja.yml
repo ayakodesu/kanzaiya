@@ -62,6 +62,8 @@
           address: '住所'
           telephone_number: 'TEL'
           name: '名前'
+        genre:
+          name: 'ジャンル名'
 
 
 
