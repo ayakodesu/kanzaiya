@@ -18,6 +18,7 @@ class Public::AddressesController < ApplicationController
   def create
     @address = Address.new(address_params)
     if @address.save
+      flash[:success] = "新規登録しました"
       redirect_to public_addresses_path
     else
       @addresses = current_customer.addresses.page(params[:page])
