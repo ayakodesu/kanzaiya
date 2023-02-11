@@ -6,14 +6,16 @@
     </div>
 
 <div class="row justify-content-center">
-<% if @item.errors.any? %>
-  <%= @item.errors.count %>件のエラーが発生しました 
-  <ul>
-    <% @item.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+  <% if @item.errors.any? %>
+    <div class="alert-danger">
+      <%= @item.errors.count %>件のエラーが発生しました
+    <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    </div>
+  <% end %>
 </div>
 
 <%= form_with model: @item, url: admin_items_path do |f| %>
