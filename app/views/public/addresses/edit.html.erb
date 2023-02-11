@@ -21,7 +21,7 @@
       郵便番号
     </div>
       <div class="col-2">
-        <%= f.text_field :postal_code, placeholder: "000000" %>
+        <%= f.text_field :postal_code, placeholder: "1234567(半角英数7桁)" %>
       </div>
   </div>
     <div class="row mt-3 mb-5 justify-content-center">
@@ -45,7 +45,7 @@
       TEL
       </div>
       <div class="col-2">
-      <%= f.text_field :telephone_number, placeholder: "08012345678" %>
+      <%= f.text_field :telephone_number, placeholder: "09012345678(半角英数10~11桁)", :size=>"30" %>
       </div>
   </div>
 

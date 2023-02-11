@@ -25,6 +25,8 @@ class GeneralCustomer < ApplicationRecord
                                             message: "は半角英数10~11桁で入力して下さい。" }
   validates :email, presence: true
 
+
+
  def self.search(search)
     search ? where('last_name LIKE ? OR first_name LIKE ? OR address LIKE ?', "%#{search}%","%#{search}%","%#{search}%") : all
  end

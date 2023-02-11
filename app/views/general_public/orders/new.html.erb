@@ -57,7 +57,7 @@
     </div>
     <div class="row mb-3 justify-content-center">
       <%= f.label :〒 %>
-      <%= f.text_field :postal_code, placeholder: "0020055" %>
+      <%= f.text_field :postal_code, placeholder: "1234567(半角英数7桁)" %>
     </div>
     <div class="row mb-3 justify-content-center">
       <%= f.label :住所 %>
@@ -65,11 +65,11 @@
     </div>
     <div class="row mb-3 justify-content-center">
       <%= f.label :宛名 %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, placeholder: "山田花子" %>
     </div>
     <div class="row mb-3 justify-content-center">
       <%= f.label :TEL %>
-      <%= f.text_field :telephone_number %>
+      <%= f.text_field :telephone_number, placeholder: "09012345678(半角英数10~11桁)", :size=>"30" %>
     </div>
 
   <div class="row mb-3">

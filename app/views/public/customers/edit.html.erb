@@ -27,16 +27,16 @@
       <td><%= f.text_field :corporation, placeholder: "〇〇〇工業　株式会社", :size=>"60" %></td>
     </tr>
     <tr><th>郵便番号</th>
-      <td><%= f.text_field :postal_code %></td>
+      <td><%= f.text_field :postal_code, placeholder: "1234567(半角英数7桁)" %></td>
     </tr>
     <tr><th>住所</th>
-      <td><%= f.text_field :address, :size=>"60" %></td>
+      <td><%= f.text_field :address, placeholder: "東京都千代田区", :size=>"60" %></td>
     </tr>
     <tr><th>TEL</th>
-      <td><%= f.text_field :telephone_number %></td>
+      <td><%= f.text_field :telephone_number, placeholder: "09012345678(半角英数10~11桁)", :size=>"30" %></td>
     </tr>
     <tr><th>email</th>
-      <td><%= f.text_field :email %></td>
+      <td><%= f.text_field :email, placeholder: "〇〇@gmail.com" %></td>
      </tr>
   </table>
 

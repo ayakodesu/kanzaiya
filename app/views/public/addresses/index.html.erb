@@ -43,7 +43,7 @@
         郵便番号(ハイフンなし)
       </div>
       <div class="col-2">
-        <%= f.text_field :postal_code, placeholder: "000000" %>
+        <%= f.text_field :postal_code, placeholder: "1234567(半角英数7桁)" %>
       </div>
     </div>
     <div class="row mt-3 mt-3 justify-content-center">
@@ -59,7 +59,7 @@
         名前
       </div>
       <div class="col-2">
-        <%= f.text_field :name %>
+        <%= f.text_field :name, placeholder: "山田花子" %>
         <%= f.hidden_field :customer_id, :value => current_customer.id %>
       </div>
     </div>
@@ -68,7 +68,7 @@
         TEL
       </div>
       <div class="col-2">
-        <%= f.text_field :telephone_number %>
+        <%= f.text_field :telephone_number, placeholder: "09012345678(半角英数10~11桁)", :size=>"30" %>
       </div>
     </div>
 
