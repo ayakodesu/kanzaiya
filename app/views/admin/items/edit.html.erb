@@ -1,4 +1,16 @@
 
+<div class="row mt-5 mb-5 justify-content-center">
+<% if @item.errors.any? %>
+  <div class="alert-danger">
+  <%= @item.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @item.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  </div>
+<% end %>
+</div>
 
 <%= form_with model: @item, url: admin_item_path do |f| %>
 
@@ -8,7 +20,7 @@
     <div class="col-6 text-center">
       <div class="font"><h1>在庫数量</h1></div><br/><br/>
         <table class="table table-borderless table-striped">
-           <th>数量</th>
+           <th>数量<font color="red">(必須)</font></th>
             <td><%= f.text_field :amount, placeholder: "20" %></td>
         </table>
       <div class="font"><h1>現在の画像</h1></div><br/><br/>
@@ -20,13 +32,13 @@
     <div class="font"><h1>商品編集</h1></div>
     </div>
     <table class="table table-borderless table-striped">
-      <th>商品画像</th>
+      <th>商品画像<font color="red">(必須)</font></th>
         <td><%= f.file_field :image, accept: "image/*" %></td></tr>
 
-        <th>ジャンル</th>
+        <th>ジャンル<font color="red">(必須)</font></th>
           <td><%= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: '--選択してください--'}, class: 'sample' %></td></tr>
 
-        <th>商品名</th>
+        <th>商品名<font color="red">(必須)</font></th>
           <td><%= f.text_field :name, placeholder: "商品名" %></td></tr>
 
         <th>商品説明</th>
@@ -38,7 +50,7 @@
         <th>サイズ</th>
           <td><%= f.text_field :size, placeholder: "15" %></td></tr>
 
-        <th>単価</th>
+        <th>単価<font color="red">(必須)</font></th>
           <td><%= f.text_field :last_price, placeholder: "10,000" %></td></tr>
 
         <th>販売ステータス</th>

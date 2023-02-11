@@ -7,7 +7,7 @@
 
 <div class="row justify-content-center">
 <% if @item.errors.any? %>
-  <%= @item.errors.count %>件のエラーが発生しました
+  <%= @item.errors.count %>件のエラーが発生しました 
   <ul>
     <% @item.errors.full_messages.each do |message| %>
       <li><%= message %></li>

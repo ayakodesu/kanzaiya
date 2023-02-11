@@ -43,8 +43,7 @@ class Admin::ItemsController < ApplicationController
         flash[:success] = "変更を保存しました"
         redirect_to admin_item_path(@item.id)
     else
-        flash[:danger] = "変更できませんでした"
-        redirect_to admin_item_path
+        render :edit
     end
   end
 
