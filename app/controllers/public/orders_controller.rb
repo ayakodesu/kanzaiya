@@ -85,8 +85,12 @@ class Public::OrdersController < ApplicationController
   def show
     @orders = current_customer.orders
     @order = current_customer.orders.find_by(id: params[:id])
-    @order_details = @order.order_details
-    @order.shipping_cost = 800
+    if @order.nil?
+      redirect_to root_path
+    else
+      @order_details = @order.order_details
+      @order.shipping_cost = 800
+    end
   end
 
 private

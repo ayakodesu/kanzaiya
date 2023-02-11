@@ -81,12 +81,13 @@ class GeneralPublic::OrdersController < ApplicationController
 
   def show
     @orders = current_general_customer.orders
-    @order = Order.find(params[:id])
-    unless @order.general_customer == current_general_customer
-      redirect_to  general_public_order_path
+    @order = current_general_customer.orders.find_by(id: params[:id])
+    if @order.nil?
+      redirect_to root_path
+    else
+      @order_details = @order.order_details
+      @order.shipping_cost = 800
     end
-    @order_details = @order.order_details
-    @order.shipping_cost = 800
   end
 
 private
