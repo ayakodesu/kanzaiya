@@ -36,11 +36,12 @@ class GeneralPublic::AddressesController < ApplicationController
 
   def destroy
     @address.destroy if @address
+    flash[:success] = "削除しました"
     redirect_to general_public_addresses_path
   end
 
   private
-  
+
   def correct_user
     @address = current_general_customer.addresses.find_by(id: params[:id])
     redirect_to  root_path unless @address

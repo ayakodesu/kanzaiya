@@ -39,6 +39,7 @@ class Public::AddressesController < ApplicationController
   def destroy
     #@address = Address.find(params[:id])
     @address.destroy if @address
+    flash[:success] = "削除しました"
     redirect_to public_addresses_path
   end
 

@@ -47,6 +47,7 @@
           telephone_number: 'TEL'
           email: 'メールアドレス'
           password: 'パスワード'
+          password_confirmation: 'パスワード再確認'
         general_customer:
           last_name: '姓'
           first_name: '名'
@@ -57,6 +58,7 @@
           telephone_number: 'TEL'
           email: 'メールアドレス'
           password: 'パスワード'
+          password_confirmation: 'パスワード再確認'
         order:
           postal_code: '郵便番号'
           address: '住所'

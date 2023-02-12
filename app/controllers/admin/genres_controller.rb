@@ -38,7 +38,7 @@ class Admin::GenresController < ApplicationController
   def destroy
     @genre = Genre.find(params[:id])
     @genre.delete
-    flash[:danger] = "削除しました"
+    flash[:success] = "削除しました"
     redirect_to admin_genres_path
   end
 
